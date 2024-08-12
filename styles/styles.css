@@ -1,27 +1,32 @@
-body{
-    background-color: black;
+body {
+    background-image: linear-gradient(to right bottom, #000000, #000000, #000000, #000000, #000000, #1e1214, #351c1e, #4d2626, #824130, #b1662e, #d49422, #e5ca10);
     color: aliceblue;
 }
 
-.body_principal{
+.body_principal {
     margin: auto;
     display: flex;
     flex-direction: column;
-    background-color: wheat;
+    background-color: black;
     width: 85vw;
     height: 100%;
     border-radius: 15px;
     margin-top: 5%;
+    box-shadow: -41px -39px 47px -9px rgba(229, 202, 16, 0.57);
+    -webkit-box-shadow: -41px -39px 47px -9px rgba(229, 202, 16, 0.57);
+    -moz-box-shadow: -41px -39px 47px -9px rgba(229, 202, 16, 0.57);
 }
-.datos_personales{
+
+.datos_personales {
     margin-top: 5%;
     text-align: center;
-    background-color: rgb(0, 0, 0); 
+    background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
 
 }
-.contenido_datos{
+
+.contenido_datos {
     margin: auto;
     display: flex;
     align-items: center;
@@ -29,32 +34,111 @@ body{
     margin-top: 10px;
     margin-bottom: 1%;
 }
-.texto_datos{
+
+.texto_datos {
     display: flex;
     flex-direction: column;
 }
-.texto_datos h3 , h4{
+
+.texto_datos h3,
+h4 {
     margin: 0;
     padding: 0;
-  
+
 }
 
-h1{
+h1 {
     text-align: center;
 }
-#img_perfil{
+
+#img_perfil {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    
+
 }
-.experiencia_laboral{
-    background-color: blue;
-}
-.proyectos{
+
+.proyectos {
     background-color: brown;
 }
-.mas_sobre_mi{
+
+.mas_sobre_mi {
     background-color: aquamarine;
     margin-bottom: 5%;
+}
+
+.experiencia_laboral {
+    background-color: black;
+
+}
+
+.a_experiencia {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.contenido_laboral {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2%;
+    padding: 15px;
+}
+
+#impar{
+    border-color: #e5ca10;
+}
+.contenido_experiencia {
+    flex: 1 1 calc(33.333% - 5%); 
+    max-width: calc(33.333% - 5%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60vh;
+    width: 25vw;
+    border: 5px solid;
+    border-radius: 15px;
+    border-color: #b1662e;
+    padding: 15px;
+    margin-bottom: 2%;
+}
+@media (max-width: 768px) {
+    .contenido_experiencia {
+        flex: 1 1 100%; 
+        max-width: 100%;
+        height: 36vh;
+    }
+    .descripcion_experiencia{
+        font-size: 5vh;
+        flex-grow: 1; 
+    }
+}
+
+.titulo_experiencia{
+    color: #e5ca10;
+    font-size: 30px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    align-self: flex-start;
+}
+
+.descripcion_experiencia{
+    font-size: 3vh;
+    flex-grow: 1; 
+}
+.fecha_experiencia{
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 5px;
+    align-self: flex-end;
+}
+.lugar_experiencia{
+    color:#e5ca10;
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    align-self: flex-end;
+}
+.experiencia_laboral h2 {
+    text-align: center;
 }
