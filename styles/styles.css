@@ -1,6 +1,7 @@
 body {
     background-image: linear-gradient(to right bottom, #000000, #000000, #000000, #000000, #000000, #1e1214, #351c1e, #4d2626, #824130, #b1662e, #d49422, #e5ca10);
     color: aliceblue;
+    font-family: "Titillium Web";
 }
 
 .body_principal {
@@ -38,6 +39,9 @@ body {
 .texto_datos {
     display: flex;
     flex-direction: column;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .texto_datos h3,
@@ -49,6 +53,7 @@ h4 {
 
 h1 {
     text-align: center;
+
 }
 
 #img_perfil {
@@ -89,6 +94,7 @@ h1 {
     border-color: #e5ca10;
 }
 .contenido_experiencia {
+
     flex: 1 1 calc(33.333% - 5%); 
     max-width: calc(33.333% - 5%);
     display: flex;
