@@ -208,7 +208,7 @@ h1 {
     .contenido_experiencia {
         flex: 1 1 100%;
         max-width: 100%;
-        height: 36vh;
+        height: auto;
     }
 
     .descripcion_experiencia {
