@@ -4,7 +4,11 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
-
+.actualizacion{
+    width: 100%;
+    text-align: center;
+    background-color: #e5ca10;
+}
 .body_principal {
     margin: auto;
     display: flex;
