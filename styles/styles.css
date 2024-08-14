@@ -4,11 +4,13 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
-.actualizacion{
+
+.actualizacion {
     width: 100%;
     text-align: center;
     background-color: #e5ca10;
 }
+
 .body_principal {
     margin: auto;
     display: flex;
@@ -26,7 +28,8 @@ body {
     text-align: center;
 
 }
-.contacto{
+
+.contacto {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -36,33 +39,41 @@ body {
     margin-bottom: 1%;
     margin-right: 10px;
 }
-.img_contacto{
+
+.img_contacto {
     width: 45px;
     height: 45px;
-    background-color: #e5ca10;
+    background-color: #fffdf5;
+    box-shadow: -7px -5px 12px -4px rgba(0,0,0,0.75) inset;
+-webkit-box-shadow: -7px -5px 12px -4px rgba(0,0,0,0.75) inset;
+-moz-box-shadow: -7px -5px 12px -4px rgba(0,0,0,0.75) inset;
     border-radius: 35%;
     padding: 5px;
 
 }
-.tecnologias h2{
+
+.tecnologias h2 {
     text-align: center;
     margin-bottom: 10px;
 }
-.contenedor_tecs{
+
+.contenedor_tecs {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 2%;
     padding: 15px;
 }
-.contenedor_tecnologias{
+
+.contenedor_tecnologias {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
     padding: 15px;
 }
-.contenedor_tecnologias img{
+
+.contenedor_tecnologias img {
     width: 50px;
     height: 50px;
 
@@ -76,7 +87,8 @@ body {
     margin-top: 10px;
     margin-bottom: 1%;
 }
-.descripcion_datos_personales{
+
+.descripcion_datos_personales {
     font-size: 15px;
     margin-bottom: 0;
     margin-top: 5px;
@@ -84,6 +96,7 @@ body {
     text-align: justify;
 
 }
+
 .texto_datos {
     display: flex;
     flex-direction: column;
@@ -117,10 +130,7 @@ h2 {
     margin-bottom: 5%;
 }
 
-.experiencia_laboral {
-
-
-}
+.experiencia_laboral {}
 
 .a_experiencia {
     color: aliceblue;
@@ -135,33 +145,31 @@ h2 {
     padding: 15px;
 }
 
-#impar{
+#impar {
     border-color: #e5ca10;
 }
+
 .contenido_experiencia {
     background-color: #1e1214;
-    flex: 1 1 calc(33.333% - 5%); 
-    max-width: calc(33.333% - 5%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 60vh;
-    width: 25vw;
+    height: auto;
+    width: 100vw;
     border: 5px solid;
     border-radius: 15px;
     border-color: #b1662e;
     padding: 15px;
     margin-bottom: 2%;
 }
-h1{
+
+h1 {
     text-align: center;
 }
-.descripcion_experiencia{
+
+.descripcion_experiencia {
     font-size: 3vh;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
-.titulo_experiencia{
+.titulo_experiencia {
     color: #e5ca10;
     font-size: 30px;
     margin-bottom: 5px;
@@ -170,38 +178,44 @@ h1{
 }
 
 
-.fecha_experiencia{
+.fecha_experiencia {
     font-size: 15px;
     margin-bottom: 0;
     margin-top: 5px;
     align-self: flex-end;
 }
-.lugar_experiencia{
-    color:#e5ca10;
+
+.lugar_experiencia {
+    color: #e5ca10;
     font-size: 15px;
     margin-bottom: 5px;
     margin-top: 5px;
     align-self: flex-end;
 }
+
 .experiencia_laboral h2 {
     text-align: center;
 }
+
 @media (max-width: 768px) {
-    
+
     .texto_datos {
         display: flex;
         flex-direction: column;
         width: 90%;
     }
+
     .contenido_experiencia {
-        flex: 1 1 100%; 
+        flex: 1 1 100%;
         max-width: 100%;
         height: 36vh;
     }
-    .descripcion_experiencia{
+
+    .descripcion_experiencia {
         font-size: 2vh;
-        flex-grow: 1; 
+        flex-grow: 1;
     }
+
     .contenido_datos {
         display: flex;
         flex-direction: column;
