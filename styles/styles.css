@@ -4,7 +4,19 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
+.titulo_univer{
 
+    font-size: 2vw;
+    margin-bottom: 5px;
+    margin-top: 0;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    font-size: 3.5vw;
+    margin-bottom: 0;
+    margin-top: 0;
+}
 .actualizacion {
     width: 100%;
     text-align: center;
@@ -89,7 +101,7 @@ body {
 }
 
 .descripcion_datos_personales {
-    font-size: 15px;
+    font-size: 1.5vw;
     margin-bottom: 0;
     margin-top: 5px;
     align-self: center;
@@ -160,9 +172,7 @@ h2 {
     margin-bottom: 2%;
 }
 
-h1 {
-    text-align: center;
-}
+
 
 .descripcion_experiencia {
     font-size: 1vw;
@@ -196,6 +206,41 @@ h1 {
 .experiencia_laboral h2 {
     text-align: center;
 }
+.contenido_proyectos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2%;
+    padding: 15px;
+}
+.a_proyectos{
+    color: #4d2626;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 7vw;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #fffdf5;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.descripcion_proyecto{
+    font-size: 1vw;
+}
+.github_proyectos{
+    width: 25px;
+    height: 25px;
+}
+.tecnologias_proyectos img{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 5px;
+}
 
 @media (max-width: 768px) {
 
@@ -223,4 +268,46 @@ h1 {
         justify-content: center;
         gap: 20px;
     }
+    .contenido_proyectos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2%;
+        padding: 15px;
+    }
+
+    .a_proyectos{
+        color: #4d2626;
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin:auto;
+        gap: 5px;
+        width: 95%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: #fffdf5;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .tecnologias_proyectos h6{
+        margin-bottom: 5px;
+    }
+    .descripcion_proyecto{
+        font-size: 3vw;
+    }
+    .github_proyectos{
+        width: 25px;
+        height: 25px;
+    }
+    .tecnologias_proyectos img{
+        width: 25px;
+        height: 25px;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
 }
+
+
