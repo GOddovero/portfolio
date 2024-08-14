@@ -44,9 +44,9 @@ body {
     width: 45px;
     height: 45px;
     background-color: #fffdf5;
-    box-shadow: -7px -5px 12px -4px rgba(0,0,0,0.75) inset;
--webkit-box-shadow: -7px -5px 12px -4px rgba(0,0,0,0.75) inset;
--moz-box-shadow: -7px -5px 12px -4px rgba(0,0,0,0.75) inset;
+    box-shadow: -7px -5px 12px -4px rgba(0, 0, 0, 0.75) inset;
+    -webkit-box-shadow: -7px -5px 12px -4px rgba(0, 0, 0, 0.75) inset;
+    -moz-box-shadow: -7px -5px 12px -4px rgba(0, 0, 0, 0.75) inset;
     border-radius: 35%;
     padding: 5px;
 
@@ -165,7 +165,7 @@ h1 {
 }
 
 .descripcion_experiencia {
-    font-size: 3vh;
+    font-size: 1vw;
     flex-grow: 1;
 }
 
