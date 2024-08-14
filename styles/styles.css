@@ -1,6 +1,8 @@
 body {
     background-image: linear-gradient(to right bottom, #000000, #000000, #000000, #000000, #000000, #1e1214, #351c1e, #4d2626, #824130, #b1662e, #d49422, #e5ca10);
     color: aliceblue;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .body_principal {
