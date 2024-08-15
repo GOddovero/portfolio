@@ -157,7 +157,7 @@ h2 {
 }
 
 .contenido_experiencia {
-    background-color: #1e1214;
+    background-color: #1e121480;
     height: auto;
     width: 100vw;
     border: 5px solid;
@@ -207,7 +207,13 @@ h2 {
     justify-content: space-between;
     gap: 2%;
     padding: 15px;
+    border: 5px solid;
+    border-radius: 45px 0 0 45px;
+    margin-bottom: 5px;
+    background-color: #4d2626a7;
+    border-color: #4d2626;
 }
+
 .a_proyectos{
     color: #4d2626;
     text-decoration: none;
@@ -223,18 +229,30 @@ h2 {
     padding: 5px;
     border-radius: 10px;
 }
-
+.img_proyectos{
+    width: 45%;
+    height: auto;
+    padding: 5px;
+}
 .descripcion_proyecto{
     font-size: 1vw;
+    margin-bottom: 15px;
 }
 .github_proyectos{
     width: 25px;
     height: 25px;
 }
+
 .tecnologias_proyectos img{
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
     margin-bottom: 5px;
+    margin-top: 15px;
+}
+.tecnologias_proyectos h6{
+    margin-bottom: 5px;
+    margin-top: 0;
+    font-size: 1.5vw;
 }
 
 @media (max-width: 768px) {
@@ -321,6 +339,14 @@ h2 {
         height: 25px;
         margin-bottom: 5px;
         margin-top: 0;
+    }
+    .img_proyectos{
+        width: 100%;
+        height: auto;
+        margin: auto;
+        background-color: #fffdf5;
+        border-radius: 45px 45px 0 0;
+        padding: 5px;
     }
 }
 
