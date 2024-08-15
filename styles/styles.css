@@ -312,7 +312,6 @@ h2 {
         justify-content: space-between;
         gap: 2%;
         padding: 15px;
-        background-color: #1e121481;
     }
 
     .a_proyectos{
@@ -348,11 +347,10 @@ h2 {
         margin-top: 0;
     }
     .img_proyectos{
-        width: 100%;
+        width: 98%;
         height: auto;
         margin: auto;
-        border-radius: 45px 45px 0 0;
-        padding: 5px;
+        padding: 1%;
     }
 }
 
