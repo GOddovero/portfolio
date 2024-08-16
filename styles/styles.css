@@ -261,12 +261,14 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 5px;
-    width: 7vw;
+    width: auto;
+    max-width: fit-content;
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: #fffdf5;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
 }
 
@@ -368,7 +370,9 @@ h2 {
         gap: 2%;
         padding: 15px;
     }
-
+    .contenido_proyectos:nth-child(even) {
+        flex-direction:column-reverse; /* Imagen a la derecha, texto a la izquierda */
+    }
     .a_proyectos {
         color: #4d2626;
         text-decoration: none;
@@ -379,6 +383,7 @@ h2 {
         margin: auto;
         gap: 5px;
         width: 95%;
+        max-width: 100%;
         margin-top: 5px;
         margin-bottom: 5px;
         background-color: #fffdf5;
