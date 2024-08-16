@@ -296,6 +296,17 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .body_principal {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        width: 98vw;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        background-color: #05050561;
+        box-shadow: none;
+    }
     .titulo_univer {
         font-size: 4.5vw;
         margin-bottom: 5px;
