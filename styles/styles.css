@@ -1,22 +1,43 @@
 body {
-    background-image: linear-gradient(to right bottom, #000000, #000000, #000000, #000000, #000000, #1e1214, #351c1e, #4d2626, #824130, #b1662e, #d49422, #e5ca10);
+    background-color: #050505;
+    position: relative;
     color: aliceblue;
-    max-width: 100%;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+
 }
-.titulo_univer{
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right bottom, #ffffff, #f7f8ff, #ecf3ff, #deeeff, #cdeaff, #c1eafd, #b6eafa, #abeaf4, #abedeb, #b0efe0, #baefd4, #c8efc9);
+    /*
+    background-image: linear-gradient(to right bottom, #000000, #000000, #000000, #000000, #000000, #1e1214, #351c1e, #4d2626, #824130, #b1662e, #d49422, #e5ca10);
+    */
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.titulo_univer {
 
     font-size: 2vw;
     margin-bottom: 5px;
     margin-top: 0;
     text-align: center;
 }
+
 h1 {
     text-align: center;
     font-size: 3.5vw;
     margin-bottom: 0;
-    margin-top: 0;
+    margin-top: 5%;
 }
+
 .actualizacion {
     width: 100%;
     text-align: center;
@@ -27,12 +48,14 @@ h1 {
     margin: auto;
     display: flex;
     flex-direction: column;
-
     width: 85vw;
     height: 100%;
-    border-radius: 15px;
-    margin-top: 5%;
-
+    position: relative;
+    z-index: 1;
+    background-color: #05050561;
+    -webkit-box-shadow: 0px 50px 84px 20px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0px 50px 84px 20px rgba(0,0,0,0.9);
+    box-shadow: 0px 50px 84px 20px rgba(0,0,0,0.9);
 }
 
 .datos_personales {
@@ -49,6 +72,7 @@ h1 {
     margin-top: 25px;
     margin-bottom: 1%;
     margin-right: 10px;
+    
 }
 
 .img_contacto {
@@ -76,13 +100,18 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
     padding: 15px;
+    background-color: #1e121415;
+    border-radius: 15px;
+    -webkit-box-shadow: 11px 11px 41px -6px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 11px 11px 41px -6px rgba(0, 0, 0, 0.53);
+    box-shadow: 11px 11px 41px -6px rgba(0, 0, 0, 0.53);
+
 }
 
 .contenedor_tecnologias img {
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
 
 }
 
@@ -93,6 +122,7 @@ h1 {
     gap: 20px;
     margin-top: 10px;
     margin-bottom: 1%;
+    
 }
 
 .descripcion_datos_personales {
@@ -124,11 +154,9 @@ h2 {
 #img_perfil {
     width: 200px;
     height: 200px;
-    object-fit:cover;
-    border-radius: 50%;
-
-
-}
+    object-fit: cover;
+    border-radius: 35%;
+    }
 
 
 
@@ -137,7 +165,6 @@ h2 {
     margin-bottom: 5%;
 }
 
-.experiencia_laboral {}
 
 .a_experiencia {
     color: aliceblue;
@@ -152,19 +179,18 @@ h2 {
     padding: 15px;
 }
 
-#impar {
-    border-color: #e5ca10;
-}
+
 
 .contenido_experiencia {
-    background-color: #1e121481;
+
     height: auto;
     width: 100vw;
-    border: 5px solid;
-    border-radius: 15px;
-    border-color: #b1662e;
     padding: 15px;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
+    -webkit-box-shadow: 11px 11px 41px -6px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 11px 11px 41px -6px rgba(0, 0, 0, 0.53);
+    box-shadow: 11px 11px 41px -6px rgba(0, 0, 0, 0.53);
+
 }
 
 
@@ -201,7 +227,8 @@ h2 {
 .experiencia_laboral h2 {
     text-align: center;
 }
-.contenido_proyectos{
+
+.contenido_proyectos {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -209,7 +236,8 @@ h2 {
     margin-bottom: 5px;
     background-color: #1e121481;
 }
-.contenido_texto_proyectos{
+
+.contenido_texto_proyectos {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -218,14 +246,15 @@ h2 {
 
     margin: 0;
 }
-.img_proyectos{
+
+.img_proyectos {
     width: 45%;
     height: auto;
     padding: 5px;
 
 }
 
-.a_proyectos{
+.a_proyectos {
     color: #4d2626;
     text-decoration: none;
     display: flex;
@@ -241,65 +270,73 @@ h2 {
     border-radius: 10px;
 }
 
-.descripcion_proyecto{
+.descripcion_proyecto {
     font-size: 1vw;
     margin-bottom: 15px;
 }
-.github_proyectos{
+
+.github_proyectos {
     width: 25px;
     height: 25px;
 }
 
-.tecnologias_proyectos img{
+.tecnologias_proyectos img {
     width: 50px;
     height: 50px;
     margin-bottom: 5px;
     margin-top: 15px;
 }
-.tecnologias_proyectos h6{
+
+.tecnologias_proyectos h6 {
     margin-bottom: 5px;
     margin-top: 0;
     font-size: 1.5vw;
 }
 
 @media (max-width: 768px) {
-    .titulo_univer{
+    .titulo_univer {
         font-size: 4.5vw;
         margin-bottom: 5px;
         margin-top: 0;
         text-align: center;
     }
+
     h1 {
         text-align: center;
         font-size: 6.5vw;
         margin-bottom: 0;
         margin-top: 0;
     }
+
     .texto_datos {
         display: flex;
         flex-direction: column;
         width: 90%;
     }
+
     .descripcion_datos_personales {
         font-size: 2.75vw;
         margin-bottom: 0;
         margin-top: 5px;
         align-self: center;
         text-align: justify;
-    
+
     }
-    .contacto{
+
+    .contacto {
         width: 100%;
         justify-content: center;
         gap: 50px;
+        
     }
-    .contacto a:nth-child(1), 
-    .contacto a:nth-child(2), 
+
+    .contacto a:nth-child(1),
+    .contacto a:nth-child(2),
     .contacto a:nth-child(3) {
         order: 1;
     }
 
-    .contacto a:nth-child(4), 
+    .contacto a:nth-child(4),
     .contacto a:nth-child(5) {
         order: 2;
     }
@@ -323,7 +360,8 @@ h2 {
         justify-content: center;
         gap: 20px;
     }
-    .contenido_proyectos{
+
+    .contenido_proyectos {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -331,14 +369,14 @@ h2 {
         padding: 15px;
     }
 
-    .a_proyectos{
+    .a_proyectos {
         color: #4d2626;
         text-decoration: none;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        margin:auto;
+        margin: auto;
         gap: 5px;
         width: 95%;
         margin-top: 5px;
@@ -347,33 +385,37 @@ h2 {
         padding: 5px;
         border-radius: 10px;
     }
-    .tecnologias_proyectos h6{
+
+    .tecnologias_proyectos h6 {
         margin-bottom: 5px;
     }
-    .descripcion_proyecto{
+
+    .descripcion_proyecto {
         font-size: 3vw;
     }
-    .github_proyectos{
+
+    .github_proyectos {
         width: 25px;
         height: 25px;
     }
-    .tecnologias_proyectos img{
+
+    .tecnologias_proyectos img {
         width: 25px;
         height: 25px;
         margin-bottom: 5px;
         margin-top: 0;
     }
-    .img_proyectos{
+
+    .img_proyectos {
         width: 98%;
         height: auto;
         margin: auto;
         padding: 1%;
     }
-    .contenedor_tecs{
+
+    .contenedor_tecs {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 5px;
     }
 }
-
-
