@@ -41,7 +41,6 @@ body::before {
     height: auto;
     position: relative;
     z-index: 1;
-    background-color: ;
 }
 
 .datos_principales {
@@ -166,6 +165,7 @@ h4 {
 
 h2 {
     text-align: center;
+    display: none;
 }
 
 #img_perfil {
@@ -186,6 +186,7 @@ h2 {
 .mas_sobre_mi {
     background-color: aquamarine;
     margin-bottom: 5%;
+    display: none;
 }
 
 
@@ -253,12 +254,14 @@ h2 {
     text-align: center;
 }
 .proyectos_tecnologia{
+    margin-top: 2%;
     display:grid;
     grid-template-columns: auto 1fr;
     gap: 2%;
     margin-bottom: 2%;
     width: 85vw;
-    height: 150vh;
+    height: auto;
+
 }
 .contenedor_tecnologias{
     display: flex;
@@ -290,13 +293,13 @@ h2 {
 }
 
 .contenedor_tecnologias img {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: auto;
 
 }
 .tecs_principales img {
-    width: 75px;
-    height: 75px;
+    width: 55px;
+    height: auto;
     margin-bottom: 0;
 }
 .contenido_proyectos {
@@ -306,6 +309,9 @@ h2 {
     padding: 15px;
     margin-bottom: 5px;
     border-bottom: #b9b5b5 1.5px solid;
+}
+#ultimo_proyecto{
+    border-bottom: none;
 }
 
 .contenido_texto_proyectos {
@@ -383,6 +389,10 @@ h2 {
 
 @media (max-width: 768px) {
     
+    h2 {
+        text-align: center;
+        display: block;
+    }
     .body_principal {
         margin: auto;
         display: flex;
@@ -556,12 +566,30 @@ h2 {
         margin: auto;
         padding: 1%;
     }
-
     .contenedor_tecs {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display:flex;
+        flex-direction: column;
+        align-items: center;
         gap: 5px;
         height: auto;
-
+        width: 80vw;
+        padding: 15px;
+    }
+    .tecs_principales{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15vw;
+        height: auto;
+        border-bottom: #574f4f 1.5px solid;
+        margin-bottom: 2%;
+    }
+    .slider_tecnologias{
+        margin-top: 2%;
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 10vw;
+        height: auto;
     }
 }
