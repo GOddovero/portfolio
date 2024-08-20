@@ -41,7 +41,8 @@ setupScrollAnimation("btn_experiencia_laboral", "contenido_laboral");
 setupScrollAnimation("btn_proyectos", "contenido_proyectos");
 //setupScrollAnimation("btn_educacion", "contenido_educacion");
 //setupScrollAnimation("btn_sobre_mi", "contenido_mas_sobre_mi");
-//setupScrollAnimation("contacto_menubar", "contenedor_contactos");
+setupScrollAnimation("contacto_menubar", "contenido_contacto");
+setupScrollAnimation("btn_ir_contacto", "contenido_contacto");
 
 document.getElementById("btn_modo_oscuro").addEventListener("click", function() {
     document.body.classList.toggle("modo-oscuro")

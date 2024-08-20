@@ -16,7 +16,7 @@
             <button id="btn_proyectos">Proyectos</button>
             <button id="btn_educacion">Educacion</button>
             <button id="btn_sobre_mi">Mas Sobre Mi</button>
-            <button class="contacto_menubar">Contacto</button>
+            <button id="contacto_menubar">Contacto</button>
             <button id="btn_modo_oscuro">Modo Oscuro</button>
         </div>
     </div>
@@ -45,7 +45,7 @@
                 <a href="https://drive.google.com/file/d/1Cn8hmpJU5yfdn2MZMiaK41AdCVWN1eMi/view?usp=drive_link"><img
                         src="img/cv.png" alt="cv" class="img_contacto"></a>
                 <a href="mailto:gasparoh.work@gmail.com"><img src="img/gmail.png" alt="gmail" class="img_contacto"></a>
-                <button class="boton_contacto">Contacto</button>
+                <button class="boton_contacto" id="btn_ir_contacto">Contacto</button>
             </div>
         </div>
         <div class="experiencia_laboral">
@@ -163,7 +163,7 @@
                         </div>
                         <img src="img/proyecto_2.png" class="img_proyectos">
                     </div>
-                    <div class="contenido_proyectos" >
+                    <div class="contenido_proyectos">
                         <img src="img/proyecto_3.png" class="img_proyectos" id="img_proyectos_3">
                         <div class="contenido_texto_proyectos">
                             <a href="https://github.com/GOddovero/portfolio" class="a_proyectos"><img
@@ -250,6 +250,37 @@
                 </div>
             </div>
         </div>
+        <div class="contacto">
+            <h2>Contacto</h2>
+            <div class="contenido_contacto" id="contenido_contacto">
+                <div class="encontrame_en">
+                    <h3>Encontrame en:</h3>
+                    <div class="contenedor_vinculos">
+                        <a href="https://github.com/GOddovero/" class="a_encontrame"><img src="img/github.png" alt="github"
+                                class="a_img_contacto">¡Conoce Más proyectos mios!</a>
+                        <a href="https://www.linkedin.com/in/gaspar-o-122803175/" class="a_encontrame"><img src="img/linkedin.png" alt="linkedin"
+                                class="a_img_contacto">¡Seguime en LinkedIn!</a>
+                        <a href="https://drive.google.com/file/d/1Cn8hmpJU5yfdn2MZMiaK41AdCVWN1eMi/view?usp=drive_link" class="a_encontrame"><img
+                                src="img/cv.png" alt="cv" class="a_img_contacto">¡Descarga mi Curriculum Vitae Actualizado!</a>
+                        <a href="mailto:gasparoh.work@gmail.com" class="a_encontrame"><img src="img/gmail.png" alt="gmail"
+                                class="a_img_contacto">¡Contactate directamete conmigo!</a>
+                        <a href="https://www.instagram.com/gasparoddovero/" class="a_encontrame"><img src="img/ig.png" alt="ig" class="a_img_contacto">¡Seguime en Instagram!</a>
+                        <a href="https://www.instagram.com/goh.dev/" class="a_encontrame"><img src="img/ig.png" alt="ig"
+                                class="a_img_contacto">¡Seguime en GOH.Dev!</a>
+                    </div>
+                </div>
+                <form class="formulario">
+                    <label for="nombre">Nombre y Apellido</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <br>
     </div>
 
     <script src="/components/main.js"></script>
