@@ -15,26 +15,69 @@ body::before {
     width: 100%;
     height: 100%;
     background-image: linear-gradient(to right bottom, #ffffff, #f7f8ff, #ecf3ff, #deeeff, #cdeaff, #c1eafd, #b6eafa, #abeaf4, #abedeb, #b0efe0, #baefd4, #c8efc9);
-    
     /*
     background-image: linear-gradient(to right bottom, #000000, #000000, #000000, #000000, #000000, #1e1214, #351c1e, #4d2626, #824130, #b1662e, #d49422, #574f4f);
     */
     filter: blur(5px);
     z-index: -1;
 }
+.modo-oscuro {
+    color: #e0e0e0;
+    background-color: #121212;
+}
 
+.modo-oscuro::before {
+    background-image: linear-gradient(to right bottom, #121212, #1d1d1d, #2a2a2a, #383838, #4a4a4a, #5e5e5e, #737373, #8a8a8a, #a1a1a1, #b9b9b9, #d2d2d2, #e9e9e9);
+}
 .botones {
     display: none;
 }
+.menubar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 7.5vh;
+    background-color: #0000007b; 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    -webkit-box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
+    -moz-box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
+    box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
+}
 
+
+.botones_menubar{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;  
+    padding: 2.5vh;
+}
+.botones_menubar button{
+    background-color: transparent;
+    border-style: none;
+    color: #a1d2de;
+    font-size: 2vh;
+    border-radius: 15px;
+
+}
+.botones_menubar button:hover{
+    transform: scale(1.2);
+}
 .actualizacion {
     width: 100%;
     text-align: center;
     background-color: #574f4f;
+ 
 }
 
 .body_principal {
+    
     margin: auto;
+    margin-top: 4%;
     display: flex;
     flex-direction: column;
     width: 85vw;
@@ -45,7 +88,6 @@ body::before {
 
 .datos_principales {
     width: 85vw;
-    padding: 15px;
     border-radius: 15px;
     padding: 10px;
     background-color: #39393922;
@@ -60,6 +102,7 @@ body::before {
     margin-bottom: 5px;
     margin-top: 0;
     text-align: center;
+    
 }
 
 h1 {
@@ -211,6 +254,7 @@ h2 {
     gap: 2%;
     padding: 15px;
     border-radius: 15px;
+    border-width: 2px;
     background-color: #39393922;
     -webkit-box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
     -moz-box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
@@ -398,6 +442,11 @@ h2 {
 
 @media (max-width: 768px) {
     .boton_ver_mas{
+        margin-left: 21vw;
+        align-items: center;
+        justify-content: center;
+    }
+    .menubar{
         display: none;
     }
     h2 {
