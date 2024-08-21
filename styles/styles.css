@@ -266,8 +266,6 @@ h2 {
 
 }
 
-
-
 .contenido_experiencia {
     height: auto;
     width: 100vw;
@@ -316,7 +314,7 @@ h2 {
     gap: 2%;
     margin-bottom: 2%;
     width: 85vw;
-    height: 185vh;
+    height: auto;
 
 }
 
@@ -332,7 +330,7 @@ h2 {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    height: 177vh;
+    height: auto;
     overflow: hidden;
     border-radius: 15px;
     background-color: #39393922;
@@ -448,7 +446,45 @@ h2 {
     margin-top: 0;
     font-size: 1.5vw;
 }
+.contenedor_educacion{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #39393922;
+    -webkit-box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
+    -moz-box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
+    box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
+    margin-bottom: 2%;
+}
+.contenido_educacion{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: auto;
+    border: #b9b5b5 1px solid;
+}
 
+.titulo_educacion{
+    font-size: 1.5vw;
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+.descripcion_educacion{
+    font-size: 1vw;
+    text-align: justify;
+}
+.lugar_educacion{
+    font-size: 1vw;
+    margin-top: 0px;
+}
+.periodo_educacion{
+    font-size: 1vw;
+    margin-bottom: 0;
+    margin-top: 0;
+    border-bottom: #b9b5b5 1px solid;
+}
 .contenido_contacto {
     width: 100%;
     display: flex;
@@ -470,6 +506,7 @@ h2 {
     gap: 5px;
     border-right: #b9b5b5 1.5px solid;
     margin-bottom: 2%;
+    margin-top: 0;
 }
 
 .contenedor_vinculos {
@@ -488,6 +525,8 @@ h2 {
     background-color: #fffdf5;
     border-radius: 35%;
     padding: 5px;
+    margin-left: 0;
+    margin-right: 20%;
 }
 
 .a_encontrame {
@@ -500,7 +539,7 @@ h2 {
     text-align: center;
     gap: 5px;
     width: 15vw;
-    max-width: fit-content;
+    height: auto;
     margin: auto;
     margin-bottom: 5%;
     background-color: #fffdf546;
@@ -523,6 +562,60 @@ h2 {
     gap: 15px
 }
 
+.formulario label {
+    margin-top: 2%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.formulario input {
+    width: 50%;
+    height: 30px;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    background-color: #fffdf546;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+    -webkit-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+}
+
+.formulario textarea {
+    width: 75%;
+    height: 100px;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    background-color: #fffdf546;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+    -webkit-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+}
+
+.formulario button {
+    width: 25%;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    background-color: #fffdf546;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+    -webkit-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.formulario button:hover {
+    transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
     .boton_ver_mas {
         margin-left: 21vw;
@@ -533,7 +626,7 @@ h2 {
     .menubar {
         display: none;
     }
-    
+
     h2 {
         text-align: center;
         display: block;
@@ -751,13 +844,15 @@ h2 {
         gap: 10vw;
         height: auto;
     }
-    .contenido_contacto{
+
+    .contenido_contacto {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2%;
     }
+
     .contenedor_vinculos {
         padding: 15px;
         padding-top: 0;
@@ -767,6 +862,7 @@ h2 {
         align-items: center;
         gap: 2%;
     }
+
     .encontrame_en {
         display: flex;
         flex-direction: column;
@@ -776,15 +872,18 @@ h2 {
         border-bottom: #b9b5b5 1.5px solid;
         border-right: none;
         margin-bottom: 2%;
-    }    
+    }
+
     .a_img_contacto {
         width: 45px;
         height: 45px;
         background-color: #fffdf5;
         border-radius: 35%;
         padding: 5px;
+        margin-left: 0;
+        margin-right: 1px;
     }
-    
+
     .a_encontrame {
         color: #6229ff;
         text-decoration: none;
@@ -805,18 +904,101 @@ h2 {
         -webkit-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
         -moz-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
     }
-    
+
     .a_encontrame:hover {
         transform: scale(1.1);
     }
-    
+
     .formulario {
-        width: 60vw;
+        width: 100vw;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
-        margin-bottom:2%;
+        gap: 15px
     }
 
+    .formulario label {
+        margin-top: 2%;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .formulario input {
+        width: 50%;
+        height: 30px;
+        padding: 5px;
+        font-size: 20px;
+        border: none;
+        background-color: #fffdf546;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+        -webkit-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+    }
+
+    .formulario textarea {
+        width: 75%;
+        height: 100px;
+        padding: 5px;
+        font-size: 20px;
+        border: none;
+        background-color: #fffdf546;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+        -webkit-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+    }
+
+    .formulario button {
+        width: 25%;
+        height: auto;
+        padding: 5px;
+        font-size: 20px;
+        border: none;
+        background-color: #fffdf546;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+        -webkit-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: 10px 13px 27px -12px rgba(0, 0, 0, 0.63);
+        margin-top: 2%;
+        margin-bottom: 5%;
+    }
+
+    .formulario button:hover {
+        transform: scale(1.1);
+    }
+    .contenedor_educacion{
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 15px;
+        background-color: #39393922;
+        -webkit-box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
+        -moz-box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
+        box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.82);
+        margin-bottom: 2%;
+    }
+    .titulo_educacion{
+        font-size: 3vh;
+        margin-bottom: 0px;
+        margin-top: 0;
+    }
+    .descripcion_educacion{
+        font-size: 1.75vh;
+        text-align: justify;
+    }
+    .lugar_educacion{
+        font-size: 2vh;
+        margin-top: 0px;
+    }
+    .periodo_educacion{
+        font-size: 2vh;
+        margin-bottom: 0;
+        margin-top: 0;
+        border-bottom: #b9b5b5 1px solid;
+    }
 }
