@@ -40,16 +40,19 @@ function setupScrollAnimation(buttonId, contentId) {
 setupScrollAnimation("btn_experiencia_laboral", "contenido_laboral");
 setupScrollAnimation("btn_proyectos", "contenido_proyectos");
 setupScrollAnimation("btn_educacion", "contenido_educacion");
-//setupScrollAnimation("btn_sobre_mi", "contenido_mas_sobre_mi");
+setupScrollAnimation("btn_sobre_mi", "contenido_mas_sobre_mi");
 setupScrollAnimation("contacto_menubar", "contenido_contacto");
 setupScrollAnimation("btn_ir_contacto", "contenido_contacto");
 
 document.getElementById("btn_modo_oscuro").addEventListener("click", function() {
     document.body.classList.toggle("modo-oscuro")
     if (document.body.classList.contains("modo-oscuro")) {
-        this.textContent = "Modo Claro";
+        this.textContent = "🌕";
     } else {
-        this.textContent = "Modo Oscuro";
+        this.textContent = "🌙";
     }
 });
 
+document.getElementById('btn_cambio_idioma').addEventListener('click', function() {
+    window.location.href = window.location.pathname.includes('index-en.html') ? 'index.html' : 'index-en.html';
+});

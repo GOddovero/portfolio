@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>goh-dev</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+
+<body>
+    <div class="menubar">
+        <div class="botones_menubar">
+            <button id="btn_experiencia_laboral">Work Experience</button>
+            <button id="btn_proyectos">Projects</button>
+            <button id="btn_educacion">Education</button>
+            <button id="btn_sobre_mi">About Me</button>
+            <button id="contacto_menubar">Contact</button>
+            <button id="btn_modo_oscuro">🌙</button>
+            <button id="btn_cambio_idioma">🇦🇷</button>
+        </div>
+    </div>
+    <br>
+    <div class="body_principal">
+        <div class="datos_principales">
+            <h1 class="nombre">Gaspar Oddovero Herrera</h1>
+            <h3 class="titulo_univer">Bachelor of Informatics</h3>
+        </div>
+        <div class="datos_personales">
+            <div class="contenido_datos">
+                <img src="img/perfil.jpeg" id="img_perfil">
+                <div class="texto_datos">
+                    <p class="descripcion_datos_personales">
+                        Software Developer with a solid background in informatics and extensive experience in the
+                        development of web and desktop applications. Capable of working through all phases of the
+                        software lifecycle, from design and development to implementation and maintenance. Passionate
+                        about technological innovation and continuous improvement.
+                    </p>
+                </div>
+            </div>
+            <div class="contenedor_contactos">
+                <a href="https://github.com/GOddovero/"><img src="img/github.png" alt="github" class="img_contacto"></a>
+                <a href="https://www.linkedin.com/in/gaspar-o-122803175/"><img src="img/linkedin.png" alt="linkedin"
+                        class="img_contacto"></a>
+                <a href="https://drive.google.com/file/d/1Cn8hmpJU5yfdn2MZMiaK41AdCVWN1eMi/view?usp=drive_link"><img
+                        src="img/cv.png" alt="cv" class="img_contacto"></a>
+                <a href="mailto:gasparoh.work@gmail.com"><img src="img/gmail.png" alt="gmail" class="img_contacto"></a>
+                <button class="boton_contacto" id="btn_ir_contacto">Contact</button>
+            </div>
+        </div>
+        <div class="experiencia_laboral">
+            <h2>Work Experience</h2>
+            <div class="contenido_laboral" id="contenido_laboral">
+                <div class="contenido_experiencia" id="impar">
+                    <h3 class="titulo_experiencia">Programming Teacher.</h3>
+                    <h4 class="descripcion_experiencia">As a programming teacher at Universidad Popular General Levalle,
+                        I taught Python classes covering basic fundamentals to intermediate topics such as
+                        Object-Oriented Programming and practical labs. I am currently expanding the program to include
+                        HTML, CSS, JavaScript, and PHP.</h4>
+                    <h5 class="fecha_experiencia">March 2024 - <span style="color: #574f4f;">Present.</span></h5>
+                    <h6 class="lugar_experiencia">Universidad Popular General Levalle</h6>
+                </div>
+                <div class="contenido_experiencia">
+                    <h3 class="titulo_experiencia">Informative AI Conferences</h3>
+                    <h4 class="descripcion_experiencia">I was a speaker at various conferences on Artificial
+                        Intelligence, covering topics from the history of AI to the practical application of modern
+                        tools like ChatGPT, Copilot, and Gemini. Known for my ability to simplify complex concepts and
+                        make them accessible to all audiences.</h4>
+                    <h5 class="fecha_experiencia">March 2024 - June 2024</h5>
+                    <h6 class="lugar_experiencia">Universidad Popular General Levalle</h6>
+                </div>
+                <div class="contenido_experiencia" id="impar">
+                    <h3 class="titulo_experiencia">Customer Service</h3>
+                    <h4 class="descripcion_experiencia">At Oddovero Herrajes, a family business, I managed customer
+                        service, stock control, and sales. Additionally, I contributed to process optimization and
+                        improving the customer experience by enhancing the management programs used.</h4>
+                    <h5 class="fecha_experiencia">February 2015 - <span style="color: #574f4f;">Present.</span></h5>
+                    <h6 class="lugar_experiencia">Oddovero Herrajes</h6>
+                </div>
+                <div class="contenido_experiencia">
+                    <h3 class="titulo_experiencia">Systems Operator</h3>
+                    <h4 class="descripcion_experiencia">I held the position of Systems Operator at Correo Argentino,
+                        where I was responsible for securely and efficiently transmitting electoral data for nationwide
+                        collection.</h4>
+                    <h5 class="fecha_experiencia">October 2023 - November 2023</h5>
+                    <h6 class="lugar_experiencia">Correo Argentino</h6>
+                </div>
+                <div class="contenido_experiencia" id="contenido_experiencia_ultimo">
+                    <h3 class="titulo_experiencia">Software Developer</h3>
+                    <h4 class="descripcion_experiencia">Internships conducted through Universidad Siglo 21, aiming to
+                        get closer to the programming sector. The website for <a
+                            href="https://cuidadoresdevivienda.com.ar/" class="a_experiencia">"Cuidadores de
+                            Viviendas"</a> and databases requested by the owners were developed during the internship.
+                        The internship was carried out as a group.</h4>
+                    <h5 class="fecha_experiencia">March 2023 - July 2023</h5>
+                    <h6 class="lugar_experiencia">Internships Universidad Siglo 21</h6>
+                </div>
+
+            </div>
+        </div>
+        <div class="proyectos_tecnologia">
+            <div class="contenedor_proyectos" id="proyectos">
+                <h2>Projects</h2>
+                <div class="body_proyectos" id="contenido_proyectos">
+                    <div class="contenido_proyectos" id="a">
+                        <img src="img/proyecto_1.png" class="img_proyectos">
+                        <div class="contenido_texto_proyectos">
+                            <a href="https://github.com/GOddovero/chefcito-tesis" class="a_proyectos"><img
+                                    src="img/github.png" class="github_proyectos"> Chefcito</a>
+                            <p class="descripcion_proyecto">Final project for the Bachelor's Degree in Informatics. The
+                                goal of the project was to include artificial intelligence to improve a process, with
+                                the chosen process being RECIPES and how they are searched. Traditionally, you first
+                                search for the recipe and then see the ingredients needed. In the case of "Chefcito,"
+                                it's the other way around. The ingredients the user possesses are added to a database,
+                                and an API from Groq is used to relate them to generate recipes. Additionally, Dall-e
+                                was used to generate images.</p>
+                            <div class="tecnologias_proyectos">
+                                <h6>Technologies Used</h6>
+                                <img src="img/js.png">
+                                <img src="img/css.png">
+                                <img src="img/html.png">
+                                <img src="img/nodo-js.png">
+                                <img src="img/open-ai.png">
+                                <img src="img/groq.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenido_proyectos" id="a">
+                        <div class="contenido_texto_proyectos">
+                            <div class="contenedor_a_proyectos">
+                                <a href="https://github.com/GOddovero/Proyecto-PokedexReloaded" class="a_proyectos"><img
+                                        src="img/github.png" class="github_proyectos"> Pokedex Reloaded</a>
+                                <a href="https://pokedexreloaded.netlify.app/" class="a_proyectos"
+                                    id="a_link_proyecto"><img src="img/link.png" class="github_proyectos"> Pokedex
+                                    Reloaded</a>
+                            </div>
+                            <p class="descripcion_proyecto">With the goal of contributing to the community of the game
+                                "Pokemon Reloaded" made by F3R, the creation of a pokedex was started where you can
+                                search for all the available Pokémon in the game to capture them. Additionally,
+                                user-suggested search options were included, as well as interest options to further
+                                assist players, such as the location of some items, ways to evolve, or hard-to-find
+                                Pokémon. Furthermore, the learning I gained while developing this page, which is still
+                                in progress, was created entirely in pure HTML, CSS, and JS without the use of external
+                                libraries, and was completely programmed in "Project IDX".</p>
+                            <div class="tecnologias_proyectos">
+                                <h6>Technologies Used</h6>
+                                <img src="img/js.png">
+                                <img src="img/css.png">
+                                <img src="img/html.png">
+                            </div>
+                        </div>
+                        <img src="img/proyecto_2.png" class="img_proyectos">
+                    </div>
+                    <div class="contenido_proyectos" id="a">
+                        <img src="img/proyecto_3.png" class="img_proyectos">
+                        <div class="contenido_texto_proyectos">
+                            <div class="contenedor_a_proyectos">
+                                <a href="https://github.com/GOddovero/proyecto-invernadero" class="a_proyectos"><img
+                                        src="img/github.png" class="github_proyectos"> Greenhouse</a>
+                                <a href="https://proyecto-invernadero.netlify.app/" class="a_proyectos"
+                                    id="a_link_proyecto"><img src="img/link.png" class="github_proyectos">
+                                    Greenhouse</a>
+                            </div>
+                            <p class="descripcion_proyecto">Project carried out with the purpose of helping the user
+                                manage their greenhouse from anywhere in the world, automating tasks such as irrigation.
+                                The user can program the necessary actions, and in case there is a failure in the
+                                system, a notification will be sent to the user.</p>
+                            <div class="tecnologias_proyectos">
+                                <h6>Technologies Used</h6>
+                                <img src="img/js.png">
+                                <img src="img/css.png">
+                                <img src="img/html.png">
+                                <img src="img/nodo-js.png">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="boton_ver_mas">See More Projects</button>
+                    </div>
+                </div>
+                <div class="contenedor_tecnologias">
+                    <div class="tecnologias">
+                        <h2>Tecnologías</h2>
+                        <div class="contenedor_tecs">
+                            <div class="tecs_principales">
+                                <div class="contenedor_tecnologias">
+                                    <img src="img/python.png">
+                                    <p>Python</p>
+                                </div>
+                                <div class="contenedor_tecnologias">
+                                    <img src="img/js.png">
+                                    <p>JavaScript</p>
+                                </div>
+                                <div class="contenedor_tecnologias">
+                                    <img src="img/java.png">
+                                    <p>Java</p>
+                                </div>
+                            </div>
+                            <div class="slider_tecnologias">
+                                <div class="contenedor_tecnologias">
+                                    <img src="img/nodo-js.png">
+                                    <p>Node.js</p>
+                                </div>
+                                <div class="contenedor_tecnologias">
+                                    <img src="img/css.png">
+                                    <p>CSS</p>
+                                </div>
+                                <div class="contenedor_tecnologias">
+                                    <img src="img/html.png">
+                                    <p>HTML</p>
+                                </div>
+                                <div class="contenedor_tecnologias">
+                                    <img src="img/react.png">
+                                    <p>React</p>
+                                </div>
+                                <div class="contenedor_tecnologias">
+                                    <img src="img/git.png">
+                                    <p>Git</p>
+                                </div>
+                                <div class="contenedor_tecnologias">
+                                    <img src="img/sql.png">
+                                    <p>MySQL</p>
+                                </div>
+                            </div>
+                            <div class="tecnologias_aprendiendo">
+                                <h3>Aprendiendo</h3>
+                                <div class="contenedor_tecnologias">
+                                    <img src="img/php.png">
+                                    <p>PHP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="educacion">
+            <h2>Education</h2>
+            <div class="contenedor_educacion" id="contenido_educacion">
+                <div class="contenido_educacion" id="licenciatura_informatica">
+                    <h3 class="titulo_educacion">Bachelor's Degree in Computer Science</h3>
+                    <h4 class="lugar_educacion">Universidad Siglo 21</h4>
+                    <h5 class="periodo_educacion">2019 - 2024</h5>
+                    <p class="descripcion_educacion">
+                        Comprehensive training in business management, web development, and desktop application
+                        development. I gained skills in programming languages, databases, and agile development
+                        methodologies. I would like to highlight a couple of projects completed during my degree. The
+                        first is Chefcito (you can find more details in the projects section) and a COIL, an
+                        international collaborative online learning project, carried out with the Polytechnic University
+                        of Gran Colombiano in Medellín and Universidad Siglo 21, where we aimed to understand and solve
+                        how IP networks work, their protocols and services, and then simulate the functioning of a
+                        network using Cisco.
+                    </p>
+                </div>
+                <div class="contenido_educacion" id="helsinki_fullstack">
+                    <h3 class="titulo_educacion">Full Stack Development Course</h3>
+                    <h4 class="lugar_educacion">Full stack Open</h4>
+                    <h5 class="periodo_educacion">Currently Ongoing</h5>
+                    <p class="descripcion_educacion">
+                        I learned to create single-page applications using React, backed by RESTful and GraphQL web
+                        services with Node.js. I also gained knowledge in TypeScript, React Native, and continuous
+                        integration. The course covered application debugging, container technology, and managing
+                        runtime environments and databases, preparing me to handle complex web development projects.
+                    </p>
+                </div>
+                <div class="contenido_educacion" id="helsinki_fullstack">
+                    <h3 class="titulo_educacion">Python Development Course</h3>
+                    <h4 class="lugar_educacion">Udemy</h4>
+                    <h5 class="periodo_educacion">Currently Ongoing</h5>
+                    <p class="descripcion_educacion">
+                        From basic to advanced programming, including Object-Oriented Programming, database connection
+                        with PostgreSQL and MySQL, and creating desktop applications with Tkinter and PySide (Qt). The
+                        course also includes developing web applications using Django and Flask, and I am currently
+                        focusing on Streamlit, a Python framework for developing web applications for data analysis.
+                    </p>
+                </div>
+                <div class="contenido_educacion" id="udemy_java">
+                    <h3 class="titulo_educacion">Complete Java Masterclass</h3>
+                    <h4 class="lugar_educacion">Udemy</h4>
+                    <h5 class="periodo_educacion">2020-2020</h5>
+                    <p class="descripcion_educacion">
+                        I learned from basic to advanced concepts in Java, including Object-Oriented Programming, design
+                        patterns (GoF), and functional programming with lambda expressions and the Java 8 Stream API. I
+                        developed web applications using Java EE 9, Spring Boot, and Angular, focusing on implementing
+                        complete systems such as login systems and shopping carts.
+                    </p>
+                </div>
+                <div class="contenido_educacion" id="curso_google">
+                    <h3 class="titulo_educacion">Digital Skills</h3>
+                    <h4 class="lugar_educacion">Google Activate</h4>
+                    <h5 class="periodo_educacion">2021</h5>
+                    <p class="descripcion_educacion">
+                        I completed Google's course, which consists of 40 hours, to expand my digital skills for
+                        professionals, highlighting among the extensive list the certification in problem-solving,
+                        information management, communication, and soft skills.
+                    </p>
+                </div>
+                <div class="contenido_educacion" id="programacion_basica">
+                    <h3 class="titulo_educacion">Basic Programming</h3>
+                    <h4 class="lugar_educacion">Platzi</h4>
+                    <h5 class="periodo_educacion">2021</h5>
+                    <p class="descripcion_educacion">
+                        I completed Platzi's course, which consists of 35 hours, to improve my web programming skills.
+                        It included an introduction to HTML, CSS, and JavaScript, along with the DOM and related skills.
+                        While I now find it very basic, it was incredibly helpful at the time in getting started with
+                        web programming.
+                    </p>
+                </div>
+            </div>
+        <div class="sobre_mi" id="sobre_mi">
+            <h2>More About Me</h2>
+            <div class="contenido_mas_sobre_mi" id="contenido_mas_sobre_mi">
+                <p>
+                    👨‍💻 I am Gaspar Oddovero Herrera, a passionate software developer with a bachelor's degree in Computer Science from Universidad Siglo 21. With a solid background in web and desktop development, I specialize in bringing innovative ideas to life using advanced technologies.
+                </p>
+                <p>
+                    🚀 Throughout my career, I have gained extensive experience working in all stages of the software life cycle, from initial design to implementation and maintenance. My interest in technology led me to explore areas such as artificial intelligence, applying it to projects aimed at enhancing user experience, like in my project "Chefcito," where I combined AI with recipe generation.
+                </p>
+                <p>
+                    📚 In addition to my technical expertise, I am also strongly committed to teaching and continuous learning. I have had the opportunity to teach programming classes, helping others develop skills from basic to more advanced levels in Python and other languages. My focus is always on continuous improvement, whether optimizing processes in family projects or exploring new tools and methodologies.
+                </p>
+                <p>
+                    🌱 Currently, I continue to expand my knowledge in Full Stack development, with a focus on modern technologies such as JavaScript, React, and Python. I am always looking for new challenges that allow me to keep growing both professionally and personally.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="contacto">
+        <h2>Contact Me</h2>
+        <div class="contenido_contacto" id="contenido_contacto">
+            <div class="encontrame_en">
+                <h3>Find Me!:</h3>
+                <div class="contenedor_vinculos">
+                    <a href="https://github.com/GOddovero/" class="a_encontrame"><img src="img/github.png" alt="github" class="a_img_contacto">Check out more of my projects!</a>
+                    <a href="https://www.linkedin.com/in/gaspar-o-122803175/" class="a_encontrame"><img src="img/linkedin.png" alt="linkedin" class="a_img_contacto">Follow me on LinkedIn!</a>
+                    <a href="https://drive.google.com/file/d/1Cn8hmpJU5yfdn2MZMiaK41AdCVWN1eMi/view?usp=drive_link" class="a_encontrame"><img src="img/cv.png" alt="cv" class="a_img_contacto">Download my updated CV!</a>
+                    <a href="mailto:gasparoh.work@gmail.com" class="a_encontrame"><img src="img/gmail.png" alt="gmail" class="a_img_contacto">Contact me directly!</a>
+                    <a href="https://www.instagram.com/gasparoddovero/" class="a_encontrame"><img src="img/ig.png" alt="ig" class="a_img_contacto">Follow me on Instagram!</a>
+                    <a href="https://www.instagram.com/goh.dev/" class="a_encontrame"><img src="img/ig.png" alt="ig" class="a_img_contacto">Follow me on GOH.Dev!</a>
+                </div>
+            </div>
+            <form class="formulario">
+                <label for="nombre">Name</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensaje">Message</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <br>
+    </div>
+    </div>
+    <script src="components/main.js"></script>
+</body>
+
+</html>
