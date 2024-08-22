@@ -649,7 +649,9 @@ h2 {
         text-align: center;
         display: block;
     }
-
+    .datos_principales{
+        margin-top: 10%;
+    }
     .body_principal {
         margin: auto;
         display: flex;
