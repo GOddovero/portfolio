@@ -1,0 +1,273 @@
+/*Reset CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+/* Justo después del Reset CSS */
+
+/* Configuración global de la fuente */
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    line-height: 1.6;
+}
+
+/* Configuración específica para los títulos */
+h1 {
+    font-weight: 700; /* Bold */
+}
+
+h2 {
+    font-weight: 600; /* Semi-bold */
+}
+
+h3 {
+    font-weight: 500; /* Medium */
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*End Reset CSS*/
+
+/* CSS PROVISIONAL*/
+::selection {
+    background-color: #ffcc00; /* Color de fondo de la selección */
+    color: #000000; /* Color del texto seleccionado */
+}
+.contacto{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.img_contacto {
+    width: 45px;
+    height: 45px;
+    background-color: #fffdf5;
+    border-radius: 35%;
+    padding: 5px;
+}
+.img_contacto:hover {
+    transform: scale(1.5);
+}
+
+header{
+    background-image: linear-gradient(to bottom, #7321a8, #7920b1, #7f1eba, #861dc4, #8c1acd, #8a17c9, #8713c5, #850fc1, #790aaf, #6d059e, #62028d, #56007c);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.titles{
+    display: block;
+    text-align: center;
+    width: 75%;
+
+}
+.profile-pic{
+    width: 400px;
+    height: auto;
+    margin: 0 0 0 10%;
+    display: block;
+    mask-image: linear-gradient(black 60%, transparent 100%);
+}
+.profile-pic:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+/* Estilos para las animaciones */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ajustes adicionales para el header */
+header h1, header h2, header h3 {
+    margin: 0 0 0 0 ;
+}
+
+header h1 {
+    font-size: 5em;
+    transition-delay: 0.2s;
+}
+
+header h2 {
+    font-size: 3.6em;
+    transition-delay: 0.4s;
+}
+
+header h3 {
+    font-size: 3em;
+    transition-delay: 0.6s;
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    position: relative;
+    border-right: 2px solid transparent; /* Añadimos un borde transparente por defecto */
+}
+
+/* Eliminamos el pseudo-elemento ::after ya que usaremos border-right */
+.typewriter.typing {
+    animation: 
+        typing 3s steps(40, end) forwards,
+        blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    from, to { border-right-color: transparent }
+    50% { border-right-color: white }
+}
+
+/* Media Queries para Responsive Design */
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .profile-pic {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .titles {
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 4em;
+    }
+
+    header h2 {
+        font-size: 2.8em;
+    }
+
+    header h3 {
+        font-size: 2.4em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .profile-pic {
+        width: 250px;
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+
+    header h2 {
+        font-size: 2.2em;
+    }
+
+    header h3 {
+        font-size: 1.8em;
+    }
+
+    .contacto {
+        gap: 15px;
+    }
+
+    .img_contacto {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .profile-pic {
+        width: 200px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header h2 {
+        font-size: 1.8em;
+    }
+
+    header h3 {
+        font-size: 1.5em;
+    }
+
+    .contacto {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .img_contacto {
+        width: 30px;
+        height: 30px;
+    }
+
+    .img_contacto:hover {
+        transform: scale(1.3);
+    }
+}

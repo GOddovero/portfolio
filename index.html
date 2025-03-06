@@ -1,374 +1,53 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>goh-dev</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="description"
+        content="Porfolio Gaspar Oddovero Herrera, Licenciado en Informatica, desarrollador fullstack.">
+    <meta name="keywords" content="GOH-dev, Portfolio">
+    <meta name="author" content="Gaspar Oddovero Herrera">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/portfolio-nuevo.css">
+
+    <title> GOH-dev 🖥 Portfolio</title>
 </head>
 
 <body>
-    <div class="menubar">
-        <div class="botones_menubar">
-            <button id="btn_experiencia_laboral">Experiencia Laboral</button>
-            <button id="btn_proyectos">Proyectos</button>
-            <button id="btn_educacion">Educacion</button>
-            <button id="btn_sobre_mi">Sobre Mi</button>
-            <button id="contacto_menubar">Contacto</button>
-            <button id="btn_modo_oscuro">🌙</button>
-            <button id="btn_cambio_idioma">🇺🇸</button>
-        </div>
-    </div>
-    <br>
-    <div class="body_principal">
-        <div class="datos_principales">
-            <h1 class="nombre">Gaspar Oddovero Herrera</h1>
-            <h3 class="titulo_univer">Licenciado en Informatica</h4>
-        </div>
-        <div class="datos_personales">
-            <div class="contenido_datos">
-                <img src="img/perfil.jpeg" id="img_perfil">
-                <div class="texto_datos">
-                    <p class="descripcion_datos_personales">
-                        Desarrollador de Software con sólida formación en informática y amplia experiencia en el
-                        desarrollo de aplicaciones web y desktop. Capaz de trabajar en todas las fases del ciclo de vida
-                        del software, desde el diseño y desarrollo hasta la implementación y mantenimiento. Apasionado
-                        por la innovación tecnológica y la mejora continua.
-                    </p>
-                </div>
+    <header>
+        <img src="img/yo.png" alt="Foto de perfil" class="profile-pic">
+        <section class="titles">
+            <h1 class="typewriter">Gaspar Oddovero Herrera</h1>
+            <h2 class="typewriter">Licenciado en Informatica</h2>
+            <h3 class="typewriter">Desarrollador Fullstack</h3>
+            <h4 class="typewriter">Portfolio en desarrollo, les dejo mis contactos.</h4>
+            <div class="contacto">
+                <a href="https://www.instagram.com/gasparoddovero/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/techs/ig.png" alt="instagram" class="img_contacto">
+                </a>
+                <a href="https://github.com/GOddovero/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/techs/github.png" alt="github" class="img_contacto">
+                </a>
+                <a href="https://www.linkedin.com/in/gaspar-o-122803175/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/techs/linkedin.png" alt="linkedin" class="img_contacto">
+                </a>
+                <a href="mailto:gasparoh.work@gmail.com">
+                    <img src="img/techs/gmail.png" alt="gmail" class="img_contacto">
+                </a>
+                <a href="https://drive.google.com/file/d/1AgnjOHTJDCDxZ61s-eKhzDFfWOw9aAbn/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                    <img src="img/techs/cv.png" alt="cv" class="img_contacto"></a>
             </div>
-            <div class="contenedor_contactos">
-                <a href="https://github.com/GOddovero/"><img src="img/github.png" alt="github" class="img_contacto"></a>
-                <a href="https://www.linkedin.com/in/gaspar-o-122803175/"><img src="img/linkedin.png" alt="linkedin"
-                        class="img_contacto"></a>
-                <a href="https://drive.google.com/file/d/1Cn8hmpJU5yfdn2MZMiaK41AdCVWN1eMi/view?usp=drive_link"><img
-                        src="img/cv.png" alt="cv" class="img_contacto"></a>
-                <a href="mailto:gasparoh.work@gmail.com"><img src="img/gmail.png" alt="gmail" class="img_contacto"></a>
-                <button class="boton_contacto" id="btn_ir_contacto">Contacto</button>
-            </div>
-        </div>
-        <div class="experiencia_laboral">
-            <h2>Experiencia Laboral</h2>
-            <div class="contenido_laboral" id="contenido_laboral">
-                <div class="contenido_experiencia" id="impar">
-                    <h3 class="titulo_experiencia">Profesor Programacion.</h3>
-                    <h4 class="descripcion_experiencia">Como profesor de programación en la Universidad Popular General
-                        Levalle, impartí clases de Python que abarcaron desde los fundamentos básicos hasta temas
-                        intermedios como Programación Orientada a Objetos y laboratorios prácticos. Actualmente, estoy
-                        ampliando el programa para incluir HTML, CSS, JavaScript, y PHP.</h4>
-                    <h5 class="fecha_experiencia">Marzo 2024 - <span style="color: #574f4f;">Actualidad.</span></h5>
-                    <h6 class="lugar_experiencia">Universidad Popular General Levalle</h6>
-                </div>
-                <div class="contenido_experiencia">
-                    <h3 class="titulo_experiencia">Conferencias Informativas sobre IA</h3>
-                    <h4 class="descripcion_experiencia">Fui orador en diversas conferencias sobre Inteligencia
-                        Artificial, donde cubrí desde la historia de la IA hasta la aplicación práctica de herramientas
-                        modernas como ChatGPT, Copilot y Gemini. Destacado por mi habilidad para simplificar conceptos
-                        complejos y hacerlos accesibles para todo tipo de audiencia.</h4>
-                    <h5 class="fecha_experiencia">Marzo 2024 - Junio 2024</h5>
-                    <h6 class="lugar_experiencia">Universidad Popular General Levalle</h6>
-                </div>
-                <div class="contenido_experiencia" id="impar">
-                    <h3 class="titulo_experiencia">Atencion al Publico</h3>
-                    <h4 class="descripcion_experiencia">En Oddovero Herrajes, un negocio familiar, gestioné la atención
-                        al público, control de stock, y manejo de ventas. Además, contribuí a la optimización de
-                        procesos y a mejorar la experiencia del cliente, optimizando los programas de gestion que se
-                        utilizaban. </h4>
-                    <h5 class="fecha_experiencia">Febrero 2015 - <span style="color: #574f4f;"> Actualidad.</span></h5>
-                    <h6 class="lugar_experiencia">Oddovero Herrajes</h6>
-                </div>
-                <div class="contenido_experiencia">
-                    <h3 class="titulo_experiencia">Operador de Sistemas</h3>
-                    <h4 class="descripcion_experiencia">Ocupé el puesto de Operador de Sistemas en el Correo Argentino,
-                        donde fui responsable de transmitir datos electorales de manera segura y eficiente para su
-                        relevamiento a nivel nacional..</h4>
-                    <h5 class="fecha_experiencia">Octubre 2023 - Noviembre 2023</h5>
-                    <h6 class="lugar_experiencia">Correo Argentino</h6>
-                </div>
-                <div class="contenido_experiencia" id="contenido_experiencia_ultimo">
-                    <h3 class="titulo_experiencia">Desarrollador de Software</h3>
-                    <h4 class="descripcion_experiencia">Pasantias laborales realizadas por intermedio de la Universidad
-                        Siglo 21, con el fin de lograr un acercamiento al sector de la programacion se realizo la pagina
-                        web de <a href="https://cuidadoresdevivienda.com.ar/" class="a_experiencia">"Cuidadores de
-                            Viviendas"</a> y bases de datos solicitadas por los propietarios de la misma. La pasantia
-                        fue llevada a cabo en grupo.</h4>
-                    <h5 class="fecha_experiencia">Marzo 2023 - Julio 2023</h5>
-                    <h6 class="lugar_experiencia">Pasantias Universidad Siglo 21</h6>
-                </div>
+        </section>
 
-            </div>
-        </div>
-        <div class="proyectos_tecnologia">
-            <div class="contenedor_proyectos" id="proyectos">
-                <h2>Proyectos</h2>
-                <div class="body_proyectos" id="contenido_proyectos">
-                    <div class="contenido_proyectos" id="a">
-                        <img src="img/proyecto_1.png" class="img_proyectos">
-                        <div class="contenido_texto_proyectos">
-                            <a href="https://github.com/GOddovero/chefcito-tesis" class="a_proyectos"><img
-                                    src="img/github.png" class="github_proyectos"> Chefcito</a>
-                            <p class="descripcion_proyecto">Proyecto final de la carrera Licenciatura en informatica. El
-                                objetivo del proyecto fue incluir inteligencia artificial para mejorar un proceso, el
-                                proceso elegido fueron las RECETAS y como se buscan. Tradicionalmente se busca primero
-                                la
-                                receta para luego ver los ingredientes que son necesarios, en el caso de "Chefcito" es
-                                al
-                                reves, se agregan los ingredientes que el usuario posee en una base de datos y por medio
-                                de
-                                una API de Groq se relacionan para generar recetas, sumado a eso se uso Dall-e para
-                                generar
-                                imagenes.</p>
-                            <div class="tecnologias_proyectos">
-                                <h6>Tecnologias Utilizadas</h6>
-                                <img src="img/js.png">
-                                <img src="img/css.png">
-                                <img src="img/html.png">
-                                <img src="img/nodo-js.png">
-                                <img src="img/open-ai.png">
-                                <img src="img/groq.png">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contenido_proyectos" id="a">
-                        <div class="contenido_texto_proyectos">
-                            <div class="contenedor_a_proyectos">
-                                <a href="https://github.com/GOddovero/Proyecto-PokedexReloaded" class="a_proyectos"><img
-                                        src="img/github.png" class="github_proyectos"> Pokedex Reloaded</a>
-                                <a href="https://pokedexreloaded.netlify.app/" class="a_proyectos"
-                                    id="a_link_proyecto"><img src="img/link.png" class="github_proyectos"> Pokedex
-                                    Reloaded</a>
-                            </div>
-                            <p class="descripcion_proyecto">Con el objetivo de contribuir a la comunidad del juego
-                                "Pokemon
-                                Reloaded" realizado por F3R se comenzo la creacion de una pokedex donde poder buscar
-                                todos
-                                los pokemones disponibles en el juego para capturarlos. Sumado a eso se incluyeron
-                                opciones
-                                de busqueda sujerida por usuarios, ademas se añadieron opciones de intereces para ayudar
-                                aún
-                                más a los jugadores, como la ubicacion de algunos objetos, formas de evolucionar o
-                                pokemones
-                                dificiles de conseguir. Ademas en cuanto al aprendizaje que obtuve al momento de
-                                desarrollar
-                                esta pagina, que aún sigue en desarrollo, fue creada toda en HTML, CSS y JS puro, sin
-                                uso de
-                                librerias externas, ademas de ser programado completamente en "Project IDX".</p>
-                            <div class="tecnologias_proyectos">
-                                <h6>Tecnologias Utilizadas</h6>
-                                <img src="img/js.png">
-                                <img src="img/css.png">
-                                <img src="img/html.png">
-                            </div>
-                        </div>
-                        <img src="img/proyecto_2.png" class="img_proyectos">
-                    </div>
-                    <div class="contenido_proyectos">
-                        <img src="img/proyecto_3.png" class="img_proyectos" id="img_proyectos_3">
-                        <div class="contenido_texto_proyectos">
-                            <a href="https://github.com/GOddovero/portfolio" class="a_proyectos"><img
-                                    src="img/github.png" class="github_proyectos"> Portfolio</a>
-                            <p class="descripcion_proyecto">Desarrollé un proyecto personal con el objetivo de
-                                enriquecer mi Currículum Vitae y crear un portafolio donde pueda mostrar mis proyectos,
-                                detallar mis experiencias laborales y compartir información sobre mi formación
-                                académica. La meta fue completar el proyecto en un plazo de 15 días, como un desafío
-                                personal para medir mi capacidad de desarrollo de una Landing Page en un tiempo
-                                limitado. Además, decidí implementar diseños diferentes para las versiones móvil y de
-                                escritorio, incorporando funcionalidades distintas para aprender y experimentar con
-                                estas variantes.</p>
-                            <div class="tecnologias_proyectos">
-                                <h6>Tecnologias Utilizadas</h6>
-                                <img src="img/js.png">
-                                <img src="img/css.png">
-                                <img src="img/html.png">
-                            </div>
-                        </div>
-                    </div>
-                    <button class="boton_ver_mas">Ver Más Proyectos</button>
-                </div>
-            </div>
-            <div class="contenedor_tecnologias">
-                <div class="tecnologias">
-                    <h2>Tecnologías</h2>
-                    <div class="contenedor_tecs">
-                        <div class="tecs_principales">
-                            <div class="contenedor_tecnologias">
-                                <img src="img/python.png">
-                                <p>Python</p>
-                            </div>
-                            <div class="contenedor_tecnologias">
-                                <img src="img/js.png">
-                                <p>JavaScript</p>
-                            </div>
-                            <div class="contenedor_tecnologias">
-                                <img src="img/java.png">
-                                <p>Java</p>
-                            </div>
-                        </div>
-                        <div class="slider_tecnologias">
-                            <div class="contenedor_tecnologias">
-                                <img src="img/nodo-js.png">
-                                <p>Node.js</p>
-                            </div>
-                            <div class="contenedor_tecnologias">
-                                <img src="img/css.png">
-                                <p>CSS</p>
-                            </div>
-                            <div class="contenedor_tecnologias">
-                                <img src="img/html.png">
-                                <p>HTML</p>
-                            </div>
-                            <div class="contenedor_tecnologias">
-                                <img src="img/react.png">
-                                <p>React</p>
-                            </div>
-                            <div class="contenedor_tecnologias">
-                                <img src="img/git.png">
-                                <p>Git</p>
-                            </div>
-                            <div class="contenedor_tecnologias">
-                                <img src="img/sql.png">
-                                <p>MySQL</p>
-                            </div>
-                        </div>
-                        <div class="tecnologias_aprendiendo">
-                            <h3>Aprendiendo</h3>
-                            <div class="contenedor_tecnologias">
-                                <img src="img/php.png">
-                                <p>PHP</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="educacion">
-                <h2>Educacion</h2>
-                <div class="contenedor_educacion" id="contenido_educacion">
-                    <div class="contenido_educacion" id="licenciatura_informatica">
-                        <h3 class="titulo_educacion">Licenciatura en Informatica</h3>
-                        <h4 class="lugar_educacion">Universidad Siglo 21</h4>
-                        <h5 class="periodo_educacion"> 2019 - 2024 </h5>
-                        <p class="descripcion_educacion">
-                            Formacion integral en gestion de empresas, desarrollo web y desarrollo de aplicaciones de
-                            escritorio. Adquirí competencias en lenguajes de programacion, bases de datos y metodologías
-                            de desarrollo ágil. Destacar un par de proyectos realizados en la carrera. <br>El primero es
-                            Chefcito(encontrarán mayor detalle en el apartado de proyectos) y un COIL, un proyecto de
-                            aprendizaje colaborativo internacional en linea, realizado con la universidad Politécnica
-                            Gran Colombiano de Medellín y la Universidad Siglo 21, donde se busco resolver y comprender
-                            como funcionan las redes IP, sus protocolos y servicios y luego por medio de Cisco simular
-                            el funcionamiento de una red.
-                        </p>
-                    </div>
-                    <div class="contenido_educacion" id="helsinki_fullstack">
-                        <h3 class="titulo_educacion">Curso de desarrollo Full Stack</h3>
-                        <h4 class="lugar_educacion">Full stack Open</h4>
-                        <h5 class="periodo_educacion"> Realizando Actualmente </h5>
-                        <p class="descripcion_educacion">
-                            Aprendí a crear aplicaciones de una sola página utilizando React, respaldadas por servicios web RESTful y GraphQL con Node.js. También adquirí conocimientos en TypeScript, React Native e integración continua. El curso incluyó la depuración de aplicaciones, tecnología de contenedores, y la administración de entornos de ejecución y bases de datos, preparándome para manejar proyectos complejos en desarrollo web.
-                        </p>
-                    </div>
-                    <div class="contenido_educacion" id="helsinki_fullstack">
-                        <h3 class="titulo_educacion">Curso de Desarrollo en Python</h3>
-                        <h4 class="lugar_educacion">Udemy</h4>
-                        <h5 class="periodo_educacion"> Realizando Actualmente </h5>
-                        <p class="descripcion_educacion">
-                            Desde programación básica hasta avanzada, incluyendo Programación Orientada a Objetos, conexión a bases de datos con Postgresql y MySQL, y creación de aplicaciones de escritorio con Tkinter y PySide (Qt). El curso también incluye desarrollar aplicaciones web utilizando Django y Flask, actualmente me estoy centrando en Streamlit un framework de python para desarrollar aplicaciones web para análisis de datos.
-                        </p>
-                    </div>
-                    <div class="contenido_educacion" id="udemy_java">
-                        <h3 class="titulo_educacion">Master Completo de Java</h3>
-                        <h4 class="lugar_educacion">Udemy</h4>
-                        <h5 class="periodo_educacion"> 2020-2020 </h5>
-                        <p class="descripcion_educacion">
-                            Aprendí desde conceptos básicos hasta avanzados en Java, incluyendo programación orientada a
-                            objetos,patrones de diseño (GoF), y programación funcional con expresiones lambda y el API Stream de
-                            Java 8. Desarrollé aplicaciones web utilizando Java EE 9, Spring Boot, y Angular, con enfoque en
-                            la implementación de sistemas completos como sistemas de login y carros de compras.
-                        </p>
-                    </div>
-                    <div class="contenido_educacion" id="curso_google">
-                        <h3 class="titulo_educacion">Competencias digitales</h3>
-                        <h4 class="lugar_educacion">Google Actívate</h4>
-                        <h5 class="periodo_educacion"> 2021 </h5>
-                        <p class="descripcion_educacion">
-                            Se realizo el curso de google que consta con una carga horaria de 40 horas para ampliar mis
-                            competencias digitales para profesionales, destacando dentro de la gran lista, la
-                            certificacion en resolución de problemas, tratamiento de la información, comunicación y Soft
-                            Skills.
-                        </p>
-                    </div>
-                    <div class="contenido_educacion" id="programacion_basica">
-                        <h3 class="titulo_educacion">Programacion Basica</h3>
-                        <h4 class="lugar_educacion">Platzi</h4>
-                        <h5 class="periodo_educacion"> 2021 </h5>
-                        <p class="descripcion_educacion">
-                            Se realizo el curso de plazi que consta con una carga horaria de 35 horas para ampliar mis
-                            habilidades en programacion web. Conto con la introduccion el HTML, CSS y javascript, sumado
-                            al DOM y competencias afines. Actualmente lo encuentro muy basico pero en su momento me
-                            sirvio muchisimo para dar mis primeros pasos en la programacion web.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-        <div class="sobre_mi">
-            <h2>Sobre Mi</h2>
-            <div class="contenido_mas_sobre_mi" id="contenido_mas_sobre_mi">
-                <p>
-                    👨‍💻Soy Gaspar Oddovero Herrera👨 un apasionado desarrollador de software con una licenciatura en informática de la Universidad Siglo 21. Con una sólida formación en desarrollo web y desktop, me especializo en llevar ideas innovadoras a la realidad mediante el uso de tecnologías avanzadas.
-                </p>
-                <p>
-                    🚀A lo largo de mi carrera he adquirido una amplia experiencia trabajando en todas las etapas del ciclo de vida del software, desde el diseño inicial hasta la implementación y el mantenimiento. Mi interés por la tecnología me llevó a explorar áreas como la inteligencia artificial, aplicándola en proyectos que buscan mejorar la experiencia del usuario, como en mi proyecto "Chefcito", donde combiné la IA con la generación de recetas.
-                </p>
-                <p>
-                    📚Además de mi experiencia técnica , también tengo un fuerte compromiso con la enseñanza y el aprendizaje continuo. He tenido la oportunidad de impartir clases de programación, ayudando a otros a desarrollar habilidades desde lo básico hasta niveles más avanzados en Python y otros lenguajes. Mi enfoque es siempre buscar la mejora continua, ya sea optimizando procesos en proyectos familiares o explorando nuevas herramientas y metodologías.
-                </p>
-                <p>
-                    🌱Actualmente, continúo ampliando mis conocimientos en desarrollo Full Stack, con un enfoque en tecnologías modernas como JavaScript, React, y Python. Siempre estoy en búsqueda de nuevos desafíos que me permitan seguir creciendo tanto profesional como personalmente.
-                </p>
-            </div>
-        </div>
-        <div class="contacto">
-            <h2>Contacto</h2>
-            <div class="contenido_contacto" id="contenido_contacto">
-                <div class="encontrame_en">
-                    <h3>Encontrame en:</h3>
-                    <div class="contenedor_vinculos">
-                        <a href="https://github.com/GOddovero/" class="a_encontrame"><img src="img/github.png"
-                                alt="github" class="a_img_contacto">¡Conoce Más proyectos mios!</a>
-                        <a href="https://www.linkedin.com/in/gaspar-o-122803175/" class="a_encontrame"><img
-                                src="img/linkedin.png" alt="linkedin" class="a_img_contacto">¡Seguime en LinkedIn!</a>
-                        <a href="https://drive.google.com/file/d/1Cn8hmpJU5yfdn2MZMiaK41AdCVWN1eMi/view?usp=drive_link"
-                            class="a_encontrame"><img src="img/cv.png" alt="cv" class="a_img_contacto">¡Descarga mi
-                            Curriculum Vitae Actualizado!</a>
-                        <a href="mailto:gasparoh.work@gmail.com" class="a_encontrame"><img src="img/gmail.png"
-                                alt="gmail" class="a_img_contacto">¡Contactate directamete conmigo!</a>
-                        <a href="https://www.instagram.com/gasparoddovero/" class="a_encontrame"><img src="img/ig.png"
-                                alt="ig" class="a_img_contacto">¡Seguime en Instagram!</a>
-                        <a href="https://www.instagram.com/goh.dev/" class="a_encontrame"><img src="img/ig.png" alt="ig"
-                                class="a_img_contacto">¡Seguime en GOH.Dev!</a>
-                    </div>
-                </div>
-                <form class="formulario">
-                    <label for="nombre">Nombre y Apellido</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-        </div>
-        <br>
-    </div>
-
-    <script src="/components/main.js"></script>
+    </header>
+    <script src="components/animations.js"></script>
 </body>
 
 </html>
