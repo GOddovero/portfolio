@@ -29,6 +29,12 @@ body {
 }
 
 /* Justo después del Reset CSS */
+/* Colores */
+:root {
+    --color1: #ff0000;
+    --color2: #ffffff;
+    --color3: #eaff00;
+}
 
 /* Configuración global de la fuente */
 body {
@@ -69,8 +75,8 @@ table {
 
 /* CSS PROVISIONAL*/
 ::selection {
-    background-color: #ffcc00; /* Color de fondo de la selección */
-    color: #000000; /* Color del texto seleccionado */
+    background-color: var(--color3); /* Color de fondo de la selección */
+    color: var(--color1); /* Color del texto seleccionado */
 }
 .contacto{
     display: flex;
@@ -81,7 +87,7 @@ table {
 .img_contacto {
     width: 45px;
     height: 45px;
-    background-color: #fffdf5;
+    background-color: var(--color2);
     border-radius: 35%;
     padding: 5px;
 }
@@ -90,8 +96,8 @@ table {
 }
 
 header{
-    background-image: linear-gradient(to bottom, #7321a8, #7920b1, #7f1eba, #861dc4, #8c1acd, #8a17c9, #8713c5, #850fc1, #790aaf, #6d059e, #62028d, #56007c);
-    color: white;
+    background-color: var(--color1);
+    color: var(--color2);
     padding: 10px 0;
     text-align: center;
     display: flex;
@@ -129,8 +135,11 @@ header{
 }
 
 /* Ajustes adicionales para el header */
-header h1, header h2, header h3 {
-    margin: 0 0 0 0 ;
+header h1, header h2, header h3, header h4 {
+    margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 header h1 {
@@ -154,6 +163,7 @@ header h3 {
     width: 0;
     position: relative;
     border-right: 2px solid transparent; /* Añadimos un borde transparente por defecto */
+    color: var(--color2);
 }
 
 /* Eliminamos el pseudo-elemento ::after ya que usaremos border-right */
@@ -170,7 +180,7 @@ header h3 {
 
 @keyframes blink {
     from, to { border-right-color: transparent }
-    50% { border-right-color: white }
+    50% { border-right-color: var(--color2) }
 }
 
 /* Media Queries para Responsive Design */
@@ -239,22 +249,45 @@ header h3 {
     header {
         padding: 10px;
         gap: 15px;
+        height: auto;
+        min-height: 100vh;
     }
 
     .profile-pic {
-        width: 200px;
+        width: 150px;
+    }
+
+    .titles {
+        width: 95%;
     }
 
     header h1 {
-        font-size: 2.5em;
+        font-size: 2em;
+        line-height: 1.2;
     }
 
     header h2 {
-        font-size: 1.8em;
+        font-size: 1.5em;
+        line-height: 1.2;
     }
 
     header h3 {
-        font-size: 1.5em;
+        font-size: 1.3em;
+        line-height: 1.2;
+    }
+
+    header h4 {
+        font-size: 1em;
+        line-height: 1.2;
+    }
+
+    .typewriter {
+        white-space: normal;
+        width: 100%;
+    }
+
+    .typewriter.typing {
+        animation: none;
     }
 
     .contacto {
