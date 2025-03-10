@@ -30,6 +30,12 @@ function generateRandomColors() {
     root.style.setProperty('--color2', color2);
     root.style.setProperty('--color3', color3);
 
+    // Actualizar el meta tag theme-color
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', color1);
+    }
+
     // Verificar que los colores se aplicaron correctamente
     console.log('Colores generados:', {
         color1,
