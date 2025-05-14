@@ -1,0 +1,689 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Cambio a Montserrat */
+}
+
+html {
+    scroll-behavior: smooth; /* Para navegación suave con anclas */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previene scrollbar horizontal general */
+    overflow-y: auto;   /* Permite scrollbar vertical cuando el contenido excede la altura */
+    position: relative; /* Para que el botón de abrir menú se posicione correctamente si no es fixed */
+    background: #2ec4b6; /* Fallback por si los gradientes no son soportados */
+    background: -webkit-linear-gradient(64deg, #2ec4b6 0%, #e5ca10 100%); /* Para navegadores WebKit */
+    background: linear-gradient(64deg, #2ec4b6 0%, #e5ca10 100%); /* Estándar */
+    background-repeat: no-repeat; /* Evita que el gradiente se repita */
+    background-attachment: fixed; /* Fija el fondo para que no se desplace con el contenido */
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition:0.3s ease;
+}
+
+a:hover {
+    color: #2ec4b6;
+}
+
+/* Botón para abrir el menú */
+#open-menu-button {
+    position: fixed; /* O absolute si prefieres que se mueva con el scroll de la página principal (si lo hubiera) */
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Por encima del contenido pero por debajo del menú cuando está abierto */
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#open-menu-button:hover {
+    background-color: #555;
+}
+
+/* Contenedor del Menú Completo */
+.menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+    height: 100%; /* Ocupa toda la altura de la ventana */
+    display: flex; /* Mantiene left-panel y right-panel uno al lado del otro */
+    z-index: 1000; /* Asegura que el menú esté sobre el contenido principal */
+    pointer-events: none; /* Evita interacciones cuando está oculto */
+}
+
+.menu-wrapper.open {
+    /* transform: translateX(0); */ /* Eliminado */
+    pointer-events: auto; /* Permite interacciones cuando está visible */
+}
+
+/* Layout Principal */
+.left-panel {
+    width: 55%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Previene scrollbar horizontal */
+    transform: translateX(-100%); /* Estado inicial: fuera de la pantalla a la izquierda */
+    transition: transform 0.5s ease-in-out; /* Animación de deslizamiento */
+}
+
+.menu-wrapper.open .left-panel {
+    transform: translateX(0); /* Estado final: en su posición */
+}
+
+.right-panel {
+    width: 45%;
+    height: 100%;
+    background-color: #2F2626;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Asegúrate de que el panel derecho sea el contexto de posicionamiento */
+    overflow-x: hidden; /* Previene scrollbar horizontal */
+    transform: translateX(100%); /* Estado inicial: fuera de la pantalla a la derecha */
+    transition: transform 0.5s ease-in-out; /* Animación de deslizamiento */
+}
+
+.menu-wrapper.open .right-panel {
+    transform: translateX(0); /* Estado final: en su posición */
+}
+
+/* Panel Izquierdo: Fondos y Logo Principal */
+.left-panel::before,
+.left-panel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1.2s ease;
+}
+
+/* Fondo base (turquesa) */
+.left-panel::before {
+    background: #2ec4b6;
+    background: -webkit-linear-gradient(90deg, #2ec4b6 0%, #3b2f2f 100%);
+    background: linear-gradient(90deg, #2ec4b6 0%, #3b2f2f 100%);
+    z-index: 0;
+    opacity: 1;
+}
+
+/* Fondo de previsualización (amarillo) */
+.left-panel::after {
+    background: #e5ca10;
+    background: -webkit-linear-gradient(90deg, #e5ca10 0%, #3b2f2f 100%);
+    background: linear-gradient(90deg, #e5ca10 0%, #3b2f2f 100%);
+    z-index: 1;
+    opacity: 0;
+}
+
+/* Cambio de opacidad en modo previsualización para fondos */
+.left-panel.preview-mode::before {
+    opacity: 0;
+}
+
+.left-panel.preview-mode::after {
+    opacity: 1;
+}
+
+/* Logo GOH */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+    will-change: transform, opacity, top, left; /* Optimiza la animación */
+    /* Transición solo para el retorno a posición original */
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    /* transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); */ /* Eliminada, el contenedor maneja la animación */
+}
+
+/* Animación del logo grande hacia la posición del logo pequeño */
+.hide-logo .logo-container {
+    /* Aplicar la animación definida */
+    animation: animateLogoToCorner 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    pointer-events: none; /* Evita que interfiera con clics */
+}
+
+/* Segunda etapa de la animación para completar la transición */
+/* Esta regla ya no es necesaria para la transformación, la animación 'animateLogoToCorner' lo cubre. */
+/* .preview-mode .hide-logo .logo-container {
+    transform: translate(0, 0) scale(0.08); 
+    opacity: 0;
+    transition: all 0.4s ease 0.4s; 
+} */
+
+/* Ocultar completamente el logo grande durante la previsualización */
+/* Esta regla sigue siendo útil como un seguro, especialmente si .preview-mode se activa sin .hide-logo (aunque no debería) */
+.preview-mode .logo-container {
+    opacity: 0 !important;
+    visibility: hidden !important; /* Asegura que esté oculto */
+}
+
+/* Panel Izquierdo: Logo Pequeño */
+.small-logo {
+    position: absolute;
+    bottom: 40px; /* Alineado con el margen inferior que usa el texto */
+    left: 40px; /* Alineado con el margen izquierdo que usa el texto */
+    width: 50px; /* Tamaño reducido */
+    height: auto;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Simplificado */
+    z-index: 4;
+    pointer-events: none; /* Evita que interfiera con clics */
+    visibility: hidden; /* Oculto por defecto */
+}
+
+/* Mostrar el logo pequeño cuando aparezca completamente */
+.show-small-logo .small-logo {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible; /* Lo hacemos visible */
+}
+
+/* Panel Izquierdo: Paneles de Previsualización */
+.preview-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    padding: 40px;
+    text-align: center;
+    z-index: 2;
+}
+
+.preview-panel.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.preview-image {
+    height: 100dvh;
+    width: auto;
+    max-width: 75%;
+    object-fit: contain;
+    object-position: right center;
+    margin-right: 20px;
+    position: relative;
+    z-index: 3;
+    transform: translateX(30px);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.preview-panel.active .preview-image {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.preview-text {
+    font-size: 65px;
+    font-weight: 800;
+    font-family: 'Jost', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    text-align: left;
+    line-height: 1.3;
+    max-width: 75%;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    z-index: 1;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.8s ease 0.2s, opacity 0.8s ease 0.2s;
+}
+
+.preview-panel.active .preview-text {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Panel Derecho: Navegación Superior */
+.top-nav {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.nav-item {
+    font-size: 16px;
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    font-weight: 500; /* Montserrat Medium */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-item:not(.active) {
+    color: white;
+}
+
+.nav-item.active {
+    color: #141414;
+    background-color: white;
+    font-weight: 600;
+}
+
+/* Panel Derecho: Contenido Principal (Listas) */
+.content-container {
+    flex: 1;
+    position: relative;
+    overflow-x: hidden; /* Previene scrollbar horizontal */
+    overflow-y: auto; /* Permite scroll vertical si es necesario */
+}
+
+.characters-list {
+    flex: 1;
+    padding: 40px 0 0 40px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start; /* Añadido para que los .menu-option no se estiren */
+    gap: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden; /* Previene scrollbar horizontal */
+}
+
+.characters-list.active {
+    display: flex;
+}
+
+.menu-option {  /* Cambiado de character-name a menu-option */
+    font-size: 38px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif; /* Reforzar Montserrat aquí */
+}
+
+.menu-option:hover {  /* Cambiado de character-name a menu-option */
+    color: #89CFF0;
+    transform: scale(1.05);
+}
+
+/* Panel Derecho: Barra Inferior y Controles */
+.bottom-bar {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: auto; */ /* Puede no ser necesario si el panel derecho no es scrollable internamente */
+    position: sticky; /* Para que se quede abajo si el contenido del panel derecho es largo */
+    bottom: 0;
+    background-color: #2F2626; /* Para que no sea transparente sobre el contenido scrolleable */
+    overflow: hidden; /* Previene scrollbar horizontal */
+    width: 100%; /* Asegura que no exceda el ancho del contenedor */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+.language-selector {
+    position: absolute;
+    bottom: 20px; /* Ajusta según sea necesario */
+    left: 20px; /* Ajusta según sea necesario */
+    z-index: 1001; /* Para asegurar que esté por encima de otros elementos si es necesario */
+}
+
+.language-selector select {
+    background-color: transparent; /* Sin fondo */
+    color: white; /* Color de texto */
+    border: none; /* Sin borde */
+    padding: 5px 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px; /* Tamaño de fuente aumentado */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    cursor: pointer; /* Para indicar que es clickeable */
+}
+
+/* Estilo para las opciones del selector, aunque el soporte puede variar entre navegadores */
+.language-selector select option {
+    background-color: #2F2626; /* Fondo para las opciones desplegadas, para que sean legibles */
+    color: white;
+}
+
+.movement-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.close-button {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilos para la flecha flotante */
+.scroll-arrow {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow img {
+    width: 60px;
+    height: auto;
+}
+
+.scroll-arrow.up {
+    transform: translateX(-50%) rotate(180deg);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+.scroll-arrow.up {
+    animation: bounce-up 2s infinite;
+}
+
+@keyframes bounce-up {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) rotate(180deg) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) rotate(180deg) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) rotate(180deg) translateY(-5px);
+    }
+}
+
+/* Animaciones */
+/* Keyframes para la animación del logo grande hacia la esquina */
+@keyframes animateLogoToCorner {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+    60% { /* Punto intermedio para escala y opacidad */
+        top: 70%; /* Movimiento diagonal hacia abajo */
+        left: 30%; /* Movimiento diagonal hacia la izquierda */
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0.7;
+        visibility: visible; /* Sigue visible mientras se desvanece */
+    }
+    100% {
+        /* Posición final en la esquina inferior izquierda */
+        top: calc(100% - 65px); /* bottom: 40px convertido a posición top */
+        left: 65px; /* Posición del logo pequeño + un poco de margen */
+        transform: translate(-50%, -50%) scale(0.1); /* Escala final */
+        opacity: 0;
+        visibility: hidden; /* Ocultar completamente */
+    }
+}
+
+/* Estilos para las secciones del contenido principal */
+main#main-content section {
+    min-height: 100vh; /* Cada sección ocupa al menos la altura de la ventana */
+    padding: 60px 40px; /* Espaciado interno */
+    border-bottom: 1px solid #444; /* Separador visual (opcional) */
+    box-sizing: border-box;
+}
+
+main#main-content section:last-child {
+    border-bottom: none; /* Sin borde para la última sección */
+}
+
+main#main-content section h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333; /* Ajusta el color según tu diseño */
+}
+
+main#main-content section p {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: #555; /* Ajusta el color según tu diseño */
+}
+
+/* Estilos para la sección Sobre Mí - CENTRADO COMPLETO */
+#sobre-mi-section {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    min-height: 100vh;
+    padding: 60px 0;
+}
+
+#sobre-mi-section .sobre-mi-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 85%;
+    max-width: 1400px;
+    margin: 0 auto; /* Centrado horizontal del contenedor */
+}
+
+@media (min-width: 992px) {
+    #sobre-mi-section .sobre-mi-container {
+        flex-direction: row;
+        align-items: center; /* Centrado vertical de los elementos internos */
+        justify-content: center; /* Centrado horizontal de los elementos internos */
+    }
+}
+
+/* Mantener la proporción actual entre texto e imagen */
+#sobre-mi-section .texto-presentacion {
+    flex: 0.7;
+    color: #3b2f2f;
+    padding-right: 40px;
+}
+
+#sobre-mi-section .fotos-presentacion {
+    flex: 1.5;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    min-width: 60%;
+    display: flex; /* Añadido para centrar la imagen dentro */
+    justify-content: center; /* Centrado horizontal de la imagen */
+    align-items: center; /* Centrado vertical de la imagen */
+}
+
+/* Asegurar que la imagen esté centrada dentro de su contenedor */
+.mosaico-container.single-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Ajustes de proporción entre texto e imagen */
+/* El texto ahora ocupa aproximadamente el 40% */
+#sobre-mi-section .texto-presentacion {
+    flex: 0.7; /* Reducido aún más para dar más peso a la imagen */
+    color: #3b2f2f;
+    padding-right: 40px; /* Más separación entre texto e imagen */
+}
+
+/* La imagen ahora ocupa aproximadamente el 60% */
+#sobre-mi-section .fotos-presentacion {
+    flex: 1.5; /* Aumentado significativamente para dar mucho más peso visual */
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0; /* Evita que se achique */
+    min-width: 60%; /* Garantiza el 60% mínimo */
+}
+
+/* Mantiene los estilos actuales de los encabezados */
+.texto-presentacion h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 3.5rem; /* Ligeramente reducido */
+    margin-bottom: 0.4rem; /* Reducido para menos espacio */
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    color: #3b2f2f;
+    max-width: 100%; /* 100% del ancho del contenedor */
+    white-space: nowrap;
+}
+
+.texto-presentacion h3 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 800; /* ExtraBold */
+    font-size: 2.5rem; /* Ligeramente reducido */
+    margin-bottom: 1.2rem; /* Reducido de 2rem */
+    color: #3b2f2f;
+    letter-spacing: 1px;
+    max-width: 100%; /* 100% del ancho del contenedor */
+    white-space: nowrap;
+}
+
+.texto-presentacion p {
+    margin-bottom: 0.8rem; /* Espacio reducido entre párrafos */
+    font-weight: 500;
+    line-height: 1.5; /* Líneas más compactas */
+}
+
+/* Ajustes para el mosaico de fotos */
+.mosaico-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(120px, auto);
+    gap: 12px;
+    width: 100%;
+    
+}
+
+
+/* Estilos para la imagen única de mosaico */
+.mosaico-container.single-image {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 15px; /* Añadir padding para dar espacio a la sombra */
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+    background: transparent; /* Asegura que el fondo sea transparente */
+}
+
+.mosaico-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+    filter: drop-shadow(5px -5px 15px rgba(0, 0, 0, 0.541));
+    border-radius: 8px; /* Opcional: para mantener las esquinas redondeadas de la imagen */
+}
+
+
+/* Ajustes responsive mejorados */
+@media (max-width: 768px) {
+    #sobre-mi-section .sobre-mi-container {
+        width: 90%; /* Un poco menos de margen en móviles */
+    }
+    
+    #sobre-mi-section .texto-presentacion {
+        padding-right: 0;
+    }
+    
+    .mosaico-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+    }
+    
+    .horizontal {
+        grid-column: span 2;
+    }
+    
+    .vertical {
+        grid-column: span 1;
+        aspect-ratio: 9/16;
+    }
+}
+
+/* Logo fijo en esquina superior izquierda */
+.corner-logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 998; /* Por debajo del menú pero por encima de otros elementos */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.corner-logo img {
+    height:  75px;
+    width: auto;
+}
+
+.corner-logo:hover {
+    transform: scale(1.05);
+}

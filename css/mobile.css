@@ -1,0 +1,211 @@
+/* Estilos Mobile para Portfolio 
+   Estos estilos se aplicarán solo en pantallas pequeñas 
+   sin afectar el diseño actual para desktop */
+   
+/* Estilos generales que se aplican a todas las vistas */
+.mosaico-container.single-image {
+    overflow: visible !important; /* Fuerza que sea visible en todas las resoluciones */
+    display: block !important; /* Asegura que se aplique nuestro display */
+}
+
+.mosaico-image {
+    filter: drop-shadow(5px -5px 15px rgba(0, 0, 0, 0.541)) !important; /* Asegurar que la sombra se aplique */
+    height: auto !important; /* Fuerza altura automática */
+    width: 100% !important; /* Fuerza ancho completo */
+    max-height: 70vh !important; /* Limita la altura máxima */
+    object-fit: contain !important; /* Mantiene la proporción */
+}
+
+/* Media Query para tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Ajustes para tablets */
+    #sobre-mi-section .sobre-mi-container {
+        flex-direction: row;
+        width: 95%;
+        gap: 20px;
+    }
+    
+    #sobre-mi-section .texto-presentacion {
+        flex: 1;
+        padding-right: 20px;
+    }
+      #sobre-mi-section .fotos-presentacion {
+        flex: 1.2;
+        min-width: 50%;
+        overflow: visible; /* Asegura que la sombra no se corte */
+    }
+      /* Asegura que el mosaico se vea correctamente en tablets */
+    #sobre-mi-section .mosaico-container.single-image {
+        padding: 20px;
+        overflow: visible !important;
+    }
+    
+    #sobre-mi-section .mosaico-image {
+        max-height: 60vh !important; /* Altura un poco mayor en tablets */
+        object-fit: contain !important;
+        width: 100% !important;
+        height: auto !important;
+    }/* Ajustes de tipografía para tablets */
+    .texto-presentacion h2 {
+        font-size: 2.2rem !important; /* Forzamos que se aplique */
+        white-space: normal !important;
+    }
+    
+    .texto-presentacion h3 {
+        font-size: 1.8rem !important;
+        white-space: normal !important;
+    }
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 767px) {
+    /* Ajustes generales */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Especificar altura mínima para dispositivos móviles */
+    #sobre-mi-section {
+        min-height: auto; /* Permite que la altura se ajuste al contenido */
+        padding-top: 60px; /* Dar más espacio en la parte superior */
+        padding-bottom: 60px; /* Dar más espacio en la parte inferior */
+    }
+    
+    /* Botón de menú más grande para mejor accesibilidad táctil */
+    #open-menu-button {
+        padding: 12px 18px;
+        font-size: 24px;
+    }
+    
+    /* Ajustes para el menú (lo trataremos en detalle después) */
+    .menu-wrapper .left-panel {
+        width: 100%;
+    }
+    
+    .menu-wrapper .right-panel {
+        width: 85%;
+    }
+      /* Sección Sobre Mi: reorganización en columna */
+    #sobre-mi-section {
+        padding: 40px 20px;
+        overflow: visible; /* Permite que la sombra se vea completamente */
+    }
+    
+    #sobre-mi-section .sobre-mi-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 30px;
+        overflow: visible; /* Permite que la sombra se vea completamente */
+    }
+    
+    #sobre-mi-section .texto-presentacion {
+        flex: 1;
+        padding-right: 0;
+        order: 2; /* Cambia el orden: texto debajo de la imagen */
+        text-align: center; /* Centra el texto en móvil */
+    }
+      #sobre-mi-section .fotos-presentacion {
+        flex: 1;
+        order: 1; /* Cambia el orden: imagen arriba del texto */
+        min-width: 100%;
+        margin-top: 40px; /* Espacio adicional arriba para compensar el logo fijo */
+        overflow: visible; /* Asegura que la sombra no se corte */
+    }    /* Ajustes de tipografía para mejor legibilidad en móvil */
+    .texto-presentacion h2 {
+        font-size: 1.8rem !important; /* Forzamos que se aplique */
+        white-space: normal !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    .texto-presentacion h3 {
+        font-size: 1.5rem !important;
+        white-space: normal !important;
+        margin-bottom: 1rem;
+    }
+    
+    .texto-presentacion p {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }    /* Ajustes para la imagen de mosaico */
+    .mosaico-container.single-image {
+        padding: 20px !important; /* Aumentado de 10px */
+        overflow: visible !important; /* Cambiado de hidden a visible para permitir que se vea la sombra */
+    }
+    
+    .mosaico-image {
+        max-width: 100% !important;
+        height: auto !important; /* Permitir que la altura se ajuste automáticamente */
+        max-height: 50vh !important; /* Limita la altura máxima al 50% de la altura visible */
+        object-fit: contain !important; /* Mantiene la proporción de la imagen */
+        filter: drop-shadow(5px -5px 15px rgba(0, 0, 0, 0.541)) !important;
+    }
+    
+    /* Ajustes para el logo fijo */
+    .corner-logo img {
+        height: 50px;
+    }
+    
+    /* Ajuste para la flecha de scroll */
+    .scroll-arrow img {
+        width: 40px;
+    }
+}
+
+/* Media Query para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    .texto-presentacion h2 {
+        font-size: 1.5rem !important; /* Forzamos que se aplique */
+    }
+    
+    .texto-presentacion h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    .texto-presentacion p {
+        font-size: 0.9rem;
+    }
+    
+    #sobre-mi-section {
+        padding: 30px 15px;
+    }
+}
+
+/* Ajustes para orientación landscape en móvil */
+@media (max-width: 767px) and (orientation: landscape) {
+    body.landscape #sobre-mi-section {
+        padding: 20px 15px;
+        min-height: auto; /* Permite que la sección sea más corta en landscape */
+    }
+    
+    body.landscape #sobre-mi-section .sobre-mi-container {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    body.landscape #sobre-mi-section .texto-presentacion {
+        order: 1;
+        text-align: left;
+    }
+      body.landscape #sobre-mi-section .fotos-presentacion {
+        order: 2;
+        margin-top: 0;
+        overflow: visible; /* Permite que la sombra se vea completamente */
+    }
+      body.landscape .mosaico-container.single-image {
+        padding: 15px !important;
+        overflow: visible !important;
+    }
+    
+    body.landscape .mosaico-image {
+        max-height: 70vh !important; /* Altura apropiada para modo landscape */
+        width: 100% !important;
+    }
+      body.landscape .texto-presentacion h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    body.landscape .texto-presentacion h3 {
+        font-size: 1.2rem !important;
+    }
+}

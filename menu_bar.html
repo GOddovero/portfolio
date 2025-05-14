@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GOH-dev</title>
+        <!-- Favicon para las pestañas del navegador -->
+        <link rel="icon" href="img/g1.png" type="image/x-icon">
+        <link rel="shortcut icon" href="img/g1.png" type="image/x-icon">
+        <!-- Importar Montserrat de Google Fonts -->        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Jost:wght@800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/mobile.css">
+        <link rel="stylesheet" href="css/fixes.css">
+    </head>
+    <body>
+        <!-- Logo fijo en esquina superior izquierda -->
+        <div class="corner-logo">
+            <img src="img/g1.png" alt="GOH FullStack Developer">
+        </div>
+
+        <!-- Botón para abrir el menú -->
+        <button id="open-menu-button">☰</button> <!-- Puedes usar un ícono SVG o una imagen aquí -->
+
+        <!-- Contenedor del menú completo -->
+        <div class="menu-wrapper">
+            <!-- Panel izquierdo con fondo gradiente y previsualizaciones -->
+            <div class="left-panel">
+                <!-- Logo predeterminado -->
+                <div class="logo-container">
+                    <img src="img/goh1.png" alt="GOH Logo" class="logo">
+                </div>
+                
+                <!-- Logo pequeño en la esquina inferior izquierda -->
+                <img src="img/g1.png" alt="Small GOH Logo" class="small-logo">
+                
+                <!-- Panel de previsualización para "Sobre Mi" -->
+                <div id="sobre-mi-preview" class="preview-panel">
+                    <img src="img/contacto_goh_sf.png" alt="Gaspar" class="preview-image">
+                    <div class="preview-text">Licenciado en Informática. <br>Programador FullStack.</div>
+                </div>
+                
+                <!-- Aquí puedes agregar más paneles de previsualización para otras opciones -->
+            </div>
+            
+            <!-- Panel derecho con navegación y contenido -->
+            <div class="right-panel">
+                <!-- Navegación superior -->
+                <div class="top-nav">
+                    <div class="nav-item active" data-section="gaspar">Gaspar</div>
+                    <div class="nav-item" data-section="experiencia">Experiencia Laboral</div>
+                    <div class="nav-item" data-section="formacion">Formación</div>
+                    <div class="nav-item" data-section="proyectos">Proyectos</div>
+                </div>
+                
+                <!-- Botón de cerrar -->
+                <button class="close-button">×</button>
+                
+                <!-- Contenido de las secciones -->
+                <div class="content-container">
+                    <!-- Sección Gaspar -->
+                    <div class="characters-list active" id="gaspar-content">
+                        <div class="menu-option" data-preview="sobre-mi-preview">
+                            <a href="#sobre-mi-section">Sobre Mi</a>
+                        </div>
+                        <div class="menu-option" data-preview="contacto-preview"> <!-- Añadido data-preview si se desea previsualización -->
+                            <a href="#contacto-section">Contacto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Sección Experiencia Laboral -->
+                    <div class="characters-list" id="experiencia-content">
+                        <div class="menu-option"><a href="#exp-desarrollador-software-section">Desarrollador de Software</a></div>
+                        <div class="menu-option"><a href="#exp-profesor-programacion-section">Profesor de Programacion</a></div>
+                        <div class="menu-option"><a href="#exp-orador-conferencias-section">Orador en Conferencias</a></div>
+                        <div class="menu-option"><a href="#exp-atencion-publico-section">Atencion al Publico</a></div>
+                        <div class="menu-option"><a href="#exp-operador-sistemas-section">Operador de Sistemas</a></div>
+                        <div class="menu-option"><a href="#exp-desarrollador-software-p-section">Desarrollador de Software (P.)</a></div>
+                    </div>
+                    
+                    <!-- Sección Formación -->
+                    <div class="characters-list" id="formacion-content">
+                        <div class="menu-option"><a href="#form-licenciatura-informatica-section">Licenciatura en Informatica</a></div>
+                        <div class="menu-option"><a href="#form-tecnicatura-programacion-section">Tecnicatura en Programacion</a></div>
+                        <div class="menu-option"><a href="#form-desarrollo-fullstack-c-section">Desarrollo en Fullstack (C)</a></div>
+                        <div class="menu-option"><a href="#form-desarrollo-python-c-section">Desarrollo en Python (C)</a></div>
+                        <div class="menu-option"><a href="#form-desarrollo-java-c-section">Desarrollo en Java (C)</a></div>
+                    </div>
+                    
+                    <!-- Sección Proyectos -->
+                    <div class="characters-list" id="proyectos-content">
+                        <div class="menu-option"><a href="#proy-sistema-gestion-section">Sistema de Gestion</a></div>
+                        <div class="menu-option"><a href="#proy-landing-institucional-section">Landing Page Institucional</a></div>
+                        <div class="menu-option"><a href="#proy-menuqr-section">MenuQR</a></div>
+                        <div class="menu-option"><a href="#proy-recetas-ia-section">Recetas con I.A.</a></div>
+                        <div class="menu-option"><a href="#proy-landing-paideia-section">Landing Paideia Editorial</a></div>
+                        <div class="menu-option"><a href="#proy-gestor-ventas-section">Gestor de Ventas</a></div>
+                    </div>
+                </div>
+
+                <!-- Selector de Idiomas -->
+                <div class="language-selector">
+                    <select name="language" id="language-select">
+                        <option value="es" selected>Español</option>
+                        <option value="en">English</option>
+                        <!-- Agrega más idiomas según necesites -->
+                    </select>
+                </div>
+            </div>
+        </div> <!-- Fin de menu-wrapper -->
+        
+        <!-- Contenido principal de la página donde se navegará al hacer clic -->
+        <main id="main-content"> <!-- Eliminado style="display: none;" -->
+            <section id="sobre-mi-section">
+                <div class="sobre-mi-container">
+                    <div class="texto-presentacion">
+                        <h2>HOLA, SOY GASPAR ODDOVERO HERRERA.</h2>
+                        <h3>Licenciado en Informática</h3>
+                        <p>Soy desarrollador con enfoque full stack y un interés marcado por la tecnología y la inteligencia artificial. He trabajado en proyectos de desarrollo web y desktop, combinando frontend atractivo con backend funcional, y siempre buscando mejorar la experiencia del usuario.</p>
+                        <p>Disfruto compartir lo que aprendo: he dado clases de programación en Python y participado como orador en conferencias sobre IA, explicando desde conceptos básicos hasta el uso de herramientas como ChatGPT o Copilot.</p>
+                        <p>Me motiva seguir aprendiendo y encontrar formas creativas de aplicar la tecnología para resolver problemas reales.</p>
+                    </div>
+                    <div class="fotos-presentacion">
+                        <!-- Una sola imagen de mosaico que reemplaza a las individuales -->
+                        <div class="mosaico-container single-image">
+                            <img src="img/Mosaico.png" alt="Mosaico de fotos de Gaspar Oddovero Herrera" class="mosaico-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Seccion sin terminar
+            <section id="contacto-section">
+                <h2>Contacto</h2>
+                <p>Información de contacto y formulario...</p>
+            </section>
+            
+            <section id="exp-desarrollador-software-section">
+                <h2>Desarrollador de Software</h2>
+                <p>Contenido sobre Desarrollador de Software...</p>
+            </section>
+            <section id="exp-profesor-programacion-section">
+                <h2>Profesor de Programacion</h2>
+                <p>Contenido sobre Profesor de Programacion...</p>
+            </section>
+            <section id="exp-orador-conferencias-section">
+                <h2>Orador en Conferencias</h2>
+                <p>Contenido sobre Orador en Conferencias...</p>
+            </section>
+            <section id="exp-atencion-publico-section">
+                <h2>Atencion al Publico</h2>
+                <p>Contenido sobre Atencion al Publico...</p>
+            </section>
+            <section id="exp-operador-sistemas-section">
+                <h2>Operador de Sistemas</h2>
+                <p>Contenido sobre Operador de Sistemas...</p>
+            </section>
+            <section id="exp-desarrollador-software-p-section">
+                <h2>Desarrollador de Software (P.)</h2>
+                <p>Contenido sobre Desarrollador de Software (P.)...</p>
+            </section>
+
+            <section id="form-licenciatura-informatica-section">
+                <h2>Licenciatura en Informatica</h2>
+                <p>Contenido sobre Licenciatura en Informatica...</p>
+            </section>
+            <section id="form-tecnicatura-programacion-section">
+                <h2>Tecnicatura en Programacion</h2>
+                <p>Contenido sobre Tecnicatura en Programacion...</p>
+            </section>
+            <section id="form-desarrollo-fullstack-c-section">
+                <h2>Desarrollo en Fullstack (C)</h2>
+                <p>Contenido sobre Desarrollo en Fullstack (C)...</p>
+            </section>
+            <section id="form-desarrollo-python-c-section">
+                <h2>Desarrollo en Python (C)</h2>
+                <p>Contenido sobre Desarrollo en Python (C)...</p>
+            </section>
+            <section id="form-desarrollo-java-c-section">
+                <h2>Desarrollo en Java (C)</h2>
+                <p>Contenido sobre Desarrollo en Java (C)...</p>
+            </section>
+
+            <section id="proy-sistema-gestion-section">
+                <h2>Sistema de Gestion</h2>
+                <p>Contenido sobre Sistema de Gestion...</p>
+            </section>
+            <section id="proy-landing-institucional-section">
+                <h2>Landing Page Institucional</h2>
+                <p>Contenido sobre Landing Page Institucional...</p>
+            </section>
+            <section id="proy-menuqr-section">
+                <h2>MenuQR</h2>
+                <p>Contenido sobre MenuQR...</p>
+            </section>
+            <section id="proy-recetas-ia-section">
+                <h2>Recetas con I.A.</h2>
+                <p>Contenido sobre Recetas con I.A....</p>
+            </section>
+            <section id="proy-landing-paideia-section">
+                <h2>Landing Paideia Editorial</h2>
+                <p>Contenido sobre Landing Paideia Editorial...</p>
+            </section>
+            <section id="proy-gestor-ventas-section">
+                <h2>Gestor de Ventas</h2>
+                <p>Contenido sobre Gestor de Ventas...</p>
+            </section>
+        -->
+        </main>
+        <div class="scroll-arrow" id="scrollArrow">
+            <img src="img/flecha 1_1.png" alt="Scroll">
+        </div>
+          <script src="js/script.js"></script>
+        <script src="js/mobile.js"></script>
+    </body>
+</html>
