@@ -687,3 +687,32 @@ main#main-content section p {
 .corner-logo:hover {
     transform: scale(1.05);
 }
+
+/* Nuevos estilos para los botones sociales */
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    background-color: #e5ca10;
+    border: 5px solid #3b2f2f;
+    border-radius: 25%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.social-button svg {
+    width: 48px;
+    height: 48px;
+}
