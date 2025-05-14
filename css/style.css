@@ -716,3 +716,7 @@ main#main-content section p {
     width: 48px;
     height: 48px;
 }
+
+.right-corner-logo {
+    display: none;
+}

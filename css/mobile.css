@@ -79,11 +79,10 @@
     
     /* Ajustes para el menú (lo trataremos en detalle después) */
     .menu-wrapper .left-panel {
-        width: 100%;
+        display: none !important;
     }
-    
     .menu-wrapper .right-panel {
-        width: 85%;
+        width: 100% !important;
     }
       /* Sección Sobre Mi: reorganización en columna */
     #sobre-mi-section {
@@ -149,6 +148,39 @@
     /* Ajuste para la flecha de scroll */
     .scroll-arrow img {
         width: 40px;
+    }
+    
+    /* Hacer scroll horizontal en la navegación superior */
+    .top-nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    .top-nav::-webkit-scrollbar {
+        display: none;
+    }
+    /* Ajustar tamaño de fuente de los ítems del nav */
+    .top-nav .nav-item {
+        font-size: 18px !important;
+        padding: 10px 15px !important;
+    }
+    /* Ajustar tamaño de fuente de las opciones del menú */
+    .characters-list .menu-option {
+        font-size: 28px !important;
+    }
+    
+    /* Mostrar el logo en la esquina inferior derecha del right-panel */
+    .right-panel .right-corner-logo {
+        display: block !important;
+        position: absolute;
+        bottom: 20px;
+        right: 20px !important;
+        left: auto !important;
+        z-index: 1001;
+    }
+    .right-panel .right-corner-logo img {
+        height: 75px !important;
+        width: auto !important;
     }
 }
 
