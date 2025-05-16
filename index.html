@@ -9,10 +9,13 @@
         <link rel="shortcut icon" href="img/g1.png" type="image/x-icon">
         <!-- Importar Montserrat de Google Fonts -->        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Jost:wght@800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Jost:wght@800&display=swap" rel="stylesheet">        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/mobile.css">
         <link rel="stylesheet" href="css/fixes.css">
+        <link rel="stylesheet" href="css/experiencia.css">
+        <link rel="stylesheet" href="css/experiencia-animations.css">
+        <link rel="stylesheet" href="css/transitions.css">
+        <link rel="stylesheet" href="css/experiencia-grid.css">
     </head>
     <body>
         <!-- Logo fijo en esquina superior izquierda -->
@@ -34,11 +37,15 @@
                 
                 <!-- Logo pequeño en la esquina inferior izquierda -->
                 <img src="img/g1.png" alt="Small GOH Logo" class="small-logo">
-                
-                <!-- Panel de previsualización para "Sobre Mi" -->
+                  <!-- Panel de previsualización para "Sobre Mi" -->
                 <div id="sobre-mi-preview" class="preview-panel">
                     <img src="img/contacto_goh_sf.png" alt="Gaspar" class="preview-image">
                     <div class="preview-text">Licenciado en Informática. <br>Programador FullStack.</div>
+                </div>
+                  <!-- Panel de previsualización para "Experiencia Laboral" -->
+                <div id="experiencia-preview" class="preview-panel">
+                    <img src="img/experiencia-preview.svg" alt="Experiencia Laboral" class="preview-image">
+                    <div class="preview-text">Experiencia<br>Profesional</div>
                 </div>
                 
                 <!-- Aquí puedes agregar más paneles de previsualización para otras opciones -->
@@ -58,44 +65,30 @@
                 <button class="close-button">×</button>
                 
                 <!-- Contenido de las secciones -->
-                <div class="content-container">
-                    <!-- Sección Gaspar -->
+                <div class="content-container">                    <!-- Sección Gaspar -->
                     <div class="characters-list active" id="gaspar-content">
                         <div class="menu-option" data-preview="sobre-mi-preview">
                             <a href="#sobre-mi-section">Sobre Mi</a>
                         </div>
+                        <div class="menu-option" data-preview="experiencia-preview">
+                            <a href="#exp-desarrollador-software-section">Experiencia Laboral</a>
+                        </div>
                         <div class="menu-option" data-preview="contacto-preview"> <!-- Añadido data-preview si se desea previsualización -->
                             <a href="#contacto-section">Contacto</a>
                         </div>
-                    </div>
-                    
-                    <!-- Sección Experiencia Laboral -->
+                    </div><!-- Sección Experiencia Laboral - Ahora enlaza todo a una única sección -->
                     <div class="characters-list" id="experiencia-content">
-                        <div class="menu-option"><a href="#exp-desarrollador-software-section">Desarrollador de Software</a></div>
-                        <div class="menu-option"><a href="#exp-profesor-programacion-section">Profesor de Programacion</a></div>
-                        <div class="menu-option"><a href="#exp-orador-conferencias-section">Orador en Conferencias</a></div>
-                        <div class="menu-option"><a href="#exp-atencion-publico-section">Atencion al Publico</a></div>
-                        <div class="menu-option"><a href="#exp-operador-sistemas-section">Operador de Sistemas</a></div>
-                        <div class="menu-option"><a href="#exp-desarrollador-software-p-section">Desarrollador de Software (P.)</a></div>
+                        <div class="menu-option" data-preview="experiencia-preview">
+                            <a href="#exp-desarrollador-software-section">Experiencia Laboral</a>
+                        </div>
                     </div>
-                    
-                    <!-- Sección Formación -->
+                      <!-- Sección Formación (Simplificada por ahora) -->
                     <div class="characters-list" id="formacion-content">
-                        <div class="menu-option"><a href="#form-licenciatura-informatica-section">Licenciatura en Informatica</a></div>
-                        <div class="menu-option"><a href="#form-tecnicatura-programacion-section">Tecnicatura en Programacion</a></div>
-                        <div class="menu-option"><a href="#form-desarrollo-fullstack-c-section">Desarrollo en Fullstack (C)</a></div>
-                        <div class="menu-option"><a href="#form-desarrollo-python-c-section">Desarrollo en Python (C)</a></div>
-                        <div class="menu-option"><a href="#form-desarrollo-java-c-section">Desarrollo en Java (C)</a></div>
+                        <div class="menu-option"><a href="#form-licenciatura-informatica-section">Formación Académica</a></div>
                     </div>
-                    
-                    <!-- Sección Proyectos -->
+                      <!-- Sección Proyectos (Simplificada por ahora) -->
                     <div class="characters-list" id="proyectos-content">
-                        <div class="menu-option"><a href="#proy-sistema-gestion-section">Sistema de Gestion</a></div>
-                        <div class="menu-option"><a href="#proy-landing-institucional-section">Landing Page Institucional</a></div>
-                        <div class="menu-option"><a href="#proy-menuqr-section">MenuQR</a></div>
-                        <div class="menu-option"><a href="#proy-recetas-ia-section">Recetas con I.A.</a></div>
-                        <div class="menu-option"><a href="#proy-landing-paideia-section">Landing Paideia Editorial</a></div>
-                        <div class="menu-option"><a href="#proy-gestor-ventas-section">Gestor de Ventas</a></div>
+                        <div class="menu-option"><a href="#proy-sistema-gestion-section">Proyectos</a></div>
                     </div>
                 </div>
 
@@ -157,90 +150,124 @@
                             <img src="img/Mosaico.png" alt="Mosaico de fotos de Gaspar Oddovero Herrera" class="mosaico-image">
                         </div>
                     </div>
+                </div>            </section>
+            
+            <section id="exp-desarrollador-software-section"><div class="experiencia-container">
+                    <div class="experiencia-titulo">
+                        <h2>EXPERIENCIA LABORAL</h2>
+                    </div>
+                    
+                    <div class="experiencia-grid">                        <!-- Desarrollador de Software (1x3) -->
+                        <div class="experiencia-item item-desarrollador">
+                            <div class="shine"></div>
+                            <div class="periodo">2024 - Presente</div>
+                            <h3>Desarrollador de Software</h3>
+                            <div class="empresa">SnakeSoftDev</div>
+                            <p class="descripcion">Como cofundador de SnakeSoftDev, asumí roles clave tanto técnicos como empresariales. Me enfoqué principalmente en el desarrollo frontend y backend para garantizar una arquitectura sólida y una excelente experiencia de usuario. Además, estuve a cargo de la atención al cliente y participé en la negociación y cierre de contratos, fomentando relaciones comerciales duraderas.</p>
+                            <div class="tecnologias">
+                                <span class="tecnologia-tag">PHP</span>
+                                <span class="tecnologia-tag">Python</span>
+                                <span class="tecnologia-tag">HTML</span>
+                                <span class="tecnologia-tag">CSS</span>
+                                <span class="tecnologia-tag">JavaScript</span>
+                                <span class="tecnologia-tag">Bootstrap</span>
+                                <span class="tecnologia-tag">React</span>
+                                <span class="tecnologia-tag">Git</span>
+                            </div>
+                            <img src="img/icons/code.svg" class="experiencia-icon" alt="Ícono código">
+                        </div>
+                        
+                        <!-- Profesor de Programación (1x2) -->
+                        <div class="experiencia-item item-profesor">
+                            <div class="shine"></div>
+                            <div class="periodo">2014 - Presente</div>
+                            <h3>Profesor de Programación</h3>
+                            <div class="empresa">Universidad Popular General Levalle</div>
+                            <p class="descripcion">Diseñé e impartí clases de programación en Python desde nivel inicial hasta intermedio, incluyendo Programación Orientada a Objetos. Actualmente me encuentro impartiendo el segundo curso de programacion, orientado al desarrollo web.</p>
+                            <div class="tecnologias">
+                                <span class="tecnologia-tag">Python</span>
+                                <span class="tecnologia-tag">HTML</span>
+                                <span class="tecnologia-tag">CSS</span>
+                                <span class="tecnologia-tag">JavaScript</span>
+                                <span class="tecnologia-tag">PHP</span>
+                                <span class="tecnologia-tag">MySQL</span>
+                                <span class="tecnologia-tag">Git</span>
+                            </div>
+                            <img src="img/icons/teacher.svg" class="experiencia-icon" alt="Ícono profesor">
+                        </div>
+                        
+                        <!-- Orador en Conferencias (1x1) -->
+                        <div class="experiencia-item item-orador">
+                            <div class="shine"></div>
+                            <div class="periodo">2024</div>
+                            <h3>Orador en Conferencias</h3>
+                            <div class="empresa">Universidad Popular General Levalle</div>
+                            <p class="descripcion">Realicé más de cinco conferencias sobre Inteligencia Artificial, explicando desde su evolución hasta el uso práctico de herramientas como ChatGPT, Copilot y Gemini. Me destaqué por comunicar conceptos técnicos de manera simple y accesible.</p>
+                            <div class="tecnologias">
+                                <span class="tecnologia-tag">IA</span>
+                                <span class="tecnologia-tag">ChatGPT</span>
+                                <span class="tecnologia-tag">Copilot</span>
+                                <span class="tecnologia-tag">Gemini</span>
+                            </div>
+                            <img src="img/icons/speaker.svg" class="experiencia-icon" alt="Ícono orador">
+                        </div>
+                        
+                        <!-- Atención al Público (1x1) -->
+                        <div class="experiencia-item item-atencion">
+                            <div class="shine"></div>
+                            <div class="periodo">2015 - Presente</div>
+                            <h3>Atención al Público</h3>
+                            <div class="empresa">Oddovero Herrajes</div>
+                            <p class="descripcion">En este negocio familiar, gestioné atención al cliente, control de stock y administración de ventas. También propuse mejoras en los procesos que optimizaron la experiencia del cliente y el rendimiento del negocio..</p>
+                            <img src="img/icons/customer.svg" class="experiencia-icon" alt="Ícono atención">
+                        </div>
+                        
+                        <!-- Operador de Sistemas (1x1) -->
+                        <div class="experiencia-item item-operador">
+                            <div class="shine"></div>
+                            <div class="periodo">2017 - 2019</div>
+                            <h3>Operador de Sistemas</h3>
+                            <div class="empresa">Correo Argentino</div>
+                            <p class="descripcion">Durante las elecciones nacionales, trabajé transmitiendo datos electorales de forma segura y precisa, contribuyendo a la transparencia y eficiencia del proceso electoral.</p>
+                            <img src="img/icons/computer.svg" class="experiencia-icon" alt="Ícono computadora">
+                        </div>
+                        
+                        <!-- Desarrollador de Software (P.) (1x1) -->
+                        <div class="experiencia-item item-desarrollador-p">
+                            <div class="shine"></div>
+                            <div class="periodo">Marzo - Junio 2023</div>
+                            <h3>Desarrollador (P.)</h3>
+                            <div class="empresa">Cuidadores de Viviendas</div>
+                            <p class="descripcion">Participé en el desarrollo de una página web y la creación de bases de datos para el proyecto “Cuidadores de Viviendas”. Colaboré estrechamente en equipo para cumplir con los requerimientos del cliente.</p>
+                            <div class="tecnologias">
+                                <span class="tecnologia-tag">HTML</span>
+                                <span class="tecnologia-tag">CSS</span>
+                                <span class="tecnologia-tag">JavaScript</span>
+                                <span class="tecnologia-tag">WordPress</span>
+                                <span class="tecnologia-tag">Excel</span>
+                            </div>
+                            <img src="img/icons/startup.svg" class="experiencia-icon" alt="Ícono startup">
+                        </div>                    </div>
                 </div>
             </section>
-            <!-- Seccion sin terminar
+            
             <section id="contacto-section">
                 <h2>Contacto</h2>
-                <p>Información de contacto y formulario...</p>
+                <p>Información de contacto y formulario... (Sección en desarrollo)</p>
+            </section><section id="form-licenciatura-informatica-section">
+                <h2>Licenciatura en Informática</h2>
+                <p>Sección en desarrollo...</p>
+            </section>            <section id="proy-sistema-gestion-section">
+                <h2>Proyectos</h2>
+                <p>Sección en desarrollo...</p>
             </section>
-            
-            <section id="exp-desarrollador-software-section">
-                <h2>Desarrollador de Software</h2>
-                <p>Contenido sobre Desarrollador de Software...</p>
-            </section>
-            <section id="exp-profesor-programacion-section">
-                <h2>Profesor de Programacion</h2>
-                <p>Contenido sobre Profesor de Programacion...</p>
-            </section>
-            <section id="exp-orador-conferencias-section">
-                <h2>Orador en Conferencias</h2>
-                <p>Contenido sobre Orador en Conferencias...</p>
-            </section>
-            <section id="exp-atencion-publico-section">
-                <h2>Atencion al Publico</h2>
-                <p>Contenido sobre Atencion al Publico...</p>
-            </section>
-            <section id="exp-operador-sistemas-section">
-                <h2>Operador de Sistemas</h2>
-                <p>Contenido sobre Operador de Sistemas...</p>
-            </section>
-            <section id="exp-desarrollador-software-p-section">
-                <h2>Desarrollador de Software (P.)</h2>
-                <p>Contenido sobre Desarrollador de Software (P.)...</p>
-            </section>
-
-            <section id="form-licenciatura-informatica-section">
-                <h2>Licenciatura en Informatica</h2>
-                <p>Contenido sobre Licenciatura en Informatica...</p>
-            </section>
-            <section id="form-tecnicatura-programacion-section">
-                <h2>Tecnicatura en Programacion</h2>
-                <p>Contenido sobre Tecnicatura en Programacion...</p>
-            </section>
-            <section id="form-desarrollo-fullstack-c-section">
-                <h2>Desarrollo en Fullstack (C)</h2>
-                <p>Contenido sobre Desarrollo en Fullstack (C)...</p>
-            </section>
-            <section id="form-desarrollo-python-c-section">
-                <h2>Desarrollo en Python (C)</h2>
-                <p>Contenido sobre Desarrollo en Python (C)...</p>
-            </section>
-            <section id="form-desarrollo-java-c-section">
-                <h2>Desarrollo en Java (C)</h2>
-                <p>Contenido sobre Desarrollo en Java (C)...</p>
-            </section>
-
-            <section id="proy-sistema-gestion-section">
-                <h2>Sistema de Gestion</h2>
-                <p>Contenido sobre Sistema de Gestion...</p>
-            </section>
-            <section id="proy-landing-institucional-section">
-                <h2>Landing Page Institucional</h2>
-                <p>Contenido sobre Landing Page Institucional...</p>
-            </section>
-            <section id="proy-menuqr-section">
-                <h2>MenuQR</h2>
-                <p>Contenido sobre MenuQR...</p>
-            </section>
-            <section id="proy-recetas-ia-section">
-                <h2>Recetas con I.A.</h2>
-                <p>Contenido sobre Recetas con I.A....</p>
-            </section>
-            <section id="proy-landing-paideia-section">
-                <h2>Landing Paideia Editorial</h2>
-                <p>Contenido sobre Landing Paideia Editorial...</p>
-            </section>
-            <section id="proy-gestor-ventas-section">
-                <h2>Gestor de Ventas</h2>
-                <p>Contenido sobre Gestor de Ventas...</p>
-            </section>
-        -->
+        
         </main>
         <div class="scroll-arrow" id="scrollArrow">
             <img src="img/flecha 1_1.png" alt="Scroll">
-        </div>
-          <script src="js/script.js"></script>
+        </div>        <script src="js/script.js"></script>
         <script src="js/mobile.js"></script>
+        <script src="js/experiencia.js"></script>
+        <script src="js/experiencia-efectos.js"></script>
     </body>
 </html>

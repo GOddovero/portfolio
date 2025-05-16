@@ -1,0 +1,84 @@
+/**
+ * Estilos específicos para el grid 9x9 de experiencia laboral
+ */
+
+/* Asegurar que el contenedor tiene suficiente altura para mostrar el grid completo */
+#exp-desarrollador-software-section {
+    min-height: 120vh; /* Dar suficiente espacio para mostrar el grid completo */
+}
+
+/* Ajuste de proporciones para cada elemento */
+.experiencia-grid {
+    aspect-ratio: 16 / 14; /* Proporción aumentada para el grid completo */
+    max-height: none; /* Eliminamos la altura máxima para permitir que crezca según el contenido */
+}
+
+/* Ajustes de contenido para cada tipo de tarjeta */
+.item-desarrollador {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-desarrollador .descripcion {
+    max-width: 95%; /* Ampliado para mostrar más texto */
+}
+
+/* Estilos específicos para tarjetas más pequeñas */
+.item-orador, .item-atencion, .item-operador, .item-desarrollador-p {
+    justify-content: space-between; /* Distribuir contenido verticalmente */
+}
+
+/* Mejoras visuales para destacar la jerarquía */
+.experiencia-grid::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(46, 196, 182, 0.05), transparent);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Mejoras del efecto 3D para cada tarjeta */
+.experiencia-item {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* Ajuste para contenido en tarjetas pequeñas */
+@media (min-width: 992px) {
+    .item-orador h3, 
+    .item-atencion h3, 
+    .item-operador h3, 
+    .item-desarrollador-p h3 {
+        font-size: 1.4rem; /* Reducir tamaño de título para tarjetas pequeñas */
+        margin-bottom: 10px; /* Reducir margen para ahorrar espacio */
+    }
+    
+    .item-orador .descripcion, 
+    .item-atencion .descripcion, 
+    .item-operador .descripcion, 
+    .item-desarrollador-p .descripcion {
+        font-size: 0.95rem; /* Reducir tamaño de texto para tarjetas pequeñas */
+        line-height: 1.5; /* Reducir interlineado para ahorrar espacio */
+    }
+    
+    .item-orador .empresa, 
+    .item-atencion .empresa, 
+    .item-operador .empresa, 
+    .item-desarrollador-p .empresa {
+        margin-bottom: 10px; /* Reducir margen para ahorrar espacio */
+        padding-bottom: 5px; /* Reducir padding para ahorrar espacio */
+    }
+}
+
+/* Mejoras para mantener el aspecto visual en diferentes tamaños de pantalla */
+@media (min-width: 1401px) {
+    .experiencia-container {
+        max-width: 1600px; /* Permitir que el contenedor sea un poco más ancho en pantallas grandes */
+    }
+    
+    .experiencia-grid {
+        gap: 30px; /* Más espacio entre elementos en pantallas grandes */
+    }
+}

@@ -1,0 +1,101 @@
+/* Estilos para mejorar las transiciones entre secciones */
+
+/* Transiciones suaves para el scroll entre secciones */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Efecto de resaltado para cuando se navega a una sección */
+.highlight-section {
+    animation: section-highlight 1.5s ease-out;
+}
+
+@keyframes section-highlight {
+    0% {
+        background-color: rgba(46, 196, 182, 0.2);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Desplazamiento con retardo para una experiencia más fluida */
+main#main-content section {
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Mejoras en la visualización de iconos de experiencia */
+.experiencia-icon {
+    filter: saturate(1.2);
+    transition: all 0.5s ease;
+}
+
+.experiencia-item:hover .experiencia-icon {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.4;
+}
+
+/* Efectos para las etiquetas tecnológicas */
+.tecnologia-tag {
+    cursor: pointer;
+}
+
+/* Mejora del efecto de las tarjetas en modo mobile */
+@media (max-width: 768px) {
+    .experiencia-item {
+        transform: none !important; /* Desactivar efectos 3D en mobile */
+    }
+    
+    .experiencia-item:active {
+        transform: scale(0.98) !important;
+    }
+}
+
+/* Mejora de accesibilidad para lectores de pantalla */
+.experiencia-item:focus-within {
+    outline: 3px solid rgba(46, 196, 182, 0.5);
+}
+
+/* Mejora en la interactividad de flechas de navegación */
+.scroll-arrow {
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-arrow:hover {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+}
+
+/* Mejora en la visualización del texto de experiencia en hover */
+.experiencia-item .descripcion {
+    position: relative;
+    z-index: 3;
+}
+
+.experiencia-titulo {
+    position: relative;
+    z-index: 1;
+}
+
+/* Agregamos un indicador de desplazamiento para dispositivos táctiles */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: rgba(59, 47, 47, 0.5);
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
