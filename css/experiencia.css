@@ -5,16 +5,29 @@
     align-items: center;
     min-height: 120vh; /* Aumentado para dar más espacio al contenido */
     padding: 80px 0; /* Aumentado el padding vertical */
-    /* Fondo mejorado para resaltar el efecto glassmorphism */
-    background: -webkit-linear-gradient(64deg, #2ec4b6 0%, #e5ca10 100%);
-    background: linear-gradient(64deg, #2ec4b6 0%, #e5ca10 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* Añadir un patrón para mejorar el efecto glassmorphism */
-    background-image: 
-        linear-gradient(64deg, #2ec4b6 0%, #e5ca10 100%),
-        radial-gradient(circle at top left, rgba(255,255,255,0.3) 0%, transparent 30%),
-        radial-gradient(circle at bottom right, rgba(46,196,182,0.4) 0%, transparent 40%);
+    position: relative;
+    background-color: transparent; /* Elimina el fondo para que se vea el pseudo-elemento */
+    z-index: 1; /* Asegura que el contenido esté por encima del fondo */
+}
+
+/* Pseudo-elemento para aplicar la imagen de fondo que ocupe todo el ancho */
+#exp-desarrollador-software-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    height: 100%; /* Ocupa toda la altura de la sección */
+    background-image: url('../img/1080-02.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat:repeat;
+    z-index: -1; /* Coloca el fondo detrás del contenido */
+    opacity: 1; /* Ajusta la opacidad según necesites */
+    /* Agregar una superposición para mejorar la transición con las otras secciones */
+    box-shadow: 0 -100px 100px -50px rgba(46,196,182,0.3) inset, 
+                0 100px 100px -50px rgba(229,202,16,0.3) inset;
 }
 
 /* Contenedor principal para el grid de experiencia laboral */
@@ -24,6 +37,8 @@
     width: 85%;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Asegura que esté por encima del fondo de imagen */
 }
 
 /* Estilos para el título principal */
@@ -34,9 +49,12 @@
 
 .experiencia-titulo h2 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 3.5rem;
+    font-weight: 600;
+    font-size: 5rem !important;
+    margin-bottom: 0 !important;
     letter-spacing: 0.5px;
+    color: #fff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     line-height: 1.1;
     color: #3b2f2f;
 }
@@ -60,22 +78,22 @@
     min-height: 100vh; /* Aumentamos la altura para dar más espacio al contenido */
 }
 
-/* Estilos comunes para las tarjetas de experiencia - Efecto Glassmorphism */
+/* Estilos comunes para las tarjetas de experiencia - Efecto Glassmorphism actualizado */
 .experiencia-item {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.73);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.91);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border: 1px solid rgba(255, 255, 255, 1);
     padding: 30px;
     display: flex;
     flex-direction: column;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     position: relative;
-    color: #3b2f2f;
-    height: auto; /* Cambiado de height: 100% para adaptarse al contenido */
+    color: #222020;
+    height: auto;
 }
 
 .experiencia-item:hover {
@@ -89,72 +107,84 @@
 .item-desarrollador {
     grid-area: 1 / 1 / 4 / 10;
     border-left: 6px solid #2ec4b6;
-    min-height: 320px; /* Aumentado para mostrar todo el contenido */
-    background: rgba(46, 196, 182, 0.1);
-    border-top: 1px solid rgba(46, 196, 182, 0.3);
-    border-bottom: 1px solid rgba(46, 196, 182, 0.3);
+    min-height: 320px;
+    background: rgba(255, 255, 255, 0.73);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border-top: 1px solid rgba(46, 196, 182, 0.5);
+    border-bottom: 1px solid rgba(46, 196, 182, 0.5);
 }
 
 /* Profesor Programación (ocupa parte de la segunda fila - 6 columnas) */
 .item-profesor {
     grid-area: 4 / 1 / 7 / 7;
     border-left: 6px solid #e5ca10;
-    min-height: 300px; /* Aumentado para mostrar todo el contenido */
-    background: rgba(229, 202, 16, 0.1);
-    border-top: 1px solid rgba(229, 202, 16, 0.3);
-    border-bottom: 1px solid rgba(229, 202, 16, 0.3);
+    min-height: 300px;
+    background: rgba(255, 255, 255, 0.73);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border-top: 1px solid rgba(229, 202, 16, 0.5);
+    border-bottom: 1px solid rgba(229, 202, 16, 0.5);
 }
 
 /* Orador Conferencias (ocupa parte de la segunda fila - 3 columnas) */
 .item-orador {
     grid-area: 4 / 7 / 7 / 10;
     border-left: 6px solid #ff9f1c;
-    min-height: 300px; /* Aumentado para mostrar todo el contenido */
-    background: rgba(255, 159, 28, 0.1);
-    border-top: 1px solid rgba(255, 159, 28, 0.3);
-    border-bottom: 1px solid rgba(255, 159, 28, 0.3);
+    min-height: 300px;
+    background: rgba(255, 255, 255, 0.73);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border-top: 1px solid rgba(255, 159, 28, 0.5);
+    border-bottom: 1px solid rgba(255, 159, 28, 0.5);
 }
 
 /* Atención al Público (tercera fila - 3 columnas) */
 .item-atencion {
     grid-area: 7 / 1 / 10 / 4;
     border-left: 6px solid #4a4e69;
-    min-height: 280px; /* Aumentado para mostrar todo el contenido */
-    background: rgba(74, 78, 105, 0.1);
-    border-top: 1px solid rgba(74, 78, 105, 0.3);
-    border-bottom: 1px solid rgba(74, 78, 105, 0.3);
+    min-height: 280px;
+    background: rgba(255, 255, 255, 0.73);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border-top: 1px solid rgba(74, 78, 105, 0.5);
+    border-bottom: 1px solid rgba(74, 78, 105, 0.5);
 }
 
 /* Operador de Sistemas (tercera fila - 3 columnas) */
 .item-operador {
     grid-area: 7 / 4 / 10 / 7;
     border-left: 6px solid #4a4e69;
-    min-height: 280px; /* Aumentado para mostrar todo el contenido */
-    background: rgba(74, 78, 105, 0.1);
-    border-top: 1px solid rgba(74, 78, 105, 0.3);
-    border-bottom: 1px solid rgba(74, 78, 105, 0.3);
+    min-height: 280px;
+    background: rgba(255, 255, 255, 0.73);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border-top: 1px solid rgba(74, 78, 105, 0.5);
+    border-bottom: 1px solid rgba(74, 78, 105, 0.5);
 }
 
 /* Desarrollador de Software (P.) (tercera fila - 3 columnas) */
 .item-desarrollador-p {
     grid-area: 7 / 7 / 10 / 10;
     border-left: 6px solid #4a4e69;
-    min-height: 280px; /* Aumentado para mostrar todo el contenido */
-    background: rgba(74, 78, 105, 0.1);
-    border-top: 1px solid rgba(74, 78, 105, 0.3);
-    border-bottom: 1px solid rgba(74, 78, 105, 0.3);
+    min-height: 280px;
+    background: rgba(255, 255, 255, 0.73);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border-top: 1px solid rgba(74, 78, 105, 0.5);
+    border-bottom: 1px solid rgba(74, 78, 105, 0.5);
 }
 
 /* Estilos para el contenido de las tarjetas */
 .experiencia-item .periodo {
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 700; /* Aumentado a bold */
     margin-bottom: 12px;
-    color: #2ec4b6;
+    color: #0d8a80; /* Color más oscuro para mejor contraste */
     display: inline-block;
     padding: 4px 10px;
     border-radius: 20px;
-    background-color: rgba(46, 196, 182, 0.1);
+    background-color: rgba(46, 196, 182, 0.15); /* Ligeramente más opaco */
 }
 
 .experiencia-item h3 {
@@ -162,7 +192,7 @@
     font-weight: 700;
     font-size: 1.6rem;
     margin-bottom: 15px;
-    color: #3b2f2f;
+    color: #222020; /* Color más oscuro para los títulos */
     line-height: 1.2;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
     letter-spacing: 0.5px;
@@ -172,7 +202,7 @@
     font-weight: 600;
     font-size: 1.2rem;
     margin-bottom: 18px;
-    color: #3b2f2f;
+    color: #282424; /* Color más oscuro para el nombre de la empresa */
     position: relative;
     padding-bottom: 10px;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
@@ -185,15 +215,16 @@
     left: 0;
     width: 40px;
     height: 3px;
-    background: #e5ca10;
+    background: #c5ad05; /* Color más oscuro para la línea */
 }
 
 .experiencia-item .descripcion {
     font-size: 1rem;
     line-height: 1.7;
-    color: #3b2f2f;
+    color: #ffffff; /* Cambiado a blanco para los párrafos según solicitado */
     margin-bottom: 10px;
-    flex-grow: 0; /* Eliminamos el crecimiento flexible para evitar espacios en blanco */
+    flex-grow: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Sombra sutil para mejorar legibilidad */
 }
 
 .experiencia-item .tecnologias {
@@ -204,19 +235,19 @@
 }
 
 .tecnologia-tag {
-    background-color: rgba(229, 202, 16, 0.15);
+    background-color: rgba(229, 202, 16, 0.2); /* Ligeramente más opaco */
     padding: 5px 10px;
     border-radius: 20px;
-    font-size: 0.8rem; /* Tamaño de fuente reducido */
-    font-weight: 600;
-    color: #3b2f2f;
+    font-size: 0.8rem;
+    font-weight: 700; /* Más bold para mejor contraste */
+    color: #222020; /* Color más oscuro para las etiquetas */
     transition: all 0.3s ease;
-    margin-bottom: 5px; /* Espacio entre filas de tags */
-    display: inline-block; /* Para garantizar que los márgenes funcionen correctamente */
+    margin-bottom: 5px;
+    display: inline-block;
 }
 
 .tecnologia-tag:hover {
-    background-color: rgba(229, 202, 16, 0.3);
+    background-color: rgba(229, 202, 16, 0.4); /* Más opaco en hover */
     transform: translateY(-2px);
 }
 
