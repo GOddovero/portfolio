@@ -8,14 +8,16 @@
         <link rel="icon" href="img/g1.png" type="image/x-icon">
         <link rel="shortcut icon" href="img/g1.png" type="image/x-icon">
         <!-- Importar Montserrat de Google Fonts -->        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Jost:wght@800&display=swap" rel="stylesheet">        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Jost:wght@800&display=swap" rel="stylesheet">
+        <!-- Font Awesome para iconos de tecnologías -->        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/mobile.css">
-        <link rel="stylesheet" href="css/fixes.css">
-        <link rel="stylesheet" href="css/experiencia.css">
+        <link rel="stylesheet" href="css/fixes.css">        <link rel="stylesheet" href="css/experiencia.css">
         <link rel="stylesheet" href="css/experiencia-animations.css">
         <link rel="stylesheet" href="css/transitions.css">
         <link rel="stylesheet" href="css/experiencia-grid.css">
+        <link rel="stylesheet" href="css/preview-experiencias.css">
+        <link rel="stylesheet" href="css/preview-experiencias-fixes.css">
     </head>
     <body>
         <!-- Logo fijo en esquina superior izquierda -->
@@ -36,16 +38,186 @@
                 </div>
                 
                 <!-- Logo pequeño en la esquina inferior izquierda -->
-                <img src="img/g1.png" alt="Small GOH Logo" class="small-logo">
-                  <!-- Panel de previsualización para "Sobre Mi" -->
+                <img src="img/g1.png" alt="Small GOH Logo" class="small-logo">                  <!-- Panel de previsualización para "Sobre Mi" -->
                 <div id="sobre-mi-preview" class="preview-panel">
                     <img src="img/contacto_goh_sf.png" alt="Gaspar" class="preview-image">
                     <div class="preview-text">Licenciado en Informática. <br>Programador FullStack.</div>
                 </div>
-                  <!-- Panel de previsualización para "Experiencia Laboral" -->
-                <div id="experiencia-preview" class="preview-panel">
-                    <img src="img/experiencia-preview.svg" alt="Experiencia Laboral" class="preview-image">
-                    <div class="preview-text">Experiencia<br>Profesional</div>
+                
+                <!-- Panel de previsualización para contacto -->
+                <div id="contacto-preview" class="preview-panel">
+                    <img src="img/contacto_goh_sf.png" alt="Contacto" class="preview-image">
+                    <div class="preview-text">¡Contáctame!<br>¿Tienes un proyecto en mente?</div>
+                </div>
+                
+                <!-- Panel de previsualización para "Desarrollador de Software" -->                <div id="experiencia-desarrollador-preview" class="preview-panel">
+                    <div class="preview-text">
+                        <strong>Desarrollador</strong>
+                        <span class="periodo-preview">2024 - Presente</span>
+                    </div>
+                    <div class="tech-icons-container">
+                        <div class="tech-icon">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-js"></i>
+                            <span>JS</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-bootstrap"></i>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de previsualización para "Profesor de Programación" -->                <div id="experiencia-profesor-preview" class="preview-panel">
+                    <div class="preview-text">
+                        <strong>Profesor</strong>
+                        <span class="periodo-preview">2014 - Presente</span>
+                    </div>
+                    <div class="tech-icons-container">
+                        <div class="tech-icon">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-js"></i>
+                            <span>JS</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de previsualización para "Orador en Conferencias" -->                <div id="experiencia-orador-preview" class="preview-panel">
+                    <div class="preview-text">
+                        <strong>Orador</strong>
+                        <span class="periodo-preview">2024</span>
+                    </div>
+                    <div class="tech-icons-container">
+                        <div class="tech-icon">
+                            <i class="fas fa-robot"></i>
+                            <span>IA</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-comment-dots"></i>
+                            <span>ChatGPT</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-code"></i>
+                            <span>Copilot</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-brain"></i>
+                            <span>Gemini</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de previsualización para "Atención al Público" -->                <div id="experiencia-atencion-preview" class="preview-panel">
+                    <div class="preview-text">
+                        <strong>Atención</strong>
+                        <span class="periodo-preview">2015 - Presente</span>
+                    </div>
+                    <div class="tech-icons-container">
+                        <div class="tech-icon">
+                            <i class="fas fa-users"></i>
+                            <span>Atención</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-box"></i>
+                            <span>Stock</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-cash-register"></i>
+                            <span>Ventas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de previsualización para "Operador de Sistemas" -->                <div id="experiencia-operador-preview" class="preview-panel">
+                    <div class="preview-text">
+                        <strong>Operador</strong>
+                        <span class="periodo-preview">2017 - 2019</span>
+                    </div>
+                    <div class="tech-icons-container">
+                        <div class="tech-icon">
+                            <i class="fas fa-desktop"></i>
+                            <span>Sistemas</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                            <span>Datos</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Seguridad</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de previsualización para "Desarrollador (P.)" -->                <div id="experiencia-desarrolladorp-preview" class="preview-panel">
+                    <div class="preview-text">
+                        <strong>Desarrollador P.</strong>
+                        <span class="periodo-preview">Marzo - Junio 2023</span>
+                    </div>
+                    <div class="tech-icons-container">
+                        <div class="tech-icon">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-js"></i>
+                            <span>JS</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-wordpress"></i>
+                            <span>WordPress</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-file-excel"></i>
+                            <span>Excel</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Aquí puedes agregar más paneles de previsualización para otras opciones -->
@@ -65,21 +237,32 @@
                 <button class="close-button">×</button>
                 
                 <!-- Contenido de las secciones -->
-                <div class="content-container">                    <!-- Sección Gaspar -->
-                    <div class="characters-list active" id="gaspar-content">
+                <div class="content-container">                    <!-- Sección Gaspar -->                    <div class="characters-list active" id="gaspar-content">
                         <div class="menu-option" data-preview="sobre-mi-preview">
                             <a href="#sobre-mi-section">Sobre Mi</a>
-                        </div>
-                        <div class="menu-option" data-preview="experiencia-preview">
-                            <a href="#exp-desarrollador-software-section">Experiencia Laboral</a>
                         </div>
                         <div class="menu-option" data-preview="contacto-preview"> <!-- Añadido data-preview si se desea previsualización -->
                             <a href="#contacto-section">Contacto</a>
                         </div>
-                    </div><!-- Sección Experiencia Laboral - Ahora enlaza todo a una única sección -->
+                    </div><!-- Sección Experiencia Laboral - Con todas las experiencias laborales -->
                     <div class="characters-list" id="experiencia-content">
-                        <div class="menu-option" data-preview="experiencia-preview">
-                            <a href="#exp-desarrollador-software-section">Experiencia Laboral</a>
+                        <div class="menu-option" data-preview="experiencia-desarrollador-preview">
+                            <a href="#exp-desarrollador-software-section">Desarrollador de Software</a>
+                        </div>
+                        <div class="menu-option" data-preview="experiencia-profesor-preview">
+                            <a href="#exp-desarrollador-software-section">Profesor de Programación</a>
+                        </div>
+                        <div class="menu-option" data-preview="experiencia-orador-preview">
+                            <a href="#exp-desarrollador-software-section">Orador en Conferencias</a>
+                        </div>
+                        <div class="menu-option" data-preview="experiencia-atencion-preview">
+                            <a href="#exp-desarrollador-software-section">Atención al Público</a>
+                        </div>
+                        <div class="menu-option" data-preview="experiencia-operador-preview">
+                            <a href="#exp-desarrollador-software-section">Operador de Sistemas</a>
+                        </div>
+                        <div class="menu-option" data-preview="experiencia-desarrolladorp-preview">
+                            <a href="#exp-desarrollador-software-section">Desarrollador (P.)</a>
                         </div>
                     </div>
                       <!-- Sección Formación (Simplificada por ahora) -->

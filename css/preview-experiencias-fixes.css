@@ -1,0 +1,89 @@
+/* Ajustes adicionales para las previsualizaciones de experiencias */
+
+/* Mejora de la transición y efectos visuales */
+.tech-icon {
+    transform: translateY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: translateY(-5px);
+}
+
+/* Colores de iconos específicos para cada tecnología */
+.fab.fa-python {
+    color: #306998;
+}
+
+.fab.fa-html5 {
+    color: #e34c26;
+}
+
+.fab.fa-css3-alt {
+    color: #264de4;
+}
+
+.fab.fa-js {
+    color: #f0db4f;
+    background-color: #323330;
+}
+
+.fab.fa-php {
+    color: #777bb3;
+}
+
+.fab.fa-react {
+    color: #61dafb;
+}
+
+.fab.fa-git-alt {
+    color: #f05032;
+}
+
+.fab.fa-bootstrap {
+    color: #7952b3;
+}
+
+.fab.fa-wordpress {
+    color: #21759b;
+}
+
+/* Otros iconos */
+.fa-database {
+    color: #f29111;
+}
+
+.fa-robot, .fa-brain, .fa-comment-dots, .fa-code {
+    color: #1a1a1a;
+}
+
+.fa-users, .fa-box, .fa-cash-register {
+    color: #795548;
+}
+
+.fa-desktop, .fa-shield-alt {
+    color: #0277bd;
+}
+
+.fa-file-excel {
+    color: #1d6f42;
+}
+
+/* Ajuste de espacio para iconos en pantallas pequeñas */
+@media (max-width: 1200px) {
+    .tech-icons-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-icons-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tech-icon i {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+}

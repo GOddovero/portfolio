@@ -1,0 +1,120 @@
+/* Estilos para las previsualizaciones de experiencias laborales */
+.tech-icons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    z-index: 3;
+    width: calc(100% - 120px);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.8s ease 0.3s, opacity 0.8s ease 0.3s;
+}
+
+.preview-panel.active .tech-icons-container {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tech-icon i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    color: #3b2f2f;
+    background-color: #e5ca10;
+    border: 4px solid #3b2f2f;
+    border-radius: 25%;
+    margin-bottom: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tech-icon span {
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tech-icon:hover i {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Adaptación de los textos dentro del preview-text para mantener estilo original */
+.preview-text strong {
+    font-family: 'Jost', sans-serif;
+    font-weight: 800;
+    font-size: 65px; /* Mismo tamaño que el preview-text original */
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.periodo-preview {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Ajustes específicos para la visualización de previsualizaciones de experiencia */
+#experiencia-desarrollador-preview,
+#experiencia-profesor-preview,
+#experiencia-orador-preview,
+#experiencia-atencion-preview,
+#experiencia-operador-preview,
+#experiencia-desarrolladorp-preview {
+    background: linear-gradient(135deg, rgba(46, 196, 182, 0.7) 0%, rgba(229, 202, 16, 0.7) 100%);
+}
+
+/* Fondo específico para cada previsualización */
+#experiencia-desarrollador-preview {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.8) 0%, rgba(0, 59, 123, 0.8) 100%);
+}
+
+#experiencia-profesor-preview {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.8) 0%, rgba(20, 83, 34, 0.8) 100%);
+}
+
+#experiencia-orador-preview {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.8) 0%, rgba(110, 26, 34, 0.8) 100%);
+}
+
+/* Ajuste de posición para el texto de períodos largos */
+#experiencia-desarrolladorp-preview .periodo-preview {
+    font-size: 26px;
+}
+
+#experiencia-atencion-preview {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.8) 0%, rgba(127, 96, 3, 0.8) 100%);
+}
+
+#experiencia-operador-preview {
+    background: linear-gradient(135deg, rgba(111, 66, 193, 0.8) 0%, rgba(55, 33, 96, 0.8) 100%);
+}
+
+#experiencia-desarrolladorp-preview {
+    background: linear-gradient(135deg, rgba(23, 162, 184, 0.8) 0%, rgba(11, 81, 92, 0.8) 100%);
+}
+
+/* Mantenemos el formato original del preview-text utilizando los estilos de style.css */
