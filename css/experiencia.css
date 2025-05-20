@@ -8,21 +8,23 @@
     position: relative;
     background-color: transparent; /* Elimina el fondo para que se vea el pseudo-elemento */
     z-index: 1; /* Asegura que el contenido esté por encima del fondo */
+    overflow: hidden; /* Evita el desbordamiento del contenido */
 }
 
 /* Pseudo-elemento para aplicar la imagen de fondo que ocupe todo el ancho */
 #exp-desarrollador-software-section::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -15%; /* Movemos el elemento hacia arriba para cubrir la esquina superior */
     left: 50%;
-    transform: translateX(-50%);
-    width: 100vw; /* Ocupa todo el ancho de la ventana */
-    height: 100%; /* Ocupa toda la altura de la sección */
-    background-image: url('../img/1080-02.jpg');
-    background-size: cover;
+    width: 200vw; /* Aumentamos significativamente el ancho */
+    height: 200%; /* Aumentamos significativamente la altura */
+    background-color: #3b2f2f; /* Color de fondo */
+    background-image: url('../img/g2.png');
+    background-size: 120px; /* Tamaño de cada repetición */
     background-position: center;
-    background-repeat:repeat;
+    background-repeat: repeat;
+    transform: translateX(-50%) rotate(-15deg); /* Gira la imagen 15 grados */
     z-index: -1; /* Coloca el fondo detrás del contenido */
     opacity: 1; /* Ajusta la opacidad según necesites */
     /* Agregar una superposición para mejorar la transición con las otras secciones */
