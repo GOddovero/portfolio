@@ -49,6 +49,47 @@ main#main-content section {
     .experiencia-item:active {
         transform: scale(0.98) !important;
     }
+    
+    /* Ajuste de animaciones en móvil */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Más rápido en móvil para mejor UX */
+    .experiencia-item {
+        animation: fadeInUp 0.4s ease forwards;
+    }
+    
+    .item-desarrollador {
+        animation-delay: 0.05s;
+    }
+    
+    .item-profesor {
+        animation-delay: 0.1s;
+    }
+    
+    .item-orador {
+        animation-delay: 0.15s;
+    }
+    
+    .item-atencion {
+        animation-delay: 0.2s;
+    }
+    
+    .item-operador {
+        animation-delay: 0.25s;
+    }
+    
+    .item-desarrollador-p {
+        animation-delay: 0.3s;
+    }
 }
 
 /* Mejora de accesibilidad para lectores de pantalla */

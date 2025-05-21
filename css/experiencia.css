@@ -15,10 +15,10 @@
 #exp-desarrollador-software-section::before {
     content: "";
     position: absolute;
-    top: -15%; /* Movemos el elemento hacia arriba para cubrir la esquina superior */
+    top: -25%; /* Movemos el elemento hacia arriba más para asegurar cobertura completa */
     left: 50%;
-    width: 200vw; /* Aumentamos significativamente el ancho */
-    height: 200%; /* Aumentamos significativamente la altura */
+    width: 250vw; /* Aumentamos aún más el ancho para asegurar cobertura completa */
+    height: 250%; /* Aumentamos aún más la altura para asegurar cobertura completa */
     background-color: #3b2f2f; /* Color de fondo */
     background-image: url('../img/g2.png');
     background-size: 120px; /* Tamaño de cada repetición */
@@ -28,8 +28,8 @@
     z-index: -1; /* Coloca el fondo detrás del contenido */
     opacity: 1; /* Ajusta la opacidad según necesites */
     /* Agregar una superposición para mejorar la transición con las otras secciones */
-    box-shadow: 0 -100px 100px -50px rgba(46,196,182,0.3) inset, 
-                0 100px 100px -50px rgba(229,202,16,0.3) inset;
+    box-shadow: 0 -120px 120px -60px rgba(46,196,182,0.35) inset, 
+                0 120px 120px -60px rgba(229,202,16,0.35) inset;
 }
 
 /* Contenedor principal para el grid de experiencia laboral */

@@ -71,6 +71,30 @@
         padding-bottom: 60px; /* Dar más espacio en la parte inferior */
     }
     
+    /* Ajustes para la sección de experiencia laboral */
+    #exp-desarrollador-software-section {
+        min-height: auto;
+        padding: 50px 0;
+        overflow: hidden;
+    }    /* Ajuste del fondo para evitar espacios vacíos */
+    #exp-desarrollador-software-section::before {
+        width: 500vw;
+        height: 500%;
+        top: -100%;
+        opacity: 0.95;
+        transform: translateX(-50%) rotate(-10deg); /* Rotación reducida para móviles */
+    }
+      /* Ajustar el título principal para que no se salga del ancho del dispositivo */
+    .experiencia-titulo h2 {
+        font-size: 3.2rem !important;
+        white-space: normal;
+        line-height: 1.2;
+        padding: 0 15px;
+        margin-top: 20px;
+        margin-bottom: 15px !important;
+        text-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    }
+    
     /* Botón de menú más grande para mejor accesibilidad táctil */
     #open-menu-button {
         padding: 12px 18px;
@@ -184,6 +208,97 @@
     }
 }
 
+/* Ajustes específicos para la experiencia laboral en móviles */
+@media (max-width: 767px) {
+    /* Ajustes generales de sección */
+    #exp-desarrollador-software-section {
+        min-height: auto;
+        padding: 40px 0 60px;
+        overflow-x: hidden;
+    }
+    
+    /* Ajustes para el contenedor de experiencia */
+    .experiencia-container {
+        width: 92%;
+    }
+      /* Ajustes del grid para una mejor visualización en móvil */
+    .experiencia-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        aspect-ratio: unset;
+        margin-top: 10px;
+    }
+    
+    /* Tarjetas individuales de experiencia */
+    .experiencia-item {
+        width: 100%;
+        padding: 22px;
+        min-height: unset;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .experiencia-item:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Ajustes para los títulos dentro de las tarjetas */
+    .experiencia-item h3 {
+        font-size: 1.7rem !important;
+        margin-bottom: 10px;
+    }
+    
+    /* Ajustes para el nombre de empresa */
+    .experiencia-item .empresa {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+    }
+    
+    /* Ajustes para el texto descriptivo */
+    .experiencia-item .descripcion {
+        font-size: 1rem;
+        max-width: 100%;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    /* Ajustes para las etiquetas de tecnología */
+    .tecnologias {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    
+    .tecnologia-tag {
+        padding: 5px 12px;
+        font-size: 0.85rem;
+        border-radius: 25px;
+        background-color: rgba(229, 202, 16, 0.25);
+    }
+    
+    /* Mejoras en los iconos */
+    .experiencia-icon {
+        width: 40px;
+        height: 40px;
+        top: 22px;
+        right: 22px;
+        opacity: 0.2;
+    }
+    
+    /* Mejoras en el período */
+    .experiencia-item .periodo {
+        padding: 5px 12px;
+        font-size: 0.9rem;
+        border-radius: 25px;
+    }
+}
+
 /* Media Query para dispositivos muy pequeños */
 @media (max-width: 480px) {
     .texto-presentacion h2 {
@@ -196,6 +311,66 @@
     
     .texto-presentacion p {
         font-size: 0.9rem;
+    }
+    
+    /* Ajustes específicos para experiencia laboral en dispositivos muy pequeños */
+    .experiencia-titulo h2 {
+        font-size: 2.6rem !important;
+        padding: 0 10px;
+    }
+    
+    /* Ajuste adicional del fondo para dispositivos pequeños */
+    #exp-desarrollador-software-section::before {
+        width: 550vw !important;
+        height: 550% !important;
+        top: -120% !important;
+    }
+    
+    .experiencia-item {
+        padding: 18px;
+        border-radius: 10px;
+    }
+    
+    .experiencia-item h3 {
+        font-size: 1.4rem !important;
+    }
+    
+    .experiencia-item .empresa {
+        font-size: 1rem;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+    }
+    
+    .experiencia-item .descripcion {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Reducir aún más el tamaño de las etiquetas */
+    .tecnologia-tag {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+    
+    /* Ajustes para el tamaño de los iconos de tecnología */
+    .experiencia-icon {
+        width: 32px;
+        height: 32px;
+        top: 18px;
+        right: 18px;
+    }
+    
+    /* Optimizar el grid de tech-icons para previews */
+    .tech-icons-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        bottom: 60px;
+    }
+    
+    .tech-icon i {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
     }
     
     #sobre-mi-section {
