@@ -1,273 +1,695 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GOH-dev</title>
-        <!-- Favicon para las pestañas del navegador -->
-        <link rel="icon" href="img/g1.png" type="image/x-icon">
-        <link rel="shortcut icon" href="img/g1.png" type="image/x-icon">
-        <!-- Importar Montserrat de Google Fonts -->        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Jost:wght@800&display=swap" rel="stylesheet">        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/mobile.css">
-        <link rel="stylesheet" href="css/fixes.css">
-        <link rel="stylesheet" href="css/experiencia.css">
-        <link rel="stylesheet" href="css/experiencia-animations.css">
-        <link rel="stylesheet" href="css/transitions.css">
-        <link rel="stylesheet" href="css/experiencia-grid.css">
-    </head>
-    <body>
-        <!-- Logo fijo en esquina superior izquierda -->
-        <div class="corner-logo">
-            <img src="img/g1.png" alt="GOH FullStack Developer">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOH - Portfolio en Desarrollo</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .gif-container {
+            margin-bottom: 30px;
+        }
+
+        .gif-container img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .message {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 64px;
+            height: 64px;
+            background-color: #e5ca10;
+            border: 5px solid #3b2f2f;
+            border-radius: 25%;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .social-button svg {
+            width: 48px;
+            height: 48px;
+            fill: #3b2f2f;
+        }
+
+        /* Animación sutil */
+        .container {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+
+            .logo {
+                max-width: 150px;
+            }
+
+            .gif-container img {
+                max-width: 250px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+
+            .social-button {
+                width: 56px;
+                height: 56px;
+                border: 4px solid #3b2f2f;
+            }
+
+            .social-button svg {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Animación de fondo con círculos flotantes */
+        @keyframes move {
+            100% {
+                transform: translate3d(0, 0, 1px) rotate(360deg);
+            }
+        }
+
+        .background {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background: #3b2f2f;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background span {
+            width: 22vmin;
+            height: 22vmin;
+            border-radius: 22vmin;
+            backface-visibility: hidden;
+            position: absolute;
+            animation: move;
+            animation-duration: 39s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .background span:nth-child(1) {
+            color: #e5ca10;
+            top: 42%;
+            left: 75%;
+            animation-duration: 39s;
+            animation-delay: -26s;
+            transform-origin: -1vw -19vh;
+            box-shadow: 44vmin 0 5.532391836703251vmin currentColor;
+        }
+        .background span:nth-child(2) {
+            color: #2ec4b6;
+            top: 88%;
+            left: 45%;
+            animation-duration: 105s;
+            animation-delay: -58s;
+            transform-origin: 12vw -3vh;
+            box-shadow: -44vmin 0 6.30367467392041vmin currentColor;
+        }
+        .background span:nth-child(3) {
+            color: #2ec4b6;
+            top: 46%;
+            left: 98%;
+            animation-duration: 66s;
+            animation-delay: -28s;
+            transform-origin: 11vw -4vh;
+            box-shadow: -44vmin 0 6.496918575243166vmin currentColor;
+        }
+        .background span:nth-child(4) {
+            color: #2ec4b6;
+            top: 73%;
+            left: 2%;
+            animation-duration: 14s;
+            animation-delay: -100s;
+            transform-origin: 18vw 21vh;
+            box-shadow: 44vmin 0 6.168290687392632vmin currentColor;
+        }
+        .background span:nth-child(5) {
+            color: #e5ca10;
+            top: 9%;
+            left: 43%;
+            animation-duration: 31s;
+            animation-delay: -4s;
+            transform-origin: -4vw 0vh;
+            box-shadow: -44vmin 0 6.290557006146626vmin currentColor;
+        }
+        .background span:nth-child(6) {
+            color: #2ec4b6;
+            top: 92%;
+            left: 39%;
+            animation-duration: 12s;
+            animation-delay: -45s;
+            transform-origin: -2vw 8vh;
+            box-shadow: -44vmin 0 5.922101463860612vmin currentColor;
+        }
+        .background span:nth-child(7) {
+            color: #e5ca10;
+            top: 73%;
+            left: 7%;
+            animation-duration: 19s;
+            animation-delay: -57s;
+            transform-origin: 15vw 24vh;
+            box-shadow: -44vmin 0 5.560774231059867vmin currentColor;
+        }
+        .background span:nth-child(8) {
+            color: #2ec4b6;
+            top: 68%;
+            left: 83%;
+            animation-duration: 51s;
+            animation-delay: -109s;
+            transform-origin: 17vw 10vh;
+            box-shadow: 44vmin 0 6.432634781818678vmin currentColor;
+        }
+        .background span:nth-child(9) {
+            color: #2ec4b6;
+            top: 40%;
+            left: 80%;
+            animation-duration: 91s;
+            animation-delay: -72s;
+            transform-origin: 25vw 21vh;
+            box-shadow: 44vmin 0 6.104489273273636vmin currentColor;
+        }
+        .background span:nth-child(10) {
+            color: #e5ca10;
+            top: 7%;
+            left: 57%;
+            animation-duration: 103s;
+            animation-delay: -38s;
+            transform-origin: 16vw -7vh;
+            box-shadow: 44vmin 0 6.382919718004137vmin currentColor;
+        }
+        .background span:nth-child(11) {
+            color: #e5ca10;
+            top: 67%;
+            left: 53%;
+            animation-duration: 8s;
+            animation-delay: -2s;
+            transform-origin: -7vw 0vh;
+            box-shadow: -44vmin 0 6.101996390448184vmin currentColor;
+        }
+        .background span:nth-child(12) {
+            color: #e5ca10;
+            top: 13%;
+            left: 30%;
+            animation-duration: 40s;
+            animation-delay: -70s;
+            transform-origin: -22vw 25vh;
+            box-shadow: 44vmin 0 5.835906104882478vmin currentColor;
+        }
+        .background span:nth-child(13) {
+            color: #2ec4b6;
+            top: 30%;
+            left: 18%;
+            animation-duration: 100s;
+            animation-delay: -56s;
+            transform-origin: -19vw -8vh;
+            box-shadow: 44vmin 0 6.033384654342863vmin currentColor;
+        }
+        .background span:nth-child(14) {
+            color: #2ec4b6;
+            top: 6%;
+            left: 85%;
+            animation-duration: 37s;
+            animation-delay: -11s;
+            transform-origin: -21vw 1vh;
+            box-shadow: -44vmin 0 6.3892596308313365vmin currentColor;
+        }
+        .background span:nth-child(15) {
+            color: #2ec4b6;
+            top: 94%;
+            left: 68%;
+            animation-duration: 112s;
+            animation-delay: -68s;
+            transform-origin: -4vw 17vh;
+            box-shadow: 44vmin 0 6.200846200891987vmin currentColor;
+        }
+        .background span:nth-child(16) {
+            color: #e5ca10;
+            top: 21%;
+            left: 68%;
+            animation-duration: 106s;
+            animation-delay: -7s;
+            transform-origin: -3vw -17vh;
+            box-shadow: -44vmin 0 5.549724732428271vmin currentColor;
+        }
+        .background span:nth-child(17) {
+            color: #2ec4b6;
+            top: 71%;
+            left: 98%;
+            animation-duration: 100s;
+            animation-delay: -32s;
+            transform-origin: 23vw -7vh;
+            box-shadow: 44vmin 0 6.291628049683805vmin currentColor;
+        }
+        .background span:nth-child(18) {
+            color: #2ec4b6;
+            top: 40%;
+            left: 60%;
+            animation-duration: 19s;
+            animation-delay: -49s;
+            transform-origin: -4vw -13vh;
+            box-shadow: 44vmin 0 6.188455215221673vmin currentColor;
+        }
+        .background span:nth-child(19) {
+            color: #e5ca10;
+            top: 42%;
+            left: 69%;
+            animation-duration: 48s;
+            animation-delay: -62s;
+            transform-origin: 20vw 5vh;
+            box-shadow: -44vmin 0 6.477431601993735vmin currentColor;
+        }
+        .background span:nth-child(20) {
+            color: #e5ca10;
+            top: 69%;
+            left: 82%;
+            animation-duration: 52s;
+            animation-delay: -106s;
+            transform-origin: 18vw 25vh;
+            box-shadow: -44vmin 0 6.41580984449855vmin currentColor;
+        }
+        .background span:nth-child(21) {
+            color: #2ec4b6;
+            top: 68%;
+            left: 98%;
+            animation-duration: 20s;
+            animation-delay: -6s;
+            transform-origin: -3vw 11vh;
+            box-shadow: 44vmin 0 6.365399363919154vmin currentColor;
+        }
+        .background span:nth-child(22) {
+            color: #2ec4b6;
+            top: 67%;
+            left: 78%;
+            animation-duration: 22s;
+            animation-delay: -48s;
+            transform-origin: 18vw 18vh;
+            box-shadow: 44vmin 0 5.965991551810747vmin currentColor;
+        }
+        .background span:nth-child(23) {
+            color: #e5ca10;
+            top: 5%;
+            left: 8%;
+            animation-duration: 58s;
+            animation-delay: -35s;
+            transform-origin: 12vw -20vh;
+            box-shadow: -44vmin 0 5.648388331487613vmin currentColor;
+        }
+        .background span:nth-child(24) {
+            color: #2ec4b6;
+            top: 69%;
+            left: 23%;
+            animation-duration: 15s;
+            animation-delay: -93s;
+            transform-origin: -11vw -19vh;
+            box-shadow: -44vmin 0 5.569681082313963vmin currentColor;
+        }
+        .background span:nth-child(25) {
+            color: #e5ca10;
+            top: 72%;
+            left: 85%;
+            animation-duration: 27s;
+            animation-delay: -90s;
+            transform-origin: -21vw -24vh;
+            box-shadow: -44vmin 0 6.172238555512577vmin currentColor;
+        }
+
+        /* Botones flotantes */
+        .floating-buttons-container {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-left: 15px;
+        }
+
+        .floating-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 280px;
+            height: 70px;
+            background: white;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 2px solid #e0e0e0;
+            padding: 10px 15px;
+            gap: 15px;
+        }
+
+        .floating-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            border-color: #FF6B35;
+        }
+
+        .floating-button:hover .floating-button-arrow {
+            transform: translateX(5px);
+            color: #FF6B35;
+        }
+
+        .floating-button-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .floating-button-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .floating-button-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #3b2f2f;
+            line-height: 1.3;
+            text-align: left;
+        }
+
+        .floating-button-arrow {
+            font-size: 18px;
+            color: #3b2f2f;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        /* Posicionamiento relativo al contenedor */
+        @media (min-width: 1024px) {
+            .floating-buttons-container {
+                position: absolute;
+                right: auto;
+                left: calc(50% + 250px + 15px);
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        /* Responsivo para los botones flotantes */
+        @media (max-width: 1023px) {
+            .floating-buttons-container {
+                right: 15px;
+                top: auto;
+                bottom: 20px;
+                transform: none;
+                margin-left: 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .floating-button {
+                width: 200px;
+                height: 60px;
+                padding: 8px 12px;
+                gap: 10px;
+            }
+
+            .floating-button-content {
+                gap: 10px;
+            }
+
+            .floating-button-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .floating-button-text {
+                font-size: 12px;
+            }
+
+            .floating-button-arrow {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .floating-buttons-container {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .floating-button {
+                width: 60px;
+                height: 60px;
+                padding: 6px;
+                gap: 0;
+                justify-content: center;
+            }
+
+            .floating-button-content {
+                gap: 0;
+            }
+
+            .floating-button-text {
+                display: none;
+            }
+
+            .floating-button-arrow {
+                display: none;
+            }
+
+            .floating-button-logo {
+                width: 48px;
+                height: 48px;
+                margin: 0 auto;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="container">
+        <!-- Logo -->
+        <img src="img/goh1.png" alt="GOH Logo" class="logo">
+        
+        <!-- GIF -->
+        <div class="gif-container">
+            <img src="img/tenor.gif" alt="Trabajando en proyectos">
         </div>
-
-        <!-- Botón para abrir el menú -->
-        <button id="open-menu-button">☰</button> <!-- Puedes usar un ícono SVG o una imagen aquí -->
-
-        <!-- Contenedor del menú completo -->
-        <div class="menu-wrapper">
-            <!-- Panel izquierdo con fondo gradiente y previsualizaciones -->
-            <div class="left-panel">
-                <!-- Logo predeterminado -->
-                <div class="logo-container">
-                    <img src="img/goh1.png" alt="GOH Logo" class="logo">
-                </div>
-                
-                <!-- Logo pequeño en la esquina inferior izquierda -->
-                <img src="img/g1.png" alt="Small GOH Logo" class="small-logo">
-                  <!-- Panel de previsualización para "Sobre Mi" -->
-                <div id="sobre-mi-preview" class="preview-panel">
-                    <img src="img/contacto_goh_sf.png" alt="Gaspar" class="preview-image">
-                    <div class="preview-text">Licenciado en Informática. <br>Programador FullStack.</div>
-                </div>
-                  <!-- Panel de previsualización para "Experiencia Laboral" -->
-                <div id="experiencia-preview" class="preview-panel">
-                    <img src="img/experiencia-preview.svg" alt="Experiencia Laboral" class="preview-image">
-                    <div class="preview-text">Experiencia<br>Profesional</div>
-                </div>
-                
-                <!-- Aquí puedes agregar más paneles de previsualización para otras opciones -->
-            </div>
-            
-            <!-- Panel derecho con navegación y contenido -->
-            <div class="right-panel">
-                <!-- Navegación superior -->
-                <div class="top-nav">
-                    <div class="nav-item active" data-section="gaspar">Gaspar</div>
-                    <div class="nav-item" data-section="experiencia">Experiencia Laboral</div>
-                    <div class="nav-item" data-section="formacion">Formación</div>
-                    <div class="nav-item" data-section="proyectos">Proyectos</div>
-                </div>
-                
-                <!-- Botón de cerrar -->
-                <button class="close-button">×</button>
-                
-                <!-- Contenido de las secciones -->
-                <div class="content-container">                    <!-- Sección Gaspar -->
-                    <div class="characters-list active" id="gaspar-content">
-                        <div class="menu-option" data-preview="sobre-mi-preview">
-                            <a href="#sobre-mi-section">Sobre Mi</a>
-                        </div>
-                        <div class="menu-option" data-preview="experiencia-preview">
-                            <a href="#exp-desarrollador-software-section">Experiencia Laboral</a>
-                        </div>
-                        <div class="menu-option" data-preview="contacto-preview"> <!-- Añadido data-preview si se desea previsualización -->
-                            <a href="#contacto-section">Contacto</a>
-                        </div>
-                    </div><!-- Sección Experiencia Laboral - Ahora enlaza todo a una única sección -->
-                    <div class="characters-list" id="experiencia-content">
-                        <div class="menu-option" data-preview="experiencia-preview">
-                            <a href="#exp-desarrollador-software-section">Experiencia Laboral</a>
-                        </div>
-                    </div>
-                      <!-- Sección Formación (Simplificada por ahora) -->
-                    <div class="characters-list" id="formacion-content">
-                        <div class="menu-option"><a href="#form-licenciatura-informatica-section">Formación Académica</a></div>
-                    </div>
-                      <!-- Sección Proyectos (Simplificada por ahora) -->
-                    <div class="characters-list" id="proyectos-content">
-                        <div class="menu-option"><a href="#proy-sistema-gestion-section">Proyectos</a></div>
-                    </div>
-                </div>
-
-                <!-- Selector de Idiomas -->
-                <div class="language-selector">
-                    <select name="language" id="language-select">
-                        <option value="es" selected>Español</option>
-                        <option value="en">English</option>
-                        <!-- Agrega más idiomas según necesites -->
-                    </select>
-                </div>
-                <div class="right-corner-logo">
-                    <img src="img/GOH-fullstack-1.png" alt="GOH Logo">
-                </div>
-            </div>
-        </div> <!-- Fin de menu-wrapper -->
         
-        <!-- Contenido principal de la página donde se navegará al hacer clic -->
-        <main id="main-content"> <!-- Eliminado style="display: none;" -->
-            <section id="sobre-mi-section">
-                <div class="sobre-mi-container">
-                    <div class="texto-presentacion">
-                        <h2>HOLA, SOY GASPAR ODDOVERO HERRERA.</h2>
-                        <h3>Licenciado en Informática</h3>
-                        <p>Soy desarrollador con enfoque full stack y un interés marcado por la tecnología y la inteligencia artificial. He trabajado en proyectos de desarrollo web y desktop, combinando frontend atractivo con backend funcional, y siempre buscando mejorar la experiencia del usuario.</p>
-                        <p>Disfruto compartir lo que aprendo: he dado clases de programación en Python y participado como orador en conferencias sobre IA, explicando desde conceptos básicos hasta el uso de herramientas como ChatGPT o Copilot.</p>
-                        <p>Me motiva seguir aprendiendo y encontrar formas creativas de aplicar la tecnología para resolver problemas reales.</p>
-                        <div class="social-buttons">
-                            <a href="https://www.linkedin.com/in/goh-dev/" class="social-button" title="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b2f2f" width="24" height="24">
-                                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                                </svg>
-                            </a>
-                            <a href="mailto:gasparoh.work@gmail.com" class="social-button" title="Gmail">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b2f2f" width="24" height="24">
-                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                                </svg>
-                            </a>
-                            <a href="https://github.com/GOddovero" class="social-button" title="GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b2f2f" width="24" height="24">
-                                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.instagram.com/goh.dev/" class="social-button" title="Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b2f2f" width="24" height="24">
-                                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
-                                </svg>
-                            </a>
-                            <a href="https://drive.google.com/file/d/1AgnjOHTJDCDxZ61s-eKhzDFfWOw9aAbn/view?usp=sharing" class="social-button" title="Descargar CV">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b2f2f" width="24" height="24">
-                                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="fotos-presentacion">
-                        <!-- Una sola imagen de mosaico que reemplaza a las individuales -->
-                        <div class="mosaico-container single-image">
-                            <img src="img/Mosaico.png" alt="Mosaico de fotos de Gaspar Oddovero Herrera" class="mosaico-image">
-                        </div>
-                    </div>
-                </div>            </section>
-            
-            <section id="exp-desarrollador-software-section"><div class="experiencia-container">
-                    <div class="experiencia-titulo">
-                        <h2>EXPERIENCIA LABORAL</h2>
-                    </div>
-                    
-                    <div class="experiencia-grid">                        <!-- Desarrollador de Software (1x3) -->
-                        <div class="experiencia-item item-desarrollador">
-                            <div class="shine"></div>
-                            <div class="periodo">2024 - Presente</div>
-                            <h3>Desarrollador de Software</h3>
-                            <div class="empresa">SnakeSoftDev</div>
-                            <p class="descripcion">Como cofundador de SnakeSoftDev, asumí roles clave tanto técnicos como empresariales. Me enfoqué principalmente en el desarrollo frontend y backend para garantizar una arquitectura sólida y una excelente experiencia de usuario. Además, estuve a cargo de la atención al cliente y participé en la negociación y cierre de contratos, fomentando relaciones comerciales duraderas.</p>
-                            <div class="tecnologias">
-                                <span class="tecnologia-tag">PHP</span>
-                                <span class="tecnologia-tag">Python</span>
-                                <span class="tecnologia-tag">HTML</span>
-                                <span class="tecnologia-tag">CSS</span>
-                                <span class="tecnologia-tag">JavaScript</span>
-                                <span class="tecnologia-tag">Bootstrap</span>
-                                <span class="tecnologia-tag">React</span>
-                                <span class="tecnologia-tag">Git</span>
-                            </div>
-                            <img src="img/icons/code.svg" class="experiencia-icon" alt="Ícono código">
-                        </div>
-                        
-                        <!-- Profesor de Programación (1x2) -->
-                        <div class="experiencia-item item-profesor">
-                            <div class="shine"></div>
-                            <div class="periodo">2014 - Presente</div>
-                            <h3>Profesor de Programación</h3>
-                            <div class="empresa">Universidad Popular General Levalle</div>
-                            <p class="descripcion">Diseñé e impartí clases de programación en Python desde nivel inicial hasta intermedio, incluyendo Programación Orientada a Objetos. Actualmente me encuentro impartiendo el segundo curso de programacion, orientado al desarrollo web.</p>
-                            <div class="tecnologias">
-                                <span class="tecnologia-tag">Python</span>
-                                <span class="tecnologia-tag">HTML</span>
-                                <span class="tecnologia-tag">CSS</span>
-                                <span class="tecnologia-tag">JavaScript</span>
-                                <span class="tecnologia-tag">PHP</span>
-                                <span class="tecnologia-tag">MySQL</span>
-                                <span class="tecnologia-tag">Git</span>
-                            </div>
-                            <img src="img/icons/teacher.svg" class="experiencia-icon" alt="Ícono profesor">
-                        </div>
-                        
-                        <!-- Orador en Conferencias (1x1) -->
-                        <div class="experiencia-item item-orador">
-                            <div class="shine"></div>
-                            <div class="periodo">2024</div>
-                            <h3>Orador en Conferencias</h3>
-                            <div class="empresa">Universidad Popular General Levalle</div>
-                            <p class="descripcion">Realicé más de cinco conferencias sobre Inteligencia Artificial, explicando desde su evolución hasta el uso práctico de herramientas como ChatGPT, Copilot y Gemini. Me destaqué por comunicar conceptos técnicos de manera simple y accesible.</p>
-                            <div class="tecnologias">
-                                <span class="tecnologia-tag">IA</span>
-                                <span class="tecnologia-tag">ChatGPT</span>
-                                <span class="tecnologia-tag">Copilot</span>
-                                <span class="tecnologia-tag">Gemini</span>
-                            </div>
-                            <img src="img/icons/speaker.svg" class="experiencia-icon" alt="Ícono orador">
-                        </div>
-                        
-                        <!-- Atención al Público (1x1) -->
-                        <div class="experiencia-item item-atencion">
-                            <div class="shine"></div>
-                            <div class="periodo">2015 - Presente</div>
-                            <h3>Atención al Público</h3>
-                            <div class="empresa">Oddovero Herrajes</div>
-                            <p class="descripcion">En este negocio familiar, gestioné atención al cliente, control de stock y administración de ventas. También propuse mejoras en los procesos que optimizaron la experiencia del cliente y el rendimiento del negocio..</p>
-                            <img src="img/icons/customer.svg" class="experiencia-icon" alt="Ícono atención">
-                        </div>
-                        
-                        <!-- Operador de Sistemas (1x1) -->
-                        <div class="experiencia-item item-operador">
-                            <div class="shine"></div>
-                            <div class="periodo">2017 - 2019</div>
-                            <h3>Operador de Sistemas</h3>
-                            <div class="empresa">Correo Argentino</div>
-                            <p class="descripcion">Durante las elecciones nacionales, trabajé transmitiendo datos electorales de forma segura y precisa, contribuyendo a la transparencia y eficiencia del proceso electoral.</p>
-                            <img src="img/icons/computer.svg" class="experiencia-icon" alt="Ícono computadora">
-                        </div>
-                        
-                        <!-- Desarrollador de Software (P.) (1x1) -->
-                        <div class="experiencia-item item-desarrollador-p">
-                            <div class="shine"></div>
-                            <div class="periodo">Marzo - Junio 2023</div>
-                            <h3>Desarrollador (P.)</h3>
-                            <div class="empresa">Cuidadores de Viviendas</div>
-                            <p class="descripcion">Participé en el desarrollo de una página web y la creación de bases de datos para el proyecto “Cuidadores de Viviendas”. Colaboré estrechamente en equipo para cumplir con los requerimientos del cliente.</p>
-                            <div class="tecnologias">
-                                <span class="tecnologia-tag">HTML</span>
-                                <span class="tecnologia-tag">CSS</span>
-                                <span class="tecnologia-tag">JavaScript</span>
-                                <span class="tecnologia-tag">WordPress</span>
-                                <span class="tecnologia-tag">Excel</span>
-                            </div>
-                            <img src="img/icons/startup.svg" class="experiencia-icon" alt="Ícono startup">
-                        </div>                    </div>
-                </div>
-            </section>
-            
-            <section id="contacto-section">
-                <h2>Contacto</h2>
-                <p>Información de contacto y formulario... (Sección en desarrollo)</p>
-            </section><section id="form-licenciatura-informatica-section">
-                <h2>Licenciatura en Informática</h2>
-                <p>Sección en desarrollo...</p>
-            </section>            <section id="proy-sistema-gestion-section">
-                <h2>Proyectos</h2>
-                <p>Sección en desarrollo...</p>
-            </section>
+        <!-- Mensaje -->
+        <p class="message">
+            Estoy trabajando en otros proyectos, pronto terminaré el portfolio
+        </p>
         
-        </main>
-        <div class="scroll-arrow" id="scrollArrow">
-            <img src="img/flecha 1_1.png" alt="Scroll">
-        </div>        <script src="js/script.js"></script>
-        <script src="js/mobile.js"></script>
-        <script src="js/experiencia.js"></script>
-        <script src="js/experiencia-efectos.js"></script>
-    </body>
+        <!-- Botones de redes sociales -->
+        <div class="social-buttons">
+            <a href="https://www.linkedin.com/in/goh-dev/" class="social-button" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b2f2f" width="24" height="24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+            </a>
+            <a href="mailto:gasparoh.work@gmail.com" class="social-button" title="Gmail">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b2f2f" width="24" height="24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/GOddovero" class="social-button" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b2f2f" width="24" height="24">
+                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/goh.dev/" class="social-button" title="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b2f2f" width="24" height="24">
+                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                </svg>
+            </a>
+            <a href="https://drive.google.com/file/d/1AgnjOHTJDCDxZ61s-eKhzDFfWOw9aAbn/view?usp=sharing" class="social-button" title="Descargar CV">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b2f2f" width="24" height="24">
+                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Botones flotantes -->
+    <div class="floating-buttons-container">
+        <!-- Botón 1: GOH GYM -->
+        <a href="https://goh-dev.com.ar/gym" class="floating-button" title="GOH GYM - Sistema de Gestión de Gimnasios">
+            <div class="floating-button-content">
+                <img src="img/logo_gohgym.png" alt="GOH GYM" class="floating-button-logo">
+                <div class="floating-button-text">Sistema de Gestión<br>de Gimnasios</div>
+            </div>
+            <i class="fas fa-arrow-right floating-button-arrow"></i>
+        </a>
+
+        <!-- Botón 2: Placeholder -->
+        <a href="#" class="floating-button" title="Proyecto 2">
+            <div class="floating-button-content">
+                <img src="img/g1.png" alt="Proyecto 2" class="floating-button-logo">
+                <div class="floating-button-text">Proyecto 2<br>En desarrollo</div>
+            </div>
+            <i class="fas fa-arrow-right floating-button-arrow"></i>
+        </a>
+
+        <!-- Botón 3: Placeholder -->
+        <a href="#" class="floating-button" title="Proyecto 3">
+            <div class="floating-button-content">
+                <img src="img/g1.png" alt="Proyecto 3" class="floating-button-logo">
+                <div class="floating-button-text">Proyecto 3<br>En desarrollo</div>
+            </div>
+            <i class="fas fa-arrow-right floating-button-arrow"></i>
+        </a>
+
+        <!-- Botón 4: Placeholder -->
+        <a href="#" class="floating-button" title="Proyecto 4">
+            <div class="floating-button-content">
+                <img src="img/g1.png" alt="Proyecto 4" class="floating-button-logo">
+                <div class="floating-button-text">Proyecto 4<br>En desarrollo</div>
+            </div>
+            <i class="fas fa-arrow-right floating-button-arrow"></i>
+        </a>
+
+        <!-- Botón 5: Placeholder -->
+        <a href="#" class="floating-button" title="Proyecto 5">
+            <div class="floating-button-content">
+                <img src="img/g1.png" alt="Proyecto 5" class="floating-button-logo">
+                <div class="floating-button-text">Proyecto 5<br>En desarrollo</div>
+            </div>
+            <i class="fas fa-arrow-right floating-button-arrow"></i>
+        </a>
+
+        <!-- Botón 6: Placeholder -->
+        <a href="#" class="floating-button" title="Proyecto 6">
+            <div class="floating-button-content">
+                <img src="img/g1.png" alt="Proyecto 6" class="floating-button-logo">
+                <div class="floating-button-text">Proyecto 6<br>En desarrollo</div>
+            </div>
+            <i class="fas fa-arrow-right floating-button-arrow"></i>
+        </a>
+
+        <!-- Botón 7: Placeholder -->
+        <a href="#" class="floating-button" title="Proyecto 7">
+            <div class="floating-button-content">
+                <img src="img/g1.png" alt="Proyecto 7" class="floating-button-logo">
+                <div class="floating-button-text">Proyecto 7<br>En desarrollo</div>
+            </div>
+            <i class="fas fa-arrow-right floating-button-arrow"></i>
+        </a>
+    </div>
+</body>
 </html>

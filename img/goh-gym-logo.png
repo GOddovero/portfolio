@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <!-- Fondo principal -->
+  <rect width="120" height="100" fill="#FF6B35" rx="8" stroke="#2D2D2D" stroke-width="2"/>
+  
+  <!-- Texto GOH -->
+  <text x="60" y="25" font-family="Arial Black, sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="#E8C547" stroke="#2D2D2D" stroke-width="1">GOH</text>
+  
+  <!-- Texto GYM -->
+  <text x="60" y="50" font-family="Arial Black, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#E8C547" stroke="#2D2D2D" stroke-width="1">GYM</text>
+  
+  <!-- Barra izquierda -->
+  <rect x="15" y="60" width="4" height="20" fill="#2D2D2D" rx="2"/>
+  <rect x="12" y="57" width="10" height="4" fill="#2D2D2D" rx="2"/>
+  <rect x="12" y="82" width="10" height="4" fill="#2D2D2D" rx="2"/>
+  
+  <!-- Disco izquierdo pequeño -->
+  <circle cx="30" cy="70" r="6" fill="#2D2D2D"/>
+  <circle cx="30" cy="70" r="4" fill="none" stroke="#FF6B35" stroke-width="1"/>
+  
+  <!-- Disco izquierdo grande -->
+  <circle cx="42" cy="70" r="8" fill="#2D2D2D"/>
+  <circle cx="42" cy="70" r="6" fill="none" stroke="#FF6B35" stroke-width="1"/>
+  
+  <!-- Barra central -->
+  <rect x="50" y="67" width="20" height="6" fill="#2D2D2D" rx="3"/>
+  
+  <!-- Disco derecho grande -->
+  <circle cx="78" cy="70" r="8" fill="#2D2D2D"/>
+  <circle cx="78" cy="70" r="6" fill="none" stroke="#FF6B35" stroke-width="1"/>
+  
+  <!-- Disco derecho pequeño -->
+  <circle cx="90" cy="70" r="6" fill="#2D2D2D"/>
+  <circle cx="90" cy="70" r="4" fill="none" stroke="#FF6B35" stroke-width="1"/>
+  
+  <!-- Barra derecha -->
+  <rect x="101" y="60" width="4" height="20" fill="#2D2D2D" rx="2"/>
+  <rect x="98" y="57" width="10" height="4" fill="#2D2D2D" rx="2"/>
+  <rect x="98" y="82" width="10" height="4" fill="#2D2D2D" rx="2"/>
+</svg>
