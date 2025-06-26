@@ -9,8 +9,8 @@
 
 /* Ajuste de proporciones para cada elemento */
 .experiencia-grid {
-    aspect-ratio: 16 / 14; /* Proporción aumentada para el grid completo */
-    max-height: none; /* Eliminamos la altura máxima para permitir que crezca según el contenido */
+    aspect-ratio: 16 / 12; /* Proporción para el grid completo */
+    max-height: 90vh; /* Altura máxima para el grid */
 }
 
 /* Ajustes de contenido para cada tipo de tarjeta */
@@ -20,7 +20,7 @@
 }
 
 .item-desarrollador .descripcion {
-    max-width: 95%; /* Ampliado para mostrar más texto */
+    max-width: 80%; /* Limitar el ancho del texto para mejorar la legibilidad */
 }
 
 /* Estilos específicos para tarjetas más pequeñas */
@@ -52,7 +52,6 @@
     .item-operador h3, 
     .item-desarrollador-p h3 {
         font-size: 1.4rem; /* Reducir tamaño de título para tarjetas pequeñas */
-        margin-bottom: 10px; /* Reducir margen para ahorrar espacio */
     }
     
     .item-orador .descripcion, 
@@ -60,15 +59,6 @@
     .item-operador .descripcion, 
     .item-desarrollador-p .descripcion {
         font-size: 0.95rem; /* Reducir tamaño de texto para tarjetas pequeñas */
-        line-height: 1.5; /* Reducir interlineado para ahorrar espacio */
-    }
-    
-    .item-orador .empresa, 
-    .item-atencion .empresa, 
-    .item-operador .empresa, 
-    .item-desarrollador-p .empresa {
-        margin-bottom: 10px; /* Reducir margen para ahorrar espacio */
-        padding-bottom: 5px; /* Reducir padding para ahorrar espacio */
     }
 }
 
