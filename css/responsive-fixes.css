@@ -1,0 +1,107 @@
+/* Ajustes adicionales de responsividad para mejorar la experiencia de usuario */
+
+/* Mejoras para tablets y dispositivos medianos */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Ajustes para la sección de experiencia */
+    .experiencia-container {
+        width: 90%;
+    }
+    
+    /* Más espacio entre las tarjetas */
+    .experiencia-grid {
+        gap: 25px;
+    }
+    
+    /* Mejorar la visualización de los iconos de tech en los previews */
+    .tech-icons-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+    }
+    
+    .tech-icon i {
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+    }
+    
+    /* Ajuste de textos */
+    .preview-text strong {
+        font-size: 55px;
+    }
+    
+    .periodo-preview {
+        font-size: 26px;
+    }
+}
+
+/* Mejoras para transición entre tamaños */
+@media (min-width: 576px) and (max-width: 767px) {
+    .experiencia-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(200px, auto);
+        gap: 20px;
+    }
+    
+    .item-desarrollador {
+        grid-column: span 2;
+    }
+    
+    .item-profesor {
+        grid-column: span 2;
+    }
+    
+    .item-orador, .item-atencion, .item-operador, .item-desarrollador-p {
+        grid-column: span 1;
+    }
+}
+
+/* Mejoras generales para la responsividad */
+@media (max-width: 991px) {
+    #exp-desarrollador-software-section {
+        overflow: hidden;
+    }
+    
+    .experiencia-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .experiencia-item:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Mejoras para orientación landscape en móviles */
+@media (max-width: 767px) and (orientation: landscape) {
+    #exp-desarrollador-software-section {
+        padding: 40px 0;
+    }
+    
+    .experiencia-titulo h2 {
+        font-size: 2.8rem !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .experiencia-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 10px;
+    }
+    
+    .item-desarrollador {
+        grid-column: span 2;
+    }
+    
+    .tech-icons-container {
+        bottom: 60px;
+        gap: 15px;
+    }
+    
+    /* Ajuste del fondo para modo landscape */
+    #exp-desarrollador-software-section::before {
+        width: 500vw;
+        height: 500%;
+        top: -120%;
+    }
+}

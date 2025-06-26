@@ -1,0 +1,71 @@
+/* Correcciones para problemas de visualización y asegurar que los estilos se apliquen */
+
+/* Asegurar que los estilos móviles tengan prioridad */
+@media (max-width: 767px) {
+    /* Forzar los estilos de experiencia en móvil */
+    #exp-desarrollador-software-section {
+        min-height: auto !important;
+        padding: 40px 0 60px !important;
+        overflow-x: hidden !important;
+    }
+      /* Forzar el estilo del fondo */
+    #exp-desarrollador-software-section::before {
+        width: 600vw !important;
+        height: 500% !important;
+        top: -100% !important;
+        opacity: 0.95 !important;
+        transform: translateX(-50%) rotate(-10deg) !important;
+    }
+    
+    /* Forzar título */
+    .experiencia-titulo h2 {
+        font-size: 3.2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: -5px !important;
+        text-shadow: 0 3px 5px rgba(0, 0, 0, 0.4) !important;
+    }
+    
+    /* Forzar grid */
+    .experiencia-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+        aspect-ratio: unset !important;
+        margin-top: 10px !important;
+    }
+    
+    /* Forzar tarjetas */
+    .experiencia-item {
+        width: 100% !important;
+        padding: 22px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    /* Iconos de tech en previews */
+    .tech-icons-container {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+        bottom: 80px !important;
+        left: 30px !important;
+        width: calc(100% - 60px) !important;
+    }
+    
+    .tech-icon i {
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 26px !important;
+        border-width: 4px !important;
+    }
+    
+    /* Dispositivos muy pequeños */
+    @media (max-width: 480px) {
+        .experiencia-titulo h2 {
+            font-size: 2.2rem !important;
+        }
+        
+        .tech-icons-container {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
+}
