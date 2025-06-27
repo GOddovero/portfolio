@@ -7,8 +7,9 @@ function handlePageTransitions() {
 
     // Obtener todos los enlaces que llevan a otras páginas
     document.querySelectorAll('a[href]').forEach(link => {
-        // Solo manejar enlaces internos
-        if (link.href.startsWith(window.location.origin)) {
+        // Solo manejar enlaces internos y que no tengan ya el event listener
+        if (link.href.startsWith(window.location.origin) && !link.hasTransitionHandler) {
+            link.hasTransitionHandler = true; // Marcar que ya tiene el handler
             link.addEventListener('click', async e => {
                 e.preventDefault();
 
@@ -36,9 +37,11 @@ function handlePageTransitions() {
                     // Esperar a que termine la transición
                     await transition.finished;
                     
-                    // Reinicializar los scripts necesarios
+                    // Reinicializar los scripts y event listeners
                     reinitializeScripts();
+                    handlePageTransitions(); // Volver a inicializar los event listeners
                 } catch (error) {
+                    console.error('Error durante la transición:', error);
                     // Si hay un error, navegar normalmente
                     window.location.href = link.href;
                 }
@@ -51,7 +54,7 @@ function handlePageTransitions() {
 function reinitializeScripts() {
     // Cargar y ejecutar script.js
     const scriptElement = document.createElement('script');
-    scriptElement.src = '/js/script.js';
+    scriptElement.src = 'js/script.js';
     document.body.appendChild(scriptElement);
 }
 

@@ -14,6 +14,36 @@
     animation: slide-in-from-right 1s forwards;
 }
 
+/* Reglas específicas para la imagen de perfil */
+::view-transition-old(img-perfil) {
+    animation: fade-scale-rotate-out 0.5s ease-in-out forwards;
+}
+
+::view-transition-new(img-perfil) {
+    animation: fade-scale-rotate-in 0.5s ease-in-out forwards;
+}
+
+@keyframes fade-scale-rotate-out {
+    from {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8) rotate(-10deg);
+    }
+}
+
+@keyframes fade-scale-rotate-in {
+    from {
+        opacity: 0;
+        transform: scale(1.2) rotate(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
 
 @keyframes slide-out-to-left{
     from{
@@ -50,44 +80,44 @@ body {
 }
 
 .container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     max-width: 500px;
     width: 90%;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    position: relative;
-    z-index: 1;
-    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 30px;
-    border-radius: 10px;
+    max-width: 150px;
+    margin-bottom: 1.5rem;
 }
 
 .img-mia-container {
-    margin-bottom: 30px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
 }
 
 .img-mia-container img {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) inset;
+    max-width: 250px;
+    box-shadow: 29px 26px 50px 12px rgba(0,0,0,0.75) inset;
+    
+    border-radius: 5%;
 }
 
 .message {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 40px;
-    line-height: 1.6;
-    font-weight: 500;
+    font-size: 1.2rem;
+    color: white;
+    margin: 1.5rem 0;
+    line-height: 1.4;
 }
 
 .social-buttons {
@@ -427,67 +457,67 @@ body {
 
 /* Botones flotantes */
 .nav-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.floating-buttons-container,
+.floating-buttons-container-left {
     position: fixed;
-    left: calc(50% - 500px - 320px); /* Contenedor/2 + margen */
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     z-index: 100;
-    width: 300px;
 }
 
 .floating-buttons-container {
-    position: fixed;
     right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 100;
 }
 
 .floating-buttons-container-left {
-    position: fixed;
     left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 100;
 }
 
 .floating-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fdfdfd;
-    color: #3b2f2f;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: white;
     text-decoration: none;
     padding: 15px 20px;
     border-radius: 15px;
     width: 300px;
     position: relative;
-    border: none;
-    box-shadow: 0 8px 0 #dfdfdf,
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 0 rgba(255, 255, 255, 0.1),
                 0 15px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.1s ease-in-out,
-                box-shadow 0.1s ease-in-out;
+                box-shadow 0.1s ease-in-out,
+                background-color 0.3s ease;
     transform: translateY(-4px);
 }
 
 .floating-button:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 0 #d4d4d4,
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 0 rgba(255, 255, 255, 0.15),
                 0 15px 25px rgba(0, 0, 0, 0.35);
 }
 
 .floating-button:active {
     transform: translateY(0);
-    box-shadow: 0 2px 0 #d4d4d4,
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.2),
                 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -499,8 +529,8 @@ body {
 }
 
 .floating-button-logo {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
     border-radius: 8px;
     flex-shrink: 0;
@@ -508,17 +538,19 @@ body {
 
 .floating-button-text {
     font-size: 14px;
-    font-weight: 600;
-    color: #3b2f2f;
+    font-weight: 500;
+    color: white;
     line-height: 1.3;
     text-align: left;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .floating-button-arrow {
     font-size: 18px;
-    color: #3b2f2f;
+    color: white;
     transition: all 0.3s ease;
     flex-shrink: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Posicionamiento relativo al contenedor */
@@ -701,140 +733,73 @@ body {
 
 /* Botones de navegación izquierdos */
 .nav-button {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fdfdfd;
-    color: #3b2f2f;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 15px;
-    width: 300px;
-    position: relative;
-    border: none;
-    /* Efecto 3D igual que los botones flotantes */
-    box-shadow: 0 8px 0 #dfdfdf,
-                0 15px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.1s ease-in-out,
-                box-shadow 0.1s ease-in-out;
-    transform: translateY(-4px);
-    /* Estructura en espejo */
-    flex-direction: row-reverse;
 }
 
 .nav-button:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 0 #d4d4d4,
-                0 15px 25px rgba(0, 0, 0, 0.35);
-}
-
-.nav-button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 0 #d4d4d4,
-                0 5px 10px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .nav-button-content {
     display: flex;
     align-items: center;
-    gap: 15px;
-    flex: 1;
-    justify-content: space-between;
+    gap: 10px;
+}
+
+.nav-button-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .nav-button-text {
-    font-size: 14px;
-    font-weight: 600;
-    color: #3b2f2f;
-    line-height: 1.3;
-    text-align: right;
+    font-size: 0.9em;
+    line-height: 1.2;
 }
 
 .nav-button-arrow {
-    font-size: 18px;
-    color: #3b2f2f;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
+    font-size: 1.2em;
+    margin-left: 10px;
 }
 
-.nav-button-icon {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #e5ca10;
-    border-radius: 8px;
-    flex-shrink: 0;
-    font-size: 24px;
-    color: #3b2f2f;
-}
-
-/* Media queries adicionales para botones de navegación */
-@media (max-width: 1023px) {
-    .nav-button-content {
-        gap: 10px;
-    }
-
-    .nav-button-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-
-    .nav-button-text {
-        font-size: 12px;
-    }
-
-    .nav-button-arrow {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .section-title,
-    .nav-button {
-        width: 260px;
+@media (max-width: 1024px) {
+    .nav-buttons-container {
+        flex-wrap: wrap;
     }
 
     .nav-button {
-        max-width: 240px;
-        padding: 12px 15px;
-        box-shadow: 0 5px 0 #dfdfdf,
-                    0 10px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-button-content {
-        gap: 0;
-    }
-
-    .nav-button-text {
-        display: none;
-    }
-
-    .nav-button-arrow {
-        display: none;
-    }
-
-    .nav-button-icon {
-        width: 48px;
-        height: 48px;
-        margin: 0 auto;
-        font-size: 24px;
-    }
-
-    /* Ocultar todos los botones de navegación excepto el primero en móviles */
-    .nav-button:not(:first-child) {
-        display: none;
+        min-width: 150px;
     }
 }
 
 /* Estilos para la página Sobre Mí */
 .about-me {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 4rem auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .back-button {
@@ -858,7 +823,6 @@ body {
 }
 
 .about-content {
-    margin-top: 4rem;
     background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
     border-radius: 20px;
@@ -876,14 +840,19 @@ body {
     display: flex;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 250px;
+    height: auto;
     object-fit: cover;
+    border-radius: 5%;
+    box-shadow: 29px 26px 50px 12px rgba(0,0,0,0.75) inset;
 }
 
 .profile-info h2 {
@@ -896,10 +865,22 @@ body {
     font-size: 1.1rem;
 }
 
-.skills-section,
-.experience-section,
-.education-section {
-    margin-bottom: 3rem;
+.profile-description {
+    padding: 1rem;
+}
+
+.profile-description p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.profile-description p:last-child {
+    margin-bottom: 0;
+}
+
+.skills-section {
+    margin-bottom: 2rem;
 }
 
 .skills-grid {
@@ -910,74 +891,118 @@ body {
 }
 
 .skill-item {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    text-align: center;
+    padding: 1.5rem;
+    height: 100%;
     transition: transform 0.3s ease;
+}
+
+.skill-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0.5rem;
+}
+
+.skill-item h4 {
+    font-size: 1.2rem;
+    margin: 10px 0;
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
 }
 
-.skill-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 1rem;
-}
-
-.timeline {
-    position: relative;
-    padding: 2rem 0;
-}
-
-.timeline-item {
-    margin-bottom: 2rem;
-    padding-left: 2rem;
-    border-left: 2px solid #3b2f2f;
-}
-
-.timeline-content {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 1.5rem;
-    border-radius: 15px;
-}
-
-.timeline-date {
-    color: #666;
-    font-style: italic;
-    margin: 0.5rem 0;
-}
-
-.education-item {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 1.5rem;
-    border-radius: 15px;
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
     margin-top: 1.5rem;
 }
 
-.education-item h4 {
-    color: #3b2f2f;
+.tech-card {
+    padding: 0.8rem;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.tech-card:hover {
+    transform: translateY(-3px);
+}
+
+.tech-card i {
+    font-size: 1.5em;
     margin-bottom: 0.5rem;
 }
 
-.institution {
-    color: #666;
-    font-weight: bold;
+.tech-card span {
+    color: white;
+    font-size: 0.9em;
+    display: block;
 }
 
-.education-date {
-    color: #666;
-    font-style: italic;
-    margin-top: 0.5rem;
+.experience-section, .education-section {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 100%;
 }
 
-/* Responsive */
+.experience-education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.experience-summary, .education-summary {
+    padding: 1rem;
+}
+
+.experience-summary p, .education-summary p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.experience-summary p:last-child, .education-summary p:last-child {
+    margin-bottom: 0;
+}
+
+/* Ajustes para los títulos */
+h1, h2, h3, h4 {
+    color: white;
+}
+
+.skills-section h3,
+.experience-section h3,
+.education-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+/* Ajustes para el texto */
+.profile-description p, 
+.experience-summary p, 
+.education-summary p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* Ajustes responsive */
 @media (max-width: 768px) {
+    .about-me {
+        margin: 2rem auto;
+        padding: 1.5rem;
+    }
+
     .profile-section {
         flex-direction: column;
         text-align: center;
+        padding: 1rem;
     }
 
     .profile-image {
@@ -985,12 +1010,27 @@ body {
         height: 150px;
     }
 
-    .skills-grid {
+    .skills-grid,
+    .experience-education-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
-    .back-button {
-        top: 1rem;
-        left: 1rem;
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 0.8rem;
+    }
+
+    .skill-item img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .experience-section, .education-section {
+        padding: 1rem;
+    }
+
+    .profile-description {
+        padding: 0.5rem;
     }
 }
