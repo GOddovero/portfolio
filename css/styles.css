@@ -3,15 +3,15 @@
 }
 
 ::view-transition-group(*){
-    animation-duration: 0.5s;
+    animation-duration: 1s;
 }
 
 ::view-transition-old(root){
-    animation: slide-out-to-left 0.5s forwards;
+    animation: slide-out-to-left 1s forwards;
 }
 
 ::view-transition-new(root){
-    animation: slide-in-from-right 0.5s forwards;
+    animation: slide-in-from-right 1s forwards;
 }
 
 
