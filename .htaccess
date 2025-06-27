@@ -18,8 +18,9 @@ RewriteRule ^(.*)$ http://goh-dev.com.ar/$1 [R=301,L]
 # Configuración de seguridad básica
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options nosniff
-    Header always set X-Frame-Options DENY
+    Header always set X-Frame-Options SAMEORIGIN
     Header always set X-XSS-Protection "1; mode=block"
+    Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
 </IfModule>
 
 # Configuración de cache para archivos estáticos

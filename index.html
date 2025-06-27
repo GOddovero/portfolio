@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOH - Portfolio en Desarrollo</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/g1.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css"
+    <link rel="stylesheet" href="css/styles.css">
+    
 </head>
 <body>
     <div class="background">
@@ -92,42 +95,14 @@
         </a>
     </div>
 
-    <!-- Botones flotantes -->
+    <!-- Botón flotante de GOH GYM -->
     <div class="floating-buttons-container">
-        <!-- Botón 1: GOH GYM -->
-        <a href="http://localhost/goh_gym/backend-api/" class="floating-button" title="GOH GYM - Sistema de Gestión de Gimnasios">
+        <a href="https://gym.goh-dev.com.ar" class="floating-button" title="GOH GYM - Sistema de Gestión de Gimnasios" onclick="window.open(this.href, '_blank'); return false;">
             <div class="floating-button-content">
-                <img src="img/logo_gohgym.png" alt="GOH GYM" class="floating-button-logo" style="view-timeline-name: img-gimnasio-logo;">
+                <img src="img/logo_gohgym.png" alt="GOH GYM" class="floating-button-logo">
                 <div class="floating-button-text">Sistema de Gestión<br>de Gimnasios</div>
             </div>
-            <i class="fas fa-arrow-right floating-button-arrow"></i>
-        </a>
-
-        <!-- Botón 2 -->
-        <a href="#" class="floating-button" title="Proyecto 2">
-            <div class="floating-button-content">
-                <img src="img/g1.png" alt="Proyecto 2" class="floating-button-logo">
-                <div class="floating-button-text">Proyecto 2<br>En desarrollo</div>
-            </div>
-            <i class="fas fa-arrow-right floating-button-arrow"></i>
-        </a>
-
-        <!-- Botón 3 -->
-        <a href="#" class="floating-button" title="Proyecto 3">
-            <div class="floating-button-content">
-                <img src="img/g1.png" alt="Proyecto 3" class="floating-button-logo">
-                <div class="floating-button-text">Proyecto 3<br>En desarrollo</div>
-            </div>
-            <i class="fas fa-arrow-right floating-button-arrow"></i>
-        </a>
-
-        <!-- Botón 4 -->
-        <a href="#" class="floating-button" title="Proyecto 4">
-            <div class="floating-button-content">
-                <img src="img/g1.png" alt="Proyecto 4" class="floating-button-logo">
-                <div class="floating-button-text">Proyecto 4<br>En desarrollo</div>
-            </div>
-            <i class="fas fa-arrow-right floating-button-arrow"></i>
+            <i class="fas fa-external-link-alt floating-button-arrow"></i>
         </a>
     </div>
     <script src="js/script.js"></script>
