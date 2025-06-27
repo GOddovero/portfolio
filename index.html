@@ -6,552 +6,7 @@
     <title>GOH - Portfolio en Desarrollo</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            width: 90%;
-            backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 1;
-        }
-
-        .logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 30px;
-            border-radius: 10px;
-        }
-
-        .gif-container {
-            margin-bottom: 30px;
-        }
-
-        .gif-container img {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .message {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-
-        .social-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .social-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 64px;
-            height: 64px;
-            background-color: #e5ca10;
-            border: 5px solid #3b2f2f;
-            border-radius: 25%;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .social-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .social-button svg {
-            width: 48px;
-            height: 48px;
-            fill: #3b2f2f;
-        }
-
-        /* Animación sutil */
-        .container {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsivo */
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
-                margin: 20px;
-            }
-
-            .logo {
-                max-width: 150px;
-            }
-
-            .gif-container img {
-                max-width: 250px;
-            }
-
-            .message {
-                font-size: 16px;
-            }
-
-            .social-button {
-                width: 56px;
-                height: 56px;
-                border: 4px solid #3b2f2f;
-            }
-
-            .social-button svg {
-                width: 40px;
-                height: 40px;
-            }
-        }
-
-        /* Animación de fondo con círculos flotantes */
-        @keyframes move {
-            100% {
-                transform: translate3d(0, 0, 1px) rotate(360deg);
-            }
-        }
-
-        .background {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            background: #3b2f2f;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .background span {
-            width: 22vmin;
-            height: 22vmin;
-            border-radius: 22vmin;
-            backface-visibility: hidden;
-            position: absolute;
-            animation: move;
-            animation-duration: 39s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-        }
-
-        .background span:nth-child(1) {
-            color: #e5ca10;
-            top: 42%;
-            left: 75%;
-            animation-duration: 39s;
-            animation-delay: -26s;
-            transform-origin: -1vw -19vh;
-            box-shadow: 44vmin 0 5.532391836703251vmin currentColor;
-        }
-        .background span:nth-child(2) {
-            color: #2ec4b6;
-            top: 88%;
-            left: 45%;
-            animation-duration: 105s;
-            animation-delay: -58s;
-            transform-origin: 12vw -3vh;
-            box-shadow: -44vmin 0 6.30367467392041vmin currentColor;
-        }
-        .background span:nth-child(3) {
-            color: #2ec4b6;
-            top: 46%;
-            left: 98%;
-            animation-duration: 66s;
-            animation-delay: -28s;
-            transform-origin: 11vw -4vh;
-            box-shadow: -44vmin 0 6.496918575243166vmin currentColor;
-        }
-        .background span:nth-child(4) {
-            color: #2ec4b6;
-            top: 73%;
-            left: 2%;
-            animation-duration: 14s;
-            animation-delay: -100s;
-            transform-origin: 18vw 21vh;
-            box-shadow: 44vmin 0 6.168290687392632vmin currentColor;
-        }
-        .background span:nth-child(5) {
-            color: #e5ca10;
-            top: 9%;
-            left: 43%;
-            animation-duration: 31s;
-            animation-delay: -4s;
-            transform-origin: -4vw 0vh;
-            box-shadow: -44vmin 0 6.290557006146626vmin currentColor;
-        }
-        .background span:nth-child(6) {
-            color: #2ec4b6;
-            top: 92%;
-            left: 39%;
-            animation-duration: 12s;
-            animation-delay: -45s;
-            transform-origin: -2vw 8vh;
-            box-shadow: -44vmin 0 5.922101463860612vmin currentColor;
-        }
-        .background span:nth-child(7) {
-            color: #e5ca10;
-            top: 73%;
-            left: 7%;
-            animation-duration: 19s;
-            animation-delay: -57s;
-            transform-origin: 15vw 24vh;
-            box-shadow: -44vmin 0 5.560774231059867vmin currentColor;
-        }
-        .background span:nth-child(8) {
-            color: #2ec4b6;
-            top: 68%;
-            left: 83%;
-            animation-duration: 51s;
-            animation-delay: -109s;
-            transform-origin: 17vw 10vh;
-            box-shadow: 44vmin 0 6.432634781818678vmin currentColor;
-        }
-        .background span:nth-child(9) {
-            color: #2ec4b6;
-            top: 40%;
-            left: 80%;
-            animation-duration: 91s;
-            animation-delay: -72s;
-            transform-origin: 25vw 21vh;
-            box-shadow: 44vmin 0 6.104489273273636vmin currentColor;
-        }
-        .background span:nth-child(10) {
-            color: #e5ca10;
-            top: 7%;
-            left: 57%;
-            animation-duration: 103s;
-            animation-delay: -38s;
-            transform-origin: 16vw -7vh;
-            box-shadow: 44vmin 0 6.382919718004137vmin currentColor;
-        }
-        .background span:nth-child(11) {
-            color: #e5ca10;
-            top: 67%;
-            left: 53%;
-            animation-duration: 8s;
-            animation-delay: -2s;
-            transform-origin: -7vw 0vh;
-            box-shadow: -44vmin 0 6.101996390448184vmin currentColor;
-        }
-        .background span:nth-child(12) {
-            color: #e5ca10;
-            top: 13%;
-            left: 30%;
-            animation-duration: 40s;
-            animation-delay: -70s;
-            transform-origin: -22vw 25vh;
-            box-shadow: 44vmin 0 5.835906104882478vmin currentColor;
-        }
-        .background span:nth-child(13) {
-            color: #2ec4b6;
-            top: 30%;
-            left: 18%;
-            animation-duration: 100s;
-            animation-delay: -56s;
-            transform-origin: -19vw -8vh;
-            box-shadow: 44vmin 0 6.033384654342863vmin currentColor;
-        }
-        .background span:nth-child(14) {
-            color: #2ec4b6;
-            top: 6%;
-            left: 85%;
-            animation-duration: 37s;
-            animation-delay: -11s;
-            transform-origin: -21vw 1vh;
-            box-shadow: -44vmin 0 6.3892596308313365vmin currentColor;
-        }
-        .background span:nth-child(15) {
-            color: #2ec4b6;
-            top: 94%;
-            left: 68%;
-            animation-duration: 112s;
-            animation-delay: -68s;
-            transform-origin: -4vw 17vh;
-            box-shadow: 44vmin 0 6.200846200891987vmin currentColor;
-        }
-        .background span:nth-child(16) {
-            color: #e5ca10;
-            top: 21%;
-            left: 68%;
-            animation-duration: 106s;
-            animation-delay: -7s;
-            transform-origin: -3vw -17vh;
-            box-shadow: -44vmin 0 5.549724732428271vmin currentColor;
-        }
-        .background span:nth-child(17) {
-            color: #2ec4b6;
-            top: 71%;
-            left: 98%;
-            animation-duration: 100s;
-            animation-delay: -32s;
-            transform-origin: 23vw -7vh;
-            box-shadow: 44vmin 0 6.291628049683805vmin currentColor;
-        }
-        .background span:nth-child(18) {
-            color: #2ec4b6;
-            top: 40%;
-            left: 60%;
-            animation-duration: 19s;
-            animation-delay: -49s;
-            transform-origin: -4vw -13vh;
-            box-shadow: 44vmin 0 6.188455215221673vmin currentColor;
-        }
-        .background span:nth-child(19) {
-            color: #e5ca10;
-            top: 42%;
-            left: 69%;
-            animation-duration: 48s;
-            animation-delay: -62s;
-            transform-origin: 20vw 5vh;
-            box-shadow: -44vmin 0 6.477431601993735vmin currentColor;
-        }
-        .background span:nth-child(20) {
-            color: #e5ca10;
-            top: 69%;
-            left: 82%;
-            animation-duration: 52s;
-            animation-delay: -106s;
-            transform-origin: 18vw 25vh;
-            box-shadow: -44vmin 0 6.41580984449855vmin currentColor;
-        }
-        .background span:nth-child(21) {
-            color: #2ec4b6;
-            top: 68%;
-            left: 98%;
-            animation-duration: 20s;
-            animation-delay: -6s;
-            transform-origin: -3vw 11vh;
-            box-shadow: 44vmin 0 6.365399363919154vmin currentColor;
-        }
-        .background span:nth-child(22) {
-            color: #2ec4b6;
-            top: 67%;
-            left: 78%;
-            animation-duration: 22s;
-            animation-delay: -48s;
-            transform-origin: 18vw 18vh;
-            box-shadow: 44vmin 0 5.965991551810747vmin currentColor;
-        }
-        .background span:nth-child(23) {
-            color: #e5ca10;
-            top: 5%;
-            left: 8%;
-            animation-duration: 58s;
-            animation-delay: -35s;
-            transform-origin: 12vw -20vh;
-            box-shadow: -44vmin 0 5.648388331487613vmin currentColor;
-        }
-        .background span:nth-child(24) {
-            color: #2ec4b6;
-            top: 69%;
-            left: 23%;
-            animation-duration: 15s;
-            animation-delay: -93s;
-            transform-origin: -11vw -19vh;
-            box-shadow: -44vmin 0 5.569681082313963vmin currentColor;
-        }
-        .background span:nth-child(25) {
-            color: #e5ca10;
-            top: 72%;
-            left: 85%;
-            animation-duration: 27s;
-            animation-delay: -90s;
-            transform-origin: -21vw -24vh;
-            box-shadow: -44vmin 0 6.172238555512577vmin currentColor;
-        }
-
-        /* Botones flotantes */
-        .floating-buttons-container {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-left: 15px;
-        }
-
-        .floating-button {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 280px;
-            height: 70px;
-            background: white;
-            border-radius: 15px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            border: 2px solid #e0e0e0;
-            padding: 10px 15px;
-            gap: 15px;
-        }
-
-        .floating-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-            border-color: #FF6B35;
-        }
-
-        .floating-button:hover .floating-button-arrow {
-            transform: translateX(5px);
-            color: #FF6B35;
-        }
-
-        .floating-button-content {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex: 1;
-        }
-
-        .floating-button-logo {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-
-        .floating-button-text {
-            font-size: 14px;
-            font-weight: 600;
-            color: #3b2f2f;
-            line-height: 1.3;
-            text-align: left;
-        }
-
-        .floating-button-arrow {
-            font-size: 18px;
-            color: #3b2f2f;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        /* Posicionamiento relativo al contenedor */
-        @media (min-width: 1024px) {
-            .floating-buttons-container {
-                position: absolute;
-                right: auto;
-                left: calc(50% + 250px + 15px);
-                top: 50%;
-                transform: translateY(-50%);
-            }
-        }
-
-        /* Responsivo para los botones flotantes */
-        @media (max-width: 1023px) {
-            .floating-buttons-container {
-                right: 15px;
-                top: auto;
-                bottom: 20px;
-                transform: none;
-                margin-left: 0;
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-            
-            .floating-button {
-                width: 200px;
-                height: 60px;
-                padding: 8px 12px;
-                gap: 10px;
-            }
-
-            .floating-button-content {
-                gap: 10px;
-            }
-
-            .floating-button-logo {
-                width: 40px;
-                height: 40px;
-            }
-
-            .floating-button-text {
-                font-size: 12px;
-            }
-
-            .floating-button-arrow {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .floating-buttons-container {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .floating-button {
-                width: 60px;
-                height: 60px;
-                padding: 6px;
-                gap: 0;
-                justify-content: center;
-            }
-
-            .floating-button-content {
-                gap: 0;
-            }
-
-            .floating-button-text {
-                display: none;
-            }
-
-            .floating-button-arrow {
-                display: none;
-            }
-
-            .floating-button-logo {
-                width: 48px;
-                height: 48px;
-                margin: 0 auto;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/styles.css"
 </head>
 <body>
     <div class="background">
@@ -587,13 +42,13 @@
         <img src="img/goh1.png" alt="GOH Logo" class="logo">
         
         <!-- GIF -->
-        <div class="gif-container">
-            <img src="img/tenor.gif" alt="Trabajando en proyectos">
+        <div class="img-mia-container">
+            <img src="img/chica_contacto_goh_sf.png" alt="Imagen Gaspar Oddovero Herrera" style="view-transition-name: img-perfil;">
         </div>
         
         <!-- Mensaje -->
         <p class="message">
-            Estoy trabajando en otros proyectos, pronto terminaré el portfolio
+            Soy Gaspar Oddovero Herrera! <br> Licenciado en Informatica, Programador FullStack.
         </p>
         
         <!-- Botones de redes sociales -->
@@ -626,6 +81,45 @@
         </div>
     </div>
 
+    <!-- Botones flotantes izquierdos -->
+    <div class="floating-buttons-container-left">
+        <!-- Botón 1: Izquierdo -->
+        <a href="sobre-mi.html" class="floating-button" title="Sobre Mí">
+            <div class="floating-button-content">
+                <img src="img/g2.png" alt="Sobre Mí" class="floating-button-logo">
+                <div class="floating-button-text">Conoceme<br>Sobre Mi</div>
+            </div>
+            <i class="fas fa-arrow-left floating-button-arrow"></i>
+        </a>
+
+        <!-- Botón 2: Izquierdo -->
+        <a href="#" class="floating-button" title="Proyecto Izquierdo 2">
+            <div class="floating-button-content">
+                <img src="img/g2.png" alt="Proyecto Izquierdo 2" class="floating-button-logo">
+                <div class="floating-button-text">Estudios<br>Mi Formacion</div>
+            </div>
+            <i class="fas fa-arrow-left floating-button-arrow"></i>
+        </a>
+
+        <!-- Botón 3: Izquierdo -->
+        <a href="#" class="floating-button" title="Proyecto Izquierdo 3">
+            <div class="floating-button-content">
+                <img src="img/g2.png" alt="Proyecto Izquierdo 3" class="floating-button-logo">
+                <div class="floating-button-text">Proyectos<br>Mis Trabajos</div>
+            </div>
+            <i class="fas fa-arrow-left floating-button-arrow"></i>
+        </a>
+
+        <!-- Botón 4: Izquierdo -->
+        <a href="#" class="floating-button" title="Proyecto Izquierdo 4">
+            <div class="floating-button-content">
+                <img src="img/g2.png" alt="Proyecto Izquierdo 4" class="floating-button-logo">
+                <div class="floating-button-text">Contactame<br>Mis redes sociales</div>
+            </div>
+            <i class="fas fa-arrow-left floating-button-arrow"></i>
+        </a>
+    </div>
+
     <!-- Botones flotantes -->
     <div class="floating-buttons-container">
         <!-- Botón 1: GOH GYM -->
@@ -637,7 +131,7 @@
             <i class="fas fa-arrow-right floating-button-arrow"></i>
         </a>
 
-        <!-- Botón 2: Placeholder -->
+        <!-- Botón 2 -->
         <a href="#" class="floating-button" title="Proyecto 2">
             <div class="floating-button-content">
                 <img src="img/g1.png" alt="Proyecto 2" class="floating-button-logo">
@@ -646,7 +140,7 @@
             <i class="fas fa-arrow-right floating-button-arrow"></i>
         </a>
 
-        <!-- Botón 3: Placeholder -->
+        <!-- Botón 3 -->
         <a href="#" class="floating-button" title="Proyecto 3">
             <div class="floating-button-content">
                 <img src="img/g1.png" alt="Proyecto 3" class="floating-button-logo">
@@ -655,7 +149,7 @@
             <i class="fas fa-arrow-right floating-button-arrow"></i>
         </a>
 
-        <!-- Botón 4: Placeholder -->
+        <!-- Botón 4 -->
         <a href="#" class="floating-button" title="Proyecto 4">
             <div class="floating-button-content">
                 <img src="img/g1.png" alt="Proyecto 4" class="floating-button-logo">
@@ -663,33 +157,7 @@
             </div>
             <i class="fas fa-arrow-right floating-button-arrow"></i>
         </a>
-
-        <!-- Botón 5: Placeholder -->
-        <a href="#" class="floating-button" title="Proyecto 5">
-            <div class="floating-button-content">
-                <img src="img/g1.png" alt="Proyecto 5" class="floating-button-logo">
-                <div class="floating-button-text">Proyecto 5<br>En desarrollo</div>
-            </div>
-            <i class="fas fa-arrow-right floating-button-arrow"></i>
-        </a>
-
-        <!-- Botón 6: Placeholder -->
-        <a href="#" class="floating-button" title="Proyecto 6">
-            <div class="floating-button-content">
-                <img src="img/g1.png" alt="Proyecto 6" class="floating-button-logo">
-                <div class="floating-button-text">Proyecto 6<br>En desarrollo</div>
-            </div>
-            <i class="fas fa-arrow-right floating-button-arrow"></i>
-        </a>
-
-        <!-- Botón 7: Placeholder -->
-        <a href="#" class="floating-button" title="Proyecto 7">
-            <div class="floating-button-content">
-                <img src="img/g1.png" alt="Proyecto 7" class="floating-button-logo">
-                <div class="floating-button-text">Proyecto 7<br>En desarrollo</div>
-            </div>
-            <i class="fas fa-arrow-right floating-button-arrow"></i>
-        </a>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
