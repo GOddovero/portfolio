@@ -13,7 +13,7 @@
             <!-- Card PKMN Reloaded -->
             <a href="https://goh-dev.com.ar/pkmrlp/" class="quick-access-card" title="PKMN Reloaded Sync" onclick="window.open(this.href, '_blank'); return false;">
                 <div class="quick-card-logo">
-                    <img src="img/favicon.png" alt="PKMN Reloaded">
+                    <img src="img/fav_pkmn.png" alt="PKMN Reloaded">
                 </div>
                 <h3>PKMN Reloaded Sync</h3>
                 <p>Sistema de Sincronización Multiusuario</p>

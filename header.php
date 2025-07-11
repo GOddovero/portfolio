@@ -70,9 +70,10 @@
     <link rel="canonical" href="https://goh-dev.com.ar/">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/g1.png">
-    <link rel="apple-touch-icon" href="img/g1.png">
-    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
