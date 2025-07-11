@@ -1,3 +1,21 @@
+/* Centrado de imagen y h4 en skill-item */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.skill-item img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skill-item h4 {
+    text-align: center;
+    width: 100%;
+}
 @view-transition{
     navigation: auto
 }
@@ -70,24 +88,31 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    color: #333;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-/* Nuevo contenedor principal */
+/* Sección Hero - Pantalla completa */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* Contenedor principal */
 .main-container {
     max-width: 1400px;
     width: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 3rem;
-    margin: 2rem auto 0 auto;
     padding: 2rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -95,6 +120,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     color: white;
+    margin: 0 auto;
 }
 
 /* Contenedor de imagen de perfil */
@@ -241,6 +267,58 @@ body {
     transition: all 0.3s ease;
     flex-shrink: 0;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Indicador de scroll */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2rem;
+    opacity: 0.7;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Secciones adicionales */
+.quick-access-section {
+    min-height: 10vh;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.about-section {
+    min-height: 100vh;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(59, 47, 47, 0.8), rgba(46, 196, 182, 0.1));
 }
 
 .nav-card:hover .card-arrow {
@@ -879,22 +957,63 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+/* Responsive para la nueva estructura de secciones */
+@media (max-width: 1200px) {
+    .hero-section {
+        padding: 0 15px;
+    }
+    
     .main-container {
-        margin: 1rem auto 0 auto;
+        max-width: 100%;
+        gap: 2rem;
         padding: 1.5rem;
+    }
+    
+    .profile-image-container {
+        flex: 0 0 30%;
     }
     
     .profile-image-main {
-        max-width: 250px;
+        max-width: 280px;
+    }
+    
+    .scroll-indicator {
+        bottom: 20px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 0 10px;
+    }
+    
+    .main-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .profile-image-container {
+        flex: none;
+        margin: 0;
+    }
+    
+    .profile-image-main {
+        max-width: 200px;
+    }
+    
+    .main-content {
+        margin: 0;
     }
     
     .presentation-text {
-        padding: 1.5rem;
+        padding: 2rem 1rem;
     }
     
     .presentation-text h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     
     .cards-container {
@@ -902,59 +1021,77 @@ body {
         gap: 1rem;
     }
     
-    .nav-card {
-        padding: 1.2rem;
-        min-height: 100px;
+    .scroll-indicator {
+        bottom: 15px;
+        font-size: 1.5rem;
     }
     
-    .card-icon {
-        width: 50px;
-        height: 50px;
+    .quick-access-section,
+    .about-section {
+        min-height: auto;
+        padding: 1rem 0;
     }
     
-    .card-text h3 {
-        font-size: 1.1rem;
+    .quick-access-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
     }
     
-    .card-text p {
+    .quick-access-card {
+        padding: 1.5rem;
+        min-height: 160px;
+        max-width: 100%;
+    }
+    
+    .quick-card-logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+    
+    .quick-access-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .quick-access-card p {
         font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 10px;
+    .hero-section {
+        padding: 0 5px;
     }
     
     .main-container {
-        margin: 0.5rem auto 0 auto;
-        padding: 1rem;
+        padding: 0.8rem;
     }
     
     .profile-image-main {
-        max-width: 200px;
+        max-width: 150px;
     }
     
     .presentation-text {
-        padding: 1rem;
+        padding: 1.5rem 0.8rem;
     }
     
     .presentation-text h1 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     
-    .nav-card {
-        padding: 1rem;
-        min-height: 80px;
-    }
-    
-    .card-content {
+    .cards-container {
         gap: 0.8rem;
     }
     
+    .nav-card {
+        padding: 0.8rem;
+        min-height: 90px;
+    }
+    
     .card-icon {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
     }
     
     .card-text h3 {
@@ -965,418 +1102,14 @@ body {
         font-size: 0.8rem;
     }
     
-    .card-arrow {
-        font-size: 1.2rem;
-    }
-
-    .floating-button {
-        width: 100%;
-        padding: 12px 15px;
-    }
-
-    .floating-buttons-container {
-        padding: 0 10px;
-    }
-
-    .floating-button-content {
-        gap: 0;
-    }
-
-    .floating-button-text {
-        display: none;
-    }
-
-    .floating-button-arrow {
-        display: none;
-    }
-
-    .floating-button-logo {
-        width: 40px;
-        height: 40px;
-        margin: 0 auto;
-    }
-
-    /* Ocultar todos los botones flotantes excepto el primero (GOH GYM) */
-    .floating-button:not(:first-child) {
-        display: none;
+    .scroll-indicator {
+        bottom: 10px;
+        font-size: 1.3rem;
     }
 }
 
-    .nav-button {
-        max-width: 240px;
-        padding: 12px 15px;
-        box-shadow: 0 5px 0 #dfdfdf,
-                    0 10px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-button-content {
-        gap: 0;
-    }
-
-    .nav-button-text {
-        display: none;
-    }
-
-    .nav-button-arrow {
-        display: none;
-    }
-
-    .nav-button-icon {
-        width: 48px;
-        height: 48px;
-        margin: 0 auto;
-        font-size: 24px;
-    }
-
-    /* Ocultar todos los botones de navegación excepto el primero en móviles */
-    .nav-button:not(:first-child) {
-        display: none;
-    }
-
-
-
-.section-title {
-    color: #3b2f2f;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    text-align: center;
-    background-color: #fdfdfd;
-    padding: 8px 15px;
-    border-radius: 10px;
-    width: 300px;
-    border: none;
-    /* Efecto 3D estático */
-    box-shadow: 0 8px 0 #dfdfdf,
-                0 15px 20px rgba(0, 0, 0, 0.3);
-    transform: translateY(-4px);
-    pointer-events: none;
-}
-
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 1rem;
-        padding: 6px 12px;
-        /* Ajuste del efecto 3D para móviles */
-        box-shadow: 0 6px 0 #dfdfdf,
-                    0 12px 15px rgba(0, 0, 0, 0.3);
-    }
-}
-
-/* Botones de navegación izquierdos */
-.nav-button {
-    flex: 1;
-    min-width: 200px;
-    max-width: 250px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    padding: 15px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-button:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.nav-button-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-button-logo {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.nav-button-text {
-    font-size: 0.9em;
-    line-height: 1.2;
-}
-
-.nav-button-arrow {
-    font-size: 1.2em;
-    margin-left: 10px;
-}
-
-@media (max-width: 1024px) {
-    .nav-buttons-container {
-        flex-wrap: wrap;
-    }
-
-    .nav-button {
-        min-width: 150px;
-    }
-}
-
-/* Estilos para la página Sobre Mí */
-.about-me {
-    max-width: 1200px;
-    margin: 4rem auto;
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    color: white;
-}
-
-.back-button {
-    position: fixed;
-    top: 2rem;
-    left: 2rem;
-    padding: 0.8rem 1.5rem;
-    background-color: rgba(59, 47, 47, 0.9);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.back-button:hover {
-    background-color: rgba(59, 47, 47, 1);
-    transform: translateX(-5px);
-}
-
-.about-content {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-}
-
-.about-content h1 {
-    text-align: center;
-    color: #3b2f2f;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.profile-section {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 1.5rem;
-}
-
-.profile-image {
-    width: 250px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5%;
-    box-shadow: 29px 26px 50px 12px rgba(0,0,0,0.75) inset;
-}
-
-.profile-info h2 {
-    color: #3b2f2f;
-    margin-bottom: 0.5rem;
-}
-
-.profile-info .subtitle {
-    color: #666;
-    font-size: 1.1rem;
-}
-
-.profile-description {
-    padding: 1rem;
-}
-
-.profile-description p {
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-.profile-description p:last-child {
-    margin-bottom: 0;
-}
-
-.skills-section {
-    margin-bottom: 2rem;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 1.5rem;
-}
-
-.skill-item {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 1.5rem;
-    height: 100%;
-    transition: transform 0.3s ease;
-}
-
-.skill-item img {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 0.5rem;
-}
-
-.skill-item h4 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-.skill-item:hover {
-    transform: translateY(-5px);
-}
-
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.tech-card {
-    padding: 0.8rem;
-    transition: transform 0.3s ease;
-    text-align: center;
-}
-
-.tech-card:hover {
-    transform: translateY(-3px);
-}
-
-.tech-card i {
-    font-size: 1.5em;
-    margin-bottom: 0.5rem;
-}
-
-.tech-card span {
-    color: white;
-    font-size: 0.9em;
-    display: block;
-}
-
-.experience-section, .education-section {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 1.5rem;
-    height: 100%;
-}
-
-.experience-education-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.experience-summary, .education-summary {
-    padding: 1rem;
-}
-
-.experience-summary p, .education-summary p {
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-.experience-summary p:last-child, .education-summary p:last-child {
-    margin-bottom: 0;
-}
-
-/* Ajustes para los títulos */
-h1, h2, h3, h4 {
-    color: white;
-}
-
-.skills-section h3,
-.experience-section h3,
-.education-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 0.5rem;
-}
-
-/* Ajustes para el texto */
-.profile-description p, 
-.experience-summary p, 
-.education-summary p {
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-}
-
-/* Ajustes responsive */
-@media (max-width: 768px) {
-    .about-me {
-        margin: 2rem auto;
-        padding: 1.5rem;
-    }
-
-    .profile-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem;
-    }
-
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
-
-    .skills-grid,
-    .experience-education-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .tech-grid {
-        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-        gap: 0.8rem;
-    }
-
-    .skill-item img {
-        width: 25px;
-        height: 25px;
-    }
-
-    .experience-section, .education-section {
-        padding: 1rem;
-    }
-
-    .profile-description {
-        padding: 0.5rem;
-    }
-}
-
-/* Sección de accesos rápidos independiente */
+/* Estilos para la sección de accesos rápidos */
 .quick-access-section {
-    max-width: 1400px;
-    width: 100%;
-    margin: 3rem auto 2rem auto;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     color: white;
     animation: fadeInUp 0.8s ease-out 0.3s both;
 }
@@ -1399,6 +1132,8 @@ h1, h2, h3, h4 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     justify-items: center;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .quick-access-card {
@@ -1492,93 +1227,319 @@ h1, h2, h3, h4 {
     z-index: 1;
 }
 
-/* Responsivo para la sección de accesos rápidos */
-@media (max-width: 1200px) {
-    .quick-access-section {
-        margin: 2rem auto 1.5rem auto;
-        padding: 1.5rem;
-    }
-    
-    .quick-access-section h2 {
-        font-size: 1.8rem;
-    }
-    
-    .quick-access-container {
-        gap: 1.5rem;
-    }
-    
-    .quick-access-card {
-        padding: 1.5rem;
-        min-height: 180px;
-    }
+/* Estilos para la sección About */
+.about-section .container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 2rem;
+    color: white;
 }
 
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 200px;
+    height: auto;
+    border-radius: 20%;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) inset;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-description h2 {
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.profile-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.skills-section {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.skills-section h3 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skill-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(1);
+}
+
+.skill-item h4 {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* centra verticalmente */
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    width: 100px;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+.tech-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tech-card i {
+    font-size: 1.5rem;
+}
+
+.tech-card span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.experience-education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.experience-section,
+.education-section {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.experience-section h3,
+.education-section h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.experience-section h3 i,
+.education-section h3 i {
+    color: #2ec4b6;
+}
+
+.experience-summary,
+.education-summary {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.experience-summary p,
+.education-summary p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Media queries para la sección About */
 @media (max-width: 768px) {
-    .quick-access-section {
-        margin: 1.5rem auto 1rem auto;
+    .about-section .container {
         padding: 1rem;
     }
     
-    .quick-access-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
     }
     
-    .quick-access-container {
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .profile-description h2 {
+        font-size: 1.8rem;
+    }
+    
+    .profile-description p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .skills-section {
+        padding: 1.5rem;
+    }
+    
+    .skills-section h3 {
+        font-size: 1.6rem;
+    }
+    
+    .skills-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
     }
     
-    .quick-access-card {
-        padding: 1.2rem;
-        min-height: 160px;
-        max-width: none;
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 0.8rem;
     }
     
-    .quick-card-logo {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 1rem;
+    .tech-card {
+        padding: 0.8rem;
     }
     
-    .quick-access-card h3 {
+    .experience-education-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .experience-section,
+    .education-section {
+        padding: 1.5rem;
+    }
+    
+    .experience-section h3,
+    .education-section h3 {
         font-size: 1.3rem;
-        margin-bottom: 0.5rem;
     }
     
-    .quick-access-card p {
-        font-size: 0.9rem;
+    .experience-summary p,
+    .education-summary p {
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
-    .quick-access-section {
-        margin: 1rem auto 0.5rem auto;
-        padding: 0.8rem;
+    .about-section .container {
+        padding: 0.5rem;
     }
     
-    .quick-access-section h2 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-    
-    .quick-access-card {
+    .profile-section {
         padding: 1rem;
-        min-height: 140px;
     }
     
-    .quick-card-logo {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 0.8rem;
+    .profile-image {
+        width: 120px;
+        height: 120px;
     }
     
-    .quick-access-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.4rem;
+    .profile-description h2 {
+        font-size: 1.5rem;
     }
     
-    .quick-access-card p {
+    .profile-description p {
+        font-size: 0.9rem;
+    }
+    
+    .skills-section {
+        padding: 1rem;
+    }
+    
+    .skills-section h3 {
+        font-size: 1.4rem;
+    }
+    
+    .skill-item {
+        padding: 1rem;
+    }
+    
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tech-card {
+        padding: 0.6rem;
+    }
+    
+    .tech-card span {
         font-size: 0.8rem;
+    }
+    
+    .experience-section,
+    .education-section {
+        padding: 1rem;
     }
 }

@@ -62,78 +62,84 @@
         <span></span>
         <span></span>
         <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
-    <!-- Nueva sección principal -->
-    <div class="main-container">
-        <!-- Imagen de perfil a la izquierda -->
-        <div class="profile-image-container">
-            <img src="img/img_caricatura.png" alt="Imagen Gaspar Oddovero Herrera" style="view-transition-name: img-perfil;" class="profile-image-main">
-        </div>
-
-        <!-- Contenido principal a la derecha -->
-        <div class="main-content">
-            <!-- Texto de presentación -->
-            <div class="presentation-text">
-                <h1>Hola, Soy Gaspar Oddovero Herrera, Licenciado en Informática y programador FullStack.</h1>
+    <!-- Sección Hero - Pantalla completa -->
+    <section class="hero-section">
+        <div class="main-container">
+            <!-- Imagen de perfil a la izquierda -->
+            <div class="profile-image-container">
+                <img src="img/img_caricatura.png" alt="Imagen Gaspar Oddovero Herrera" style="view-transition-name: img-perfil;" class="profile-image-main">
             </div>
 
-            <!-- Cards de navegación -->
-            <div class="cards-container">
-                <!-- Card 1: Sobre Mí -->
-                <a href="sobre-mi.html" class="nav-card" title="Sobre Mí">
-                    <div class="card-content">
-                        <img src="img/g2.png" alt="Sobre Mí" class="card-icon">
-                        <div class="card-text">
-                            <h3>Conoceme</h3>
-                            <p><span style="view-transition-name: text-sobre-mi;">Sobre Mí</span></p>
-                        </div>
-                    </div>
-                    <i class="fas fa-arrow-down card-arrow"></i>
-                </a>
+            <!-- Contenido principal a la derecha -->
+            <div class="main-content">
+                <!-- Texto de presentación -->
+                <div class="presentation-text">
+                    <h1>Hola, ¡Bienvenido a mi portafolio Web!</h1>
+                </div>
 
-                <!-- Card 2: Estudios -->
-                <a href="#" class="nav-card" title="Estudios">
-                    <div class="card-content">
-                        <img src="img/g2.png" alt="Estudios" class="card-icon">
-                        <div class="card-text">
-                            <h3>Estudios</h3>
-                            <p>Mi Formación</p>
+                <!-- Cards de navegación -->
+                <div class="cards-container">
+                    <!-- Card 1: Sobre Mí -->
+                    <a href="#cont-about-me" class="nav-card" title="Sobre Mí">
+                        <div class="card-content">
+                            <img src="img/g2.png" alt="Sobre Mí" class="card-icon">
+                            <div class="card-text">
+                                <h3>Conoceme</h3>
+                                <p><span style="view-transition-name: text-sobre-mi;">Sobre Mí</span></p>
+                            </div>
                         </div>
-                    </div>
-                    <i class="fas fa-arrow-down card-arrow"></i>
-                </a>
+                        <i class="fas fa-arrow-down card-arrow"></i>
+                    </a>
 
-                <!-- Card 3: Proyectos -->
-                <a href="#" class="nav-card" title="Proyectos">
-                    <div class="card-content">
-                        <img src="img/g2.png" alt="Proyectos" class="card-icon">
-                        <div class="card-text">
-                            <h3>Proyectos</h3>
-                            <p>Mis Trabajos</p>
+                    <!-- Card 2: Estudios -->
+                    <a href="#" class="nav-card" title="Estudios">
+                        <div class="card-content">
+                            <img src="img/g2.png" alt="Estudios" class="card-icon">
+                            <div class="card-text">
+                                <h3>Estudios</h3>
+                                <p>Mi Formación</p>
+                            </div>
                         </div>
-                    </div>
-                    <i class="fas fa-arrow-down card-arrow"></i>
-                </a>
+                        <i class="fas fa-arrow-down card-arrow"></i>
+                    </a>
 
-                <!-- Card 4: Contacto -->
-                <a href="#" class="nav-card" title="Contacto">
-                    <div class="card-content">
-                        <img src="img/g2.png" alt="Contacto" class="card-icon">
-                        <div class="card-text">
-                            <h3>Contactame</h3>
-                            <p>Mis redes sociales</p>
+                    <!-- Card 3: Proyectos -->
+                    <a href="#" class="nav-card" title="Proyectos">
+                        <div class="card-content">
+                            <img src="img/g2.png" alt="Proyectos" class="card-icon">
+                            <div class="card-text">
+                                <h3>Proyectos</h3>
+                                <p>Mis Trabajos</p>
+                            </div>
                         </div>
-                    </div>
-                    <i class="fas fa-arrow-down card-arrow"></i>
-                </a>
+                        <i class="fas fa-arrow-down card-arrow"></i>
+                    </a>
+
+                            <div class="card-text">
+                                <h3>Contactame</h3>
+                                <p>Mis redes sociales</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-down card-arrow"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+        
+        <!-- Indicador de scroll -->
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-    <!-- Nueva sección de accesos rápidos -->
-    <div class="quick-access-section">
-        <h2>Accesos Rápidos</h2>
+    <!-- Sección de accesos rápidos -->
+    <section class="quick-access-section">
         <div class="quick-access-container">
             <!-- Card GOH GYM -->
             <a href="https://gym.goh-dev.com.ar" class="quick-access-card" title="GOH GYM - Sistema de Gestión de Gimnasios" onclick="window.open(this.href, '_blank'); return false;">
@@ -153,8 +159,175 @@
                 <p>Sistema de Sincronización Multiusuario</p>
             </a>
         </div>
-    </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section class="about-section" id="cont-about-me">
+        <div class="container about-me">
+        <!-- Contenido Principal -->
+        <div class="about-content">            
+            <!-- Sección de Perfil -->
+            <section class="profile-section">
+                <img src="img/contacto_goh_sf.png" alt="Gaspar Oddovero Herrera" class="profile-image" style="view-transition-name: img-perfil;">
+                <div class="profile-info">
+                    
+                    <div class="profile-description">
+                        <h2>Gaspar Oddovero Herrera</h2>
+                        <p>Soy Licenciado en Informática y Desarrollador Full Stack con sólida experiencia en el desarrollo de aplicaciones web y de escritorio. Como cofundador de SnakeSoftDev, combino habilidades técnicas con visión empresarial, participando en todas las etapas del ciclo de vida del software, desde el diseño hasta la implementación y soporte.</p>
+                        
+                        <p>Mi recorrido profesional incluye la docencia en programación (Python, HTML, CSS, JavaScript y PHP), charlas sobre Inteligencia Artificial en universidades y experiencia práctica en proyectos reales tanto académicos como comerciales. Me destaco por mi enfoque en la mejora continua, la innovación tecnológica y la creación de soluciones que priorizan la experiencia del usuario.</p>
+                        
+                        <p>Actualmente, desarrollo proyectos utilizando tecnologías como React, PHP, Java, MySQL. Complemento mi perfil técnico con habilidades blandas clave: comunicación efectiva, pensamiento crítico y orientación al cliente.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Habilidades -->
+            <section class="skills-section">
+                <h3>Habilidades Técnicas</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <img src="img/icons/code.svg" alt="Frontend">
+                        <h4>Desarrollo Frontend</h4>
+                        <div class="tech-grid">
+                            <div class="tech-card">
+                                <i class="fab fa-html5" style="color: #E34F26;"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fab fa-js" style="color: #F7DF1E;"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fab fa-react" style="color: #61DAFB;"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-stream" style="color: #FF4B4B;"></i>
+                                <span>Streamlit</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-mobile-alt" style="color: #4CAF50;"></i>
+                                <span>Responsive</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-paint-brush" style="color: #9C27B0;"></i>
+                                <span>UX/UI</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <img src="img/icons/computer.svg" alt="Backend">
+                        <h4>Desarrollo Backend</h4>
+                        <div class="tech-grid">
+                            <div class="tech-card">
+                                <i class="fab fa-python" style="color: #3776AB;"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fab fa-java" style="color: #ED8B00;"></i>
+                                <span>Java</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fab fa-php" style="color: #777BB4;"></i>
+                                <span>PHP</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fab fa-node-js" style="color: #339933;"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-server" style="color: #FF6C37;"></i>
+                                <span>REST APIs</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-database" style="color: #336791;"></i>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-fire" style="color: #FFCA28;"></i>
+                                <span>Firebase</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-database" style="color: #336791;"></i>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-shield-alt" style="color: #4CAF50;"></i>
+                                <span>Auth</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <img src="img/icons/startup.svg" alt="DevOps">
+                        <h4>DevOps y Herramientas</h4>
+                        <div class="tech-grid">
+                            <div class="tech-card">
+                                <i class="fab fa-git-alt" style="color: #F05032;"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fab fa-github" style="color: #070707;"></i>
+                                <span>GitHub</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-infinity" style="color: #2496ED;"></i>
+                                <span>CI/CD</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-tasks" style="color: #1976D2;"></i>
+                                <span>Scrum</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fab fa-docker" style="color: #2496ED;"></i>
+                                <span>Docker</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-code" style="color: #007ACC;"></i>
+                                <span>VS Code</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-laptop-code" style="color: #FE315D;"></i>
+                                <span>IntelliJ</span>
+                            </div>
+                            <div class="tech-card">
+                                <i class="fas fa-layer-group" style="color: #FE315D;"></i>
+                                <span>Cursor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Experiencia y Educación -->
+            <div class="experience-education-grid">
+                <!-- Sección de Experiencia -->
+                <section class="experience-section">
+                    <h3><i class="fas fa-briefcase"></i> Experiencia Profesional</h3>
+                    <div class="experience-summary">
+                        <p>Desde 2024 soy Desarrollador Full Stack y cofundador de SnakeSoftDev, donde combino desarrollo web, gestión comercial y atención al cliente. Paralelamente, dicto clases de programación en la Universidad Popular General Levalle y brindo charlas sobre Inteligencia Artificial.</p>
+                        
+                        <p>Desde enero de 2025, impulso mi marca personal GOH-DEV, con la que firmo todos mis desarrollos y consolidé mi presencia profesional en el mundo tech.</p>
+                    </div>
+                </section>
+
+                <!-- Sección de Educación -->
+                <section class="education-section">
+                    <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
+                    <div class="education-summary">
+                        <p>Licenciado en Informática por la Universidad Siglo 21 (2019–2024), con enfoque en desarrollo web, aplicaciones de escritorio y metodologías ágiles. Complemento mi formación con cursos profesionales en Python (Django, Flask, Streamlit) y Java (Spring Boot, Angular), orientados a la creación de soluciones completas y funcionales.</p>
+                    </div>
+                </section>
+            </div>
+            </div>
+        </div>
+    </section>
     <script src="js/script.js"></script>
     <script src="js/transitions.js"></script>
+    <script src="js/scroll-handler.js"></script>
 </body>
 </html>
