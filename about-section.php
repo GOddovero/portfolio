@@ -5,7 +5,7 @@
         <div class="about-content">            
             <!-- Sección de Perfil -->
             <section class="profile-section">
-                <img src="img/contacto_goh_sf.png" alt="Gaspar Oddovero Herrera" class="profile-image">
+                <img src="img/contacto_goh_sf.webp" alt="Gaspar Oddovero Herrera" class="profile-image">
                 <div class="profile-info">
                     
                     <div class="profile-description">

@@ -21,7 +21,7 @@
     <meta property="og:url" content="https://goh-dev.com.ar/">
     <meta property="og:title" content="Gaspar Oddovero Herrera - Desarrollador Full Stack | GOH-DEV">
     <meta property="og:description" content="Desarrollador Full Stack y Licenciado en Informática de General Levalle, Argentina. Especialista en desarrollo web con PHP, JavaScript, React y MySQL.">
-    <meta property="og:image" content="https://goh-dev.com.ar/img/contacto_goh_sf.png">
+    <meta property="og:image" content="https://goh-dev.com.ar/img/contacto_goh_sf.webp">
     <meta property="og:locale" content="es_AR">
     <meta property="og:site_name" content="GOH-DEV Portfolio">
     
@@ -30,7 +30,7 @@
     <meta property="twitter:url" content="https://goh-dev.com.ar/">
     <meta property="twitter:title" content="Gaspar Oddovero Herrera - Desarrollador Full Stack | GOH-DEV">
     <meta property="twitter:description" content="Desarrollador Full Stack y Licenciado en Informática de General Levalle, Argentina. Especialista en desarrollo web.">
-    <meta property="twitter:image" content="https://goh-dev.com.ar/img/contacto_goh_sf.png">
+    <meta property="twitter:image" content="https://goh-dev.com.ar/img/contacto_goh_sf.webp">
     <meta property="twitter:creator" content="@goh_dev">>
     
     <!-- Schema.org JSON-LD -->
@@ -43,7 +43,7 @@
       "jobTitle": "Desarrollador Full Stack",
       "description": "Licenciado en Informática y Desarrollador Full Stack especializado en PHP, JavaScript, React y MySQL",
       "url": "https://goh-dev.com.ar/",
-      "image": "https://goh-dev.com.ar/img/contacto_goh_sf.png",
+      "image": "https://goh-dev.com.ar/img/contacto_goh_sf.webp",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "General Levalle",
@@ -80,8 +80,8 @@
     
     <!-- Preload de recursos críticos -->
     <link rel="preload" href="css/styles.css" as="style">
-    <link rel="preload" href="img/contacto_goh_sf.png" as="image">
-    
+    <link rel="preload" href="img/contacto_goh_sf.webp" as="image">
+
     <!-- DNS prefetch para recursos externos -->
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">

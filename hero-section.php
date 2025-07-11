@@ -3,7 +3,7 @@
         <div class="main-container">
             <!-- Imagen de perfil a la izquierda -->
             <div class="profile-image-container">
-                <img src="img/img_caricatura.png" alt="Imagen Gaspar Oddovero Herrera" class="profile-image-main">
+                <img src="img/img_caricatura.webp" alt="Imagen Gaspar Oddovero Herrera" class="profile-image-main">
             </div>
 
             <!-- Contenido principal a la derecha -->
