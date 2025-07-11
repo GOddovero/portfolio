@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://goh-dev.com.ar/sitemap.xml
+
+# Disallow logs and config directories
+Disallow: /logs/
+Disallow: /config/
+Disallow: /vendor/
+
+# Allow important files and directories
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /*.php

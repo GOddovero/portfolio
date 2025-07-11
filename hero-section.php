@@ -10,7 +10,8 @@
             <div class="main-content">
                 <!-- Texto de presentación -->
                 <div class="presentation-text">
-                    <h1>Hola ¡Bienvenido a mi portafolio Web!</h1>
+                    <h1>Bienvenido a mi Portafolio Web!</h1>
+                    <h2>Gaspar Oddovero Herrera - Lic. en Informatica</h2>
                 </div>
 
                 <!-- Cards de navegación -->
