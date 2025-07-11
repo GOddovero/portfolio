@@ -66,6 +66,13 @@
         <span></span>
         <span></span>
         <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
     <!-- Sección Hero - Pantalla completa -->
@@ -121,6 +128,10 @@
                         <i class="fas fa-arrow-down card-arrow"></i>
                     </a>
 
+                    <!-- Card 4: Contacto -->
+                    <a href="#" class="nav-card" title="Contacto">
+                        <div class="card-content">
+                            <img src="img/g2.png" alt="Contacto" class="card-icon">
                             <div class="card-text">
                                 <h3>Contactame</h3>
                                 <p>Mis redes sociales</p>
@@ -329,5 +340,19 @@
     <script src="js/script.js"></script>
     <script src="js/transitions.js"></script>
     <script src="js/scroll-handler.js"></script>
+    <script>
+    // Scroll suave para enlaces internos (funciona siempre)
+    document.querySelectorAll('a.nav-card[href="#cont-about-me"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector('#cont-about-me');
+            if (target) {
+                e.preventDefault();
+                // Limpia el hash para que siempre funcione
+                history.replaceState(null, '', location.pathname + location.search);
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+    </script>
 </body>
 </html>
