@@ -8,7 +8,11 @@ function handlePageTransitions() {
     // Obtener todos los enlaces que llevan a otras páginas
     document.querySelectorAll('a[href]').forEach(link => {
         // Solo manejar enlaces internos y que no tengan ya el event listener
-        if (link.href.startsWith(window.location.origin) && !link.hasTransitionHandler) {
+        // Excluir enlaces de navegación interna (que empiecen con #)
+        const href = link.getAttribute('href');
+        if (link.href.startsWith(window.location.origin) && 
+            !href.startsWith('#') && 
+            !link.hasTransitionHandler) {
             link.hasTransitionHandler = true; // Marcar que ya tiene el handler
             link.addEventListener('click', async e => {
                 e.preventDefault();

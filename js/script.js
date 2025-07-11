@@ -125,30 +125,36 @@ document.querySelectorAll('.menu-option a').forEach(link => {
 document.addEventListener('DOMContentLoaded', function() {
     const scrollArrow = document.getElementById('scrollArrow');
     
-    // Comprobar posición inicial del scroll
-    checkScrollPosition();
-    
-    // Añadir evento de scroll
-    window.addEventListener('scroll', checkScrollPosition);
-    
-    // Hacer que la flecha actúe como botón de scroll
-    scrollArrow.addEventListener('click', function() {
-        if (scrollArrow.classList.contains('up')) {
-            // Si está hacia arriba, ir al inicio
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        } else {
-            // Si está hacia abajo, ir al final
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth'
-            });
-        }
-    });
+    // Verificar si el elemento existe antes de usarlo
+    if (scrollArrow) {
+        // Comprobar posición inicial del scroll
+        checkScrollPosition();
+        
+        // Añadir evento de scroll
+        window.addEventListener('scroll', checkScrollPosition);
+        
+        // Hacer que la flecha actúe como botón de scroll
+        scrollArrow.addEventListener('click', function() {
+            if (scrollArrow.classList.contains('up')) {
+                // Si está hacia arriba, ir al inicio
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Si está hacia abajo, ir al final
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
     
     function checkScrollPosition() {
+        // Verificar nuevamente si el elemento existe
+        if (!scrollArrow) return;
+        
         // Calcular si estamos cerca del final del documento (a 100px del final)
         const scrollPosition = window.scrollY + window.innerHeight;
         const documentHeight = document.body.scrollHeight;
@@ -167,11 +173,14 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const cornerLogo = document.querySelector('.corner-logo');
     
-    cornerLogo.addEventListener('click', function() {
-        // Ir al inicio de la página principal
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    // Verificar si el elemento existe antes de usarlo
+    if (cornerLogo) {
+        cornerLogo.addEventListener('click', function() {
+            // Ir al inicio de la página principal
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    });
+    }
 });
