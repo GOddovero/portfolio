@@ -38,79 +38,121 @@
         <span></span>
         <span></span>
         <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
-    <div class="container">
-        <!-- Logo -->
-        <img src="img/goh1.png" alt="GOH Logo" class="logo">
-        
-        <!-- GIF -->
-        <div class="img-mia-container">
-            <img src="img/chica_contacto_goh_sf.png" alt="Imagen Gaspar Oddovero Herrera" style="view-transition-name: img-perfil;">
+    <!-- Nueva sección principal -->
+    <div class="main-container">
+        <!-- Imagen de perfil a la izquierda -->
+        <div class="profile-image-container">
+            <img src="img/img_caricatura.png" alt="Imagen Gaspar Oddovero Herrera" style="view-transition-name: img-perfil;" class="profile-image-main">
         </div>
-        
-        <!-- Mensaje -->
-        <p class="message">
-            Soy Gaspar Oddovero Herrera! <br> Licenciado en Informatica, Programador FullStack.
-        </p>
-       
+
+        <!-- Contenido principal a la derecha -->
+        <div class="main-content">
+            <!-- Texto de presentación -->
+            <div class="presentation-text">
+                <h1>Hola, Soy Gaspar Oddovero Herrera, Licenciado en Informática y programador FullStack.</h1>
+            </div>
+
+            <!-- Cards de navegación -->
+            <div class="cards-container">
+                <!-- Card 1: Sobre Mí -->
+                <a href="sobre-mi.html" class="nav-card" title="Sobre Mí">
+                    <div class="card-content">
+                        <img src="img/g2.png" alt="Sobre Mí" class="card-icon">
+                        <div class="card-text">
+                            <h3>Conoceme</h3>
+                            <p><span style="view-transition-name: text-sobre-mi;">Sobre Mí</span></p>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-down card-arrow"></i>
+                </a>
+
+                <!-- Card 2: Estudios -->
+                <a href="#" class="nav-card" title="Estudios">
+                    <div class="card-content">
+                        <img src="img/g2.png" alt="Estudios" class="card-icon">
+                        <div class="card-text">
+                            <h3>Estudios</h3>
+                            <p>Mi Formación</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-down card-arrow"></i>
+                </a>
+
+                <!-- Card 3: Proyectos -->
+                <a href="#" class="nav-card" title="Proyectos">
+                    <div class="card-content">
+                        <img src="img/g2.png" alt="Proyectos" class="card-icon">
+                        <div class="card-text">
+                            <h3>Proyectos</h3>
+                            <p>Mis Trabajos</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-down card-arrow"></i>
+                </a>
+
+                <!-- Card 4: Contacto -->
+                <a href="#" class="nav-card" title="Contacto">
+                    <div class="card-content">
+                        <img src="img/g2.png" alt="Contacto" class="card-icon">
+                        <div class="card-text">
+                            <h3>Contactame</h3>
+                            <p>Mis redes sociales</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-down card-arrow"></i>
+                </a>
+            </div>
+        </div>
     </div>
 
-    <!-- Botones flotantes izquierdos -->
-    <div class="floating-buttons-container-left">
-        <!-- Botón 1: Izquierdo -->
-        <a href="sobre-mi.html" class="floating-button" title="Sobre Mí">
-            <div class="floating-button-content">
-                <img src="img/g2.png" alt="Sobre Mí" class="floating-button-logo">
-                <div class="floating-button-text">Conoceme<br><span style="view-transition-name: text-sobre-mi;">Sobre Mí</span></div>
-            </div>
-            <i class="fas fa-arrow-left floating-button-arrow"></i>
-        </a>
+    <!-- Nueva sección de accesos rápidos -->
+    <div class="quick-access-section">
+        <h2>Accesos Rápidos</h2>
+        <div class="quick-access-container">
+            <!-- Card GOH GYM -->
+            <a href="https://gym.goh-dev.com.ar" class="quick-access-card" title="GOH GYM - Sistema de Gestión de Gimnasios" onclick="window.open(this.href, '_blank'); return false;">
+                <div class="quick-card-logo">
+                    <img src="img/logo_gohgym.png" alt="GOH GYM">
+                </div>
+                <h3>GOH GYM</h3>
+                <p>Sistema de Gestión de Gimnasios</p>
+            </a>
 
-        <!-- Botón 2: Izquierdo -->
-        <a href="#" class="floating-button" title="Proyecto Izquierdo 2">
-            <div class="floating-button-content">
-                <img src="img/g2.png" alt="Proyecto Izquierdo 2" class="floating-button-logo">
-                <div class="floating-button-text">Estudios<br>Mi Formacion</div>
-            </div>
-            <i class="fas fa-arrow-left floating-button-arrow"></i>
-        </a>
-
-        <!-- Botón 3: Izquierdo -->
-        <a href="#" class="floating-button" title="Proyecto Izquierdo 3">
-            <div class="floating-button-content">
-                <img src="img/g2.png" alt="Proyecto Izquierdo 3" class="floating-button-logo">
-                <div class="floating-button-text">Proyectos<br>Mis Trabajos</div>
-            </div>
-            <i class="fas fa-arrow-left floating-button-arrow"></i>
-        </a>
-
-        <!-- Botón 4: Izquierdo -->
-        <a href="#" class="floating-button" title="Proyecto Izquierdo 4">
-            <div class="floating-button-content">
-                <img src="img/g2.png" alt="Proyecto Izquierdo 4" class="floating-button-logo">
-                <div class="floating-button-text">Contactame<br>Mis redes sociales</div>
-            </div>
-            <i class="fas fa-arrow-left floating-button-arrow"></i>
-        </a>
-    </div>
-
-    <!-- Botón flotante de GOH GYM -->
-    <div class="floating-buttons-container">
-        <a href="https://gym.goh-dev.com.ar" class="floating-button" title="GOH GYM - Sistema de Gestión de Gimnasios" onclick="window.open(this.href, '_blank'); return false;">
-            <div class="floating-button-content">
-                <img src="img/logo_gohgym.png" alt="GOH GYM" class="floating-button-logo">
-                <div class="floating-button-text">Sistema de Gestión<br>de Gimnasios</div>
-            </div>
-            <i class="fas fa-external-link-alt floating-button-arrow"></i>
-        </a>
-        <a href="https://goh-dev.com.ar/pkmrlp/" class="floating-button" title="PKMN Reloaded Sync" onclick="window.open(this.href, '_blank'); return false;">
-            <div class="floating-button-content">
-                <img src="img/favicon.png" alt="GOH GYM" class="floating-button-logo">
-                <div class="floating-button-text">Sistema de Sinconización<br>Multiusuario</div>
-            </div>
-            <i class="fas fa-external-link-alt floating-button-arrow"></i>
-        </a>
+            <!-- Card PKMN Reloaded -->
+            <a href="https://goh-dev.com.ar/pkmrlp/" class="quick-access-card" title="PKMN Reloaded Sync" onclick="window.open(this.href, '_blank'); return false;">
+                <div class="quick-card-logo">
+                    <img src="img/favicon.png" alt="PKMN Reloaded">
+                </div>
+                <h3>PKMN Reloaded Sync</h3>
+                <p>Sistema de Sincronización Multiusuario</p>
+            </a>
+        </div>
     </div>
     <script src="js/script.js"></script>
     <script src="js/transitions.js"></script>
