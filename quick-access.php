@@ -9,7 +9,14 @@
                 <h3>GOH GYM</h3>
                 <p>Sistema de Gestión de Gimnasios</p>
             </a>
-
+            <!-- Card Change Log -->
+            <a href="https://goh-dev.com.ar/cambios-goh" class="quick-access-card" title="GOH GYM - Sistema de Gestión de Gimnasios" onclick="window.open(this.href, '_blank'); return false;">
+                <div class="quick-card-logo">
+                    <img src="img/GOH-DEV.png" alt="GOH GYM">
+                </div>
+                <h3>Change Log</h3>
+                <p>Portal informativo de cambios en los sistemas de GOH</p>
+            </a>
             <!-- Card PKMN Reloaded -->
             <a href="https://goh-dev.com.ar/pkmrlp/" class="quick-access-card" title="PKMN Reloaded Sync" onclick="window.open(this.href, '_blank'); return false;">
                 <div class="quick-card-logo">
