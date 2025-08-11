@@ -31,7 +31,17 @@
     <meta property="twitter:title" content="Gaspar Oddovero Herrera - Desarrollador Full Stack | GOH-DEV">
     <meta property="twitter:description" content="Desarrollador Full Stack y Licenciado en Informática de General Levalle, Argentina. Especialista en desarrollo web.">
     <meta property="twitter:image" content="https://goh-dev.com.ar/img/contacto_goh_sf.webp">
-    <meta property="twitter:creator" content="@goh_dev">>
+    <meta property="twitter:creator" content="@goh_dev">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-764C75N48R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+
+      gtag('config', 'G-764C75N48R');
+    </script>
     
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
