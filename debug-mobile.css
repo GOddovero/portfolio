@@ -1,0 +1,380 @@
+/* ================================================
+   DEBUG CSS PARA MOBILE - GOH-DEV Portfolio
+   Descomentar estas líneas temporalmente para
+   visualizar problemas de layout en móvil
+   ================================================ */
+
+/* 
+   CÓMO USAR:
+   1. Copia el bloque que necesites
+   2. Pégalo al final de styles.css temporalmente
+   3. Recarga la página
+   4. Identifica el problema
+   5. Elimina el código debug
+*/
+
+/* ===============================================
+   DEBUG 1: Mostrar bordes en todos los elementos
+   Útil para identificar márgenes y padding
+   =============================================== */
+/*
+@media (max-width: 767px) {
+    * {
+        outline: 1px solid red !important;
+    }
+    
+    .main-container {
+        outline: 3px solid yellow !important;
+    }
+    
+    .nav-card {
+        outline: 2px solid green !important;
+    }
+    
+    .quick-access-card {
+        outline: 2px solid blue !important;
+    }
+}
+*/
+
+/* ===============================================
+   DEBUG 2: Mostrar dimensiones de elementos
+   =============================================== */
+/*
+@media (max-width: 767px) {
+    .main-container::before,
+    .nav-card::before,
+    .quick-access-card::before,
+    .profile-section::before {
+        content: attr(class) " - Width: " attr(data-width);
+        display: block;
+        background: rgba(255, 0, 0, 0.8);
+        color: white;
+        padding: 5px;
+        font-size: 12px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+}
+*/
+
+/* ===============================================
+   DEBUG 3: Identificar overflow horizontal
+   =============================================== */
+/*
+@media (max-width: 767px) {
+    * {
+        outline: 1px solid red;
+        background: rgba(255, 0, 0, 0.05);
+    }
+    
+    body {
+        overflow-x: hidden;
+        position: relative;
+    }
+    
+    body::after {
+        content: "Si ves scroll horizontal, algún elemento es más ancho que la pantalla";
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: red;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        z-index: 10000;
+        font-size: 12px;
+    }
+}
+*/
+
+/* ===============================================
+   DEBUG 4: Visualizar áreas táctiles
+   Muestra si los botones son lo suficientemente grandes
+   =============================================== */
+/*
+@media (max-width: 767px) {
+    .nav-card,
+    .quick-access-card,
+    .btn-submit,
+    .social-link,
+    .back-btn,
+    .saber-mas-btn {
+        position: relative;
+    }
+    
+    .nav-card::after,
+    .quick-access-card::after,
+    .btn-submit::after,
+    .social-link::after,
+    .back-btn::after,
+    .saber-mas-btn::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 44px;
+        height: 44px;
+        border: 2px dashed yellow;
+        pointer-events: none;
+        z-index: 1000;
+    }
+}
+*/
+
+/* ===============================================
+   DEBUG 5: Mostrar breakpoint actual
+   =============================================== */
+/*
+body::before {
+    content: "Desktop";
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+    z-index: 10000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+    body::before {
+        content: "Tablet (≤1024px)";
+        background: green;
+    }
+}
+
+@media (max-width: 767px) {
+    body::before {
+        content: "Mobile (≤767px)";
+        background: orange;
+    }
+}
+
+@media (max-width: 480px) {
+    body::before {
+        content: "Mobile Pequeño (≤480px)";
+        background: red;
+    }
+}
+
+@media (max-width: 360px) {
+    body::before {
+        content: "Mobile Muy Pequeño (≤360px)";
+        background: darkred;
+    }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+    body::before {
+        content: "Mobile Landscape";
+        background: purple;
+    }
+}
+*/
+
+/* ===============================================
+   DEBUG 6: Mostrar grid lines
+   Útil para verificar alineación de grids
+   =============================================== */
+/*
+@media (max-width: 767px) {
+    .cards-container,
+    .quick-access-container,
+    .skills-grid,
+    .tech-grid {
+        background: 
+            repeating-linear-gradient(
+                0deg,
+                rgba(255, 0, 0, 0.1) 0px,
+                rgba(255, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 20px
+            ),
+            repeating-linear-gradient(
+                90deg,
+                rgba(255, 0, 0, 0.1) 0px,
+                rgba(255, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 20px
+            );
+    }
+}
+*/
+
+/* ===============================================
+   DEBUG 7: Resaltar elementos con z-index
+   =============================================== */
+/*
+@media (max-width: 767px) {
+    [style*="z-index"],
+    .scroll-indicator,
+    .back-navigation,
+    .custom-modal {
+        box-shadow: 0 0 0 3px red !important;
+    }
+}
+*/
+
+/* ===============================================
+   DEBUG 8: Verificar font-sizes
+   =============================================== */
+/*
+@media (max-width: 767px) {
+    h1, h2, h3, h4, p, span, a {
+        position: relative;
+    }
+    
+    h1::after, h2::after, h3::after, h4::after {
+        content: " [" attr(style) "]";
+        font-size: 10px;
+        color: red;
+        font-weight: normal;
+    }
+}
+*/
+
+/* ===============================================
+   DEBUG 9: Detectar elementos que causan scroll
+   =============================================== */
+/*
+@media (max-width: 767px) {
+    * {
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    *:not(body):not(html) {
+        position: relative;
+    }
+    
+    *:not(body):not(html)::before {
+        content: attr(class);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(255, 0, 0, 0.8);
+        color: white;
+        font-size: 10px;
+        padding: 2px 5px;
+        z-index: 10000;
+        pointer-events: none;
+    }
+}
+*/
+
+/* ===============================================
+   DEBUG 10: Console log simulado en pantalla
+   Para ver valores en tiempo real
+   =============================================== */
+/*
+@media (max-width: 767px) {
+    body::after {
+        content: "Width: " attr(data-width) " | Height: " attr(data-height);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 10px;
+        font-family: monospace;
+        font-size: 12px;
+        z-index: 10000;
+        text-align: center;
+    }
+}
+*/
+
+/* ===============================================
+   JAVASCRIPT COMPANION
+   Agrega esto a mobile.js o en la consola
+   =============================================== */
+/*
+// Mostrar dimensiones en tiempo real
+function showDimensions() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const body = document.body;
+    body.setAttribute('data-width', width + 'px');
+    body.setAttribute('data-height', height + 'px');
+    console.log(`Dimensiones: ${width}px × ${height}px`);
+}
+
+window.addEventListener('resize', showDimensions);
+window.addEventListener('orientationchange', showDimensions);
+showDimensions();
+
+// Detectar elementos que causan overflow
+function findOverflowElements() {
+    const allElements = document.querySelectorAll('*');
+    const overflowElements = [];
+    
+    allElements.forEach(el => {
+        if (el.scrollWidth > document.documentElement.clientWidth) {
+            overflowElements.push({
+                element: el,
+                width: el.scrollWidth,
+                class: el.className,
+                id: el.id
+            });
+        }
+    });
+    
+    console.log('Elementos que causan overflow horizontal:', overflowElements);
+    return overflowElements;
+}
+
+// Ejecutar en consola:
+// findOverflowElements();
+
+// Verificar áreas táctiles
+function checkTouchTargets() {
+    const interactiveElements = document.querySelectorAll('a, button, input, .nav-card, .quick-access-card');
+    const tooSmall = [];
+    
+    interactiveElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.height < 44 || rect.width < 44) {
+            tooSmall.push({
+                element: el,
+                height: rect.height,
+                width: rect.width,
+                class: el.className
+            });
+        }
+    });
+    
+    console.log('Elementos con área táctil menor a 44px:', tooSmall);
+    return tooSmall;
+}
+
+// Ejecutar en consola:
+// checkTouchTargets();
+
+// Simular diferentes tamaños de pantalla
+function simulateDevice(device) {
+    const sizes = {
+        'iphone-se': { width: 375, height: 667 },
+        'iphone-12': { width: 390, height: 844 },
+        'iphone-max': { width: 428, height: 926 },
+        'android-small': { width: 360, height: 640 },
+        'android-medium': { width: 412, height: 915 },
+        'tablet': { width: 768, height: 1024 }
+    };
+    
+    if (sizes[device]) {
+        console.log(`Simulando ${device}: ${sizes[device].width}×${sizes[device].height}`);
+        // Usar Chrome DevTools para aplicar
+    }
+}
+
+// Ejecutar en consola:
+// simulateDevice('iphone-12');
+*/

@@ -2,7 +2,7 @@
     <section class="quick-access-section">
         <div class="quick-access-container">
             <!-- Card GOH GYM -->
-            <a href="https://gym.goh-dev.com.ar" class="quick-access-card" title="GOH GYM - Sistema de Gestión de Gimnasios" onclick="window.open(this.href, '_blank'); return false;">
+            <a href="https://goh-dev.com.ar/gym" class="quick-access-card" title="GOH GYM - Sistema de Gestión de Gimnasios" onclick="window.open(this.href, '_blank'); return false;">
                 <div class="quick-card-logo">
                     <img src="img/logo_gohgym.png" alt="GOH GYM">
                 </div>
@@ -17,13 +17,13 @@
                 <h3>Change Log</h3>
                 <p>Portal informativo de cambios en los sistemas de GOH</p>
             </a>
-            <!-- Card PKMN Reloaded -->
-            <a href="https://goh-dev.com.ar/pkmrlp/" class="quick-access-card" title="PKMN Reloaded Sync" onclick="window.open(this.href, '_blank'); return false;">
+            <!-- Card GOH CARE -->
+            <a href="https://goh-dev.com.ar/care/" class="quick-access-card" title="GOH CARE" onclick="window.open(this.href, '_blank'); return false;">
                 <div class="quick-card-logo">
-                    <img src="img/fav_pkmn.png" alt="PKMN Reloaded">
+                    <img src="img/goh-care.png" alt="GOH CARE">
                 </div>
-                <h3>PKMN Reloaded Sync</h3>
-                <p>Sistema de Sincronización Multiusuario</p>
+                <h3>GOH CARE</h3>
+                <p>Sistema de Gestión Médico</p>
             </a>
         </div>
     </section>
