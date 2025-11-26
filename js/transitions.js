@@ -9,10 +9,13 @@ function handlePageTransitions() {
     document.querySelectorAll('a[href]').forEach(link => {
         // Solo manejar enlaces internos y que no tengan ya el event listener
         // Excluir enlaces de navegación interna (que empiecen con #)
+        // Excluir enlaces de quick access y enlaces con target="_blank"
         const href = link.getAttribute('href');
         if (link.href.startsWith(window.location.origin) && 
             !href.startsWith('#') && 
-            !link.hasTransitionHandler) {
+            !link.hasTransitionHandler &&
+            !link.classList.contains('quick-access-card') &&
+            link.getAttribute('target') !== '_blank') {
             link.hasTransitionHandler = true; // Marcar que ya tiene el handler
             link.addEventListener('click', async e => {
                 e.preventDefault();
