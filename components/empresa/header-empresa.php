@@ -48,6 +48,9 @@
     <link rel="icon" type="image/png" href="img/png1.png">
     <link rel="apple-touch-icon" href="img/png1.png">
     
+    <!-- Preload Hero Image for LCP -->
+    <link rel="preload" as="image" href="img/png1.png">
+
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,8 +67,8 @@
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
     
     <!-- Main Styles -->
-    <link rel="preload" href="css/empresa.css" as="style">
-    <link rel="stylesheet" href="css/empresa.css">
+    <link rel="preload" href="css/empresa.min.css" as="style">
+    <link rel="stylesheet" href="css/empresa.min.css">
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">

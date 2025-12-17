@@ -1,7 +1,7 @@
 <section id="ecosistema" class="section-padding products-section">
     <div class="container">
         <div style="margin-bottom: 50px;">
-            <span style="color: var(--goh-yellow); font-weight: 700;">NUESTRO PORTAFOLIO</span>
+            <span class="text-accent" style="font-weight: 700;">NUESTRO PORTAFOLIO</span>
             <h2 style="font-size: 2.5rem; margin-top: 10px;">PRODUCTOS <br> PROPIETARIOS</h2>
         </div>
     </div>
@@ -35,7 +35,7 @@
                     <h3>GOH-Care</h3>
                     <p>Solución integral para hospitales y consultorios. Turnera inteligente, historias clínicas
                         digitales y módulos especializados para diferentes especialidades médicas.</p>
-                    <a href="#contacto" class="link-underline"></a>
+                    <a href="#contacto" class="link-underline" aria-label="Consultar sobre GOH-Care">Consultar</a>
                 </div>
             </div>
 

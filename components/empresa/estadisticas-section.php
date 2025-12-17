@@ -6,7 +6,7 @@
                 <p style="text-transform: uppercase; font-weight: 700;">Uptime Garantizado</p>
             </div>
             <div class="stat-box" data-aos="zoom-in" data-aos-delay="100">
-                <h3 style="font-size: 4rem; color: var(--goh-yellow); -webkit-text-stroke: 1px var(--goh-dark);">+3</h3>
+                <h3 class="text-accent" style="font-size: 4rem; -webkit-text-stroke: 1px var(--goh-dark);">+3</h3>
                 <p style="text-transform: uppercase; font-weight: 700;">Plataformas SaaS Activas</p>
             </div>
             <div class="stat-box" data-aos="zoom-in" data-aos-delay="200">

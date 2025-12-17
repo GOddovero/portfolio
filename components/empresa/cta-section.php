@@ -2,7 +2,7 @@
     <div class="cta-bg"></div>
     <div class="container">
         <h2 class="cta-title" data-aos="fade-up">¿SU EMPRESA ESTÁ LISTA <br> PARA <span
-                style="color: var(--goh-yellow);">EVOLUCIONAR?</span></h2>
+                class="text-accent">EVOLUCIONAR?</span></h2>
         <p style="font-size: 1.5rem; margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="100">
             Deje de usar software genérico. Implemente soluciones a medida diseñadas para liderar su mercado.
         </p>
@@ -14,7 +14,7 @@
                rel="noopener noreferrer">
                 INICIAR TRANSFORMACIÓN
             </a>
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">Consultoría inicial gratuita para empresas.</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #555;">Consultoría inicial gratuita para empresas.</p>
         </div>
     </div>
 </section>

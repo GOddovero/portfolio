@@ -1,5 +1,5 @@
 <section class="hero">
-    <img src="img/png1.png" alt="GOH Background - Desarrollo Software Empresarial" class="hero-bg-img" loading="eager">
+    <img src="img/png1.png" alt="GOH Background - Desarrollo Software Empresarial" class="hero-bg-img" loading="eager" fetchpriority="high">
     <div class="hero-content">
         <span class="label-corp" data-aos="fade-down">Software Development Factory</span>
         <h1 data-aos="fade-up" data-aos-delay="100">
