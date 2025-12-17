@@ -2,7 +2,7 @@
     <div class="container">
         <div style="margin-bottom: 50px;">
             <span style="color: var(--goh-yellow); font-weight: 700;">NUESTRO PORTAFOLIO</span>
-            <h2 style="font-size: 3.5rem; margin-top: 10px;">PRODUCTOS <br> PROPIETARIOS</h2>
+            <h2 style="font-size: 2.5rem; margin-top: 10px;">PRODUCTOS <br> PROPIETARIOS</h2>
         </div>
     </div>
 

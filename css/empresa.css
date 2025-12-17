@@ -226,6 +226,12 @@ nav a:hover::after {
     padding-left: 20px;
 }
 
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .hero-bg-img {
     position: absolute;
     right: -10%;
@@ -734,40 +740,152 @@ nav a:hover::after {
 }
 
 @media (max-width: 768px) {
+    /* --- HERO MOBILE OPTIMIZADO --- */
+    .hero {
+        height: auto;
+        min-height: 100dvh; /* Mejor soporte para navegadores móviles */
+        padding-top: 110px;
+        padding-bottom: 60px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-content {
+        padding-left: 0;
+        width: 100%;
+    }
+
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
+        line-height: 1.1;
+        margin-bottom: 25px;
     }
 
     .hero p {
         font-size: 1.1rem;
+        border-left: none;
+        /* Cambio de borde lateral a superior para centrado */
+        border-top: 4px solid var(--goh-yellow);
+        padding-left: 0;
+        padding-top: 20px;
+        margin: 0 auto 35px;
+        max-width: 100%;
     }
 
+    .hero-bg-img {
+        opacity: 0.1 !important;
+        right: -20%;
+        top: 20%;
+        height: 50vh;
+        transform: rotate(0deg); /* Simplificar transformación */
+    }
+
+    /* Botones más accesibles en mobile */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero .btn {
+        width: 90%;
+        justify-content: center;
+        margin: 0;
+    }
+
+    /* --- GENERAL LAYOUT --- */
     .container {
-        padding: 0 20px;
+        padding: 0 25px;
     }
 
     .section-padding {
-        padding: 60px 0;
+        padding: 70px 0;
+    }
+
+    /* --- TYPOGRAPHY --- */
+    h2 {
+        font-size: 2.2rem;
+        text-align: center; /* Títulos centrados en mobile */
+    }
+
+    /* --- MARQUEE --- */
+    .marquee {
+        padding: 15px 0;
     }
 
     .marquee span {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin: 0 20px;
     }
 
+    /* --- SERVICES --- */
     .service-item {
-        padding: 40px 20px;
+        padding: 50px 25px;
+        text-align: center;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
+    .service-num {
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+    }
+
+    .service-item h3 {
+        font-size: 1.75rem;
+    }
+
+    .service-link {
+        justify-content: center;
+        width: 100%;
+        padding: 15px;
+        background: rgba(0,0,0,0.03);
+        border-radius: 8px;
+        margin-top: 30px;
+    }
+
+    /* --- PRODUCTS --- */
+    .products-grid {
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    .product-card {
+        margin: 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Más sombra en mobile */
+    }
+
+    .product-info {
+        padding: 25px;
+    }
+
+    .product-info h3 {
+        font-size: 1.8rem;
+    }
+
+    /* --- CTA --- */
+    .cta-title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
+    /* --- GLOBAL BUTTONS --- */
     .btn {
-        padding: 15px 30px;
-        font-size: 0.8rem;
+        padding: 16px 30px;
+        font-size: 0.9rem;
+        justify-content: center;
     }
 
+    /* --- WHATSAPP --- */
     .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        height: 50px;
-        padding: 10px 15px;
+        bottom: 25px;
+        right: 25px;
+        height: 55px;
+        width: 55px;
+        padding: 0;
+        border-radius: 50%;
+        font-size: 28px;
+        justify-content: center;
     }
 
     .whatsapp-float p {
