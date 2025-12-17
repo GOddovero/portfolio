@@ -1,16 +1,36 @@
+# GOH Enterprise - Robots.txt
+# Actualizado: 17 de diciembre de 2025
+
 User-agent: *
 Allow: /
 
 # Sitemap
 Sitemap: https://goh-dev.com.ar/sitemap.xml
 
-# Disallow logs and config directories
-Disallow: /logs/
-Disallow: /config/
-Disallow: /vendor/
-
-# Allow important files and directories
+# Archivos y directorios importantes permitidos
 Allow: /css/
 Allow: /js/
 Allow: /img/
 Allow: /*.php
+
+# Bloquear directorios sensibles
+Disallow: /logs/
+Disallow: /config/
+Disallow: /vendor/
+Disallow: /components/legacy/
+Disallow: /.git/
+Disallow: /includes/
+
+# Crawl-delay para bots agresivos
+User-agent: BingBot
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+
+# Bloquear bots maliciosos
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10
