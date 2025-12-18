@@ -134,16 +134,26 @@
         <a href="#" class="brand">
             <img src="img/png1.png" alt="Logo GOH Enterprise - Desarrollo Software" style="width:40px; height:auto;">
         </a>
-        <nav>
+        
+        <nav id="mainNav">
             <ul>
                 <li><a href="#soluciones">SOLUCIONES</a></li>
                 <li><a href="#ecosistema">ECOSISTEMA</a></li>
                 <li><a href="#empresa">TRABAJOS</a></li>
+                <li><a href="#nosotros">NOSOTROS</a></li>
                 <li><a href="#contacto">CONTACTO</a></li>
             </ul>
         </nav>
-        <a href="https://wa.me/3385405049?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        
+        <a href="https://wa.me/3385405049?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo" class="btn btn-primary btn-header-cta" target="_blank" rel="noopener noreferrer">
             Habla con nosotros <i class="ph-bold ph-arrow-right"></i>
         </a>
+        
+        <!-- Menú hamburguesa para mobile -->
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </header>

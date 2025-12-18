@@ -1,7 +1,7 @@
 <section id="soluciones" class="section-padding">
     <div class="container">
         <div style="margin-bottom: 60px;" data-aos="fade-right">
-            <h2 style="font-size: 3rem;">CAPACIDADES <span class="text-accent">INDUSTRIALES</span></h2>
+            <h2 style="font-size: 2.5rem;">CAPACIDADES <span class="text-accent">INDUSTRIALES</span></h2>
             <p>Nuestra empresa tecnológica cubre todo el ciclo de vida del software.</p>
         </div>
     </div>

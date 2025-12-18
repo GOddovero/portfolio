@@ -89,10 +89,58 @@
                             behavior: 'smooth',
                             block: 'start'
                         });
+                        // Cerrar menú móvil si está abierto
+                        if (window.innerWidth <= 768) {
+                            const hamburger = document.getElementById('hamburger');
+                            const mainNav = document.getElementById('mainNav');
+                            if (hamburger && mainNav && mainNav.classList.contains('active')) {
+                                hamburger.classList.remove('active');
+                                mainNav.classList.remove('active');
+                                document.body.style.overflow = '';
+                            }
+                        }
                     }
                 }
             });
         });
+
+        // Menú hamburguesa móvil
+        const hamburger = document.getElementById('hamburger');
+        const mainNav = document.getElementById('mainNav');
+
+        if (hamburger && mainNav) {
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                
+                // Prevenir scroll del body cuando el menú está abierto
+                if (mainNav.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Cerrar menú al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (!hamburger.contains(e.target) && !mainNav.contains(e.target)) {
+                    if (mainNav.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        mainNav.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                }
+            });
+
+            // Cerrar menú al redimensionar a desktop
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
     });
 </script>
 
