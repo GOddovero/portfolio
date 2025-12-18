@@ -131,17 +131,17 @@
 
 <header>
     <div class="container nav-flex">
-        <a href="#" class="brand">
+        <a href="index.php#" class="brand">
             <img src="img/png1.png" alt="Logo GOH Enterprise - Desarrollo Software" style="width:40px; height:auto;">
         </a>
         
         <nav id="mainNav">
             <ul>
-                <li><a href="#soluciones">SOLUCIONES</a></li>
-                <li><a href="#ecosistema">ECOSISTEMA</a></li>
-                <li><a href="#empresa">TRABAJOS</a></li>
-                <li><a href="#nosotros">NOSOTROS</a></li>
-                <li><a href="#contacto">CONTACTO</a></li>
+                <li><a href="index.php#soluciones">SOLUCIONES</a></li>
+                <li><a href="index.php#ecosistema">ECOSISTEMA</a></li>
+                <li><a href="trabajo.php">TRABAJOS</a></li>
+                <li><a href="index.php#nosotros">NOSOTROS</a></li>
+                <li><a href="index.php#contacto">CONTACTO</a></li>
             </ul>
         </nav>
         

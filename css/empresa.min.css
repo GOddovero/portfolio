@@ -495,10 +495,15 @@ nav a:hover::after {
 .product-visual img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 30px;
+    object-fit: cover;
+    padding: 0;
     opacity: 0.9;
     transition: 0.5s;
+}
+
+.a-ref-diego {
+    color: var(--goh-yellow) !important;
+    text-decoration: underline !important;
 }
 
 .product-card:hover .product-visual img {
@@ -898,7 +903,7 @@ nav a:hover::after {
     /* --- HERO MOBILE OPTIMIZADO --- */
     .hero {
         height: auto;
-        min-height: 100dvh; /* Mejor soporte para navegadores móviles */
+        min-height: 70dvh; /* Mejor soporte para navegadores móviles */
         padding-top: 110px;
         padding-bottom: 60px;
         text-align: center;
