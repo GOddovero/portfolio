@@ -67,8 +67,8 @@
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
     
     <!-- Main Styles -->
-    <link rel="preload" href="css/empresa.min.css" as="style">
-    <link rel="stylesheet" href="css/empresa.min.css">
+    <link rel="preload" href="css/empresa.min.css?v=<?php echo filemtime('css/empresa.min.css'); ?>" as="style">
+    <link rel="stylesheet" href="css/empresa.min.css?v=<?php echo filemtime('css/empresa.min.css'); ?>">
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">

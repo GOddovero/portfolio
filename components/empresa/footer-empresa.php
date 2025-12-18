@@ -45,13 +45,13 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
 <!-- Performance Optimizations -->
-<script src="js/performance.js" defer></script>
+<script src="js/performance.js?v=<?php echo filemtime('js/performance.js'); ?>" defer></script>
 
 <!-- Mobile Optimization Script -->
-<script src="js/mobile.js" defer></script>
+<script src="js/mobile.js?v=<?php echo filemtime('js/mobile.js'); ?>" defer></script>
 
 <!-- Scroll Handler Script -->
-<script src="js/scroll-handler.js" defer></script>
+<script src="js/scroll-handler.js?v=<?php echo filemtime('js/scroll-handler.js'); ?>" defer></script>
 
 <script>
     // Init Animations when DOM is ready

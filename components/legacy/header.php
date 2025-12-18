@@ -86,10 +86,10 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=<?php echo filemtime('css/styles.css'); ?>">
     
     <!-- Preload de recursos críticos -->
-    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="css/styles.css?v=<?php echo filemtime('css/styles.css'); ?>" as="style">
     <link rel="preload" href="img/contacto_goh_sf.webp" as="image">
 
     <!-- DNS prefetch para recursos externos -->
