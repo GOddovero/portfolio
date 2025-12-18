@@ -10,14 +10,14 @@ include 'components/empresa/header-empresa.php';
 ?>
 
 <!-- Hero Section Custom for Trabajo -->
-<section class="hero" style="padding: 120px 0 80px 0; background: #111; max-height: 70dvh; ">
+<section class="hero" style="padding: 120px 0 80px 0; background: #3b2f2f; max-height: 70dvh; ">
     <div class="hero-content">
-        <span class="label-corp" data-aos="fade-down">NUESTRO PORTAFOLIO</span>
-        <h1 data-aos="fade-up" data-aos-delay="100" style="font-size: 3.5rem;">
+        <span class="label-corp" data-aos="fade-down" style="color: white !important; background: #e5ca10;">NUESTRO PORTAFOLIO</span>
+        <h1 data-aos="fade-up" data-aos-delay="100" style="font-size: 3.5rem; color: white !important;">
             CASOS DE <br>
             <span>ÉXITO</span>
         </h1>
-        <p data-aos="fade-up" data-aos-delay="200" style="max-width: 600px; margin: 0 auto;">
+        <p data-aos="fade-up" data-aos-delay="200" style="max-width: 600px; margin: 0 auto; color: white !important;">
             Descubre cómo hemos transformado la presencia digital de nuestros clientes con Landing Pages de alto impacto y sistemas a medida.
         </p>
     </div>

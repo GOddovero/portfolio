@@ -1,4 +1,9 @@
 <section id="ecosistema" class="section-padding products-section">
+    <!-- Effect Layers -->
+    <div class="products-bg-reveal"></div>
+    <div class="products-mask-reveal"></div>
+    <div id="products-circle-mask"></div>
+
     <div class="container">
         <div style="margin-bottom: 50px;">
             <span class="text-accent" style="font-weight: 700;">NUESTRO PORTAFOLIO</span>
@@ -56,4 +61,54 @@
 
         </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const section = document.querySelector('.products-section');
+        if (!section) return;
+        
+        const backgroundReveal = section.querySelector('.products-bg-reveal');
+        const maskReveal = section.querySelector('.products-mask-reveal');
+        const circleMaskReveal = document.getElementById('products-circle-mask');
+
+        if (!backgroundReveal || !maskReveal || !circleMaskReveal) return;
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let isMouseOverSection = false;
+
+        function updateCirclePosition() {
+            if (!isMouseOverSection) return;
+            
+            circleMaskReveal.style.left = mouseX + 'px';
+            circleMaskReveal.style.top = mouseY + 'px';
+
+            maskReveal.style.maskImage = `radial-gradient(circle 150px at ${mouseX}px ${mouseY}px, transparent, black)`;
+            maskReveal.style.webkitMaskImage = `radial-gradient(circle 150px at ${mouseX}px ${mouseY}px, transparent, black)`;
+
+            requestAnimationFrame(updateCirclePosition);
+        }
+
+        section.addEventListener('mousemove', (e) => {
+            const rect = section.getBoundingClientRect();
+            mouseX = e.clientX - rect.left;
+            mouseY = e.clientY - rect.top;
+
+            if (!isMouseOverSection) {
+                isMouseOverSection = true;
+                backgroundReveal.style.opacity = '1';
+                circleMaskReveal.style.display = 'block';
+                requestAnimationFrame(updateCirclePosition);
+            }
+        });
+
+        section.addEventListener('mouseleave', () => {
+            isMouseOverSection = false;
+            backgroundReveal.style.opacity = '0';
+            circleMaskReveal.style.display = 'none';
+            maskReveal.style.maskImage = 'none';
+            maskReveal.style.webkitMaskImage = 'none';
+        });
+    });
+    </script>
 </section>
