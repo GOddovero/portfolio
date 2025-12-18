@@ -1188,3 +1188,56 @@ img[loading="eager"] {
     color: #e5ca10 !important;
 }
 
+
+/* Hero Trabajo Reveal Effect */
+.hero-trabajo-reveal {
+    position: relative;
+    overflow: hidden;
+    background-color: #3b2f2f;
+}
+
+.hero-bg-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/1920-01.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-mask-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3b2f2f;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#hero-circle-mask {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        transparent 20%,
+        rgba(59, 47, 47, 0.2) 40%,
+        rgba(59, 47, 47, 0.6) 60%,
+        rgba(59, 47, 47, 0.8) 80%,
+        rgba(59, 47, 47, 1) 100%
+    );
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: none;
+}
+

@@ -10,8 +10,13 @@ include 'components/empresa/header-empresa.php';
 ?>
 
 <!-- Hero Section Custom for Trabajo -->
-<section class="hero" style="padding: 120px 0 80px 0; background: #3b2f2f; max-height: 70dvh; ">
-    <div class="hero-content">
+<section class="hero hero-trabajo-reveal" style="padding: 120px 0 80px 0; background: #3b2f2f; max-height: 70dvh; position: relative; overflow: hidden;">
+    <!-- Effect Layers -->
+    <div class="hero-bg-reveal"></div>
+    <div class="hero-mask-reveal"></div>
+    <div id="hero-circle-mask"></div>
+
+    <div class="hero-content" style="position: relative; z-index: 10;">
         <span class="label-corp" data-aos="fade-down" style="color: white !important; background: #e5ca10;">NUESTRO PORTAFOLIO</span>
         <h1 data-aos="fade-up" data-aos-delay="100" style="font-size: 3.5rem; color: white !important;">
             CASOS DE <br>
@@ -21,6 +26,56 @@ include 'components/empresa/header-empresa.php';
             Descubre cómo hemos transformado la presencia digital de nuestros clientes con Landing Pages de alto impacto y sistemas a medida.
         </p>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const section = document.querySelector('.hero-trabajo-reveal');
+        if (!section) return;
+        
+        const backgroundReveal = section.querySelector('.hero-bg-reveal');
+        const maskReveal = section.querySelector('.hero-mask-reveal');
+        const circleMaskReveal = document.getElementById('hero-circle-mask');
+
+        if (!backgroundReveal || !maskReveal || !circleMaskReveal) return;
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let isMouseOverSection = false;
+
+        function updateCirclePosition() {
+            if (!isMouseOverSection) return;
+            
+            circleMaskReveal.style.left = mouseX + 'px';
+            circleMaskReveal.style.top = mouseY + 'px';
+
+            maskReveal.style.maskImage = `radial-gradient(circle 150px at ${mouseX}px ${mouseY}px, transparent, black)`;
+            maskReveal.style.webkitMaskImage = `radial-gradient(circle 150px at ${mouseX}px ${mouseY}px, transparent, black)`;
+
+            requestAnimationFrame(updateCirclePosition);
+        }
+
+        section.addEventListener('mousemove', (e) => {
+            const rect = section.getBoundingClientRect();
+            mouseX = e.clientX - rect.left;
+            mouseY = e.clientY - rect.top;
+
+            if (!isMouseOverSection) {
+                isMouseOverSection = true;
+                backgroundReveal.style.opacity = '1';
+                circleMaskReveal.style.display = 'block';
+                requestAnimationFrame(updateCirclePosition);
+            }
+        });
+
+        section.addEventListener('mouseleave', () => {
+            isMouseOverSection = false;
+            backgroundReveal.style.opacity = '0';
+            circleMaskReveal.style.display = 'none';
+            maskReveal.style.maskImage = 'none';
+            maskReveal.style.webkitMaskImage = 'none';
+        });
+    });
+    </script>
 </section>
 
 <!-- Beneficios Section -->
