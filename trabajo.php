@@ -314,7 +314,7 @@ include 'components/empresa/header-empresa.php';
         <!-- Proyecto 1 -->
         <div class="portfolio-card" data-aos="fade-up">
             <div class="portfolio-visual">
-                <img src="img/mockup/paideia.png" alt="Proyecto 1 Mockup">
+                <img src="img/mockup/paideia_optimized_1766148892.webp" alt="Proyecto 1 Mockup">
             </div>
             <div class="portfolio-info">
                 <h3>Landing Page Editorial</h3>
@@ -330,7 +330,7 @@ include 'components/empresa/header-empresa.php';
         <!-- Proyecto 2 -->
         <div class="portfolio-card" data-aos="fade-up" data-aos-delay="100">
             <div class="portfolio-visual">
-                <img src="img/mockup/muni_levalle.png" alt="Proyecto 2 Mockup">
+                <img src="img/mockup/muni_levalle_optimized_1766148863.webp" alt="Proyecto 2 Mockup">
             </div>
             <div class="portfolio-info">
                 <h3>LANDING PAGE INSTITUCIONAL</h3>
@@ -344,7 +344,7 @@ include 'components/empresa/header-empresa.php';
         <!-- Proyecto 3 -->
         <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
             <div class="portfolio-visual">
-                <img src="img/mockup/oddoherrajes.png" alt="Proyecto 3 Mockup">
+                <img src="img/mockup/oddoherrajes_optimized_1766148886.webp" alt="Proyecto 3 Mockup">
             </div>
             <div class="portfolio-info">
                 <h3>LANDING PAGE EMPRESARIAL</h3>
