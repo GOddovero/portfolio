@@ -70,6 +70,9 @@
     <link rel="preload" href="css/empresa.min.css?v=<?php echo filemtime('css/empresa.min.css'); ?>" as="style">
     <link rel="stylesheet" href="css/empresa.min.css?v=<?php echo filemtime('css/empresa.min.css'); ?>">
     
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></script>
+    
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {

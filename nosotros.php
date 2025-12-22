@@ -294,57 +294,100 @@ include 'components/empresa/header-empresa.php';
         color: #555;
     }
 
-    /* 4. STACK TECNOLÓGICO (Categorizado) */
+    /* 4. STACK TECNOLÓGICO (Slider Compacto) */
     .tech-section {
-        padding: 100px 0;
-        background: var(--goh-dark);
-        color: white;
+        padding: 80px 0;
+        background: white;
+        border-bottom: 1px solid #f0f0f0;
     }
 
-    .tech-category {
-        margin-bottom: 60px;
+    .tech-slider-container {
+        position: relative;
+        padding: 0 50px; /* Espacio para flechas */
+        max-width: 1000px;
+        margin: 0 auto;
     }
 
-    .tech-category h3 {
-        font-size: 1.5rem;
-        color: var(--goh-yellow);
-        margin-bottom: 25px;
-        border-left: 4px solid var(--goh-teal);
-        padding-left: 15px;
-    }
-
-    .tech-grid-detailed {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    .tech-track {
+        display: flex;
         gap: 20px;
+        overflow-x: auto;
+        padding: 20px 5px;
+        scroll-behavior: smooth;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+    }
+    
+    .tech-track::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
     }
 
-    .tech-card {
-        background: rgba(255,255,255,0.05);
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s;
-        border: 1px solid transparent;
+    .tech-item {
+        flex: 0 0 110px; /* Ancho fijo */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 10px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        border: 1px solid #f5f5f5;
+        transition: all 0.3s ease;
+        cursor: default;
     }
 
-    .tech-card:hover {
-        background: rgba(255,255,255,0.1);
-        border-color: var(--goh-teal);
+    .tech-item:hover {
         transform: translateY(-5px);
+        border-color: var(--goh-teal);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
-    .tech-card i {
-        font-size: 2rem;
-        margin-bottom: 10px;
-        color: #ccc;
-        display: block;
+    .tech-item i {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+        color: #888;
+        transition: color 0.3s;
+    }
+    
+    .tech-item:hover i {
+        color: var(--goh-teal);
     }
 
-    .tech-card span {
+    .tech-item span {
+        font-size: 0.8rem;
         font-weight: 600;
-        font-size: 0.9rem;
+        color: #555;
+        text-align: center;
     }
+
+    .tech-nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border: 1px solid #eee;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--goh-dark);
+        transition: all 0.3s;
+    }
+
+    .tech-nav-btn:hover {
+        background: var(--goh-teal);
+        color: white;
+        border-color: var(--goh-teal);
+    }
+
+    .tech-prev { left: 0; }
+    .tech-next { right: 0; }
 
     /* 5. HABILIDADES BLANDAS & IDIOMAS */
     .soft-skills-section {
@@ -419,10 +462,10 @@ include 'components/empresa/header-empresa.php';
         transition: width 1.5s ease-out;
     }
 
-    /* 6. CURSOS SLIDER */
+    /* 6. CURSOS SLIDER - REDISEÑO MODERNO */
     .courses-section {
         padding: 100px 0;
-        background: #f4f4f4;
+        background: #f8f9fa;
         overflow: hidden;
     }
 
@@ -430,7 +473,7 @@ include 'components/empresa/header-empresa.php';
         display: flex;
         gap: 30px;
         overflow-x: auto;
-        padding: 20px 5px 50px 5px;
+        padding: 40px 20px;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; /* Firefox */
@@ -441,62 +484,168 @@ include 'components/empresa/header-empresa.php';
     }
 
     .course-slide {
-        flex: 0 0 400px;
+        flex: 0 0 360px;
         scroll-snap-align: center;
         background: white;
-        border-radius: 20px;
+        border-radius: 16px;
         overflow: hidden;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        transition: transform 0.3s;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        transition: all 0.3s ease;
         position: relative;
+        border: 1px solid rgba(0,0,0,0.04);
+        display: flex;
+        flex-direction: column;
     }
 
     .course-slide:hover {
         transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
     }
 
-    .course-img-placeholder {
-        height: 200px;
-        background: var(--goh-dark);
+    .course-header {
+        height: 275px;
+        background: var(--goh-gray);
+        position: relative;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
-        font-size: 3rem;
-        position: relative;
+    }
+
+    .course-header-icon {
+        font-size: 4rem;
+        color: var(--goh-teal);
+        opacity: 0.8;
+        z-index: 1;
+        transition: transform 0.3s;
     }
     
-    .course-img-placeholder::after {
-        content: '';
+    .course-slide:hover .course-header-icon {
+        transform: scale(1.1);
+    }
+    
+    /* Estilo para cuando es PDF preview */
+    .course-pdf-preview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    
+    /* Overlay para el PDF para que parezca imagen y sea clickeable todo el header */
+    .course-overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 100%);
+        background: rgba(0,0,0,0.02);
+        z-index: 2;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .course-slide:hover .course-overlay {
+        background: rgba(0,0,0,0.05);
+    }
+    
+    .course-type-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(255,255,255,0.95);
+        padding: 6px 14px;
+        border-radius: 30px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--goh-dark);
+        z-index: 3;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        backdrop-filter: blur(5px);
     }
 
     .course-content {
-        padding: 30px;
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     .course-content h4 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
+        font-size: 1.25rem;
+        margin-bottom: 8px;
         color: var(--goh-dark);
+        font-weight: 700;
+        line-height: 1.4;
     }
 
-    .course-content p {
+    .course-meta {
+        font-size: 0.85rem;
+        color: #888;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .course-desc {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 15px;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+
+    .course-footer {
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid #f5f5f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .status-badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    .status-completed { background: #e8f5e9; color: #2e7d32; }
+    .status-progress { background: #e3f2fd; color: #1565c0; }
+
+    .btn-cert {
         font-size: 0.9rem;
-        color: #666;
-        margin-bottom: 20px;
+        color: var(--goh-teal);
+        font-weight: 600;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s;
+        padding: 6px 12px;
+        border-radius: 6px;
+    }
+    
+    .btn-cert:hover {
+        background: rgba(var(--goh-teal-rgb), 0.1); /* Asumiendo que existe o fallback */
+        background: #f0fcfc;
+        transform: translateX(3px);
     }
 
     .slider-controls {
         display: flex;
         justify-content: center;
         gap: 20px;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     .slider-btn {
@@ -504,18 +653,21 @@ include 'components/empresa/header-empresa.php';
         height: 50px;
         border-radius: 50%;
         background: white;
-        border: 2px solid var(--goh-dark);
+        border: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         transition: 0.3s;
         font-size: 1.2rem;
+        color: var(--goh-dark);
     }
 
     .slider-btn:hover {
-        background: var(--goh-dark);
+        background: var(--goh-teal);
         color: white;
+        transform: scale(1.1);
     }
 
     /* Responsive */
@@ -607,7 +759,8 @@ include 'components/empresa/header-empresa.php';
                     <ul class="exp-list">
                         <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> GOH-GYM: Sistema integral para gimnasios.</li>
                         <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> GOH-Shop: Software de gestión comercial.</li>
-                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Turnos Médicos: Plataforma hospitalaria.</li>
+                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> GOH-Care: Plataforma hospitalaria.</li>
+                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i>Multiples Landing Pages</li>
                     </ul>
                 </div>
             </div>
@@ -623,9 +776,10 @@ include 'components/empresa/header-empresa.php';
                     <h4>Universidad Popular General Levalle</h4>
                     <p>Comparto conocimiento y formo a futuros desarrolladores.</p>
                     <ul class="exp-list">
-                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Clases de Python, Web y POO.</li>
-                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Conferencias sobre IA (ChatGPT, Gemini).</li>
-                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Comunicación de conceptos complejos.</li>
+                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Profesor de Programación por más de 2 años consecutivos.</li>
+                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Dictado de clases: Python, Lógica, Git/GitHub, HTML, CSS, JavaScript y Bootstrap.</li>
+                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Conferencias sobre IA y su aplicación en la vida cotidiana.</li>
+                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Desarrollo de curso PHP y Bases de Datos para 2026.</li>
                     </ul>
                 </div>
             </div>
@@ -642,7 +796,7 @@ include 'components/empresa/header-empresa.php';
                     <p>Roles que forjaron mi disciplina laboral y gestión.</p>
                     <ul class="exp-list">
                         <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Operador de sistemas electorales.</li>
-                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Desarrollo web colaborativo.</li>
+                        <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Desarrollo web colaborativo.(Practicas)</li>
                         <li><i class="fas fa-check" style="color: var(--goh-teal); margin-right: 10px;"></i> Gestión comercial y atención al cliente.</li>
                     </ul>
                 </div>
@@ -651,53 +805,44 @@ include 'components/empresa/header-empresa.php';
         </div>
     </section>
 
-    <!-- 4. STACK TECNOLÓGICO DETALLADO -->
+    <!-- 4. STACK TECNOLÓGICO (SLIDER COMPACTO) -->
     <section class="tech-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 70px;">
-                <h2 style="color: white; font-size: 3rem;">Stack <span style="color: var(--goh-yellow);">Tecnológico</span></h2>
-                <p style="color: #aaa;">Dominio de herramientas modernas para el desarrollo de software.</p>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="color: var(--goh-dark); font-size: 2.2rem;">Stack <span style="color: var(--goh-teal);">Tecnológico</span></h2>
+                <p style="color: #888; font-size: 0.95rem;">Herramientas que potencian mis desarrollos.</p>
             </div>
 
-            <div class="tech-category" data-aos="fade-up">
-                <h3>Lenguajes de Programación</h3>
-                <div class="tech-grid-detailed">
-                    <div class="tech-card"><i class="fab fa-python"></i><span>Python</span></div>
-                    <div class="tech-card"><i class="fab fa-java"></i><span>Java</span></div>
-                    <div class="tech-card"><i class="fab fa-js"></i><span>JavaScript</span></div>
-                    <div class="tech-card"><i class="fab fa-php"></i><span>PHP</span></div>
-                    <div class="tech-card"><i class="fab fa-html5"></i><span>HTML5</span></div>
-                    <div class="tech-card"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="tech-slider-container" data-aos="fade-up">
+                <button class="tech-nav-btn tech-prev" onclick="scrollTech(-1)"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="tech-track" id="techTrack">
+                    <!-- Lenguajes -->
+                    <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+                    <div class="tech-item"><i class="fab fa-java"></i><span>Java</span></div>
+                    <div class="tech-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                    <div class="tech-item"><i class="fab fa-php"></i><span>PHP</span></div>
+                    <div class="tech-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                    <div class="tech-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                    
+                    <!-- Frameworks -->
+                    <div class="tech-item"><i class="fab fa-react"></i><span>React</span></div>
+                    <div class="tech-item"><i class="fas fa-leaf"></i><span>Spring Boot</span></div>
+                    <div class="tech-item"><i class="fas fa-stream"></i><span>Streamlit</span></div>
+                    
+                    <!-- DB -->
+                    <div class="tech-item"><i class="fas fa-database"></i><span>MySQL</span></div>
+                    <div class="tech-item"><i class="fas fa-fire"></i><span>Firebase</span></div>
+                    
+                    <!-- Tools -->
+                    <div class="tech-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                    <div class="tech-item"><i class="fas fa-code"></i><span>VS Code</span></div>
+                    <div class="tech-item"><i class="fas fa-laptop-code"></i><span>IntelliJ</span></div>
+                    <div class="tech-item"><i class="fas fa-sync"></i><span>Agile</span></div>
                 </div>
-            </div>
 
-            <div class="tech-category" data-aos="fade-up">
-                <h3>Frameworks y Librerías</h3>
-                <div class="tech-grid-detailed">
-                    <div class="tech-card"><i class="fab fa-react"></i><span>React</span></div>
-                    <div class="tech-card"><i class="fas fa-leaf"></i><span>Spring Boot</span></div>
-                    <div class="tech-card"><i class="fas fa-stream"></i><span>Streamlit</span></div>
-                </div>
+                <button class="tech-nav-btn tech-next" onclick="scrollTech(1)"><i class="fas fa-chevron-right"></i></button>
             </div>
-
-            <div class="tech-category" data-aos="fade-up">
-                <h3>Bases de Datos</h3>
-                <div class="tech-grid-detailed">
-                    <div class="tech-card"><i class="fas fa-database"></i><span>MySQL</span></div>
-                    <div class="tech-card"><i class="fas fa-fire"></i><span>Firebase</span></div>
-                </div>
-            </div>
-
-            <div class="tech-category" data-aos="fade-up">
-                <h3>Herramientas & Otros</h3>
-                <div class="tech-grid-detailed">
-                    <div class="tech-card"><i class="fab fa-git-alt"></i><span>Git</span></div>
-                    <div class="tech-card"><i class="fas fa-code"></i><span>VS Code</span></div>
-                    <div class="tech-card"><i class="fas fa-laptop-code"></i><span>IntelliJ IDEA</span></div>
-                    <div class="tech-card"><i class="fas fa-sync"></i><span>Scrum / Agile</span></div>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -786,59 +931,7 @@ include 'components/empresa/header-empresa.php';
             </div>
 
             <div class="slider-container" id="coursesSlider">
-                
-                <!-- Slide 1 -->
-                <div class="course-slide">
-                    <div class="course-img-placeholder">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <div class="course-content">
-                        <h4>Full Stack Open</h4>
-                        <p>Universidad de Helsinki (2025)</p>
-                        <p style="font-size: 0.85rem; color: #888;">React, Node.js, GraphQL, TypeScript, React Native, CI/CD.</p>
-                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--goh-teal);">VERIFICADO</span>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="course-slide">
-                    <div class="course-img-placeholder">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <div class="course-content">
-                        <h4>Desarrollo en Python</h4>
-                        <p>Udemy (2024)</p>
-                        <p style="font-size: 0.85rem; color: #888;">Django, Flask, Streamlit, POO, PostgreSQL y MySQL.</p>
-                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--goh-teal);">VERIFICADO</span>
-                    </div>
-                </div>
-
-                <!-- Slide 3 (Placeholder Certificado) -->
-                <div class="course-slide">
-                    <div class="course-img-placeholder">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="course-content">
-                        <h4>Licenciatura en Informática</h4>
-                        <p>Universidad Siglo 21 (2024)</p>
-                        <p style="font-size: 0.85rem; color: #888;">Título de Grado Universitario Oficial.</p>
-                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--goh-teal);">TITULADO</span>
-                    </div>
-                </div>
-
-                <!-- Slide 4 (Placeholder) -->
-                <div class="course-slide">
-                    <div class="course-img-placeholder">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="course-content">
-                        <h4>Inteligencia Artificial</h4>
-                        <p>Capacitación Continua</p>
-                        <p style="font-size: 0.85rem; color: #888;">Prompt Engineering, LLMs integration.</p>
-                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--goh-teal);">EN CURSO</span>
-                    </div>
-                </div>
-
+                <!-- Los cursos se cargarán dinámicamente desde js/cursos-data.js y js/cursos-render.js -->
             </div>
 
             <div class="slider-controls">
@@ -861,7 +954,17 @@ include 'components/empresa/header-empresa.php';
 
 </main>
 
+<!-- Scripts para cargar cursos dinámicamente -->
+<script src="js/cursos-data.js"></script>
+<script src="js/cursos-render.js"></script>
+
 <script>
+    function scrollTech(direction) {
+        const track = document.getElementById('techTrack');
+        const scrollAmount = 300; // Scroll por click
+        track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
     function slideLeft() {
         const slider = document.getElementById('coursesSlider');
         slider.scrollBy({ left: -350, behavior: 'smooth' });
