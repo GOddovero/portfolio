@@ -140,7 +140,7 @@
                 <li><a href="index.php#soluciones">SOLUCIONES</a></li>
                 <li><a href="index.php#ecosistema">ECOSISTEMA</a></li>
                 <li><a href="trabajo.php">TRABAJOS</a></li>
-                <li><a href="nosotros.php">NOSOTROS</a></li>
+                <li><a href="nosotros.php">SOBRE MI</a></li>
                 <li><a href="index.php#contacto">CONTACTO</a></li>
             </ul>
         </nav>
