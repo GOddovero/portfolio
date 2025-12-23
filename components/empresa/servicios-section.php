@@ -9,8 +9,8 @@
     <div class="services-grid">
         <div class="service-item" data-aos="fade-up">
             <div class="service-num">01</div>
-            <h3>Arquitectura SaaS</h3>
-            <p>Desarrollamos Software as a Service desde cero. Gestión de usuarios multi-nivel, facturación
+            <h3>SaaS Personalizado</h3>
+            <p>Desarrollamos Software as a Service a medida desde cero. Gestión de usuarios multi-nivel, facturación
                 recurrente y bases de datos optimizadas para alto tráfico.</p>
             <p>
                 Creamos un sistema a tu medida, escalable y seguro, diseñado para crecer junto a tu empresa.
@@ -22,7 +22,7 @@
         <div class="service-item featured-service" data-aos="fade-up" data-aos-delay="100">
             <div class="service-badge">LISTA EN 30 DÍAS</div>
             <div class="service-num">02</div>
-            <h3>Web Corporativa</h3>
+            <h3>Landing Pages</h3>
             <p><strong>Landing Pages a Medida.</strong> Diseños agresivos enfocados 100% en conversión. Sin plantillas. Creamos experiencias digitales veloces que refuerzan su identidad de marca y transforman visitantes en clientes.</p>
             <a href="#contacto" class="service-link">Cotizar Landing Page <i class="ph-bold ph-arrow-right"></i></a>
         </div>

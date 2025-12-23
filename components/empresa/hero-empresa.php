@@ -1,13 +1,13 @@
 <section class="hero">
-    <img src="img/png1.png" alt="GOH Background - Desarrollo Software Empresarial" class="hero-bg-img" loading="eager" fetchpriority="high">
+    <img src="img/png1.png" alt="GOH - Desarrollo de SaaS Personalizado y Landing Pages" class="hero-bg-img" loading="eager" fetchpriority="high">
     <div class="hero-content">
         <span class="label-corp" data-aos="fade-down">⚠️ AGENDA 2026 ABIERTA - CUPOS LIMITADOS</span>
         <h1 data-aos="fade-up" data-aos-delay="100">
-            TU LANDING PAGE <br>
-            <span>EN 2026</span>
+            TU LANDING PAGE Y <br>
+            <span>SAAS PERSONALIZADO</span>
         </h1>
         <p data-aos="fade-up" data-aos-delay="200">
-            Asegura el éxito digital de tu marca para el próximo año. Desarrollamos Landing Pages de alta conversión diseñadas para vender.
+            Asegura el éxito digital de tu marca. Desarrollamos <strong>SaaS a medida</strong> y <strong>Landing Pages</strong> de alta conversión diseñadas para escalar tu negocio.
             <br><br>
             <strong style="color: #ff4d4d; background: rgba(255, 77, 77, 0.1); padding: 5px 10px; border-radius: 4px;">
                 🔥 SOLO QUEDAN 3 CUPOS DE 12 DISPONIBLES

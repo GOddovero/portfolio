@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWYCK0SF3P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PWYCK0SF3P');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>GOH | Software Empresarial a Medida - Desarrollo Full Stack Argentina</title>
-    <meta name="description" content="Desarrollamos sistemas empresariales personalizados: SaaS, Landing Pages corporativas y Apps móviles. Soluciones escalables con tecnología de vanguardia. Consultoría inicial gratuita.">
-    <meta name="keywords" content="desarrollo software empresarial, sistemas a medida, saas desarrollo, landing pages corporativas, desarrollo full stack, software argentina, goh-dev">
+    <title>GOH | Desarrollo de SaaS Personalizado y Landing Pages - Software a Medida</title>
+    <meta name="description" content="Expertos en desarrollo de SaaS personalizado y Landing Pages de alto impacto. En GOH creamos software a medida, sistemas de gestión y soluciones digitales que escalan tu negocio.">
+    <meta name="keywords" content="GOH, saas personalizado, landing page, desarrollo software a medida, sistemas web, programador saas, landing page ventas, software argentina, desarrollo full stack">
     <meta name="author" content="Gaspar Oddovero Herrera - GOH-DEV">
     <meta name="robots" content="index, follow">
     
@@ -17,8 +26,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://goh-dev.com.ar/">
-    <meta property="og:title" content="GOH | Software Empresarial a Medida - Ingeniería del Futuro">
-    <meta property="og:description" content="Construimos ecosistemas digitales personalizados para empresas que buscan liderar su industria. Desarrollo SaaS, Landing Pages y Apps móviles.">
+    <meta property="og:title" content="GOH | Desarrollo de SaaS y Landing Pages Premium">
+    <meta property="og:description" content="Impulsa tu empresa con Software a Medida. Especialistas en SaaS Personalizado y Landing Pages optimizadas para conversión.">
     <meta property="og:image" content="https://goh-dev.com.ar/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -28,10 +37,51 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://goh-dev.com.ar/">
-    <meta name="twitter:title" content="GOH | Software Empresarial a Medida">
-    <meta name="twitter:description" content="Construimos ecosistemas digitales personalizados. SaaS, Landing Pages y Apps móviles.">
+    <meta name="twitter:title" content="GOH | SaaS Personalizado y Landing Pages">
+    <meta name="twitter:description" content="Desarrollo de software a medida: SaaS, Landing Pages y Apps. Calidad premium para empresas exigentes.">
     <meta name="twitter:image" content="https://goh-dev.com.ar/img/og-image.jpg">
     <meta name="twitter:creator" content="@goh_dev">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "GOH - Desarrollo de Software y SaaS",
+      "image": "https://goh-dev.com.ar/img/png1.png",
+      "@id": "https://goh-dev.com.ar",
+      "url": "https://goh-dev.com.ar",
+      "telephone": "+543385405049",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "General Levalle",
+        "addressRegion": "Córdoba",
+        "addressCountry": "AR"
+      },
+      "priceRange": "$$",
+      "description": "Desarrollo de SaaS personalizado, Landing Pages de alto impacto y soluciones de software empresarial a medida.",
+      "serviceArea": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "offers": [
+        {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "Desarrollo de SaaS Personalizado"
+            }
+        },
+        {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "Diseño de Landing Pages"
+            }
+        }
+      ]
+    }
+    </script>
     
     <!-- Geo Tags -->
     <meta name="geo.region" content="AR-X">

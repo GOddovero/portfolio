@@ -3,7 +3,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <img src="img/goh1.png" alt="GOH Logo Footer">
-                <p>Transformando ideas en ecosistemas digitales de alto impacto. Ingeniería de software para el futuro.</p>
+                <p>Transformando ideas en ecosistemas digitales de alto impacto. Especialistas en <strong>SaaS Personalizado</strong> y <strong>Landing Pages</strong> de alta conversión.</p>
             </div>
             
             <div class="footer-links">
