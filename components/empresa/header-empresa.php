@@ -183,29 +183,92 @@
 <body>
 
 <header>
-    <div class="container nav-flex">
-        <a href="index.php#" class="brand">
-            <img src="img/png1.png" alt="Logo GOH Enterprise - Desarrollo Software" style="width:40px; height:auto;">
-        </a>
-        
-        <nav id="mainNav">
-            <ul>
-                <li><a href="index.php#soluciones">SOLUCIONES</a></li>
-                <li><a href="trabajo.php">CASOS DE EXITO</a></li>
-                <li><a href="nosotros.php">SOBRE MI</a></li>
-                <li><a href="index.php#contacto">CONTACTO</a></li>
-            </ul>
+    <div class="card-nav-container">
+        <nav class="card-nav" aria-label="Navegación principal">
+            <div class="card-nav-top">
+                <button
+                    type="button"
+                    class="hamburger-menu"
+                    aria-label="Abrir menú de navegación"
+                >
+                    <i class="fa-solid fa-bars hamburger-icon" aria-hidden="true"></i>
+                </button>
+
+                <div class="logo-container">
+                    <a href="index.php#" class="brand">
+                        <img src="img/goh1.png" alt="Logo GOH Enterprise - Desarrollo Software" class="logo">
+                    </a>
+                </div>
+
+                <a
+                    href="https://wa.me/3385405049?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo"
+                    class="card-nav-cta-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Habla con nosotros <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="card-nav-content" aria-hidden="true">
+                <div class="nav-card nav-card-primary">
+                    <div class="nav-card-label">Soluciones</div>
+                    <div class="nav-card-links">
+                        <a class="nav-card-link" href="index.php#soluciones">
+                            <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
+                            Ver soluciones SaaS
+                        </a>
+                        <a class="nav-card-link" href="trabajo.php">
+                            <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
+                            Sistemas a medida
+                        </a>
+                        <a class="nav-card-link" href="index.php#contacto">
+                            <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
+                            Consultar proyecto
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-card nav-card-accent">
+                    <div class="nav-card-label">Casos de éxito</div>
+                    <div class="nav-card-links">
+                        <a class="nav-card-link" href="trabajo.php">
+                            <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
+                            Landing Pages a medida
+                        </a>
+                        <a class="nav-card-link" href="https://goh-dev.com.ar/gym/" target="_blank" rel="noopener noreferrer">
+                            <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
+                            GOH GYM
+                        </a>
+                        <span class="nav-card-link nav-card-link-disabled">
+                            <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
+                            GOH CARE
+                        </span>
+                        <span class="nav-card-link nav-card-link-disabled">
+                            <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
+                            Proyectos empresariales
+                        </span>
+                    </div>
+                </div>
+
+                <div class="nav-card nav-card-light">
+                    <div class="nav-card-label">Sobre mí</div>
+                    <div class="nav-card-links">
+                        <a class="nav-card-link" href="nosotros.php">
+                            <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
+                            Conoce a Gaspar
+                        </a>
+                        <a class="nav-card-link" href="index.php#contacto">
+                            <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
+                            Agenda una reunión
+                        </a>
+                        <a class="nav-card-link" href="index.php#contacto">
+                            <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
+                            Contactos
+                        </a>
+                    </div>
+                </div>
+            </div>
         </nav>
-        
-        <a href="https://wa.me/3385405049?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo" class="btn btn-primary btn-header-cta" target="_blank" rel="noopener noreferrer">
-            Habla con nosotros <i class="ph-bold ph-arrow-right"></i>
-        </a>
-        
-        <!-- Menú hamburguesa para mobile -->
-        <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </div>
 </header>
