@@ -129,7 +129,7 @@ portfolio/
 ## 📞 Información de Contacto
 
 - **WhatsApp**: +54 3385 405049
-- **Email**: contacto@goh-dev.com.ar
+- **Email**: contacto@goh.com.ar
 - **Ubicación**: General Levalle, Córdoba, Argentina
 
 ### Redes Sociales

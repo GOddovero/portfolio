@@ -25,7 +25,7 @@
                     <h3>GOH-GYM</h3>
                     <p>La plataforma definitiva para centros de alto rendimiento. Control biométrico de acceso,
                         gestión financiera automatizada y app para socios.</p>
-                    <a href="https://goh-dev.com.ar/gym/" class="link-underline" target="_blank" rel="noopener noreferrer">Ver Sistema</a>
+                    <a href="https://goh.com.ar/gym/" class="link-underline" target="_blank" rel="noopener noreferrer">Ver Sistema</a>
                 </div>
             </div>
 

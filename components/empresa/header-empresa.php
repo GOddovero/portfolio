@@ -21,14 +21,14 @@
     <meta name="robots" content="index, follow">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://goh-dev.com.ar/">
+    <link rel="canonical" href="https://goh.com.ar/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://goh-dev.com.ar/">
+    <meta property="og:url" content="https://goh.com.ar/">
     <meta property="og:title" content="GOH | Desarrollo de SaaS y Landing Pages Premium">
     <meta property="og:description" content="Impulsa tu empresa con Software a Medida. Especialistas en SaaS Personalizado y Landing Pages optimizadas para conversión.">
-    <meta property="og:image" content="https://goh-dev.com.ar/img/og-image.jpg">
+    <meta property="og:image" content="https://goh.com.ar/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_AR">
@@ -36,21 +36,21 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://goh-dev.com.ar/">
+    <meta name="twitter:url" content="https://goh.com.ar/">
     <meta name="twitter:title" content="GOH | SaaS Personalizado y Landing Pages">
     <meta name="twitter:description" content="Desarrollo de software a medida: SaaS, Landing Pages y Apps. Calidad premium para empresas exigentes.">
-    <meta name="twitter:image" content="https://goh-dev.com.ar/img/og-image.jpg">
+    <meta name="twitter:image" content="https://goh.com.ar/img/og-image.jpg">
     <meta name="twitter:creator" content="@goh_dev">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "GOH - Desarrollo de Software y SaaS",
-      "image": "https://goh-dev.com.ar/img/png1.png",
-      "@id": "https://goh-dev.com.ar",
-      "url": "https://goh-dev.com.ar",
+    "@type": "ProfessionalService",
+    "name": "GOH - Desarrollo de Software y SaaS",
+    "image": "https://goh.com.ar/img/png1.png",
+    "@id": "https://goh.com.ar",
+    "url": "https://goh.com.ar",
       "telephone": "+543385405049",
       "address": {
         "@type": "PostalAddress",
@@ -130,8 +130,8 @@
         "@type": "Organization",
         "name": "GOH Enterprise Solutions",
         "alternateName": "GOH-DEV",
-        "url": "https://goh-dev.com.ar",
-        "logo": "https://goh-dev.com.ar/img/goh1.png",
+        "url": "https://goh.com.ar",
+        "logo": "https://goh.com.ar/img/goh1.png",
         "description": "Desarrollo de software empresarial a medida. Especialistas en SaaS, Landing Pages corporativas y aplicaciones móviles.",
         "address": {
             "@type": "PostalAddress",
@@ -171,10 +171,10 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "GOH Enterprise",
-        "url": "https://goh-dev.com.ar",
+        "url": "https://goh.com.ar",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://goh-dev.com.ar/?s={search_term_string}",
+            "target": "https://goh.com.ar/?s={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     }
@@ -236,7 +236,7 @@
                             <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
                             Landing Pages a medida
                         </a>
-                        <a class="nav-card-link" href="https://goh-dev.com.ar/gym/" target="_blank" rel="noopener noreferrer">
+                            <a class="nav-card-link" href="https://goh.com.ar/gym/" target="_blank" rel="noopener noreferrer">
                             <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
                             GOH GYM
                         </a>

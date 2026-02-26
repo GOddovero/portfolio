@@ -352,7 +352,7 @@ include 'components/empresa/header-empresa.php';
                     Desarrollo de una landing page para Oddovero Herrajes, una empresa dedicada a la venta minorista en el pueblo de General Levalle. Con el desarrollo se busco captar los principales productos de ventas y redirigirlos a la tienda oficial para su posterior compra.
                     La landing page destaca sus productos, historia y valores, con un diseño moderno y funcional que facilita la navegación y el contacto con potenciales clientes.
                 </p>
-                <span class="service-badge" style="position: relative; top: auto; right: auto; display: inline-block;"><a href="https://goh-dev.com.ar/oddovero_herrajes/a" target="_blank" rel="noopener noreferrer">VISITAR PAGINA</a></span>
+                <span class="service-badge" style="position: relative; top: auto; right: auto; display: inline-block;"><a href="https://goh.com.ar/oddovero_herrajes/a" target="_blank" rel="noopener noreferrer">VISITAR PAGINA</a></span>
             </div>
     </div>
 </section>

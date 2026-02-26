@@ -18,19 +18,19 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://goh-dev.com.ar/">
+    <meta property="og:url" content="https://goh.com.ar/">
     <meta property="og:title" content="Gaspar Oddovero Herrera - Desarrollador Full Stack | GOH-DEV">
     <meta property="og:description" content="Desarrollador Full Stack y Licenciado en Informática de General Levalle, Argentina. Especialista en desarrollo web con PHP, JavaScript, React y MySQL.">
-    <meta property="og:image" content="https://goh-dev.com.ar/img/contacto_goh_sf.webp">
+    <meta property="og:image" content="https://goh.com.ar/img/contacto_goh_sf.webp">
     <meta property="og:locale" content="es_AR">
     <meta property="og:site_name" content="GOH-DEV Portfolio">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://goh-dev.com.ar/">
+    <meta property="twitter:url" content="https://goh.com.ar/">
     <meta property="twitter:title" content="Gaspar Oddovero Herrera - Desarrollador Full Stack | GOH-DEV">
     <meta property="twitter:description" content="Desarrollador Full Stack y Licenciado en Informática de General Levalle, Argentina. Especialista en desarrollo web.">
-    <meta property="twitter:image" content="https://goh-dev.com.ar/img/contacto_goh_sf.webp">
+    <meta property="twitter:image" content="https://goh.com.ar/img/contacto_goh_sf.webp">
     <meta property="twitter:creator" content="@goh_dev">
     
     <!-- Google tag (gtag.js) -->
@@ -52,8 +52,8 @@
       "alternateName": "GOH-DEV",
       "jobTitle": "Desarrollador Full Stack",
       "description": "Licenciado en Informática y Desarrollador Full Stack especializado en PHP, JavaScript, React y MySQL",
-      "url": "https://goh-dev.com.ar/",
-      "image": "https://goh-dev.com.ar/img/contacto_goh_sf.webp",
+      "url": "https://goh.com.ar/",
+      "image": "https://goh.com.ar/img/contacto_goh_sf.webp",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "General Levalle",
@@ -77,7 +77,7 @@
     </script>
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://goh-dev.com.ar/">
+    <link rel="canonical" href="https://goh.com.ar/">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">

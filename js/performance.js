@@ -76,8 +76,8 @@
     // === PREFETCH DE ENLACES IMPORTANTES ===
     const prefetchLinks = () => {
         const importantLinks = [
-            'https://goh-dev.com.ar/gym/',
-            'https://goh-dev.com.ar/care/'
+            'https://goh.com.ar/gym/',
+            'https://goh.com.ar/care/'
         ];
 
         importantLinks.forEach(url => {

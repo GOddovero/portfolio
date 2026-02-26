@@ -4,15 +4,28 @@ DirectoryIndex index.html index.php
 # Habilitar el motor de reescritura
 RewriteEngine on
 
-# Redireccionar www a no-www (opcional)
-RewriteCond %{HTTP_HOST} ^www\.goh\-dev\.com\.ar [NC]
-RewriteRule ^(.*)$ http://goh-dev.com.ar/$1 [R=301,L]
+# -----------------------------------------------
+# Reglas para goh-gym.com.ar
+# -----------------------------------------------
 
-# Si tienes certificado SSL, descomenta las siguientes líneas para forzar HTTPS
+# Redirigir goh-gym.com.ar (HTTP y HTTPS) → https://goh.com.ar/gym
+# No forzamos HTTPS en goh-gym porque no necesita certificado propio
+RewriteCond %{HTTP_HOST} ^(www\.)?goh\-gym\.com\.ar [NC]
+RewriteRule ^(.*)$ https://goh.com.ar/gym [R=301,L]
+
+# -----------------------------------------------
+# Reglas para goh.com.ar
+# -----------------------------------------------
+
+# Redireccionar www a no-www (opcional)
+RewriteCond %{HTTP_HOST} ^www\.goh\-com\.ar [NC]
+RewriteRule ^(.*)$ http://goh.com.ar/$1 [R=301,L]
+
+# Forzar HTTPS en goh.com.ar
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:CDN-LOOP} !cloudflare
 RewriteCond %{REQUEST_URI} !^/.well-known/acme-challenge/
-RewriteCond %{HTTP_HOST} ^(www\.)?goh\-dev\.com\.ar
+RewriteCond %{HTTP_HOST} ^(www\.)?goh\-com\.ar
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,QSA]
 
 # Configuración de seguridad básica

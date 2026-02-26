@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://goh-dev.com.ar/sitemap.xml
+Sitemap: https://goh.com.ar/sitemap.xml
 
 # Archivos y directorios importantes permitidos
 Allow: /css/
