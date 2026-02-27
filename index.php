@@ -26,4 +26,3 @@ include 'components/empresa/footer-empresa.php';
 ?>
 </div>
 
-?>

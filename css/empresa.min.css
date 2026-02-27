@@ -1126,9 +1126,9 @@ nav a:hover::after {
     /* --- HERO MOBILE OPTIMIZADO --- */
     .hero {
         height: auto;
-        min-height: 70dvh; /* Mejor soporte para navegadores móviles */
-        padding-top: 110px;
-        padding-bottom: 60px;
+        min-height: 60dvh;
+        padding-top: 30px;
+        padding-bottom: 40px;
         text-align: center;
         align-items: center;
     }
@@ -1140,23 +1140,26 @@ nav a:hover::after {
     }
 
     .card-nav-container {
-        padding: 0 8%;
-        margin-bottom: 2.5rem;
+        left: 4%;
+        right: 4%;
     }
 
     .card-nav-top {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
         padding: 0.5rem 1rem;
-        justify-content: space-between;
     }
 
     .hamburger-menu {
-        order: 2;
+        order: 1;
+        justify-self: start;
     }
 
     .logo-container {
+        order: 2;
         position: static;
         transform: none;
-        order: 1;
+        justify-self: center;
     }
 
     .card-nav-cta-button {
@@ -1188,24 +1191,24 @@ nav a:hover::after {
     }
 
     .hero-content {
-        padding-left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
         width: 100%;
     }
 
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 1.9rem;
         line-height: 1.1;
-        margin-bottom: 25px;
+        margin-bottom: 16px;
     }
 
     .hero p {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         border-left: none;
-        /* Cambio de borde lateral a superior para centrado */
         border-top: 4px solid var(--goh-yellow);
         padding-left: 0;
-        padding-top: 20px;
-        margin: 0 auto 35px;
+        padding-top: 16px;
+        margin: 0 auto 25px;
         max-width: 100%;
     }
 
@@ -1233,43 +1236,54 @@ nav a:hover::after {
 
     /* --- GENERAL LAYOUT --- */
     .container {
-        padding: 0 25px;
+        padding: 0 20px;
     }
 
     .section-padding {
-        padding: 70px 0;
+        padding: 45px 0;
     }
 
     /* --- TYPOGRAPHY --- */
     h2 {
-        font-size: 2.2rem;
-        text-align: center; /* Títulos centrados en mobile */
+        font-size: 1.5rem !important;
+        text-align: center;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .stat-box h3 {
+        font-size: 2rem !important;
     }
 
     /* --- MARQUEE --- */
     .marquee {
-        padding: 15px 0;
+        padding: 12px 0;
+    }
+
+    .marquee-content {
+        display: inline-flex;
+        align-items: center;
     }
 
     .marquee span {
-        font-size: 1.8rem;
-        margin: 0 20px;
+        font-size: 1.2rem;
+        margin: 0 14px;
     }
 
     /* --- SERVICES --- */
     .service-item {
-        padding: 50px 25px;
+        padding: 35px 20px;
         text-align: center;
         border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
     .service-num {
-        font-size: 3.5rem;
-        margin-bottom: 15px;
+        font-size: 2rem;
+        margin-bottom: 10px;
     }
 
     .service-item h3 {
-        font-size: 1.75rem;
+        font-size: 1.2rem;
     }
 
     .service-link {
@@ -1297,13 +1311,13 @@ nav a:hover::after {
     }
 
     .product-info h3 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
 
     /* --- CTA --- */
     .cta-title {
-        font-size: 2.5rem;
-        line-height: 1.1;
+        font-size: 1.5rem;
+        line-height: 1.15;
     }
 
     /* --- GLOBAL BUTTONS --- */
