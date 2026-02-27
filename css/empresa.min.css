@@ -32,6 +32,7 @@ body {
 }
 
 .page-wrapper {
+    margin-top: calc(2rem + 60px + 1.5rem); /* top nav offset + alto nav + separación */
     margin-left: 4%;
     margin-right: 4%;
     padding-bottom: 4%;
@@ -43,7 +44,7 @@ body {
 
 /* --- CARD NAVBAR FLOANTE --- */
 .card-nav-container {
-    position: absolute;
+    position: fixed;
     top: 2rem;
     left: 4%;
     right: 4%;
@@ -51,6 +52,10 @@ body {
     margin: 0 auto;
     z-index: 1001;
     box-sizing: border-box;
+}
+
+.card-nav-container.card-nav-floating {
+    position: fixed;
 }
 
 .card-nav {
@@ -343,8 +348,7 @@ header {
     position: relative;
     width: 100%;
     z-index: 1000;
-    padding-top: 24px;
-    padding-bottom: 96px; /* espacio para navbar flotante + separación del wrapper */
+    padding: 0;
     background: transparent;
     border-bottom: none;
 }
@@ -1380,18 +1384,7 @@ img[loading="eager"] {
     }
 }
 
-/* Optimización de backdrop-filter para mejor performance */
-@supports (backdrop-filter: blur(15px)) {
-    header {
-        backdrop-filter: blur(15px);
-    }
-}
-
-@supports not (backdrop-filter: blur(15px)) {
-    header {
-        background: rgba(255, 255, 255, 0.95);
-    }
-}
+/* backdrop-filter removido del header — rompía position:fixed en hijos */
 
 /* Products Section Reveal Effect */
 .products-section {

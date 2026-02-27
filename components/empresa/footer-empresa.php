@@ -67,14 +67,25 @@
 
         // Card Nav Scroll Interaction
         const cardNav = document.querySelector('.card-nav');
-        window.addEventListener('scroll', () => {
-            if (!cardNav) return;
+        const cardNavContainer = document.querySelector('.card-nav-container');
+        const updateCardNavOnScroll = () => {
+            if (!cardNav || !cardNavContainer) return;
+
             if (window.scrollY > 50) {
                 cardNav.classList.add('card-nav-scrolled');
             } else {
                 cardNav.classList.remove('card-nav-scrolled');
             }
-        });
+
+            if (window.scrollY > 5) {
+                cardNavContainer.classList.add('card-nav-floating');
+            } else {
+                cardNavContainer.classList.remove('card-nav-floating');
+            }
+        };
+
+        window.addEventListener('scroll', updateCardNavOnScroll);
+        updateCardNavOnScroll();
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

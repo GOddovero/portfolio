@@ -182,9 +182,8 @@
 </head>
 <body>
 
-<header>
-    <div class="card-nav-container">
-        <nav class="card-nav" aria-label="Navegación principal">
+<div class="card-nav-container">
+    <nav class="card-nav" aria-label="Navegación principal">
             <div class="card-nav-top">
                 <button
                     type="button"
@@ -236,7 +235,7 @@
                             <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
                             Landing Pages a medida
                         </a>
-                            <a class="nav-card-link" href="https://goh.com.ar/gym/" target="_blank" rel="noopener noreferrer">
+                            <a class="nav-card-link" href="https://goh-gym.com.ar/" target="_blank" rel="noopener noreferrer">
                             <i class="ph-bold ph-arrow-up-right nav-card-link-icon" aria-hidden="true"></i>
                             GOH GYM
                         </a>
@@ -269,6 +268,7 @@
                     </div>
                 </div>
             </div>
-        </nav>
-    </div>
-</header>
+    </nav>
+</div>
+
+<header>
