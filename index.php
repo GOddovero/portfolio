@@ -16,8 +16,8 @@ include 'components/empresa/header-empresa.php';
 include 'components/empresa/hero-empresa.php';
 include 'components/empresa/marquee-section.php';
 
-include 'components/empresa/servicios-section.php';
 include 'components/empresa/productos-section.php';
+include 'components/empresa/servicios-section.php';
 include 'components/empresa/estadisticas-section.php';
 
 include 'components/empresa/cta-section.php';

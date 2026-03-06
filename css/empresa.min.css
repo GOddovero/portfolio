@@ -655,6 +655,13 @@ nav a:hover::after {
     background: #3b2f2f;
     color: white;
     position: relative;
+    padding-bottom: 0 !important;
+}
+
+.products-section .products-full-bleed {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .products-section h2 {
@@ -662,38 +669,55 @@ nav a:hover::after {
 }
 
 .products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
     margin-top: 50px;
+    width: 100%;
+    overflow-x: auto;
 }
 
 .product-card {
-    background: #222;
-    border: 1px solid #333;
+    flex: 1 1 0;
+    min-width: 280px;
+    background: linear-gradient(155deg, var(--theme-color, #222), var(--theme-color-2, #111));
+    border: none;
     transition: 0.5s;
     display: flex;
     flex-direction: column;
-    --theme-color: var(--goh-yellow);
     will-change: transform;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.product-card + .product-card {
+    border-left: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 /* Temas de color por tarjeta */
 .card-gym {
-    --theme-color: #e86c0e;
+    --theme-color: #e76d0e;
+    --theme-color-2: #e76d0e;
 }
 
 .card-care {
-    --theme-color: #e3427d;
+    --theme-color: #e4427f;
+    --theme-color-2: #e4427f;
+}
+
+.card-tax {
+    --theme-color: #f7fa4e;
+    --theme-color-2: #f7fa4e;
 }
 
 .card-shop {
     --theme-color: #7f02a6;
+    --theme-color-2: #7f02a6;
 }
 
 .product-card:hover {
-    border-color: var(--theme-color);
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .product-card.featured {
@@ -709,7 +733,7 @@ nav a:hover::after {
 
 .product-visual {
     height: 250px;
-    background: #333;
+    background: rgba(255, 255, 255, 0.14);
     position: relative;
     overflow: hidden;
 }
@@ -742,58 +766,69 @@ nav a:hover::after {
 }
 
 .p-tag {
-    color: var(--theme-color);
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.22);
+    padding: 4px 10px;
+    border-radius: 4px;
     font-weight: 700;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+    display: inline-block;
     letter-spacing: 1px;
+    width: fit-content;
 }
 
 .product-info h3 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 15px;
     color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .product-info p {
-    color: #aaa;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 25px;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .link-underline {
     color: white;
-    font-weight: 600;
+    font-weight: 700;
     margin-top: auto;
+    background: rgba(255,255,255,0.2);
+    padding: 12px 20px;
+    border-radius: 6px;
+    width: fit-content;
+    text-align: center;
+    transition: background 0.3s;
 }
 
-.card-gym .link-underline {
-    background-color: #e86c0e;
-    padding: 10px 15px;
-    width: fit-content;
+.link-underline:hover {
+    background: rgba(255,255,255,0.32);
 }
 
 .badge {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 5px 12px;
+    padding: 6px 14px;
     font-weight: 800;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     z-index: 2;
-    background: var(--theme-color);
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     color: white;
+    border-radius: 4px;
 }
 
 /* WIP Style */
 .product-card.wip {
-    opacity: 0.7;
+    opacity: 0.88;
 }
 
 .product-card.wip:hover {
     opacity: 1;
-    border-color: #555;
 }
 
 /* --- CTA SECTION --- */
@@ -969,7 +1004,9 @@ nav a:hover::after {
     }
 
     .products-grid {
-        grid-template-columns: 1fr;
+        flex-wrap: nowrap;
+        gap: 0;
+        overflow-x: auto;
     }
 
     .product-card.featured {
@@ -1297,11 +1334,17 @@ nav a:hover::after {
 
     /* --- PRODUCTS --- */
     .products-grid {
-        gap: 40px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 0;
         margin-top: 30px;
+        overflow-x: visible;
     }
 
     .product-card {
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 100%;
         margin: 0;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Más sombra en mobile */
     }
