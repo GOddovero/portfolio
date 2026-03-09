@@ -706,8 +706,8 @@ nav a:hover::after {
 }
 
 .card-tax {
-    --theme-color: #f7fa4e;
-    --theme-color-2: #f7fa4e;
+    --theme-color: #e2e615;
+    --theme-color-2: #c6c91c;
 }
 
 .card-shop {
