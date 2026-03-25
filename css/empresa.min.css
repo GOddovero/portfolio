@@ -701,8 +701,8 @@ nav a:hover::after {
 }
 
 .card-care {
-    --theme-color: #e4427f;
-    --theme-color-2: #e4427f;
+    --theme-color: #334155;
+    --theme-color-2: #334155;
 }
 .card-tax {
     --theme-color: #e2e615;
