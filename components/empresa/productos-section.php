@@ -40,8 +40,7 @@
                     <h3>GOH-Care</h3>
                     <p>Solución integral para hospitales y consultorios. Turnera inteligente, historias clínicas
                         digitales y módulos especializados para diferentes especialidades médicas.</p>
-                    <a href="#contacto" class="link-underline" aria-label="Consultar sobre GOH-Care">Consultar</a>
-                </div>
+                    <a href="https://care.goh.com.ar/" class="link-underline" target="_blank" rel="noopener noreferrer">Ver Sistema</a>                </div>
             </div>
 
             <!-- GOH-TAX -->

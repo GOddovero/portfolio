@@ -42,7 +42,7 @@
         <!-- Plan Básico -->
         <div class="service-item" style="display: flex; flex-direction: column; justify-content: center;" data-aos="fade-up">
             <h3>Para tu Negocio</h3>
-            <div class="price" style="font-size: 2.5rem; font-family: var(--font-display); font-weight: 900; color: var(--goh-dark); margin: 15px 0;">$175.000</div>
+            <div class="price" style="font-size: 2.5rem; font-family: var(--font-display); font-weight: 900; color: var(--goh-dark); margin: 15px 0;">$149.000</div>
             <p><strong>1 Página (Landing Page).</strong><br>Diseño de alta conversión, sin gastos mensuales.</p>
             <p style="font-size: 0.9rem; font-weight: bold; margin-top: 15px; color: var(--goh-yellow);">+ $25.000 por página extra.</p>
             <a href="#contacto" class="service-link" style="margin-top: 30px;">Comenzar Ahora <i class="ph-bold ph-arrow-right"></i></a>
