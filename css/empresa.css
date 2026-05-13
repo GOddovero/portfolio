@@ -674,7 +674,7 @@ nav a:hover::after {
     gap: 0;
     margin-top: 50px;
     width: 100%;
-    overflow-x: auto; /* Para pantallas pequeñas */
+    overflow-x: hidden;
 }
 
 .product-card {
@@ -711,8 +711,8 @@ nav a:hover::after {
 }
 
 .card-shop {
-    --theme-color: #7f02a6;
-    --theme-color-2: #7f02a6;
+    --theme-color: #407055;
+    --theme-color-2: #407055;
 }
 
 .product-card:hover {
@@ -1007,7 +1007,7 @@ nav a:hover::after {
     .products-grid {
         flex-wrap: nowrap;
         gap: 0;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
     .product-card.featured {
