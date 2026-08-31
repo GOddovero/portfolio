@@ -17,6 +17,10 @@ RewriteRule ^(.*)$ https://goh.com.ar/gym [R=301,L]
 # Reglas para goh.com.ar
 # -----------------------------------------------
 
+# Redirigir la landing de emprendedores a GOH-Shop
+RewriteCond %{HTTP_HOST} ^(www\.)?goh\.com\.ar$ [NC]
+RewriteRule ^emprende/?$ https://goh-shop.com.ar/emprendedores [R=301,L]
+
 # Redireccionar www a no-www (opcional)
 RewriteCond %{HTTP_HOST} ^www\.goh\-com\.ar [NC]
 RewriteRule ^(.*)$ http://goh.com.ar/$1 [R=301,L]

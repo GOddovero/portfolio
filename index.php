@@ -1,4 +1,11 @@
 <?php
+// Alias público del programa para emprendedores de GOH-Shop.
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+if (rtrim($requestPath, '/') === '/emprende') {
+    header('Location: https://goh-shop.com.ar/emprendedores', true, 301);
+    exit;
+}
+
 /**
  * GOH Enterprise - Landing Page Empresarial
  * Página principal con diseño corporativo moderno
