@@ -14,7 +14,7 @@ const coursesData = [
         title: "Terminal y línea de comandos",
         institution: "Platzi",
         date: "9/12/2025",
-        description: "Introduccion a la terminal y línea de comandos.",
+        description: "Introducción a la terminal y línea de comandos.",
         status: "TITULADO",
         icon: "fab fa-linux",
         pdfUrl: "cursos_pdf/diploma-terminal.pdf" 
@@ -31,10 +31,10 @@ const coursesData = [
     },
     {
         id: 4,
-        title: "Redes informaticas de internet",
+        title: "Redes informáticas de internet",
         institution: "Platzi",
         date: "15/01/2026",
-        description: "Curso complementario de introduccion a la gestion de infraestructura de redes.",
+        description: "Curso complementario de introducción a la gestión de infraestructura de redes.",
         status: "TITULADO",
         icon: "fas fa-network-wired",
         pdfUrl: "cursos_pdf/diploma-redes.pdf"
