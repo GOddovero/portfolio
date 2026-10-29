@@ -7,10 +7,10 @@ $pageCanonical = gohCanonical('blog/');
 $articles = gohArticles();
 $categories = gohBlogCategories();
 $query = is_string($_GET['q'] ?? null) ? trim($_GET['q']) : '';
-$query = function_exists('mb_substr') ? mb_substr($query, 0, 80, 'UTF-8') : substr($query, 0, 80);
+$query = preg_match('/^.{0,80}/us', $query, $queryMatch) === 1 ? $queryMatch[0] : '';
 $category = is_string($_GET['categoria'] ?? null) && isset($categories[$_GET['categoria']]) ? $_GET['categoria'] : '';
 if (parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) === gohUrl('blog/index.php')) {
-    $parameters = http_build_query(array_filter(['q'=>$query, 'categoria'=>$category]));
+    $parameters = http_build_query(array_filter(['q'=>$query, 'categoria'=>$category], fn($value) => $value !== ''));
     header('Location: ' . gohUrl('blog/') . ($parameters ? '?' . $parameters : ''), true, 301);
     exit;
 }
@@ -18,7 +18,10 @@ $filtered = $query !== '' || $category !== '';
 if ($filtered) $pageRobots = 'noindex,follow';
 $results = array_filter($articles, function ($post) use ($query, $category) {
     if ($category !== '' && $category !== $post['category']) return false;
-    $haystack = gohSearchText($post['title'] . ' ' . $post['description'] . ' ' . $post['product'] . ' ' . $post['categoryLabel'] . ' ' . $post['answer']);
+    if ($query === '') return true;
+    $body = strip_tags(implode(' ', array_column($post['sections'], 'html')));
+    $questions = implode(' ', array_map(fn($faq) => implode(' ', $faq), $post['faqs']));
+    $haystack = gohSearchText($post['title'] . ' ' . $post['description'] . ' ' . $post['product'] . ' ' . $post['categoryLabel'] . ' ' . $post['answer'] . ' ' . $body . ' ' . $questions);
     foreach (preg_split('/\s+/u', gohSearchText($query), -1, PREG_SPLIT_NO_EMPTY) as $term) {
         if (strpos($haystack, $term) === false) return false;
     }

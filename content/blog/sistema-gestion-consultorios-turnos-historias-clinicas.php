@@ -35,7 +35,7 @@ return [
         [
             'id' => 'goh-care',
             'title' => 'Qué propone GOH CARE',
-            'html' => '<p>GOH CARE es el sistema de gestión médica de GOH para profesionales, consultorios y centros de salud en Argentina. Reúne turnos, pacientes, historias clínicas por especialidad, roles y comunicación del equipo.</p><p>Su propuesta contempla herramientas para medicina, odontología y nutrición. La gestión de la agenda la realiza el equipo: la reserva online autónoma por pacientes figura como una función futura en su sitio. El alcance de cada especialidad y plan se revisa durante la demostración.</p>',
+            'html' => '<p>GOH CARE es el sistema de gestión médica de GOH para profesionales, consultorios y centros de salud en Argentina. Reúne turnos, pacientes, historias clínicas por especialidad, roles y comunicación del equipo.</p><p>Su propuesta contempla herramientas para medicina, odontología y nutrición. La gestión de la agenda está a cargo del equipo del consultorio. La reserva online autónoma por pacientes está prevista como una función futura. El alcance de cada especialidad y plan se revisa durante la demostración.</p>',
         ],
     ],
     'faqs' => [
@@ -45,7 +45,7 @@ return [
         ],
         [
             '¿Los pacientes pueden reservar turnos por su cuenta?',
-            'Actualmente, el sitio de GOH CARE informa que la gestión de turnos la realiza el equipo y que la reserva autónoma por pacientes es una función futura.',
+            'Actualmente, la gestión de turnos está a cargo del equipo del consultorio. La reserva autónoma por pacientes está prevista como una función futura.',
         ],
         [
             '¿Secretaría y profesionales pueden tener cuentas diferentes?',
