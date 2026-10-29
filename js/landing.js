@@ -29,6 +29,7 @@
     if (screenshotSwitcher) screenshotSwitcher.hidden = false;
     document.querySelectorAll('[data-preview]').forEach(button => button.addEventListener('click', () => {
         const preview = document.querySelector('#gym-preview');
+        preview.srcset = button.dataset.previewSrcset;
         preview.src = button.dataset.preview;
         preview.alt = button.dataset.previewAlt;
         document.querySelectorAll('[data-preview]').forEach(item => {
@@ -37,48 +38,67 @@
         });
     }));
 
-    const filters = document.querySelector('.project-filters');
-    const projects = [...document.querySelectorAll('[data-category]')];
-    if (filters) filters.hidden = false;
-    filters?.addEventListener('click', event => {
-        const button = event.target.closest('[data-filter]');
-        if (!button) return;
-        filters.querySelectorAll('button').forEach(item => {
-            item.setAttribute('aria-pressed', String(item === button));
-            item.classList.toggle('is-active', item === button);
-        });
-        projects.forEach(project => {
-            project.hidden = button.dataset.filter !== 'all' && project.dataset.category !== button.dataset.filter;
-        });
-        const count = projects.filter(project => !project.hidden).length;
-        document.querySelector('#filter-status').textContent = `${count} proyectos visibles`;
-    });
-
-    const interests = {
-        gym: {context: 'Conocé GOH GYM y coordinemos una demo para tu gimnasio.', message: 'Hola, vi la web de GOH y quiero conocer GOH GYM para mi gimnasio. Me gustaría coordinar una demo.'},
-        shop: {context: 'Conocé GOH SHOP y coordinemos una demo para tu comercio.', message: 'Hola, vi la web de GOH y quiero conocer GOH SHOP para mi negocio. Me gustaría coordinar una demo.'},
-        custom: {context: 'Una web, un sistema o esa idea que querés poner en marcha.', message: 'Hola, vi la web de GOH y quiero conversar sobre un desarrollo a medida para mi negocio.'}
+    // Explore product areas without hiding any information when JavaScript is unavailable.
+    const areaNav = document.querySelector('.shop-area-nav');
+    const areaButtons = [...document.querySelectorAll('[data-shop-area]')];
+    const areaPanels = [...document.querySelectorAll('.shop-area-panel')];
+    const selectArea = button => {
+        areaButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        areaPanels.forEach(panel => { panel.hidden = panel.id !== button.getAttribute('aria-controls'); });
     };
-    document.querySelectorAll('[data-interest]').forEach(button => button.addEventListener('click', () => {
-        document.querySelectorAll('[data-interest]').forEach(item => {
-            item.setAttribute('aria-pressed', String(item === button));
-            item.classList.toggle('is-active', item === button);
+    if (areaNav && areaButtons.length) {
+        selectArea(areaButtons[0]);
+        areaNav.hidden = false;
+        document.querySelector('.shop-explorer').classList.add('is-interactive');
+        areaNav.addEventListener('click', event => {
+            const button = event.target.closest('[data-shop-area]');
+            if (button) selectArea(button);
         });
-        const interest = interests[button.dataset.interest];
-        document.querySelector('#contact-context').textContent = interest.context;
-        document.querySelector('#contact-whatsapp').href = `https://wa.me/543385405049?text=${encodeURIComponent(interest.message)}`;
-    }));
-    // Optional reveal is limited to small content groups. Everything is visible without JS.
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
-        }), {threshold: 0.08});
-        document.querySelectorAll('.section-heading, .studio-intro, .services-grid').forEach(item => {
-            item.classList.add('reveal');
-            observer.observe(item);
+        areaNav.addEventListener('keydown', event => {
+            const button = event.target.closest('[data-shop-area]');
+            if (!button || !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
+            event.preventDefault();
+            const direction = ['ArrowRight', 'ArrowDown'].includes(event.key) ? 1 : -1;
+            let index = (areaButtons.indexOf(button) + direction + areaButtons.length) % areaButtons.length;
+            if (event.key === 'Home') index = 0;
+            if (event.key === 'End') index = areaButtons.length - 1;
+            selectArea(areaButtons[index]);
+            areaButtons[index].focus();
         });
     }
+
+    // Entrances accompany the logo's flight into the navbar as the white cover fades.
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if ('IntersectionObserver' in window && !motionPreference.matches) {
+        // Animate small content groups, never the entire screenshot-heavy section.
+        const targets = [...document.querySelectorAll('[data-reveal], .gym-copy, .success-copy, .section-heading, .studio-intro, .services-grid')];
+        targets.forEach(item => { item.dataset.reveal = ''; item.classList.add('motion-pending'); });
+        document.documentElement.classList.add('motion-ready');
+        const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove('motion-pending');
+                entry.target.classList.add('is-in-view');
+                entry.target.closest('[data-motion-group]')?.classList.add('is-in-view');
+                revealObserver.unobserve(entry.target);
+            }
+        }), {threshold: 0.01, rootMargin: '0px 0px 80px 0px'});
+        let introObserver;
+        const startReveals = () => {
+            if (document.documentElement.classList.contains('intro-active') && !document.documentElement.classList.contains('intro-docking')) return;
+            introObserver?.disconnect();
+            targets.forEach(item => revealObserver.observe(item));
+        };
+        if (document.documentElement.classList.contains('intro-active')) {
+            introObserver = new MutationObserver(startReveals);
+            introObserver.observe(document.documentElement, {attributes: true, attributeFilter: ['class']});
+        } else startReveals();
+        motionPreference.addEventListener('change', event => {
+            if (!event.matches) return;
+            introObserver?.disconnect();
+            revealObserver.disconnect();
+            document.documentElement.classList.remove('motion-ready');
+            targets.forEach(item => item.classList.remove('motion-pending'));
+        });
+    }
+
 })();

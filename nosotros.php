@@ -1,26 +1,32 @@
 <?php
 $gohPage = 'about';
 require __DIR__ . '/components/landing/helpers.php';
+$pageSchema = [[
+    '@type'=>'ProfilePage', '@id'=>gohCanonical('nosotros.php#profile'),
+    'url'=>gohCanonical('nosotros.php'), 'name'=>'Gaspar Oddovero Herrera · GOH',
+    'inLanguage'=>'es-AR', 'mainEntity'=>['@id'=>gohCanonical('nosotros.php#gaspar')],
+], gohBreadcrumbSchema([['Inicio',gohCanonical()],['Nosotros',gohCanonical('nosotros.php')]])];
+$pageImage = gohCanonical('img/gaspar-oddovero-800.webp');
 require __DIR__ . '/components/landing/header.php';
 ?>
 <main id="contenido" class="about-page">
-    <section class="about-hero section-dark" id="inicio" aria-labelledby="about-title">
+    <section class="about-hero" id="inicio" aria-labelledby="gaspar">
         <div class="container about-hero-grid">
             <div class="about-hero-copy">
-                <p class="eyebrow">NOSOTROS / UNA MARCA, UNA PERSONA</p>
-                <h1 id="about-title">Detrás de GOH,<br><span>estoy yo.</span></h1>
-                <p class="about-name">Gaspar Oddovero Herrera</p>
-                <p class="about-role">Licenciado en Informática · Fundador de GOH</p>
+                <p class="eyebrow"><span class="status-dot"></span> NOSOTROS / DETRÁS DE GOH</p>
+                <h1 id="gaspar">Gaspar<br><span>Oddovero Herrera.</span></h1>
+                <p class="about-name">Licenciado en Informática · Fundador de GOH</p>
+                <p class="about-role">General Levalle, Córdoba, Argentina.</p>
                 <p class="about-intro">Diseño y desarrollo software para que los negocios puedan gestionar mejor, ordenar su trabajo y seguir creciendo. Desde General Levalle, Córdoba, con un trato directo de principio a fin.</p>
                 <div class="about-actions">
-                    <a class="button button-yellow" href="#contacto">Hablemos de tu proyecto</a>
+                    <a class="button button-dark" href="#contacto">Conversemos <?= gohIcon('chat') ?></a>
                     <a class="text-link" href="#trayectoria">Conocé mi recorrido <?= gohIcon('arrow') ?></a>
                 </div>
             </div>
             <div class="about-portrait">
-                <span class="portrait-wordmark" aria-hidden="true">GOH</span>
-                <img src="<?= gohAsset('img/contacto_goh_sf.webp') ?>" alt="Gaspar Oddovero Herrera, fundador y desarrollador de GOH" width="2000" height="3000" fetchpriority="high">
-                <div class="portrait-caption"><span class="status-dot"></span> EL QUE ESCUCHA TU IDEA.<br> EL QUE LA DESARROLLA.</div>
+                <span class="portrait-wordmark" aria-hidden="true"><?php require __DIR__ . '/components/landing/brand-symbol.php'; ?></span>
+                <img src="<?= gohAsset('img/gaspar-oddovero-800.webp') ?>" srcset="<?= gohAsset('img/gaspar-oddovero-480.webp') ?> 480w, <?= gohAsset('img/gaspar-oddovero-800.webp') ?> 800w" sizes="(max-width:650px) 90vw, 40vw" alt="Gaspar Oddovero Herrera, fundador y desarrollador de GOH" width="800" height="1200" fetchpriority="high" decoding="async">
+                <div class="portrait-caption"><span class="status-dot"></span> DESARROLLO PROPIO.<br> TRATO DIRECTO.</div>
             </div>
         </div>
         <div class="container about-hero-foot"><span>DESARROLLO DE SOFTWARE</span><span>PRODUCTOS PROPIOS</span><span>DOCENCIA & APRENDIZAJE</span></div>
@@ -32,15 +38,25 @@ require __DIR__ . '/components/landing/header.php';
             <div class="about-prose">
                 <p>GOH es mi marca personal. Hoy soy yo quien está detrás de cada desarrollo: escuchando las necesidades, pensando la solución, escribiendo el código y acompañando su implementación.</p>
                 <p>Mi experiencia en gestión comercial, atención al cliente y docencia también forma parte de ese trabajo. Me interesa entender qué pasa en tu negocio y construir una herramienta que te sirva en el día a día.</p>
-                <a class="text-link" href="index.php#proyectos">Mirá algunos de mis trabajos <?= gohIcon('arrow') ?></a>
+                <a class="text-link" href="<?= gohUrl('#proyectos') ?>">Conocé los proyectos <?= gohIcon('arrow') ?></a>
             </div>
         </div>
+    </section>
+
+    <section class="about-ecosystem container" aria-labelledby="ecosystem-title">
+        <div class="about-ecosystem-heading"><div><p class="eyebrow">UNA IDENTIDAD COMPARTIDA</p><h2 id="ecosystem-title">Lo que construyo con GOH.</h2></div><p>Productos propios, herramientas para cada actividad<br>y desarrollos que parten de una necesidad concreta.</p></div>
+        <div class="about-systems">
+            <a href="<?= gohUrl('#goh-shop') ?>" class="about-system about-system-shop"><img src="<?= gohAsset('img/logo_shop.png') ?>" width="120" height="120" alt="GOH SHOP" loading="lazy"><span><strong>Gestión comercial</strong><span>Ventas, stock, caja y facturación.</span></span><?= gohIcon('arrow') ?></a>
+            <a href="<?= gohUrl('#goh-gym') ?>" class="about-system about-system-gym"><img src="<?= gohAsset('img/logo_gohgym.png') ?>" width="120" height="120" alt="GOH GYM" loading="lazy"><span><strong>Administración de gimnasios</strong><span>Socios, membresías y cobros.</span></span><?= gohIcon('arrow') ?></a>
+            <a href="<?= gohUrl('#goh-care') ?>" class="about-system about-system-care"><img src="<?= gohAsset('img/goh-care.png') ?>" width="120" height="120" alt="GOH CARE" loading="lazy"><span><strong>Gestión médica</strong><span>Turnos, pacientes e historias clínicas.</span></span><?= gohIcon('arrow') ?></a>
+        </div>
+        <div class="about-modules"><p><strong>Módulos GOH</strong><span>GOH RESTO · GOH TAX · Próximamente más.</span></p><a class="text-link" href="<?= gohUrl('#modulos') ?>">Explorar módulos <?= gohIcon('arrow') ?></a></div>
     </section>
 
     <section class="about-degree" aria-labelledby="degree-title">
         <div class="container degree-layout">
             <figure class="degree-photo">
-                <img src="<?= gohAsset('img/mosaico-portfolio-1.jpeg') ?>" width="3000" height="2000" loading="lazy" alt="Gaspar durante la entrega de su título en la Universidad Siglo 21">
+                <img src="<?= gohAsset('img/formacion-gaspar-goh-1280.webp') ?>" srcset="<?= gohAsset('img/formacion-gaspar-goh-640.webp') ?> 640w, <?= gohAsset('img/formacion-gaspar-goh-1280.webp') ?> 1280w" sizes="(max-width:650px) 90vw, 48vw" width="3000" height="2000" loading="lazy" decoding="async" alt="Gaspar durante la entrega de su título en la Universidad Siglo 21">
                 <figcaption>Un cierre de etapa. El comienzo de muchas ideas.</figcaption>
             </figure>
             <div class="degree-copy">
@@ -59,7 +75,7 @@ require __DIR__ . '/components/landing/header.php';
             <div class="career-list">
                 <article class="career-row">
                     <div class="career-period"><span class="career-number">01</span><p>AGOSTO 2024 — ACTUALIDAD</p><span class="career-current">Mi proyecto</span></div>
-                    <div class="career-content"><p class="career-company">GOH / MARCA PERSONAL</p><h3>Fundador & desarrollador Full Stack</h3><p>Desarrollo productos propios y sistemas a medida para clientes reales. Desde la primera conversación hasta la implementación y las mejoras del sistema.</p><ul><li>GOH GYM y GOH SHOP: gestión para gimnasios y comercios.</li><li>Córdoba Teje: expositores, cobranzas, facturación, entradas y validación QR.</li><li>Global English Academy: administración integral de la academia.</li><li>GOH CARE, plataforma hospitalaria, y desarrollo de sitios web y landing pages.</li></ul><a class="text-link" href="index.php#productos">Conocé los productos GOH <?= gohIcon('arrow') ?></a></div>
+                    <div class="career-content"><p class="career-company">GOH / MARCA PERSONAL</p><h3>Fundador & desarrollador Full Stack</h3><p>Desarrollo productos propios y sistemas a medida para clientes reales. Desde la primera conversación hasta la implementación y las mejoras del sistema.</p><ul><li>GOH SHOP, GOH GYM y GOH CARE: sistemas para comercios, gimnasios y gestión médica.</li><li>Córdoba Teje: expositores, cobranzas, facturación, entradas y validación QR.</li><li>Global English Academy: administración integral de la academia.</li><li>GOH RESTO y GOH TAX: módulos para gastronomía y gestión contable.</li></ul><a class="text-link" href="index.php#productos">Conocé los productos GOH <?= gohIcon('arrow') ?></a></div>
                 </article>
                 <article class="career-row">
                     <div class="career-period"><span class="career-number">02</span><p>MARZO 2024 — ACTUALIDAD</p></div>
@@ -88,15 +104,19 @@ require __DIR__ . '/components/landing/header.php';
     <section class="section about-courses" aria-labelledby="courses-title">
         <div class="container">
             <div class="section-heading"><div><p class="eyebrow">05 / FORMACIÓN CONTINUA</p><h2 id="courses-title">Siempre hay algo<br><span>nuevo por aprender.</span></h2></div><p>Cursos, certificaciones y nuevas herramientas que sumo a mi forma de trabajar.</p></div>
-            <div id="coursesSlider" class="courses-grid"></div>
-            <noscript><p>Certificaciones de Platzi: <a href="cursos_pdf/diploma-terminal.pdf">Terminal y línea de comandos</a>, <a href="cursos_pdf/diploma-ingenieria%20(1).pdf">Fundamentos de Ingeniería de Software</a> y <a href="cursos_pdf/diploma-redes.pdf">Redes informáticas de internet</a>. Full Stack Open, Universidad de Helsinki: en curso.</p></noscript>
+            <div class="courses-grid">
+                <article class="course-card"><div class="course-topline"><span>Universidad de Helsinki</span><span class="course-status is-progress">En curso</span></div><h3>Full Stack Open</h3><p class="course-description">React, Node.js, GraphQL, TypeScript, React Native y procesos de integración y entrega continua.</p><div class="course-bottom"><span class="course-date">Formación iniciada en 2025</span><span class="course-status">Aprendizaje continuo</span></div></article>
+                <article class="course-card"><div class="course-topline"><span>Platzi</span><span class="course-status">Completado</span></div><h3>Terminal y línea de comandos</h3><p class="course-description">Herramientas para trabajar con la terminal y organizar tareas de desarrollo.</p><div class="course-bottom"><span class="course-date">9 de diciembre de 2025</span><a href="<?= gohUrl('cursos_pdf/diploma-terminal.pdf') ?>" target="_blank" rel="noopener">Ver certificado ↗</a></div></article>
+                <article class="course-card"><div class="course-topline"><span>Platzi</span><span class="course-status">Completado</span></div><h3>Fundamentos de Ingeniería de Software</h3><p class="course-description">Conceptos y fundamentos para construir y comprender sistemas de software.</p><div class="course-bottom"><span class="course-date">12 de diciembre de 2025</span><a href="<?= gohUrl('cursos_pdf/diploma-ingenieria%20(1).pdf') ?>" target="_blank" rel="noopener">Ver certificado ↗</a></div></article>
+                <article class="course-card"><div class="course-topline"><span>Platzi</span><span class="course-status">Completado</span></div><h3>Redes informáticas de internet</h3><p class="course-description">Introducción a la gestión de infraestructura y a los fundamentos de las redes.</p><div class="course-bottom"><span class="course-date">15 de enero de 2026</span><a href="<?= gohUrl('cursos_pdf/diploma-redes.pdf') ?>" target="_blank" rel="noopener">Ver certificado ↗</a></div></article>
+            </div>
         </div>
     </section>
+
+    <section class="container about-blog"><span class="about-blog-mark" aria-hidden="true"><?php require __DIR__ . '/components/landing/brand-symbol.php'; ?></span><div><p class="eyebrow">COMPARTIR TAMBIÉN ES PARTE DEL TRABAJO</p><h2>Ideas que ayudan a elegir.</h2><p>En el blog de GOH comparto guías sobre software, gestión y decisiones que aparecen al digitalizar un negocio en Argentina.</p></div><a class="text-link" href="<?= gohUrl('blog/') ?>">Explorar el blog <?= gohIcon('arrow') ?></a></section>
 
     <section class="about-contact" id="contacto" aria-labelledby="about-contact-title">
         <div class="container about-contact-grid"><div><p class="eyebrow">TU PRÓXIMO PROYECTO</p><h2 id="about-contact-title">Hablás conmigo.<br>Lo construimos juntos.</h2><p>Contame qué necesitás. Pensemos cómo llevarlo a la práctica.</p></div><div class="about-contact-actions"><a class="button button-dark" href="<?= gohWhatsapp('Hola Gaspar, conocí tu trabajo en la web de GOH y me gustaría conversar sobre un proyecto.') ?>" target="_blank" rel="noopener noreferrer">Conversemos por WhatsApp <?= gohIcon('chat') ?></a><a class="text-link" href="mailto:contacto@goh.com.ar">contacto@goh.com.ar</a><a class="text-link" href="https://www.linkedin.com/in/goh-dev/" target="_blank" rel="noopener noreferrer">También me encontrás en LinkedIn <?= gohIcon('arrow') ?></a></div></div>
     </section>
 </main>
-<script src="<?= gohAsset('js/cursos-data.js') ?>" defer></script>
-<script src="<?= gohAsset('js/cursos-render.js') ?>" defer></script>
 <?php require __DIR__ . '/components/landing/footer.php'; ?>

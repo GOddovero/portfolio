@@ -1,191 +1,123 @@
-/* Personal page: GOH typography and the yellow/brown brand system. */
-.main-nav a[aria-current="page"] {color: var(--yellow); text-decoration: underline; text-underline-offset: 8px;}
-.about-hero {overflow: hidden;}
-.about-hero-grid {display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: 65px; padding-top: 55px;}
-.about-hero-copy {padding-bottom: 48px;}
-.about-hero-copy .eyebrow {font-size: 9px; margin-bottom: 28px;}
-.about-hero h1 {font-size: clamp(54px, 5.4vw, 78px); line-height: 1.06; letter-spacing: -.045em; font-weight: 600;}
-.about-hero h1 span {color: var(--yellow);}
-.about-name {font: 600 26px/1.3 var(--font-heading); margin-top: 27px;}
-.about-role {font-size: 11px; color: var(--subtle-text); margin-top: 7px;}
-.about-intro {font-size: 13px; color: var(--soft-text); line-height: 1.9; max-width: 525px; margin-top: 24px;}
-.about-actions {display: flex; gap: 20px; flex-wrap: wrap; margin-top: 29px; align-items: center;}
-.about-actions .button {font-size: 12px;}
-.about-actions .text-link {font-size: 11px;}
-.about-portrait {align-self: end; position: relative; isolation: isolate; height: 550px; display: flex; align-items: flex-end; justify-content: center;}
-.about-portrait::before {content: ''; position: absolute; z-index: -2; inset: 40px 0 0; border-radius: 130px 14px 0 0; background: var(--yellow);}
-.portrait-wordmark {position: absolute; z-index: -1; top: 44px; left: 30px; font: 800 130px/1 var(--font-heading); letter-spacing: -.06em; color: rgba(59,47,47,.13);}
-.about-portrait > img {height: 104%; max-width: 100%; width: auto; object-fit: contain; object-position: bottom;}
-.portrait-caption {position: absolute; right: -14px; bottom: 72px; background: var(--goh-brown); border: 1px solid var(--dark-line); padding: 16px 22px 16px 39px; color: var(--yellow); font-size: 8px; font-weight: 600; line-height: 1.85; letter-spacing: .045em;}
-.portrait-caption .status-dot {position: absolute; left: 20px; top: 22px; width: 5px; height: 5px;}
-.about-hero-foot {border-top: 1px solid var(--dark-line); min-height: 65px; display: flex; align-items: center; justify-content: space-between; gap: 25px; font-size: 8px; letter-spacing: .1em; color: var(--subtle-text);}
-.about-split {display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px;}
-.about-split .eyebrow {margin-bottom: 25px;}
-.about-prose p {font-size: 14px; color: var(--muted); line-height: 1.95;}
-.about-prose p + p {margin-top: 21px;}
-.about-prose .text-link {margin-top: 20px; font-size: 12px;}
-.about-degree {padding-bottom: 100px;}
-.degree-layout {display: grid; grid-template-columns: 1.15fr 1fr; gap: 65px; align-items: center;}
-.degree-photo {margin: 0; background: var(--warm-card); border-radius: 12px; overflow: hidden;}
-.degree-photo img {width: 100%; height: 380px; object-fit: cover; object-position: center;}
-.degree-photo figcaption {padding: 18px 22px; font-size: 10px; color: var(--muted);}
-.degree-copy .eyebrow {margin-bottom: 23px; font-size: 9px;}
-.degree-copy h2 {font-size: clamp(40px, 3.6vw, 51px);}
-.degree-university {font-size: 12px; margin-block: 19px; font-weight: 700;}
-.degree-university span {display: block; font-size: 10px; color: var(--muted); font-weight: 500; margin-top: 4px;}
-.degree-copy > p:not(.eyebrow):not(.degree-university) {font-size: 13px; color: var(--muted); line-height: 1.9;}
-.degree-thesis {padding: 20px 0 0 21px; border-left: 3px solid var(--yellow); margin-top: 25px;}
-.degree-thesis > span {font-size: 8px; letter-spacing: .08em; color: var(--muted);}
-.degree-thesis h3 {font-size: 24px; margin-block: 7px;}
-.degree-thesis p {font-size: 12px; color: var(--muted); line-height: 1.85;}
-.about-career {background: var(--warm-card);}
-.career-list {margin-top: 60px;}
-.career-row {display: grid; grid-template-columns: .48fr 1fr; gap: 70px; padding-block: 40px; border-top: 1px solid var(--line);}
-.career-row:first-child {border-top-color: var(--goh-brown);}
-.career-row:last-child {padding-bottom: 0;}
-.career-number {font: 500 55px/1 var(--font-heading); color: var(--muted); letter-spacing: -.05em;}
-.career-period p {font-size: 9px; margin-top: 20px; letter-spacing: .025em;}
-.career-current {display: inline-block; padding: 4px 9px; background: var(--goh-yellow); color: var(--goh-brown); font-size: 9px; margin-top: 13px; border-radius: 4px;}
-.career-company {font-size: 9px; letter-spacing: .07em; color: var(--muted); margin-bottom: 11px;}
-.career-content h3 {font-size: 30px; font-weight: 600; letter-spacing: -.025em;}
-.career-content > p:not(.career-company) {font-size: 13px; color: var(--muted); line-height: 1.9; margin-top: 17px;}
-.career-content ul {padding-left: 16px; margin-top: 17px; font-size: 12px; line-height: 1.9;}
-.career-content li {padding-left: 5px; margin-block: 8px;}
-.career-content li::marker {color: var(--muted); font-size: 9px;}
-.career-content .text-link {font-size: 12px; margin-top: 12px;}
-.about-skills .section-heading h2 span {color: var(--yellow);}
-.about-skills .section-heading > p {color: var(--soft-text);}
-.skills-grid {display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 55px;}
-.skills-grid > div {padding-top: 25px; border-top: 1px solid var(--dark-line);}
-.skill-group-number {font-size: 8px; color: var(--subtle-text); letter-spacing: .06em;}
-.skills-grid h3 {font-size: 22px; font-weight: 500; margin-block: 16px 23px;}
-.skill-tags {display: flex; flex-wrap: wrap; gap: 8px; list-style: none;}
-.skill-tags li {font-size: 11px; padding: 7px 12px; border: 1px solid var(--dark-line); border-radius: 4px; color: var(--soft-text);}
-.people-skills {display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; margin-top: 63px; padding-top: 34px; border-top: 1px solid var(--dark-line);}
-.people-skills h3 {font-size: 28px; font-weight: 500;}
-.people-skills > div > p {font-size: 13px; line-height: 1.9; color: var(--soft-text); margin-top: 14px;}
-.about-languages > p {display: flex; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--dark-line); padding-bottom: 13px;}
-.about-languages strong {font-weight: 600; color: var(--light);}
-.about-languages p span {font-size: 11px;}
-.about-languages small {display: block; font-size: 10px; line-height: 1.9; color: var(--subtle-text); margin-top: 14px;}
-.courses-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 20px;}
-.course-card {padding: 29px; border: 1px solid var(--line); border-radius: 9px; display: flex; flex-direction: column;}
-.course-topline {display: flex; justify-content: space-between; gap: 18px; align-items: center; font-size: 9px; color: var(--muted);}
-.course-status {font-size: 8px; padding: 4px 8px; border: 1px solid var(--line); border-radius: 4px;}
-.course-status.is-progress {background: var(--yellow); color: var(--goh-brown); border-color: var(--yellow);}
-.course-card h3 {font-size: 25px; font-weight: 600; letter-spacing: -.02em; margin-top: 22px;}
-.course-description {font-size: 12px; color: var(--muted); line-height: 1.85; margin-block: 13px 22px;}
-.course-bottom {display: flex; gap: 20px; justify-content: space-between; align-items: center; margin-top: auto; border-top: 1px solid var(--line); padding-top: 13px; min-height: 58px;}
-.course-date {font-size: 9px; color: var(--muted);}
-.course-bottom a {display: inline-flex; align-items: center; min-height: 44px; font-size: 11px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px;}
-.about-contact {padding-block: 78px; background: var(--yellow);}
-.about-contact-grid {display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: center;}
-.about-contact .eyebrow {margin-bottom: 23px; font-size: 9px;}
-.about-contact h2 {font-size: clamp(39px, 4vw, 58px); line-height: 1.1;}
-.about-contact p:last-child {font-size: 13px; margin-top: 22px; max-width: 420px;}
-.about-contact-actions {display: flex; flex-direction: column; align-items: flex-start; gap: 11px;}
-.about-contact-actions .button {font-size: 12px; gap: 15px;}
-.about-contact-actions .text-link {font-size: 11px;}
-@media(max-width: 1150px) {
-    .about-hero-grid {gap: 35px;}
-    .about-hero h1 {font-size: 60px;}
-    .about-portrait {height: 530px;}
-    .about-name {font-size: 24px;}
-    .about-split, .degree-layout {gap: 45px;}
-    .career-row {gap: 50px;}
-    .people-skills {gap: 60px;}
-    .about-contact-grid {gap: 35px;}
-}
-@media(max-width: 900px) {
-    .about-hero-grid {grid-template-columns: 1.15fr 1fr; gap: 28px; padding-top: 40px;}
-    .about-hero h1 {font-size: 49px;}
-    .about-hero-copy .eyebrow {font-size: 7px;}
-    .about-intro {font-size: 12px;}
-    .about-portrait {height: 510px;}
-    .about-portrait::before {top: 100px; border-top-left-radius: 90px;}
-    .portrait-wordmark {font-size: 100px; top: 110px; left: 20px;}
-    .portrait-caption {right: -8px; padding: 14px 13px 14px 28px; font-size: 7px;}
-    .portrait-caption .status-dot {left: 13px; top: 19px;}
-    .about-name {font-size: 21px;}
-    .about-role {font-size: 9px;}
-    .about-actions {gap: 7px;}
-    .about-actions .button {font-size: 11px;}
-    .degree-layout {grid-template-columns: 1fr 1fr; gap: 30px;}
-    .degree-copy h2 {font-size: 37px;}
-    .degree-photo img {height: 400px;}
-    .about-split {gap: 35px;}
-    .about-split h2 {font-size: 33px;}
-    .career-row {grid-template-columns: .4fr 1fr; gap: 35px;}
-    .skills-grid {gap: 22px;}
-    .skills-grid h3 {font-size: 19px;}
-    .skill-tags li {font-size: 10px; padding: 6px 10px;}
-    .course-card {padding: 22px;}
-    .course-card h3 {font-size: 23px;}
-    .about-contact-grid {grid-template-columns: 1.2fr 1fr; gap: 25px;}
-    .about-contact-actions .button {font-size: 10px; padding-inline: 16px;}
-}
-@media(max-width: 650px) {
-    .about-hero-grid {grid-template-columns: 1fr; gap: 0; padding-top: 40px;}
-    .about-hero-copy {padding-bottom: 27px;}
-    .about-hero h1 {font-size: clamp(49px, 9.5vw, 61px);}
-    .about-hero-copy .eyebrow {font-size: 8px; margin-bottom: 22px;}
-    .about-name {font-size: 24px; margin-top: 25px;}
-    .about-role {font-size: 10px;}
-    .about-intro {font-size: 13px; margin-top: 20px;}
-    .about-actions {gap: 13px; margin-top: 22px;}
-    .about-portrait {height: 395px; width: min(100%, 360px); justify-self: center;}
-    .about-portrait::before {inset: 40px 12px 0;}
-    .portrait-wordmark {left: 42px; top: 60px; font-size: 108px;}
-    .portrait-caption {right: 0; font-size: 7px; bottom: 23px;}
-    .about-hero-foot {font-size: 6px; gap: 14px; min-height: 62px;}
-    .about-split, .degree-layout, .people-skills, .about-contact-grid {grid-template-columns: 1fr; gap: 29px;}
-    .about-split h2 {font-size: 37px;}
-    .about-prose p {font-size: 13px;}
-    .about-degree {padding-bottom: 69px;}
-    .degree-photo img {height: auto; aspect-ratio: 1.3; object-fit: cover;}
-    .degree-photo figcaption {font-size: 9px; padding: 15px 18px;}
-    .degree-copy {padding-top: 7px;}
-    .degree-copy h2 {font-size: 43px;}
-    .degree-copy .eyebrow {margin-bottom: 20px;}
-    .degree-thesis {margin-top: 21px; padding-top: 8px;}
-    .career-list {margin-top: 33px;}
-    .career-row {grid-template-columns: 1fr; gap: 22px; padding-block: 30px;}
-    .career-period {display: flex; gap: 15px; align-items: center; flex-wrap: wrap;}
-    .career-number {font-size: 33px;}
-    .career-period p {margin-top: 0; font-size: 8px;}
-    .career-current {margin-top: 0; font-size: 8px;}
-    .career-company {font-size: 8px;}
-    .career-content h3 {font-size: 28px;}
-    .career-content ul {font-size: 11px;}
-    .skills-grid {grid-template-columns: 1fr; gap: 29px; margin-top: 35px;}
-    .skills-grid h3 {font-size: 25px; margin-block: 12px 18px;}
-    .skill-tags li {font-size: 11px;}
-    .people-skills {margin-top: 40px; padding-top: 29px; gap: 17px;}
-    .courses-grid {grid-template-columns: 1fr; gap: 16px;}
-    .course-card {padding: 23px;}
-    .course-card h3 {font-size: 26px;}
-    .about-contact {padding-block: 62px;}
-    .about-contact h2 {font-size: clamp(35px, 8.7vw, 48px);}
-    .about-contact-actions .button {font-size: 12px; padding-inline: 19px;}
-    .about-contact-actions {gap: 7px;}
-}
-@media(max-width: 380px) {
-    .about-hero h1 {font-size: 43px;}
-    .about-hero-copy .eyebrow {font-size: 7px;}
-    .about-name {font-size: 22px;}
-    .about-role {font-size: 8px;}
-    .about-portrait {height: 365px;}
-    .about-hero-foot {font-size: 5px; gap: 10px;}
-    .about-split h2 {font-size: 32px;}
-    .about-contact-actions .button {font-size: 11px;}
-}
-@media print {
-    .about-hero-grid, .about-split, .degree-layout, .about-contact-grid {display: block;}
-    .about-portrait {display: none;}
-    .about-intro, .about-role, .people-skills > div > p, .skill-tags li {color: var(--ink);}
-    .about-hero-copy {padding-bottom: 20px;}
-    .about-degree {padding-bottom: 25px;}
-    .degree-photo {max-width: 300px; margin-bottom: 20px;}
-    .degree-photo img {height: auto;}
-    .career-row, .course-card {break-inside: avoid;}
-}
+/* GOH profile: the same institutional language as the home and blog. */
+.about-page .section {padding:76px 0;}
+.about-hero {padding-top:47px; background:#fff;}
+.about-hero-grid {display:grid; grid-template-columns:1.15fr 1fr; gap:65px; align-items:center;}
+.about-hero-copy {padding-bottom:20px; min-width:0;}
+.about-hero-copy > .eyebrow {font-size:9px; color:#3c7057; margin-bottom:25px;}
+.about-hero h1 {font-size:clamp(42px,4.9vw,69px); line-height:1.08; letter-spacing:-.045em; font-weight:600;}
+.about-hero h1 span {color:#667660;}
+.about-name {font:500 23px/1.35 var(--font-heading); margin-top:25px;}
+.about-role {font-size:10px; color:var(--muted); margin-top:9px;}
+.about-intro {font-size:13px; color:var(--muted); line-height:1.95; max-width:490px; margin-top:23px;}
+.about-actions {display:flex; gap:21px; flex-wrap:wrap; align-items:center; margin-top:28px;}
+.about-actions .button {font-size:12px; min-height:49px;}
+.about-actions .text-link {font-size:11px;}
+.about-portrait {align-self:stretch; position:relative; isolation:isolate; height:485px; display:flex; align-items:flex-end; justify-content:center; overflow:hidden; border-radius:15px; background:#e9eee2;}
+.portrait-wordmark {position:absolute; z-index:-1; top:25px; right:-35px; width:285px; opacity:.12;}
+.about-portrait > img {height:99%; width:auto; max-width:100%; object-fit:contain; object-position:bottom; position:relative;}
+.portrait-caption {position:absolute; right:22px; bottom:27px; background:#fff; border:1px solid #dce2d3; padding:15px 20px 15px 33px; color:#3f5643; font-size:8px; font-weight:650; line-height:1.8; letter-spacing:.06em; border-radius:5px;}
+.portrait-caption .status-dot {position:absolute; left:17px; top:21px; width:5px; height:5px;}
+.about-hero-foot {display:flex; justify-content:space-between; align-items:center; gap:20px; min-height:68px; border-bottom:1px solid var(--line); margin-top:32px; font-size:9px; letter-spacing:.09em; color:var(--muted);}
+.about-split {display:grid; grid-template-columns:1fr 1fr; gap:90px;}
+.about-split .eyebrow {font-size:9px; color:var(--muted); margin-bottom:22px;}
+.about-split h2 {font-size:39px; line-height:1.18; font-weight:600; letter-spacing:-.03em;}
+.about-split h2 span {color:#667660;}
+.about-prose p {font-size:13px; line-height:1.95; color:var(--muted);}
+.about-prose p + p {margin-top:20px;}
+.about-prose .text-link {font-size:11px; margin-top:16px;}
+.about-ecosystem {padding-bottom:75px;}
+.about-ecosystem-heading {display:flex; justify-content:space-between; align-items:end; gap:35px; margin-bottom:27px;}
+.about-ecosystem-heading .eyebrow {font-size:9px; color:var(--muted); margin-bottom:14px;}
+.about-ecosystem-heading h2 {font-size:36px; font-weight:600; letter-spacing:-.03em;}
+.about-ecosystem-heading > p {font-size:11px; color:var(--muted); line-height:1.85; max-width:360px;}
+.about-systems {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;}
+.about-system {display:flex; flex-direction:column; align-items:start; position:relative; gap:19px; padding:25px; border:1px solid #dce3d8; border-radius:9px; background:#f2f6ee;}
+.about-system-gym {background:#f5f4eb; border-color:#e4e0ce;}
+.about-system-care {background:#eff4f7; border-color:#d9e1e7;}
+.about-system > img {width:83px; height:91px; object-fit:contain;}
+.about-system > span {display:block;}
+.about-system strong {display:block; font:600 23px/1.2 var(--font-heading); letter-spacing:-.02em;}
+.about-system > span > span {display:block; font-size:10px; line-height:1.8; color:var(--muted); margin-top:9px;}
+.about-system > .icon {position:absolute; top:28px; right:23px; width:18px; transition:transform .2s;}
+.about-system:hover > .icon {transform:translateX(3px);}
+.about-system:hover strong {text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px;}
+.about-modules {display:flex; align-items:center; justify-content:space-between; gap:25px; padding:23px 0; border-bottom:1px solid var(--line);}
+.about-modules p {display:flex; gap:25px; align-items:center; flex-wrap:wrap;}
+.about-modules strong {font:600 22px/1.2 var(--font-heading);}
+.about-modules span {font-size:10px; color:var(--muted);}
+.about-modules .text-link {font-size:11px; flex-shrink:0;}
+.about-degree {padding-bottom:75px;}
+.degree-layout {display:grid; grid-template-columns:1fr 1fr; gap:65px; align-items:center;}
+.degree-photo {margin:0; background:#f4f4ef; border-radius:10px; overflow:hidden;}
+.degree-photo img {width:100%; aspect-ratio:1.45; object-fit:cover;}
+.degree-photo figcaption {padding:17px 20px; font-size:10px; color:var(--muted);}
+.degree-copy .eyebrow {font-size:9px; color:var(--muted); margin-bottom:20px;}
+.degree-copy h2 {font-size:45px; line-height:1.08; font-weight:600; letter-spacing:-.03em;}
+.degree-university {font-size:12px; font-weight:650; margin:20px 0 15px;}
+.degree-university span {display:block; font-size:10px; font-weight:500; color:var(--muted); margin-top:5px;}
+.degree-copy > p:not(.eyebrow):not(.degree-university) {font-size:12px; color:var(--muted); line-height:1.9;}
+.degree-thesis {border-left:3px solid var(--yellow); padding-left:20px; margin-top:25px;}
+.degree-thesis > span {font-size:8px; letter-spacing:.08em; color:var(--muted);}
+.degree-thesis h3 {font-size:25px; font-weight:600; margin:7px 0;}
+.degree-thesis p {font-size:11px; color:var(--muted); line-height:1.85;}
+.about-career {background:#f7f7f3;}
+.about-page .section-heading h2 {font-size:42px; font-weight:600; letter-spacing:-.035em; line-height:1.12;}
+.about-page .section-heading .eyebrow {font-size:9px; color:var(--muted);}
+.about-page .section-heading > p {font-size:12px; line-height:1.9;}
+.career-list {margin-top:38px;}
+.career-row {display:grid; grid-template-columns:.52fr 1fr; gap:65px; padding:32px 0; border-top:1px solid #ddded7;}
+.career-row:last-child {padding-bottom:0;}
+.career-number {font:500 47px/1 var(--font-heading); color:#8b9183; letter-spacing:-.04em;}
+.career-period p {font-size:9px; color:var(--muted); margin-top:17px;}
+.career-current {display:inline-block; font-size:8px; background:#e4eadb; color:#465d46; padding:4px 9px; margin-top:12px; border-radius:4px;}
+.career-company {font-size:9px; color:var(--muted); letter-spacing:.06em; margin-bottom:10px;}
+.career-content h3 {font-size:30px; line-height:1.18; font-weight:600; letter-spacing:-.02em;}
+.career-content > p:not(.career-company) {font-size:12px; color:var(--muted); line-height:1.9; margin-top:15px;}
+.career-content ul {padding-left:17px; font-size:11px; line-height:1.9; color:var(--muted); margin-top:16px;}
+.career-content li {margin:7px 0; padding-left:4px;}
+.career-content .text-link {font-size:11px; margin-top:8px;}
+.about-page .about-skills {background:#293e34; color:#f4f6ef;}
+.about-skills .section-heading .eyebrow,.about-skills .section-heading > p {color:#c1cec2;}
+.about-skills .section-heading h2 span {color:#d3dcbd;}
+.skills-grid {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:30px; margin-top:36px;}
+.skills-grid > div {border-top:1px solid #55695d; padding-top:23px;}
+.skill-group-number {font-size:8px; letter-spacing:.07em; color:#b9c7bc;}
+.skills-grid h3 {font-size:24px; font-weight:500; margin:16px 0 22px;}
+.skill-tags {display:flex; flex-wrap:wrap; gap:8px; list-style:none;}
+.skill-tags li {border:1px solid #66796b; border-radius:4px; padding:6px 10px; font-size:10px; color:#e0e7dc;}
+.people-skills {display:grid; grid-template-columns:1.2fr 1fr; gap:80px; border-top:1px solid #55695d; padding-top:29px; margin-top:43px;}
+.people-skills h3 {font-size:27px; font-weight:500;}
+.people-skills > div > p {font-size:12px; line-height:1.9; color:#c1cec2; margin-top:13px;}
+.about-languages > p {display:flex; justify-content:space-between; gap:20px; border-bottom:1px solid #55695d; padding-bottom:11px;}
+.about-languages strong {font-weight:600; color:#f4f6ef;}
+.about-languages p span {font-size:10px;}
+.about-languages small {display:block; font-size:10px; line-height:1.9; color:#c1cec2; margin-top:13px;}
+.courses-grid {display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+.course-card {border:1px solid var(--line); border-radius:8px; padding:26px; display:flex; flex-direction:column;}
+.course-topline {display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:9px; color:var(--muted);}
+.course-status {font-size:8px; padding:4px 7px; border:1px solid var(--line); border-radius:3px;}
+.course-status.is-progress {background:#f4efcd; color:#75691a; border-color:#e7dfaa;}
+.course-card h3 {font-size:25px; font-weight:600; line-height:1.2; letter-spacing:-.02em; margin-top:22px;}
+.course-description {font-size:12px; color:var(--muted); line-height:1.85; margin:14px 0 20px;}
+.course-bottom {display:flex; justify-content:space-between; gap:14px; align-items:center; border-top:1px solid var(--line); padding-top:13px; margin-top:auto; min-height:55px;}
+.course-date {font-size:9px; color:var(--muted);}
+.course-bottom a {display:inline-flex; min-height:44px; align-items:center; font-size:10px; font-weight:650; text-decoration:underline; text-underline-offset:4px;}
+.about-blog {display:flex; align-items:center; gap:27px; padding:28px 0 48px;}
+.about-blog-mark {width:65px; height:65px; flex-shrink:0;}
+.about-blog .eyebrow {font-size:8px; color:var(--muted); margin-bottom:10px;}
+.about-blog h2 {font-size:31px; font-weight:600; letter-spacing:-.025em; margin-bottom:12px;}
+.about-blog p:not(.eyebrow) {max-width:600px; font-size:12px; color:var(--muted); line-height:1.85;}
+.about-blog > .text-link {margin-left:auto; font-size:11px; flex-shrink:0;}
+.about-contact {padding:62px 0; background:#f2efdf; border-top:1px solid #e6e0c9;}
+.about-contact-grid {display:grid; grid-template-columns:1.25fr 1fr; gap:60px; align-items:center;}
+.about-contact .eyebrow {font-size:9px; color:#706954; margin-bottom:20px;}
+.about-contact h2 {font-size:43px; font-weight:600; line-height:1.12; letter-spacing:-.035em;}
+.about-contact p:last-child {font-size:12px; color:#706954; line-height:1.8; margin-top:17px; max-width:400px;}
+.about-contact-actions {display:flex; flex-direction:column; align-items:start; gap:8px;}
+.about-contact-actions .button {font-size:12px; gap:15px;}
+.about-contact-actions .text-link {font-size:11px;}
+@media(max-width:1100px) {.about-hero-grid {gap:35px;} .about-portrait {height:450px;} .about-name {font-size:20px;} .about-split,.degree-layout {gap:45px;} .career-row {gap:45px;} .people-skills {gap:45px;} .about-ecosystem-heading {align-items:start; flex-direction:column; gap:16px;} .about-ecosystem-heading > p {max-width:none;} .about-ecosystem-heading br {display:none;} .about-system {padding:20px;} .about-system strong {font-size:21px;}}
+@media(max-width:900px) {.about-hero-grid {gap:25px;} .about-portrait {height:420px;} .about-hero h1 {font-size:44px;} .about-intro {font-size:12px;} .about-name {font-size:19px;} .about-split {gap:30px;} .about-split h2 {font-size:33px;} .degree-copy h2 {font-size:38px;} .degree-layout {gap:30px;} .about-systems {gap:12px;} .about-system strong {font-size:19px;} .about-system > .icon {right:15px;} .about-system > img {width:74px; height:82px;} .about-modules p {gap:12px;} .career-row {grid-template-columns:.4fr 1fr; gap:30px;} .skills-grid {gap:22px;} .skills-grid h3 {font-size:21px;} .about-blog {flex-wrap:wrap;} .about-blog > div {flex:1;} .about-blog > .text-link {margin-left:92px;} .about-contact-grid {gap:30px;} .about-contact h2 {font-size:38px;} .about-contact-actions .button {font-size:11px; padding-inline:16px;}}
+@media(max-width:650px) {.about-page .section {padding:49px 0;} .about-hero {padding-top:33px;} .about-hero-grid {grid-template-columns:1fr; gap:27px;} .about-hero h1 {font-size:clamp(42px,8vw,58px);} .about-name {font-size:21px;} .about-intro {font-size:13px;} .about-hero-copy {padding-bottom:0;} .about-hero-copy > .eyebrow {font-size:8px; margin-bottom:20px;} .about-portrait {height:390px; width:100%; max-width:420px; justify-self:center;} .portrait-wordmark {width:240px; top:15px;} .portrait-caption {font-size:8px; right:18px; bottom:20px;} .about-hero-foot {font-size:7px; gap:12px; margin-top:23px; min-height:62px;} .about-split,.degree-layout,.people-skills,.about-contact-grid {grid-template-columns:1fr; gap:25px;} .about-split h2 {font-size:35px;} .about-ecosystem {padding-bottom:49px;} .about-ecosystem-heading h2 {font-size:32px;} .about-systems {grid-template-columns:1fr; gap:12px;} .about-system {flex-direction:row; align-items:center; gap:20px; padding:20px 50px 20px 20px;} .about-system > img {width:72px; height:75px; flex-shrink:0;} .about-system strong {font-size:23px;} .about-system > .icon {top:50%; translate:0 -50%; right:18px;} .about-modules {flex-wrap:wrap; gap:8px; padding:20px 0;} .about-modules p {display:block;} .about-modules span {display:block; margin-top:8px;} .about-modules .text-link {min-height:40px;} .about-degree {padding-bottom:48px;} .degree-photo img {aspect-ratio:1.3;} .degree-copy h2 {font-size:42px;} .about-page .section-heading h2 {font-size:35px;} .career-list {margin-top:30px;} .career-row {grid-template-columns:1fr; gap:21px; padding:28px 0;} .career-period {display:flex; align-items:center; gap:15px; flex-wrap:wrap;} .career-period p,.career-current {margin-top:0;} .career-number {font-size:34px;} .career-content h3 {font-size:28px;} .skills-grid {grid-template-columns:1fr; margin-top:30px; gap:26px;} .skills-grid h3 {font-size:25px;} .people-skills {gap:14px; margin-top:34px;} .courses-grid {grid-template-columns:1fr; gap:15px;} .course-card {padding:23px;} .course-card h3 {font-size:26px;} .about-blog {padding-top:0; padding-bottom:42px; gap:18px; align-items:start;} .about-blog-mark {width:45px; height:45px;} .about-blog > .text-link {margin-left:63px;} .about-blog h2 {font-size:28px;} .about-contact {padding:47px 0;} .about-contact h2 {font-size:37px;} .about-contact-actions .button {font-size:12px;}}
+@media(max-width:380px) {.about-hero h1 {font-size:39px;} .about-name {font-size:19px;} .about-portrait {height:350px;} .about-hero-foot {font-size:6px;} .about-actions {gap:10px;} .about-system {gap:16px;} .about-system > img {width:59px; height:68px;} .about-system strong {font-size:22px;} .course-bottom {flex-wrap:wrap;} .about-contact-actions .button {font-size:11px;} .about-page .section-heading h2 {font-size:31px;}}
+@media print {.about-hero-grid,.about-split,.degree-layout,.about-contact-grid {display:block;} .about-portrait,.about-blog {display:none;} .about-degree {padding-bottom:25px;} .degree-photo {max-width:300px; margin-bottom:20px;} .career-row,.course-card {break-inside:avoid;} .about-page .about-skills,.about-skills .section-heading > p,.skill-tags li,.people-skills p,.about-languages strong,.about-languages small {color:var(--ink); background:#fff;}}

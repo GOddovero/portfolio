@@ -1,0 +1,34 @@
+BLOG GOH — EDICIÓN Y PUBLICACIÓN
+
+El blog se integra con la web PHP existente, sin base de datos ni panel de administración.
+Cada archivo .php de esta carpeta devuelve los datos y el contenido de una guía.
+
+Para añadir una guía:
+1. Copiar un artículo existente con un nombre nuevo, en minúsculas y separado por guiones.
+2. Cambiar slug, título, descripción, categoría, producto, logo y secciones.
+3. Indicar la fecha real de publicación y de modificación en formato AAAA-MM-DD.
+4. Para preparar un borrador, añadir 'status' => 'draft'. Para mostrarlo, usar 'published'.
+   Una fecha de publicación futura también mantiene el artículo fuera del sitio.
+5. Revisar fuentes, preguntas y vínculos relacionados. El slug debe ser único y coincidir con el nombre del archivo.
+6. Probar la página, el buscador y la vista móvil antes de publicar.
+
+El índice, los tiempos de lectura y el sitemap.xml se generan a partir de los artículos publicados.
+Las páginas de búsqueda y filtros llevan noindex; cada artículo tiene su URL canónica independiente.
+El HTML de las secciones es contenido de confianza editado en el repositorio: no aceptar HTML de formularios públicos.
+
+URL local: http://localhost/portfolio/blog/
+URL pública prevista: https://goh.com.ar/blog/
+Mapa del sitio: https://goh.com.ar/sitemap.xml (servido por sitemap.php).
+Al publicar, subir también blog/.htaccess y la regla del sitemap del .htaccess principal.
+La reescritura requiere Apache 2.4 con mod_rewrite, como el entorno XAMPP usado para verificar.
+
+Criterios editoriales:
+- Resolver una pregunta concreta con ejemplos y respuestas directas.
+- Vincular al perfil real del autor y a los productos relacionados.
+- Confirmar las funciones antes de describirlas; no inventar métricas, clientes ni resultados.
+- No copiar textos de otras páginas. Citar fuentes oficiales cuando haya datos técnicos o normativos.
+- Evitar escalas fiscales o requisitos sanitarios sin revisar las fuentes vigentes.
+- Usar fechas de actualización reales; no renovar fechas sin cambios sustanciales.
+
+La preparación técnica facilita el rastreo; la indexación y aparición en respuestas de IA dependen de cada buscador.
+Después del despliegue, revisar sitemap e indexación en Search Console y Bing Webmaster Tools.

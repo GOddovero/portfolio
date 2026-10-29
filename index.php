@@ -13,8 +13,10 @@ require __DIR__ . '/components/landing/header.php';
 <?php
 require __DIR__ . '/components/landing/hero.php';
 require __DIR__ . '/components/landing/products.php';
+require __DIR__ . '/components/landing/care.php';
 require __DIR__ . '/components/landing/projects.php';
 require __DIR__ . '/components/landing/studio.php';
+require __DIR__ . '/components/landing/journal.php';
 require __DIR__ . '/components/landing/contact.php';
 ?>
 </main>

@@ -22,15 +22,18 @@ RewriteCond %{HTTP_HOST} ^(www\.)?goh\.com\.ar$ [NC]
 RewriteRule ^emprende/?$ https://goh-shop.com.ar/emprendedores [R=301,L]
 
 # Redireccionar www a no-www (opcional)
-RewriteCond %{HTTP_HOST} ^www\.goh\-com\.ar [NC]
-RewriteRule ^(.*)$ http://goh.com.ar/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.goh\.com\.ar$ [NC]
+RewriteRule ^(.*)$ https://goh.com.ar/$1 [R=301,L]
 
 # Forzar HTTPS en goh.com.ar
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:CDN-LOOP} !cloudflare
 RewriteCond %{REQUEST_URI} !^/.well-known/acme-challenge/
-RewriteCond %{HTTP_HOST} ^(www\.)?goh\-com\.ar
+RewriteCond %{HTTP_HOST} ^goh\.com\.ar$ [NC]
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,QSA]
+
+# El sitemap se genera desde los artículos publicados.
+RewriteRule ^sitemap\.xml$ sitemap.php [END]
 
 # Configuración de seguridad básica
 <IfModule mod_headers.c>
@@ -50,4 +53,5 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,QSA]
     ExpiresByType image/jpeg "access plus 1 month"
     ExpiresByType image/gif "access plus 1 month"
     ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
 </IfModule>

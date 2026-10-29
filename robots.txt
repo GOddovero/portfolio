@@ -1,36 +1,25 @@
-# GOH Enterprise - Robots.txt
-# Actualizado: 17 de diciembre de 2025
-
+# GOH · Sistemas y desarrollo de software en Argentina
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://goh.com.ar/sitemap.xml
-
-# Archivos y directorios importantes permitidos
-Allow: /css/
-Allow: /js/
-Allow: /img/
-Allow: /*.php
-
-# Bloquear directorios sensibles
 Disallow: /logs/
 Disallow: /config/
 Disallow: /vendor/
-Disallow: /components/legacy/
+Disallow: /components/
+Disallow: /content/
 Disallow: /.git/
 Disallow: /includes/
 
-# Crawl-delay para bots agresivos
-User-agent: BingBot
-Crawl-delay: 1
+Sitemap: https://goh.com.ar/sitemap.xml
 
-User-agent: Googlebot
-Allow: /
-
-# Bloquear bots maliciosos
 User-agent: AhrefsBot
 Disallow: /
 
 User-agent: SemrushBot
+Disallow: /logs/
+Disallow: /config/
+Disallow: /vendor/
+Disallow: /components/
+Disallow: /content/
+Disallow: /.git/
+Disallow: /includes/
 Crawl-delay: 10
